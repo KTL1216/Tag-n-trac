@@ -1,0 +1,4153 @@
+[2024/4/27 15:41:00][LOG]: OC:QDM065EABAN06AAAAA
+[2024/4/27 15:41:00][LOG]: 测试软件信息:1.0.48
+[2024/4/27 15:41:00][LOG]: 20240426_10:43
+[2024/4/27 15:41:00][LOG]: 当前夹具编号:QDC526-SP-BTFT-12-004-M
+[2024/4/27 15:41:00][LOG]: 工单号:SUGQ5000048706
+[2024/4/27 15:41:00][LOG]: 当前SN:P14K4DQ02000064
+[2024/4/27 15:41:00][LOG]:  MOB_Barcode号数据获取成功 SN当前站位：AUTO_FT
+[2024/4/27 15:41:00][LOG]: 符合测试条件，即将进行测试
+[2024/4/27 15:41:00][LOG]: 打开串口COM4
+[2024/4/27 15:41:00][LOG]: 打开串口COM4成功
+[2024/4/27 15:41:00][LOG]: Test Item '打开串口COM4' PASS. Data is 'PASS'
+[2024/4/27 15:41:00][LOG]: 打开串口COM16
+[2024/4/27 15:41:00][LOG]: 打开串口COM16成功
+[2024/4/27 15:41:00][LOG]: Test Item '打开串口COM16' PASS. Data is 'PASS'
+[2024/4/27 15:41:00][LOG]: OpenVISA
+[2024/4/27 15:41:01][DATARECV]: 打开GPIB1::5::INSTR成功
+[2024/4/27 15:41:01][LOG]: Test Item 'OpenVISA' PASS. Data is '==='
+[2024/4/27 15:41:01][LOG]: 打开电源接口成功
+[2024/4/27 15:41:01][DATARECV]: 指令OUTP OFF
+写入成功
+[2024/4/27 15:41:01][LOG]: Power_OFF指令成功
+[2024/4/27 15:41:01][LOG]: 等待2秒后开始测试
+[2024/4/27 15:41:03][LOG]: 电源名称：KEYSIGHT_E3640A
+[2024/4/27 15:41:03][DATARECV]: 指令VOLT:RANG P20V
+写入成功
+[2024/4/27 15:41:03][DATARECV]: 指令VOLT 3.7
+写入成功
+[2024/4/27 15:41:03][LOG]: Test Item 'SendVolt' PASS. Data is '==='
+[2024/4/27 15:41:03][LOG]: 写入VOLT指令成功
+[2024/4/27 15:41:03][DATARECV]: 指令CURR 1.5
+写入成功
+[2024/4/27 15:41:03][LOG]: Test Item 'SendCurr' PASS. Data is '==='
+[2024/4/27 15:41:03][LOG]: 写入CURR指令成功
+[2024/4/27 15:41:03][DATARECV]: 指令OUTP ON
+写入成功
+[2024/4/27 15:41:03][LOG]: Test Item 'Send_Power_ON' PASS. Data is '==='
+[2024/4/27 15:41:03][LOG]: Power_ON指令成功
+[2024/4/27 15:41:03][LOG]: OpenRFVISA
+[2024/4/27 15:41:03][DATARECV]: TCPIP0::192.168.100.254::hislip0::INSTR打开成功
+[2024/4/27 15:41:03][LOG]: Test Item 'OpenVISA' PASS. Data is 'PASS'
+[2024/4/27 15:41:03][LOG]: 打开电源接口成功
+[2024/4/27 15:41:03][LOG]: CheckRFVer
+[2024/4/27 15:41:03][DATARECV]: LitePoint,IQxstream-M,IQ1414D0001X,1.16.0\n
+[2024/4/27 15:41:03][LOG]: LitePoint,IQxstream-M,IQ1414D0001X,1.16.0\n
+[2024/4/27 15:41:03][LOG]: Test Item 'CheckRFVer' PASS. Data is 'PASS'
+[2024/4/27 15:41:03][LOG]: 检查RF设备版本成功
+[2024/4/27 15:41:03][LOG]: Check Sleep mode allowed
+[2024/4/27 15:41:04][DATARECV]: 
+DRAM:  2.5 MiB
+[2024/4/27 15:41:04][DATARECV]: 
+Now running in RAM - U-Boot at: 902a8000
+[2024/4/27 15:41:04][DATARECV]: 
+Boot mode 3
+[2024/4/27 15:41:04][DATARECV]: 
+Flash Manufacturer/Device ID is: 0xef6018
+[2024/4/27 15:41:04][DATARECV]: 
+Enable QUAD mode
+[2024/4/27 15:41:04][DATARECV]: 
+Flash: 16 MiB
+[2024/4/27 15:41:04][DATARECV]: 
+map import OK
+[2024/4/27 15:41:04][DATARECV]: 
+USB CTRL has been successfully initialized!
+[2024/4/27 15:41:04][DATARECV]: 
+In:    usbtty
+[2024/4/27 15:41:04][DATARECV]: 
+Out:   usbtty
+[2024/4/27 15:41:04][DATARECV]: 
+Err:   usbtty
+[2024/4/27 15:41:04][DATARECV]: 
+Configuring Flash Write Protection (offset 0x192e00)
+[2024/4/27 15:41:04][DATARECV]: 
+new_ce_val = 0x3a00f8f0
+[2024/4/27 15:41:04][DATARECV]: 
+Rst info: power button : power on, no reset 
+[2024/4/27 15:41:06][DATARECV]: 
+Hit any key to stop autoboot:  2  1  0 
+[2024/4/27 15:41:06][DATARECV]: 
+Version: 2.0
+[2024/4/27 15:41:06][DATARECV]: 
+
+[2024/4/27 15:41:06][DATARECV]: 
+Nothing to upgrade...
+[2024/4/27 15:41:06][DATARECV]: 
+hbsb ok. 1 ms 
+[2024/4/27 15:41:06][DATARECV]: 
+## Starting appli?initGnssAppWithLogicalSerialPort lsid=27
+[2024/4/27 15:41:06][DATARECV]: 
+>eLC_app_entry
+[2024/4/27 15:41:06][DATARECV]: 
+Skip audio hub init - Audio hub is not enabled
+[2024/4/27 15:41:06][DATARECV]: 
+[is_backup_valid() 608]is_backup_valid
+[2024/4/27 15:41:06][DATARECV]: 
+[get_backup_area_fileinfo() 547]backup is empty 
+[2024/4/27 15:41:07][DATARECV]: 
+
+[2024/4/27 15:41:07][DATARECV]: 
+Init logs:
+[2024/4/27 15:41:07][DATARECV]: 
+Jan 01 00:00:00.000 [D4]  [INIT][    0.63129] Starting PM
+[2024/4/27 15:41:07][DATARECV]: 
+Jan 01 00:00:00.000 [D4]  [INIT][    0.63240] Starting SM
+[2024/4/27 15:41:07][DATARECV]: 
+Jan 01 00:00:00.000 [D4]  [INIT][    0.63383] Normal boot from u-boot
+[2024/4/27 15:41:07][DATARECV]: 
+Jan 01 00:00:00.000 [D4]  [INIT][    0.63404] Cold boot
+[2024/4/27 15:41:07][DATARECV]: 
+Jan 01 00:00:00.022 [D4]  [INIT][    0.85329] Error [5] failed to open file: d:/resetcause
+[2024/4/27 15:41:07][DATARECV]: 
+Jan 01 00:00:00.022 [D4]  [INIT][    0.85423] MAP reset cause: 0
+[2024/4/27 15:41:07][DATARECV]: 
+Jan 01 00:00:00.022 [D4]  [INIT][    0.85516] MCU present: 1
+[2024/4/27 15:41:07][DATARECV]: 
+Jan 01 00:00:00.029 [D4]  [INIT][    0.92704] Host Interface port not present UARTB mapped to [N]
+[2024/4/27 15:41:07][DATARECV]: 
+Jan 01 00:00:00.045 [D4]  [INIT][    0.108194] RAM start = 901ec000
+[2024/4/27 15:41:07][DATARECV]: 
+Jan 01 00:00:00.045 [D4]  [INIT][    0.108224] heap start = 901ec000
+[2024/4/27 15:41:07][DATARECV]: 
+Jan 01 00:00:00.045 [D4]  [INIT][    0.108241] Computed heap size=1130496
+[2024/4/27 15:41:07][DATARECV]: 
+Jan 01 00:00:00.058 [D4]  [INIT][    0.121793] Calling lte driver with uart:N baudrate:921600 flow_ctrl:0
+[2024/4/27 15:41:07][DATARECV]: 
+Jan 01 00:00:00.059 [D4]  [INIT][    0.122399] LTE driver init complete
+[2024/4/27 15:41:07][DATARECV]: 
+Jan 01 00:00:00.062 [D4]  [INIT][    0.125209] alt1250_usb_init()=-1
+[2024/4/27 15:41:07][DATARECV]: 
+Jan 01 00:00:00.062 [D4]  [INIT][    0.125914] Setup AT/PPP [N] & CLI/AT [A] & AT [N] & AT_2 [N] & ALTCOM [UART0]!
+[2024/4/27 15:41:07][DATARECV]: 
+Jan 01 00:00:00.062 [D4]  [INIT][    0.125944] Setup TCP dump [N] & SFP logger [C] & LTE driver FW [N] & MUX A [N] & MUX B [N] !
+[2024/4/27 15:41:07][DATARECV]: 
+Jan 01 00:00:00.062 [D4]  [INIT][    0.125995] Open UART-A base = 0xbc118000 cfg =0x0 intrp=72
+[2024/4/27 15:41:07][DATARECV]: 
+Jan 01 00:00:00.062 [D4]  [INIT][    0.126063] Setup rx_interrupt_only for uart 0
+[2024/4/27 15:41:07][DATARECV]: 
+Jan 01 00:00:00.063 [D4]  [INIT][    0.126137] serialMngrOpen:451, device=A 0x9c0d5a50
+[2024/4/27 15:41:07][DATARECV]: 
+Jan 01 00:00:00.068 [D4]  [INIT][    0.131404] Setup UART A in Tx blocking mode
+[2024/4/27 15:41:07][DATARECV]: 
+Jan 01 00:00:00.068 [D4]  [INIT][    0.131433] Open UART-C base = 0xbf0a1000 cfg =0xbf021000 intrp=77
+[2024/4/27 15:41:07][DATARECV]: 
+Jan 01 00:00:00.068 [D4]  [INIT][    0.131470] Setup rx_interrupt_only for uart 2
+[2024/4/27 15:41:07][DATARECV]: 
+Jan 01 00:00:00.068 [D4]  [INIT][    0.131494] serialMngrOpen:451, device=C 0x9c0d5f20
+[2024/4/27 15:41:07][DATARECV]: 
+Jan 01 00:00:00.068 [D4]  [INIT][    0.131517] Setup UART C in Tx blocking mode
+[2024/4/27 15:41:07][DATARECV]: 
+Jan 01 00:00:00.068 [D4]  [INIT][    0.131534] Setup rx_tx_interrupt_ for uart 2
+[2024/4/27 15:41:07][DATARECV]: 
+Jan 01 00:00:00.068 [D4]  [INIT][    0.131559] Calling irq_moveInterruptToHW2() with uart id=2
+[2024/4/27 15:41:07][DATARECV]: 
+Jan 01 00:00:00.073 [D4]  [INIT][    0.136767] Setup ALTCOM device: UART0 
+[2024/4/27 15:41:07][DATARECV]: 
+Jan 01 00:00:00.073 [D4]  [INIT][    0.136788] Open UART-0 base = 0xbf0a3000 cfg =0x0 intrp=123
+[2024/4/27 15:41:07][DATARECV]: 
+Jan 01 00:00:00.073 [D4]  [INIT][    0.136824] serialMngrOpen:451, device=UART0 0x9c0d63f0
+[2024/4/27 15:41:07][DATARECV]: 
+Jan 01 00:00:00.073 [D4]  [INIT][    0.136847] Setup UART UART0 in Tx blocking mode
+[2024/4/27 15:41:07][DATARECV]: 
+Jan 01 00:00:00.073 [D4]  [INIT][    0.136866] Setup rx_tx_interrupt_ for uart 4
+[2024/4/27 15:41:07][DATARECV]: 
+Jan 01 00:00:00.073 [D4]  [INIT][    0.136883] Calling irq_moveInterruptToHW2() with uart id=4
+[2024/4/27 15:41:07][DATARECV]: 
+Jan 01 00:00:00.077 [D4]  [INIT][    0.140195] hifc_register_uart_CBs was called for internal HIFC
+[2024/4/27 15:41:07][DATARECV]: 
+Jan 01 00:00:00.242 [D4]  [INIT][    0.305239] LteDriver - init task ended
+[2024/4/27 15:41:07][DATARECV]: 
+Jan 01 00:00:00.311 [D4]  [INIT][    0.374627] 1st AT cmd: AT+CEREG=0
+[2024/4/27 15:41:07][DATARECV]: 
+ - sent/rcv -> 3151/3359 Msec
+[2024/4/27 15:41:07][DATARECV]: 
+
+[2024/4/27 15:41:08][DATARECV]: 
+Jan 01 00:00:00.313 [D4]  [INIT][    0.376915] Binding C
+[2024/4/27 15:41:08][DATARECV]: 
+Jan 01 00:00:00.313 [D4]  [INIT][    0.376960] Calling main app init
+[2024/4/27 15:41:08][DATARECV]: 
+Jan 01 00:00:00.315 [D4]  [INIT][    0.378145] CLI is enable!
+[2024/4/27 15:41:08][DATARECV]: 
+Jan 01 00:00:00.320 [D4]  [INIT][    0.383978] lwip_stats ready
+[2024/4/27 15:41:08][DATARECV]: 
+Jan 01 00:00:00.320 [D4]  [INIT][    0.384068] lwip_ipsec ready
+[2024/4/27 15:41:08][DATARECV]: 
+Jan 01 00:00:00.321 [D4]  [INIT][    0.384352] quectel_apptcpip_app_entry
+[2024/4/27 15:41:08][DATARECV]: 
+Jan 01 00:00:00.322 [D4]  [INIT][    0.385906] quectel_atcop_app_entry
+[2024/4/27 15:41:08][DATARECV]: 
+Jan 01 00:00:00.322 [D4]  [INIT][    0.385937] quectel_atcmd_init
+[2024/4/27 15:41:08][DATARECV]: 
+Jan 01 00:00:00.329 [D4]  [INIT][    0.392204] CLI AT cmd buff len is 3092
+[2024/4/27 15:41:08][DATARECV]: 
+Jan 01 00:00:00.332 [D4]  [INIT][    0.395357] [OTA] xTimerCreate created
+[2024/4/27 15:41:08][DATARECV]: 
+
+[2024/4/27 15:41:08][DATARECV]: 
+Jan 01 00:00:00.335 [D4]  [INIT][    0.398135] AP_RDY Timer init
+[2024/4/27 15:41:08][DATARECV]: 
+
+[2024/4/27 15:41:08][DATARECV]: 
+Jan 01 00:00:00.335 [D4]  [INIT][    0.398172] AP_RDY Timer init done
+[2024/4/27 15:41:08][DATARECV]: 
+
+[2024/4/27 15:41:08][DATARECV]: 
+Jan 01 00:00:00.335 [D4]  [INIT][    0.398249] qsclk_resume_suspend_task_init
+[2024/4/27 15:41:08][DATARECV]: 
+Jan 01 00:00:00.335 [D4]  [INIT][    0.398351] QL_SVN_Set uSvn 35 
+[2024/4/27 15:41:08][DATARECV]: 
+
+[2024/4/27 15:41:08][DATARECV]: 
+Jan 01 00:00:00.335 [D4]  [INIT][    0.398764] quectel_backup_restore_entry
+[2024/4/27 15:41:08][DATARECV]: 
+Jan 01 00:00:00.335 [D4]  [INIT][    0.398796] quectel_cell_rf_jamming_atcmd_init
+[2024/4/27 15:41:08][DATARECV]: 
+Jan 01 00:00:00.338 [D4]  [INIT][    0.401477] quectel_coap_app_entry
+[2024/4/27 15:41:08][DATARECV]: 
+Jan 01 00:00:00.339 [D4]  [INIT][    0.402398] quectel_dfota_app_entry
+[2024/4/27 15:41:08][DATARECV]: 
+Jan 01 00:00:00.339 [D4]  [INIT][    0.402543] [Harding][quectel_load_ap_ready_info_from_nv]
+[2024/4/27 15:41:08][DATARECV]: 
+
+[2024/4/27 15:41:08][DATARECV]: 
+Jan 01 00:00:00.339 [D4]  [INIT][    0.402983] [Harding][quectel_ap_ready_nv_init] Ap reaady init SUCCESSFULLY!!!
+[2024/4/27 15:41:08][DATARECV]: 
+Jan 01 00:00:00.339 [D4]  [INIT][    0.403029] quectel_ftm_app_entry
+[2024/4/27 15:41:08][DATARECV]: 
+Jan 01 00:00:00.339 [D4]  [INIT][    0.403059] quectel_ftp_app_entry
+[2024/4/27 15:41:08][DATARECV]: 
+Jan 01 00:00:00.340 [D4]  [INIT][    0.403639] quectel_gnss_app_entry
+[2024/4/27 15:41:08][DATARECV]: 
+Jan 01 00:00:00.340 [D4]  [INIT][    0.403661] quectel_gnss_atcmd_init
+[2024/4/27 15:41:08][DATARECV]: 
+Jan 01 00:00:00.340 [D4]  [INIT][    0.404042] quectel_gpio_init
+[2024/4/27 15:41:08][DATARECV]: 
+Jan 01 00:00:00.402 [D4]  [INIT][    0.465138] quectel_http_app_entry
+[2024/4/27 15:41:08][DATARECV]: 
+Jan 01 00:00:00.402 [D4]  [INIT][    0.465565] quectel_mqtt_app_entry
+[2024/4/27 15:41:08][DATARECV]: 
+Jan 01 00:00:00.405 [D4]  [INIT][    0.468427] quectel_ntp_app_entry
+[2024/4/27 15:41:08][DATARECV]: 
+Jan 01 00:00:00.417 [D4]  [INIT][    0.480719] [Quectel]quectel_restore_process 
+[2024/4/27 15:41:08][DATARECV]: 
+
+[2024/4/27 15:41:08][DATARECV]: 
+Jan 01 00:00:00.424 [D4]  [INIT][    0.487493] [Quectel]backup area data is empty or invaild
+[2024/4/27 15:41:08][DATARECV]: 
+Jan 01 00:00:00.425 [D4]  [INIT][    0.488988] Starting Watchdog timer
+[2024/4/27 15:41:08][DATARECV]: 
+Jan 01 00:00:00.427 [D4]  [INIT][    0.490465] Internal MCU is detected - Setting HIFC to mode B
+[2024/4/27 15:41:08][DATARECV]: 
+Jan 01 00:00:00.428 [D4]  [INIT][    0.491473] HIFC HOST_TO_MODEM LINE is LOW
+[2024/4/27 15:41:08][DATARECV]: 
+Jan 01 00:00:00.428 [D4]  [INIT][    0.491640] HIFC configured line HOST_TO_MODEM=0, MODEM_TO_HOST=1 mode=B
+[2024/4/27 15:41:08][DATARECV]: 
+Jan 01 00:00:00.435 [D4]  [INIT][    0.498954] Binding UART0
+[2024/4/27 15:41:08][DATARECV]: 
+Read RFBP File (2336623)
+[2024/4/27 15:41:09][DATARECV]: 
+
+[2024/4/27 15:41:09][DATARECV]: 
+Sleep mode allowed
+[2024/4/27 15:41:09][LOG]: Test Item 'Check Sleep mode allowed' PASS. Data is 'PASS'
+[2024/4/27 15:41:09][LOG]: COM16串口返回：
+DRAM:  2.5 MiB
+Now running in RAM - U-Boot at: 902a8000
+Boot mode 3
+Flash Manufacturer/Device ID is: 0xef6018
+Enable QUAD mode
+Flash: 16 MiB
+map import OK
+USB CTRL has been successfully initialized!
+In:    usbtty
+Out:   usbtty
+Err:   usbtty
+Configuring Flash Write Protection (offset 0x192e00)
+new_ce_val = 0x3a00f8f0
+Rst info: power button : power on, no reset 
+Hit any key to stop autoboot:  2  1  0 
+Version: 2.0
+
+Nothing to upgrade...
+hbsb ok. 1 ms 
+## Starting appli?initGnssAppWithLogicalSerialPort lsid=27
+>eLC_app_entry
+Skip audio hub init - Audio hub is not enabled
+[is_backup_valid() 608]is_backup_valid
+[get_backup_area_fileinfo() 547]backup is empty 
+
+Init logs:
+Jan 01 00:00:00.000 [D4]  [INIT][    0.63129] Starting PM
+Jan 01 00:00:00.000 [D4]  [INIT][    0.63240] Starting SM
+Jan 01 00:00:00.000 [D4]  [INIT][    0.63383] Normal boot from u-boot
+Jan 01 00:00:00.000 [D4]  [INIT][    0.63404] Cold boot
+Jan 01 00:00:00.022 [D4]  [INIT][    0.85329] Error [5] failed to open file: d:/resetcause
+Jan 01 00:00:00.022 [D4]  [INIT][    0.85423] MAP reset cause: 0
+Jan 01 00:00:00.022 [D4]  [INIT][    0.85516] MCU present: 1
+Jan 01 00:00:00.029 [D4]  [INIT][    0.92704] Host Interface port not present UARTB mapped to [N]
+Jan 01 00:00:00.045 [D4]  [INIT][    0.108194] RAM start = 901ec000
+Jan 01 00:00:00.045 [D4]  [INIT][    0.108224] heap start = 901ec000
+Jan 01 00:00:00.045 [D4]  [INIT][    0.108241] Computed heap size=1130496
+Jan 01 00:00:00.058 [D4]  [INIT][    0.121793] Calling lte driver with uart:N baudrate:921600 flow_ctrl:0
+Jan 01 00:00:00.059 [D4]  [INIT][    0.122399] LTE driver init complete
+Jan 01 00:00:00.062 [D4]  [INIT][    0.125209] alt1250_usb_init()=-1
+Jan 01 00:00:00.062 [D4]  [INIT][    0.125914] Setup AT/PPP [N] & CLI/AT [A] & AT [N] & AT_2 [N] & ALTCOM [UART0]!
+Jan 01 00:00:00.062 [D4]  [INIT][    0.125944] Setup TCP dump [N] & SFP logger [C] & LTE driver FW [N] & MUX A [N] & MUX B [N] !
+Jan 01 00:00:00.062 [D4]  [INIT][    0.125995] Open UART-A base = 0xbc118000 cfg =0x0 intrp=72
+Jan 01 00:00:00.062 [D4]  [INIT][    0.126063] Setup rx_interrupt_only for uart 0
+Jan 01 00:00:00.063 [D4]  [INIT][    0.126137] serialMngrOpen:451, device=A 0x9c0d5a50
+Jan 01 00:00:00.068 [D4]  [INIT][    0.131404] Setup UART A in Tx blocking mode
+Jan 01 00:00:00.068 [D4]  [INIT][    0.131433] Open UART-C base = 0xbf0a1000 cfg =0xbf021000 intrp=77
+Jan 01 00:00:00.068 [D4]  [INIT][    0.131470] Setup rx_interrupt_only for uart 2
+Jan 01 00:00:00.068 [D4]  [INIT][    0.131494] serialMngrOpen:451, device=C 0x9c0d5f20
+Jan 01 00:00:00.068 [D4]  [INIT][    0.131517] Setup UART C in Tx blocking mode
+Jan 01 00:00:00.068 [D4]  [INIT][    0.131534] Setup rx_tx_interrupt_ for uart 2
+Jan 01 00:00:00.068 [D4]  [INIT][    0.131559] Calling irq_moveInterruptToHW2() with uart id=2
+Jan 01 00:00:00.073 [D4]  [INIT][    0.136767] Setup ALTCOM device: UART0 
+Jan 01 00:00:00.073 [D4]  [INIT][    0.136788] Open UART-0 base = 0xbf0a3000 cfg =0x0 intrp=123
+Jan 01 00:00:00.073 [D4]  [INIT][    0.136824] serialMngrOpen:451, device=UART0 0x9c0d63f0
+Jan 01 00:00:00.073 [D4]  [INIT][    0.136847] Setup UART UART0 in Tx blocking mode
+Jan 01 00:00:00.073 [D4]  [INIT][    0.136866] Setup rx_tx_interrupt_ for uart 4
+Jan 01 00:00:00.073 [D4]  [INIT][    0.136883] Calling irq_moveInterruptToHW2() with uart id=4
+Jan 01 00:00:00.077 [D4]  [INIT][    0.140195] hifc_register_uart_CBs was called for internal HIFC
+Jan 01 00:00:00.242 [D4]  [INIT][    0.305239] LteDriver - init task ended
+Jan 01 00:00:00.311 [D4]  [INIT][    0.374627] 1st AT cmd: AT+CEREG=0
+ - sent/rcv -> 3151/3359 Msec
+
+Jan 01 00:00:00.313 [D4]  [INIT][    0.376915] Binding C
+Jan 01 00:00:00.313 [D4]  [INIT][    0.376960] Calling main app init
+Jan 01 00:00:00.315 [D4]  [INIT][    0.378145] CLI is enable!
+Jan 01 00:00:00.320 [D4]  [INIT][    0.383978] lwip_stats ready
+Jan 01 00:00:00.320 [D4]  [INIT][    0.384068] lwip_ipsec ready
+Jan 01 00:00:00.321 [D4]  [INIT][    0.384352] quectel_apptcpip_app_entry
+Jan 01 00:00:00.322 [D4]  [INIT][    0.385906] quectel_atcop_app_entry
+Jan 01 00:00:00.322 [D4]  [INIT][    0.385937] quectel_atcmd_init
+Jan 01 00:00:00.329 [D4]  [INIT][    0.392204] CLI AT cmd buff len is 3092
+Jan 01 00:00:00.332 [D4]  [INIT][    0.395357] [OTA] xTimerCreate created
+
+Jan 01 00:00:00.335 [D4]  [INIT][    0.398135] AP_RDY Timer init
+
+Jan 01 00:00:00.335 [D4]  [INIT][    0.398172] AP_RDY Timer init done
+
+Jan 01 00:00:00.335 [D4]  [INIT][    0.398249] qsclk_resume_suspend_task_init
+Jan 01 00:00:00.335 [D4]  [INIT][    0.398351] QL_SVN_Set uSvn 35 
+
+Jan 01 00:00:00.335 [D4]  [INIT][    0.398764] quectel_backup_restore_entry
+Jan 01 00:00:00.335 [D4]  [INIT][    0.398796] quectel_cell_rf_jamming_atcmd_init
+Jan 01 00:00:00.338 [D4]  [INIT][    0.401477] quectel_coap_app_entry
+Jan 01 00:00:00.339 [D4]  [INIT][    0.402398] quectel_dfota_app_entry
+Jan 01 00:00:00.339 [D4]  [INIT][    0.402543] [Harding][quectel_load_ap_ready_info_from_nv]
+
+Jan 01 00:00:00.339 [D4]  [INIT][    0.402983] [Harding][quectel_ap_ready_nv_init] Ap reaady init SUCCESSFULLY!!!
+Jan 01 00:00:00.339 [D4]  [INIT][    0.403029] quectel_ftm_app_entry
+Jan 01 00:00:00.339 [D4]  [INIT][    0.403059] quectel_ftp_app_entry
+Jan 01 00:00:00.340 [D4]  [INIT][    0.403639] quectel_gnss_app_entry
+Jan 01 00:00:00.340 [D4]  [INIT][    0.403661] quectel_gnss_atcmd_init
+Jan 01 00:00:00.340 [D4]  [INIT][    0.404042] quectel_gpio_init
+Jan 01 00:00:00.402 [D4]  [INIT][    0.465138] quectel_http_app_entry
+Jan 01 00:00:00.402 [D4]  [INIT][    0.465565] quectel_mqtt_app_entry
+Jan 01 00:00:00.405 [D4]  [INIT][    0.468427] quectel_ntp_app_entry
+Jan 01 00:00:00.417 [D4]  [INIT][    0.480719] [Quectel]quectel_restore_process 
+
+Jan 01 00:00:00.424 [D4]  [INIT][    0.487493] [Quectel]backup area data is empty or invaild
+Jan 01 00:00:00.425 [D4]  [INIT][    0.488988] Starting Watchdog timer
+Jan 01 00:00:00.427 [D4]  [INIT][    0.490465] Internal MCU is detected - Setting HIFC to mode B
+Jan 01 00:00:00.428 [D4]  [INIT][    0.491473] HIFC HOST_TO_MODEM LINE is LOW
+Jan 01 00:00:00.428 [D4]  [INIT][    0.491640] HIFC configured line HOST_TO_MODEM=0, MODEM_TO_HOST=1 mode=B
+Jan 01 00:00:00.435 [D4]  [INIT][    0.498954] Binding UART0
+Read RFBP File (2336623)
+
+Sleep mode allowed
+[2024/4/27 15:41:09][LOG]: 等待0秒后开始测试
+[2024/4/27 15:41:09][LOG]: pm-sleep disable
+
+[2024/4/27 15:41:09][LOG]: 等待0秒后开始测试
+[2024/4/27 15:41:09][DATARECV]: 
+pm-sleep disable
+[2024/4/27 15:41:09][DATARECV]: 
+PM Sleep - Disable
+[2024/4/27 15:41:10][LOG]: Test Item 'pm-sleep disable
+' PASS. Data is '
+pm-sleep disable
+PM Sleep - Disable'
+[2024/4/27 15:41:10][LOG]: config -s pm.conf.sleep_mode disable
+
+[2024/4/27 15:41:10][LOG]: 等待0秒后开始测试
+[2024/4/27 15:41:10][DATARECV]: 
+>config -s pm.conf.sleep_mode disable
+[2024/4/27 15:41:10][DATARECV]: 
+Done
+[2024/4/27 15:41:11][LOG]: Test Item 'config -s pm.conf.sleep_mode disable
+' PASS. Data is '
+>config -s pm.conf.sleep_mode disable
+Done'
+[2024/4/27 15:41:11][LOG]: at AT+EGMR=0,7
+
+[2024/4/27 15:41:11][LOG]: 等待2秒后开始测试
+[2024/4/27 15:41:11][DATARECV]: 
+at AT+EGMR=0,7
+[2024/4/27 15:41:11][DATARECV]: 
+
+[2024/4/27 15:41:11][DATARECV]: 
++EGMR: 868617060284546
+[2024/4/27 15:41:11][DATARECV]: 
+
+[2024/4/27 15:41:11][DATARECV]: 
+OK
+[2024/4/27 15:41:13][LOG]: Test Item 'at AT+EGMR=0,7
+' PASS. Data is '
+at AT+EGMR=0,7
+
++EGMR: 868617060284546
+
+OK'
+[2024/4/27 15:41:13][LOG]: at AT+CFUN=0
+
+[2024/4/27 15:41:13][LOG]: 等待1秒后开始测试
+[2024/4/27 15:41:13][DATARECV]: 
+>> at AT+CFUN=0
+[2024/4/27 15:41:13][DATARECV]: 
+
+[2024/4/27 15:41:13][DATARECV]: 
+OK
+[2024/4/27 15:41:14][LOG]: Test Item 'at AT+CFUN=0
+' PASS. Data is '
+>> at AT+CFUN=0
+
+OK'
+[2024/4/27 15:41:14][LOG]: 等待0秒后开始测试
+[2024/4/27 15:41:15][LOG]: at AT+QRFTESTMODE=1
+
+[2024/4/27 15:41:15][LOG]: 等待1秒后开始测试
+[2024/4/27 15:41:15][DATARECV]: 
+>> at AT+QRFTESTMODE=1
+[2024/4/27 15:41:15][DATARECV]: 
+
+[2024/4/27 15:41:15][DATARECV]: 
+OK
+[2024/4/27 15:41:16][LOG]: Test Item 'at AT+QRFTESTMODE=1
+' PASS. Data is '
+>> at AT+QRFTESTMODE=1
+
+OK'
+[2024/4/27 15:41:16][LOG]: at AT+QRFTESTMODE?
+
+[2024/4/27 15:41:16][LOG]: 等待2秒后开始测试
+[2024/4/27 15:41:16][DATARECV]: 
+>> at AT+QRFTESTMODE?
+[2024/4/27 15:41:16][DATARECV]: 
+
+[2024/4/27 15:41:16][DATARECV]: 
++QRFTESTMODE: 1
+[2024/4/27 15:41:16][DATARECV]: 
+
+[2024/4/27 15:41:16][DATARECV]: 
+OK
+[2024/4/27 15:41:16][DATARECV]: 
+>> +STA_CONNECTED:"32:ef:a2:94:a5:40"..
+[2024/4/27 15:41:16][DATARECV]: 
++DIST_STA_IP:"32:ef:a2:94:a5:40","192.168.4.2"..
+[2024/4/27 15:41:18][LOG]: Test Item 'at AT+QRFTESTMODE?
+' PASS. Data is '
+>> at AT+QRFTESTMODE?
+
++QRFTESTMODE: 1
+
+OK
+>> +STA_CONNECTED:"32:ef:a2:94:a5:40"..
++DIST_STA_IP:"32:ef:a2:94:a5:40","192.168.4.2"..'
+[2024/4/27 15:41:18][LOG]: at AT+QRFTEST=3,18300,0,0,2300,0,0,6,0
+
+[2024/4/27 15:41:18][LOG]: 等待1秒后开始测试
+[2024/4/27 15:41:18][DATARECV]: 
+at AT+QRFTEST=3,18300,0,0,2300,0,0,6,0
+[2024/4/27 15:41:18][DATARECV]: 
+
+[2024/4/27 15:41:18][DATARECV]: 
+OK
+[2024/4/27 15:41:20][LOG]: Test Item 'at AT+QRFTEST=3,18300,0,0,2300,0,0,6,0
+' PASS. Data is '
+at AT+QRFTEST=3,18300,0,0,2300,0,0,6,0
+
+OK'
+[2024/4/27 15:41:20][LOG]: Setup_LTE_Cmd_TX
+[2024/4/27 15:41:20][LOG]: CHAN1;LTE;CONF:BAND 1.00
+
+[2024/4/27 15:41:20][LOG]: CHAN1;LTE;CONF:EARF:UL:cc1 18300
+
+[2024/4/27 15:41:20][LOG]: CHAN1;LTE;CONF:ENP:UL 23
+
+[2024/4/27 15:41:20][LOG]: CHAN1;LTE;CONF:FTYP MIN
+
+[2024/4/27 15:41:20][LOG]: CHAN1;LTE;CONF:CBW:CC1 100000000
+
+[2024/4/27 15:41:20][LOG]: CHAN1;LTE;CONF:UMAR 0
+
+[2024/4/27 15:41:20][LOG]: CHAN1;LTE; HSET:ALL VSA1
+
+[2024/4/27 15:41:20][LOG]: VSA1;TRIG:SOUR Free Run (No Sync)
+
+[2024/4/27 15:41:20][LOG]: VSA1;SRAT 40000000
+
+[2024/4/27 15:41:20][LOG]: VSA1;CAPT:TIME 0.01
+
+[2024/4/27 15:41:20][LOG]: Test Item 'Setup_LTE_Cmd_TX' PASS. Data is 'PASS'
+[2024/4/27 15:41:20][LOG]: 配置综测仪的LTE成功
+[2024/4/27 15:41:20][LOG]: Setup_LTE_Routing_Port_TX
+[2024/4/27 15:41:20][LOG]: ROUT1;PORT:RES:ADD:BANK1 RF1,VSA1
+
+[2024/4/27 15:41:20][LOG]: Test Item 'Setup_LTE_Routing_Port_TX' PASS. Data is 'PASS'
+[2024/4/27 15:41:20][LOG]: 配置综测仪的LTE成功
+[2024/4/27 15:41:20][LOG]: Setup_LTE_EATTenuation_TX
+[2024/4/27 15:41:20][LOG]: MEM:TABLE "VSA1_BANK1_LTE_TX_RF1";MEM:TABLE:DEFINE "FREQ,LOSS";MEMory:TABLe:INSert:POINt 1950 MHz,20
+
+[2024/4/27 15:41:20][LOG]: VSA1;RFC:USE:BANK1 "VSA1_BANK1_LTE_TX_RF1",RF1
+
+[2024/4/27 15:41:20][LOG]: MEMory:TABLe "VSA1_BANK1_LTE_TX_RF1";MEMory:TABLe:STORe
+
+[2024/4/27 15:41:20][LOG]: VSA1;init
+LTE
+
+[2024/4/27 15:41:20][LOG]: Test Item 'Setup_LTE_EATTenuation_TX' PASS. Data is '20'
+[2024/4/27 15:41:20][LOG]: 配置综测仪的LTE线损成功
+[2024/4/27 15:41:20][LOG]: Test_LTE_TX_Power_L_BAND_1_L_18_H_28
+[2024/4/27 15:41:21][LOG]: VSA1;init
+LTE
+calc:pow 0,2
+calc:spec 0,2
+calc:ccdf 0,2
+calc:txq 0,2
+FETC:SEGM1:POW:AVER?
+
+[2024/4/27 15:41:21][DATARECV]: 0,2.1942924e+01\n
+[2024/4/27 15:41:21][LOG]: 查找LTE TX 调制平均值成功
+[2024/4/27 15:41:21][LOG]: Test Item 'Test_LTE_TX_Power_L_BAND_1_L_18_H_28' PASS. Data is '21.94292'
+[2024/4/27 15:41:21][LOG]: 对比LTE TX 平均功率成功
+[2024/4/27 15:41:21][LOG]: at AT+QRFTESTMODE=0
+
+[2024/4/27 15:41:21][LOG]: 等待2秒后开始测试
+[2024/4/27 15:41:21][DATARECV]: 
+>> at AT+QRFTESTMODE=0
+[2024/4/27 15:41:21][DATARECV]: 
+
+[2024/4/27 15:41:21][DATARECV]: 
+OK
+[2024/4/27 15:41:23][LOG]: Test Item 'at AT+QRFTESTMODE=0
+' PASS. Data is '
+>> at AT+QRFTESTMODE=0
+
+OK'
+[2024/4/27 15:41:23][LOG]: at AT+QRFTESTMODE?
+
+[2024/4/27 15:41:23][LOG]: 等待1秒后开始测试
+[2024/4/27 15:41:23][DATARECV]: 
+>> at AT+QRFTESTMODE?
+[2024/4/27 15:41:23][DATARECV]: 
+
+[2024/4/27 15:41:23][DATARECV]: 
++QRFTESTMODE: 0
+[2024/4/27 15:41:23][DATARECV]: 
+
+[2024/4/27 15:41:23][DATARECV]: 
+OK
+[2024/4/27 15:41:24][LOG]: Test Item 'at AT+QRFTESTMODE?
+' PASS. Data is '
+>> at AT+QRFTESTMODE?
+
++QRFTESTMODE: 0
+
+OK'
+[2024/4/27 15:41:24][LOG]: at AT+QRFTESTMODE=1
+
+[2024/4/27 15:41:24][LOG]: 等待1秒后开始测试
+[2024/4/27 15:41:24][DATARECV]: 
+>> at AT+QRFTESTMODE=1
+[2024/4/27 15:41:24][DATARECV]: 
+
+[2024/4/27 15:41:24][DATARECV]: 
+OK
+[2024/4/27 15:41:25][LOG]: Test Item 'at AT+QRFTESTMODE=1
+' PASS. Data is '
+>> at AT+QRFTESTMODE=1
+
+OK'
+[2024/4/27 15:41:25][LOG]: at AT+QRFTESTMODE?
+
+[2024/4/27 15:41:26][LOG]: 等待2秒后开始测试
+[2024/4/27 15:41:26][DATARECV]: 
+>> at AT+QRFTESTMODE?
+[2024/4/27 15:41:26][DATARECV]: 
+
+[2024/4/27 15:41:26][DATARECV]: 
++QRFTESTMODE: 1
+[2024/4/27 15:41:26][DATARECV]: 
+
+[2024/4/27 15:41:26][DATARECV]: 
+OK
+[2024/4/27 15:41:28][LOG]: Test Item 'at AT+QRFTESTMODE?
+' PASS. Data is '
+>> at AT+QRFTESTMODE?
+
++QRFTESTMODE: 1
+
+OK'
+[2024/4/27 15:41:28][LOG]: at AT+QRFTEST=3,19575,0,0,2300,0,0,6,0
+
+[2024/4/27 15:41:28][LOG]: 等待1秒后开始测试
+[2024/4/27 15:41:28][DATARECV]: 
+>> at AT+QRFTEST=3,19575,0,0,2300,0,0,6,0
+[2024/4/27 15:41:28][DATARECV]: 
+
+[2024/4/27 15:41:28][DATARECV]: 
+OK
+[2024/4/27 15:41:29][LOG]: Test Item 'at AT+QRFTEST=3,19575,0,0,2300,0,0,6,0
+' PASS. Data is '
+>> at AT+QRFTEST=3,19575,0,0,2300,0,0,6,0
+
+OK'
+[2024/4/27 15:41:29][LOG]: Setup_LTE_Cmd_TX
+[2024/4/27 15:41:30][LOG]: CHAN1;LTE;CONF:BAND 3.00
+
+[2024/4/27 15:41:30][LOG]: CHAN1;LTE;CONF:EARF:UL:cc1 19575
+
+[2024/4/27 15:41:30][LOG]: CHAN1;LTE;CONF:ENP:UL 23
+
+[2024/4/27 15:41:30][LOG]: CHAN1;LTE;CONF:FTYP MIN
+
+[2024/4/27 15:41:30][LOG]: CHAN1;LTE;CONF:CBW:CC1 100000000
+
+[2024/4/27 15:41:30][LOG]: CHAN1;LTE;CONF:UMAR 0
+
+[2024/4/27 15:41:30][LOG]: CHAN1;LTE; HSET:ALL VSA1
+
+[2024/4/27 15:41:30][LOG]: VSA1;TRIG:SOUR Free Run (No Sync)
+
+[2024/4/27 15:41:30][LOG]: VSA1;SRAT 40000000
+
+[2024/4/27 15:41:30][LOG]: VSA1;CAPT:TIME 0.01
+
+[2024/4/27 15:41:30][LOG]: Test Item 'Setup_LTE_Cmd_TX' PASS. Data is 'PASS'
+[2024/4/27 15:41:30][LOG]: 配置综测仪的LTE成功
+[2024/4/27 15:41:30][LOG]: Setup_LTE_Routing_Port_TX
+[2024/4/27 15:41:30][LOG]: ROUT1;PORT:RES:ADD:BANK1 RF1,VSA1
+
+[2024/4/27 15:41:30][LOG]: Test Item 'Setup_LTE_Routing_Port_TX' PASS. Data is 'PASS'
+[2024/4/27 15:41:30][LOG]: 配置综测仪的LTE成功
+[2024/4/27 15:41:30][LOG]: Setup_LTE_EATTenuation_TX
+[2024/4/27 15:41:30][LOG]: MEM:TABLE "VSA1_BANK1_LTE_TX_RF1";MEM:TABLE:DEFINE "FREQ,LOSS";MEMory:TABLe:INSert:POINt 1747.5 MHz,20
+
+[2024/4/27 15:41:30][LOG]: VSA1;RFC:USE:BANK1 "VSA1_BANK1_LTE_TX_RF1",RF1
+
+[2024/4/27 15:41:30][LOG]: MEMory:TABLe "VSA1_BANK1_LTE_TX_RF1";MEMory:TABLe:STORe
+
+[2024/4/27 15:41:30][LOG]: VSA1;init
+LTE
+
+[2024/4/27 15:41:30][LOG]: Test Item 'Setup_LTE_EATTenuation_TX' PASS. Data is '20'
+[2024/4/27 15:41:30][LOG]: 配置综测仪的LTE线损成功
+[2024/4/27 15:41:30][LOG]: Test_LTE_TX_Power_L_BAND_3_L_18_H_28
+[2024/4/27 15:41:30][LOG]: VSA1;init
+LTE
+calc:pow 0,2
+calc:spec 0,2
+calc:ccdf 0,2
+calc:txq 0,2
+FETC:SEGM1:POW:AVER?
+
+[2024/4/27 15:41:30][DATARECV]: 0,2.4504177e+01\n
+[2024/4/27 15:41:30][LOG]: 查找LTE TX 调制平均值成功
+[2024/4/27 15:41:30][LOG]: Test Item 'Test_LTE_TX_Power_L_BAND_3_L_18_H_28' PASS. Data is '24.50418'
+[2024/4/27 15:41:30][LOG]: 对比LTE TX 平均功率成功
+[2024/4/27 15:41:30][LOG]: at AT+QRFTESTMODE=0
+
+[2024/4/27 15:41:31][LOG]: 等待2秒后开始测试
+[2024/4/27 15:41:31][DATARECV]: 
+>> at AT+QRFTESTMODE=0
+[2024/4/27 15:41:31][DATARECV]: 
+
+[2024/4/27 15:41:31][DATARECV]: 
+OK
+[2024/4/27 15:41:31][DATARECV]: 
+>> +STA_DISCONNECTED:"32:ef:a2:94:a5:40"..
+[2024/4/27 15:41:33][LOG]: Test Item 'at AT+QRFTESTMODE=0
+' PASS. Data is '
+>> at AT+QRFTESTMODE=0
+
+OK
+>> +STA_DISCONNECTED:"32:ef:a2:94:a5:40"..'
+[2024/4/27 15:41:33][LOG]: at AT+QRFTESTMODE?
+
+[2024/4/27 15:41:33][LOG]: 等待1秒后开始测试
+[2024/4/27 15:41:33][DATARECV]: 
+at AT+QRFTESTMODE?
+[2024/4/27 15:41:33][DATARECV]: 
+
+[2024/4/27 15:41:33][DATARECV]: 
++QRFTESTMODE: 0
+[2024/4/27 15:41:33][DATARECV]: 
+
+[2024/4/27 15:41:33][DATARECV]: 
+OK
+[2024/4/27 15:41:34][LOG]: Test Item 'at AT+QRFTESTMODE?
+' PASS. Data is '
+at AT+QRFTESTMODE?
+
++QRFTESTMODE: 0
+
+OK'
+[2024/4/27 15:41:34][LOG]: at AT+QRFTESTMODE=1
+
+[2024/4/27 15:41:34][LOG]: 等待1秒后开始测试
+[2024/4/27 15:41:34][DATARECV]: 
+>> at AT+QRFTESTMODE=1
+[2024/4/27 15:41:34][DATARECV]: 
+
+[2024/4/27 15:41:34][DATARECV]: 
+OK
+[2024/4/27 15:41:35][LOG]: Test Item 'at AT+QRFTESTMODE=1
+' PASS. Data is '
+>> at AT+QRFTESTMODE=1
+
+OK'
+[2024/4/27 15:41:35][LOG]: at AT+QRFTESTMODE?
+
+[2024/4/27 15:41:35][LOG]: 等待2秒后开始测试
+[2024/4/27 15:41:35][DATARECV]: 
+>> at AT+QRFTESTMODE?
+[2024/4/27 15:41:35][DATARECV]: 
+
+[2024/4/27 15:41:35][DATARECV]: 
++QRFTESTMODE: 1
+[2024/4/27 15:41:35][DATARECV]: 
+
+[2024/4/27 15:41:35][DATARECV]: 
+OK
+[2024/4/27 15:41:37][LOG]: Test Item 'at AT+QRFTESTMODE?
+' PASS. Data is '
+>> at AT+QRFTESTMODE?
+
++QRFTESTMODE: 1
+
+OK'
+[2024/4/27 15:41:37][LOG]: at AT+QRFTEST=3,20525,0,0,2300,0,0,6,0
+
+[2024/4/27 15:41:37][LOG]: 等待1秒后开始测试
+[2024/4/27 15:41:37][DATARECV]: 
+>> at AT+QRFTEST=3,20525,0,0,2300,0,0,6,0
+[2024/4/27 15:41:37][DATARECV]: 
+
+[2024/4/27 15:41:38][DATARECV]: 
+OK
+[2024/4/27 15:41:39][LOG]: Test Item 'at AT+QRFTEST=3,20525,0,0,2300,0,0,6,0
+' PASS. Data is '
+>> at AT+QRFTEST=3,20525,0,0,2300,0,0,6,0
+
+OK'
+[2024/4/27 15:41:39][LOG]: Setup_LTE_Cmd_TX
+[2024/4/27 15:41:39][LOG]: CHAN1;LTE;CONF:BAND 5.00
+
+[2024/4/27 15:41:39][LOG]: CHAN1;LTE;CONF:EARF:UL:cc1 20525
+
+[2024/4/27 15:41:39][LOG]: CHAN1;LTE;CONF:ENP:UL 23
+
+[2024/4/27 15:41:39][LOG]: CHAN1;LTE;CONF:FTYP MIN
+
+[2024/4/27 15:41:39][LOG]: CHAN1;LTE;CONF:CBW:CC1 100000000
+
+[2024/4/27 15:41:39][LOG]: CHAN1;LTE;CONF:UMAR 0
+
+[2024/4/27 15:41:39][LOG]: CHAN1;LTE; HSET:ALL VSA1
+
+[2024/4/27 15:41:39][LOG]: VSA1;TRIG:SOUR Free Run (No Sync)
+
+[2024/4/27 15:41:39][LOG]: VSA1;SRAT 40000000
+
+[2024/4/27 15:41:39][LOG]: VSA1;CAPT:TIME 0.01
+
+[2024/4/27 15:41:39][LOG]: Test Item 'Setup_LTE_Cmd_TX' PASS. Data is 'PASS'
+[2024/4/27 15:41:39][LOG]: 配置综测仪的LTE成功
+[2024/4/27 15:41:39][LOG]: Setup_LTE_Routing_Port_TX
+[2024/4/27 15:41:39][LOG]: ROUT1;PORT:RES:ADD:BANK1 RF1,VSA1
+
+[2024/4/27 15:41:39][LOG]: Test Item 'Setup_LTE_Routing_Port_TX' PASS. Data is 'PASS'
+[2024/4/27 15:41:39][LOG]: 配置综测仪的LTE成功
+[2024/4/27 15:41:40][LOG]: Setup_LTE_EATTenuation_TX
+[2024/4/27 15:41:40][LOG]: MEM:TABLE "VSA1_BANK1_LTE_TX_RF1";MEM:TABLE:DEFINE "FREQ,LOSS";MEMory:TABLe:INSert:POINt 836.5 MHz,20
+
+[2024/4/27 15:41:40][LOG]: VSA1;RFC:USE:BANK1 "VSA1_BANK1_LTE_TX_RF1",RF1
+
+[2024/4/27 15:41:40][LOG]: MEMory:TABLe "VSA1_BANK1_LTE_TX_RF1";MEMory:TABLe:STORe
+
+[2024/4/27 15:41:40][LOG]: VSA1;init
+LTE
+
+[2024/4/27 15:41:40][LOG]: Test Item 'Setup_LTE_EATTenuation_TX' PASS. Data is '20'
+[2024/4/27 15:41:40][LOG]: 配置综测仪的LTE线损成功
+[2024/4/27 15:41:40][LOG]: Test_LTE_TX_Power_L_BAND_5_L_18_H_28
+[2024/4/27 15:41:40][LOG]: VSA1;init
+LTE
+calc:pow 0,2
+calc:spec 0,2
+calc:ccdf 0,2
+calc:txq 0,2
+FETC:SEGM1:POW:AVER?
+
+[2024/4/27 15:41:40][DATARECV]: 0,2.5080025e+01\n
+[2024/4/27 15:41:40][LOG]: 查找LTE TX 调制平均值成功
+[2024/4/27 15:41:40][LOG]: Test Item 'Test_LTE_TX_Power_L_BAND_5_L_18_H_28' PASS. Data is '25.08002'
+[2024/4/27 15:41:40][LOG]: 对比LTE TX 平均功率成功
+[2024/4/27 15:41:40][LOG]: at AT+QRFTESTMODE=0
+
+[2024/4/27 15:41:40][LOG]: 等待2秒后开始测试
+[2024/4/27 15:41:40][DATARECV]: 
+>> at AT+QRFTESTMODE=0
+[2024/4/27 15:41:40][DATARECV]: 
+
+[2024/4/27 15:41:40][DATARECV]: 
+OK
+[2024/4/27 15:41:42][LOG]: Test Item 'at AT+QRFTESTMODE=0
+' PASS. Data is '
+>> at AT+QRFTESTMODE=0
+
+OK'
+[2024/4/27 15:41:42][LOG]: at AT+QRFTESTMODE?
+
+[2024/4/27 15:41:42][LOG]: 等待1秒后开始测试
+[2024/4/27 15:41:43][DATARECV]: 
+>> at AT+QRFTESTMODE?
+[2024/4/27 15:41:43][DATARECV]: 
+
+[2024/4/27 15:41:43][DATARECV]: 
++QRFTESTMODE: 0
+[2024/4/27 15:41:43][DATARECV]: 
+
+[2024/4/27 15:41:43][DATARECV]: 
+OK
+[2024/4/27 15:41:43][LOG]: Test Item 'at AT+QRFTESTMODE?
+' PASS. Data is '
+>> at AT+QRFTESTMODE?
+
++QRFTESTMODE: 0
+
+OK'
+[2024/4/27 15:41:43][LOG]: 断电重启
+[2024/4/27 15:41:43][DATARECV]: 指令OUTP OFF
+写入成功
+[2024/4/27 15:41:43][LOG]: Power_OFF指令成功
+[2024/4/27 15:41:43][LOG]: 等待2秒后开始测试
+[2024/4/27 15:41:45][DATARECV]: 指令OUTP ON
+写入成功
+[2024/4/27 15:41:46][LOG]: Test Item 'Send_Power_ON' PASS. Data is '==='
+[2024/4/27 15:41:46][LOG]: Power_ON指令成功
+[2024/4/27 15:41:46][LOG]: Check Sleep mode allowed
+[2024/4/27 15:41:46][DATARECV]: 
+
+[2024/4/27 15:41:46][DATARECV]: 
+
+[2024/4/27 15:41:46][DATARECV]: 
+U-Boot 2012.10 (Feb 06 2023 - 15:13:44) ALT1250_03_00_00_00_30621_UB
+[2024/4/27 15:41:46][DATARECV]: 
+
+[2024/4/27 15:41:46][DATARECV]: 
+Board: ALT1250 Ver: 0.32-BZ-E0 (PMP CPU Speed 120 MHz)
+[2024/4/27 15:41:46][DATARECV]: 
+DRAM:  2.5 MiB
+[2024/4/27 15:41:46][DATARECV]: 
+Now running in RAM - U-Boot at: 902a8000
+[2024/4/27 15:41:46][DATARECV]: 
+Boot mode 3
+[2024/4/27 15:41:46][DATARECV]: 
+Flash Manufacturer/Device ID is: 0xef6018
+[2024/4/27 15:41:46][DATARECV]: 
+Enable QUAD mode
+[2024/4/27 15:41:47][DATARECV]: 
+Flash: 16 MiB
+[2024/4/27 15:41:47][DATARECV]: 
+map import OK
+[2024/4/27 15:41:47][DATARECV]: 
+USB CTRL has been successfully initialized!
+[2024/4/27 15:41:47][DATARECV]: 
+In:    usbtty
+[2024/4/27 15:41:47][DATARECV]: 
+Out:   usbtty
+[2024/4/27 15:41:47][DATARECV]: 
+Err:   usbtty
+[2024/4/27 15:41:47][DATARECV]: 
+Configuring Flash Write Protection (offset 0x192e00)
+[2024/4/27 15:41:47][DATARECV]: 
+new_ce_val = 0x3a00f8f0
+[2024/4/27 15:41:47][DATARECV]: 
+Rst info: power button : power on, no reset 
+[2024/4/27 15:41:48][DATARECV]: 
+Hit any key to stop autoboot:  2  1  0 
+[2024/4/27 15:41:48][DATARECV]: 
+Version: 2.0
+[2024/4/27 15:41:48][DATARECV]: 
+
+[2024/4/27 15:41:48][DATARECV]: 
+Nothing to upgrade...
+[2024/4/27 15:41:48][DATARECV]: 
+hbsb ok. 1 ms 
+[2024/4/27 15:41:49][DATARECV]: 
+## Starting appli?initGnssAppWithLogicalSerialPort lsid=27
+[2024/4/27 15:41:49][DATARECV]: 
+>eLC_app_entry
+[2024/4/27 15:41:49][DATARECV]: 
+Skip audio hub init - Audio hub is not enabled
+[2024/4/27 15:41:49][DATARECV]: 
+[is_backup_valid() 608]is_backup_valid
+[2024/4/27 15:41:49][DATARECV]: 
+[get_backup_area_fileinfo() 547]backup is empty 
+[2024/4/27 15:41:50][DATARECV]: 
+
+[2024/4/27 15:41:50][DATARECV]: 
+Init logs:
+[2024/4/27 15:41:50][DATARECV]: 
+Jan 01 00:00:00.000 [D4]  [INIT][    0.63043] Starting PM
+[2024/4/27 15:41:50][DATARECV]: 
+Jan 01 00:00:00.000 [D4]  [INIT][    0.63153] Starting SM
+[2024/4/27 15:41:50][DATARECV]: 
+Jan 01 00:00:00.000 [D4]  [INIT][    0.63297] Normal boot from u-boot
+[2024/4/27 15:41:50][DATARECV]: 
+Jan 01 00:00:00.000 [D4]  [INIT][    0.63317] Cold boot
+[2024/4/27 15:41:50][DATARECV]: 
+Jan 01 00:00:00.022 [D4]  [INIT][    0.85230] Error [5] failed to open file: d:/resetcause
+[2024/4/27 15:41:50][DATARECV]: 
+Jan 01 00:00:00.022 [D4]  [INIT][    0.85330] MAP reset cause: 0
+[2024/4/27 15:41:50][DATARECV]: 
+Jan 01 00:00:00.022 [D4]  [INIT][    0.85423] MCU present: 1
+[2024/4/27 15:41:50][DATARECV]: 
+Jan 01 00:00:00.029 [D4]  [INIT][    0.92574] Host Interface port not present UARTB mapped to [N]
+[2024/4/27 15:41:50][DATARECV]: 
+Jan 01 00:00:00.045 [D4]  [INIT][    0.108146] RAM start = 901ec000
+[2024/4/27 15:41:50][DATARECV]: 
+Jan 01 00:00:00.045 [D4]  [INIT][    0.108177] heap start = 901ec000
+[2024/4/27 15:41:50][DATARECV]: 
+Jan 01 00:00:00.045 [D4]  [INIT][    0.108194] Computed heap size=1130496
+[2024/4/27 15:41:50][DATARECV]: 
+Jan 01 00:00:00.058 [D4]  [INIT][    0.121743] Calling lte driver with uart:N baudrate:921600 flow_ctrl:0
+[2024/4/27 15:41:50][DATARECV]: 
+Jan 01 00:00:00.059 [D4]  [INIT][    0.122339] LTE driver init complete
+[2024/4/27 15:41:50][DATARECV]: 
+Jan 01 00:00:00.062 [D4]  [INIT][    0.125144] alt1250_usb_init()=-1
+[2024/4/27 15:41:50][DATARECV]: 
+Jan 01 00:00:00.062 [D4]  [INIT][    0.125855] Setup AT/PPP [N] & CLI/AT [A] & AT [N] & AT_2 [N] & ALTCOM [UART0]!
+[2024/4/27 15:41:50][DATARECV]: 
+Jan 01 00:00:00.062 [D4]  [INIT][    0.125885] Setup TCP dump [N] & SFP logger [C] & LTE driver FW [N] & MUX A [N] & MUX B [N] !
+[2024/4/27 15:41:50][DATARECV]: 
+Jan 01 00:00:00.062 [D4]  [INIT][    0.125936] Open UART-A base = 0xbc118000 cfg =0x0 intrp=72
+[2024/4/27 15:41:50][DATARECV]: 
+Jan 01 00:00:00.063 [D4]  [INIT][    0.126004] Setup rx_interrupt_only for uart 0
+[2024/4/27 15:41:50][DATARECV]: 
+Jan 01 00:00:00.063 [D4]  [INIT][    0.126078] serialMngrOpen:451, device=A 0x9c0d5a50
+[2024/4/27 15:41:50][DATARECV]: 
+Jan 01 00:00:00.068 [D4]  [INIT][    0.131360] Setup UART A in Tx blocking mode
+[2024/4/27 15:41:50][DATARECV]: 
+Jan 01 00:00:00.068 [D4]  [INIT][    0.131389] Open UART-C base = 0xbf0a1000 cfg =0xbf021000 intrp=77
+[2024/4/27 15:41:50][DATARECV]: 
+Jan 01 00:00:00.068 [D4]  [INIT][    0.131426] Setup rx_interrupt_only for uart 2
+[2024/4/27 15:41:50][DATARECV]: 
+Jan 01 00:00:00.068 [D4]  [INIT][    0.131450] serialMngrOpen:451, device=C 0x9c0d5f20
+[2024/4/27 15:41:50][DATARECV]: 
+Jan 01 00:00:00.068 [D4]  [INIT][    0.131472] Setup UART C in Tx blocking mode
+[2024/4/27 15:41:50][DATARECV]: 
+Jan 01 00:00:00.068 [D4]  [INIT][    0.131490] Setup rx_tx_interrupt_ for uart 2
+[2024/4/27 15:41:50][DATARECV]: 
+Jan 01 00:00:00.068 [D4]  [INIT][    0.131515] Calling irq_moveInterruptToHW2() with uart id=2
+[2024/4/27 15:41:50][DATARECV]: 
+Jan 01 00:00:00.073 [D4]  [INIT][    0.136710] Setup ALTCOM device: UART0 
+[2024/4/27 15:41:50][DATARECV]: 
+Jan 01 00:00:00.073 [D4]  [INIT][    0.136731] Open UART-0 base = 0xbf0a3000 cfg =0x0 intrp=123
+[2024/4/27 15:41:50][DATARECV]: 
+Jan 01 00:00:00.073 [D4]  [INIT][    0.136767] serialMngrOpen:451, device=UART0 0x9c0d63f0
+[2024/4/27 15:41:50][DATARECV]: 
+Jan 01 00:00:00.073 [D4]  [INIT][    0.136789] Setup UART UART0 in Tx blocking mode
+[2024/4/27 15:41:50][DATARECV]: 
+Jan 01 00:00:00.073 [D4]  [INIT][    0.136808] Setup rx_tx_interrupt_ for uart 4
+[2024/4/27 15:41:50][DATARECV]: 
+Jan 01 00:00:00.073 [D4]  [INIT][    0.136825] Calling irq_moveInterruptToHW2() with uart id=4
+[2024/4/27 15:41:50][DATARECV]: 
+Jan 01 00:00:00.077 [D4]  [INIT][    0.140141] hifc_register_uart_CBs was called for internal HIFC
+[2024/4/27 15:41:50][DATARECV]: 
+Jan 01 00:00:00.242 [D4]  [INIT][    0.305184] LteDriver - init task ended
+[2024/4/27 15:41:50][DATARECV]: 
+Jan 01 00:00:00.311 [D4]  [INIT][    0.374671] 1st AT cmd: AT+CEREG=0
+[2024/4/27 15:41:50][DATARECV]: 
+ - sent/rcv -> 3144/3352 Msec
+[2024/4/27 15:41:50][DATARECV]: 
+
+[2024/4/27 15:41:50][DATARECV]: 
+Jan 01 00:00:00.313 [D4]  [INIT][    0.376954] Binding C
+[2024/4/27 15:41:50][DATARECV]: 
+Jan 01 00:00:00.314 [D4]  [INIT][    0.377000] Calling main app init
+[2024/4/27 15:41:50][DATARECV]: 
+Jan 01 00:00:00.315 [D4]  [INIT][    0.378187] CLI is enable!
+[2024/4/27 15:41:50][DATARECV]: 
+Jan 01 00:00:00.321 [D4]  [INIT][    0.384066] lwip_stats ready
+[2024/4/27 15:41:50][DATARECV]: 
+Jan 01 00:00:00.321 [D4]  [INIT][    0.384164] lwip_ipsec ready
+[2024/4/27 15:41:50][DATARECV]: 
+Jan 01 00:00:00.321 [D4]  [INIT][    0.384435] quectel_apptcpip_app_entry
+[2024/4/27 15:41:50][DATARECV]: 
+Jan 01 00:00:00.322 [D4]  [INIT][    0.385980] quectel_atcop_app_entry
+[2024/4/27 15:41:50][DATARECV]: 
+Jan 01 00:00:00.323 [D4]  [INIT][    0.386019] quectel_atcmd_init
+[2024/4/27 15:41:50][DATARECV]: 
+Jan 01 00:00:00.329 [D4]  [INIT][    0.392272] CLI AT cmd buff len is 3092
+[2024/4/27 15:41:50][DATARECV]: 
+Jan 01 00:00:00.332 [D4]  [INIT][    0.395270] [OTA] xTimerCreate created
+[2024/4/27 15:41:50][DATARECV]: 
+
+[2024/4/27 15:41:50][DATARECV]: 
+Jan 01 00:00:00.335 [D4]  [INIT][    0.398208] AP_RDY Timer init
+[2024/4/27 15:41:50][DATARECV]: 
+
+[2024/4/27 15:41:50][DATARECV]: 
+Jan 01 00:00:00.335 [D4]  [INIT][    0.398245] AP_RDY Timer init done
+[2024/4/27 15:41:50][DATARECV]: 
+
+[2024/4/27 15:41:50][DATARECV]: 
+Jan 01 00:00:00.335 [D4]  [INIT][    0.398321] qsclk_resume_suspend_task_init
+[2024/4/27 15:41:50][DATARECV]: 
+Jan 01 00:00:00.335 [D4]  [INIT][    0.398423] QL_SVN_Set uSvn 35 
+[2024/4/27 15:41:50][DATARECV]: 
+
+[2024/4/27 15:41:50][DATARECV]: 
+Jan 01 00:00:00.335 [D4]  [INIT][    0.398843] quectel_backup_restore_entry
+[2024/4/27 15:41:51][DATARECV]: 
+Jan 01 00:00:00.335 [D4]  [INIT][    0.398874] quectel_cell_rf_jamming_atcmd_init
+[2024/4/27 15:41:51][DATARECV]: 
+Jan 01 00:00:00.338 [D4]  [INIT][    0.401552] quectel_coap_app_entry
+[2024/4/27 15:41:51][DATARECV]: 
+Jan 01 00:00:00.339 [D4]  [INIT][    0.402464] quectel_dfota_app_entry
+[2024/4/27 15:41:51][DATARECV]: 
+Jan 01 00:00:00.339 [D4]  [INIT][    0.402608] [Harding][quectel_load_ap_ready_info_from_nv]
+[2024/4/27 15:41:51][DATARECV]: 
+
+[2024/4/27 15:41:51][DATARECV]: 
+Jan 01 00:00:00.340 [D4]  [INIT][    0.403022] [Harding][quectel_ap_ready_nv_init] Ap reaady init SUCCESSFULLY!!!
+[2024/4/27 15:41:51][DATARECV]: 
+Jan 01 00:00:00.340 [D4]  [INIT][    0.403069] quectel_ftm_app_entry
+[2024/4/27 15:41:51][DATARECV]: 
+Jan 01 00:00:00.340 [D4]  [INIT][    0.403098] quectel_ftp_app_entry
+[2024/4/27 15:41:51][DATARECV]: 
+Jan 01 00:00:00.340 [D4]  [INIT][    0.403674] quectel_gnss_app_entry
+[2024/4/27 15:41:51][DATARECV]: 
+Jan 01 00:00:00.340 [D4]  [INIT][    0.403696] quectel_gnss_atcmd_init
+[2024/4/27 15:41:51][DATARECV]: 
+Jan 01 00:00:00.341 [D4]  [INIT][    0.404082] quectel_gpio_init
+[2024/4/27 15:41:51][DATARECV]: 
+Jan 01 00:00:00.402 [D4]  [INIT][    0.465445] quectel_http_app_entry
+[2024/4/27 15:41:51][DATARECV]: 
+Jan 01 00:00:00.402 [D4]  [INIT][    0.465873] quectel_mqtt_app_entry
+[2024/4/27 15:41:51][DATARECV]: 
+Jan 01 00:00:00.406 [D4]  [INIT][    0.469373] quectel_ntp_app_entry
+[2024/4/27 15:41:51][DATARECV]: 
+Jan 01 00:00:00.417 [D4]  [INIT][    0.480480] [Quectel]quectel_restore_process 
+[2024/4/27 15:41:51][DATARECV]: 
+
+[2024/4/27 15:41:51][DATARECV]: 
+Jan 01 00:00:00.424 [D4]  [INIT][    0.487246] [Quectel]backup area data is empty or invaild
+[2024/4/27 15:41:51][DATARECV]: 
+Jan 01 00:00:00.425 [D4]  [INIT][    0.488741] Starting Watchdog timer
+[2024/4/27 15:41:51][DATARECV]: 
+Jan 01 00:00:00.427 [D4]  [INIT][    0.490347] Internal MCU is detected - Setting HIFC to mode B
+[2024/4/27 15:41:51][DATARECV]: 
+Jan 01 00:00:00.428 [D4]  [INIT][    0.491379] HIFC HOST_TO_MODEM LINE is LOW
+[2024/4/27 15:41:51][DATARECV]: 
+Jan 01 00:00:00.428 [D4]  [INIT][    0.491561] HIFC configured line HOST_TO_MODEM=0, MODEM_TO_HOST=1 mode=B
+[2024/4/27 15:41:51][DATARECV]: 
+Jan 01 00:00:00.436 [D4]  [INIT][    0.499403] Binding UART0
+[2024/4/27 15:41:51][DATARECV]: 
+Read RFBP File (2306181)
+[2024/4/27 15:41:51][DATARECV]: 
+
+[2024/4/27 15:41:51][DATARECV]: 
+Sleep mode allowed
+[2024/4/27 15:41:51][LOG]: Test Item 'Check Sleep mode allowed' PASS. Data is 'PASS'
+[2024/4/27 15:41:51][LOG]: COM16串口返回：
+
+
+U-Boot 2012.10 (Feb 06 2023 - 15:13:44) ALT1250_03_00_00_00_30621_UB
+
+Board: ALT1250 Ver: 0.32-BZ-E0 (PMP CPU Speed 120 MHz)
+DRAM:  2.5 MiB
+Now running in RAM - U-Boot at: 902a8000
+Boot mode 3
+Flash Manufacturer/Device ID is: 0xef6018
+Enable QUAD mode
+Flash: 16 MiB
+map import OK
+USB CTRL has been successfully initialized!
+In:    usbtty
+Out:   usbtty
+Err:   usbtty
+Configuring Flash Write Protection (offset 0x192e00)
+new_ce_val = 0x3a00f8f0
+Rst info: power button : power on, no reset 
+Hit any key to stop autoboot:  2  1  0 
+Version: 2.0
+
+Nothing to upgrade...
+hbsb ok. 1 ms 
+## Starting appli?initGnssAppWithLogicalSerialPort lsid=27
+>eLC_app_entry
+Skip audio hub init - Audio hub is not enabled
+[is_backup_valid() 608]is_backup_valid
+[get_backup_area_fileinfo() 547]backup is empty 
+
+Init logs:
+Jan 01 00:00:00.000 [D4]  [INIT][    0.63043] Starting PM
+Jan 01 00:00:00.000 [D4]  [INIT][    0.63153] Starting SM
+Jan 01 00:00:00.000 [D4]  [INIT][    0.63297] Normal boot from u-boot
+Jan 01 00:00:00.000 [D4]  [INIT][    0.63317] Cold boot
+Jan 01 00:00:00.022 [D4]  [INIT][    0.85230] Error [5] failed to open file: d:/resetcause
+Jan 01 00:00:00.022 [D4]  [INIT][    0.85330] MAP reset cause: 0
+Jan 01 00:00:00.022 [D4]  [INIT][    0.85423] MCU present: 1
+Jan 01 00:00:00.029 [D4]  [INIT][    0.92574] Host Interface port not present UARTB mapped to [N]
+Jan 01 00:00:00.045 [D4]  [INIT][    0.108146] RAM start = 901ec000
+Jan 01 00:00:00.045 [D4]  [INIT][    0.108177] heap start = 901ec000
+Jan 01 00:00:00.045 [D4]  [INIT][    0.108194] Computed heap size=1130496
+Jan 01 00:00:00.058 [D4]  [INIT][    0.121743] Calling lte driver with uart:N baudrate:921600 flow_ctrl:0
+Jan 01 00:00:00.059 [D4]  [INIT][    0.122339] LTE driver init complete
+Jan 01 00:00:00.062 [D4]  [INIT][    0.125144] alt1250_usb_init()=-1
+Jan 01 00:00:00.062 [D4]  [INIT][    0.125855] Setup AT/PPP [N] & CLI/AT [A] & AT [N] & AT_2 [N] & ALTCOM [UART0]!
+Jan 01 00:00:00.062 [D4]  [INIT][    0.125885] Setup TCP dump [N] & SFP logger [C] & LTE driver FW [N] & MUX A [N] & MUX B [N] !
+Jan 01 00:00:00.062 [D4]  [INIT][    0.125936] Open UART-A base = 0xbc118000 cfg =0x0 intrp=72
+Jan 01 00:00:00.063 [D4]  [INIT][    0.126004] Setup rx_interrupt_only for uart 0
+Jan 01 00:00:00.063 [D4]  [INIT][    0.126078] serialMngrOpen:451, device=A 0x9c0d5a50
+Jan 01 00:00:00.068 [D4]  [INIT][    0.131360] Setup UART A in Tx blocking mode
+Jan 01 00:00:00.068 [D4]  [INIT][    0.131389] Open UART-C base = 0xbf0a1000 cfg =0xbf021000 intrp=77
+Jan 01 00:00:00.068 [D4]  [INIT][    0.131426] Setup rx_interrupt_only for uart 2
+Jan 01 00:00:00.068 [D4]  [INIT][    0.131450] serialMngrOpen:451, device=C 0x9c0d5f20
+Jan 01 00:00:00.068 [D4]  [INIT][    0.131472] Setup UART C in Tx blocking mode
+Jan 01 00:00:00.068 [D4]  [INIT][    0.131490] Setup rx_tx_interrupt_ for uart 2
+Jan 01 00:00:00.068 [D4]  [INIT][    0.131515] Calling irq_moveInterruptToHW2() with uart id=2
+Jan 01 00:00:00.073 [D4]  [INIT][    0.136710] Setup ALTCOM device: UART0 
+Jan 01 00:00:00.073 [D4]  [INIT][    0.136731] Open UART-0 base = 0xbf0a3000 cfg =0x0 intrp=123
+Jan 01 00:00:00.073 [D4]  [INIT][    0.136767] serialMngrOpen:451, device=UART0 0x9c0d63f0
+Jan 01 00:00:00.073 [D4]  [INIT][    0.136789] Setup UART UART0 in Tx blocking mode
+Jan 01 00:00:00.073 [D4]  [INIT][    0.136808] Setup rx_tx_interrupt_ for uart 4
+Jan 01 00:00:00.073 [D4]  [INIT][    0.136825] Calling irq_moveInterruptToHW2() with uart id=4
+Jan 01 00:00:00.077 [D4]  [INIT][    0.140141] hifc_register_uart_CBs was called for internal HIFC
+Jan 01 00:00:00.242 [D4]  [INIT][    0.305184] LteDriver - init task ended
+Jan 01 00:00:00.311 [D4]  [INIT][    0.374671] 1st AT cmd: AT+CEREG=0
+ - sent/rcv -> 3144/3352 Msec
+
+Jan 01 00:00:00.313 [D4]  [INIT][    0.376954] Binding C
+Jan 01 00:00:00.314 [D4]  [INIT][    0.377000] Calling main app init
+Jan 01 00:00:00.315 [D4]  [INIT][    0.378187] CLI is enable!
+Jan 01 00:00:00.321 [D4]  [INIT][    0.384066] lwip_stats ready
+Jan 01 00:00:00.321 [D4]  [INIT][    0.384164] lwip_ipsec ready
+Jan 01 00:00:00.321 [D4]  [INIT][    0.384435] quectel_apptcpip_app_entry
+Jan 01 00:00:00.322 [D4]  [INIT][    0.385980] quectel_atcop_app_entry
+Jan 01 00:00:00.323 [D4]  [INIT][    0.386019] quectel_atcmd_init
+Jan 01 00:00:00.329 [D4]  [INIT][    0.392272] CLI AT cmd buff len is 3092
+Jan 01 00:00:00.332 [D4]  [INIT][    0.395270] [OTA] xTimerCreate created
+
+Jan 01 00:00:00.335 [D4]  [INIT][    0.398208] AP_RDY Timer init
+
+Jan 01 00:00:00.335 [D4]  [INIT][    0.398245] AP_RDY Timer init done
+
+Jan 01 00:00:00.335 [D4]  [INIT][    0.398321] qsclk_resume_suspend_task_init
+Jan 01 00:00:00.335 [D4]  [INIT][    0.398423] QL_SVN_Set uSvn 35 
+
+Jan 01 00:00:00.335 [D4]  [INIT][    0.398843] quectel_backup_restore_entry
+Jan 01 00:00:00.335 [D4]  [INIT][    0.398874] quectel_cell_rf_jamming_atcmd_init
+Jan 01 00:00:00.338 [D4]  [INIT][    0.401552] quectel_coap_app_entry
+Jan 01 00:00:00.339 [D4]  [INIT][    0.402464] quectel_dfota_app_entry
+Jan 01 00:00:00.339 [D4]  [INIT][    0.402608] [Harding][quectel_load_ap_ready_info_from_nv]
+
+Jan 01 00:00:00.340 [D4]  [INIT][    0.403022] [Harding][quectel_ap_ready_nv_init] Ap reaady init SUCCESSFULLY!!!
+Jan 01 00:00:00.340 [D4]  [INIT][    0.403069] quectel_ftm_app_entry
+Jan 01 00:00:00.340 [D4]  [INIT][    0.403098] quectel_ftp_app_entry
+Jan 01 00:00:00.340 [D4]  [INIT][    0.403674] quectel_gnss_app_entry
+Jan 01 00:00:00.340 [D4]  [INIT][    0.403696] quectel_gnss_atcmd_init
+Jan 01 00:00:00.341 [D4]  [INIT][    0.404082] quectel_gpio_init
+Jan 01 00:00:00.402 [D4]  [INIT][    0.465445] quectel_http_app_entry
+Jan 01 00:00:00.402 [D4]  [INIT][    0.465873] quectel_mqtt_app_entry
+Jan 01 00:00:00.406 [D4]  [INIT][    0.469373] quectel_ntp_app_entry
+Jan 01 00:00:00.417 [D4]  [INIT][    0.480480] [Quectel]quectel_restore_process 
+
+Jan 01 00:00:00.424 [D4]  [INIT][    0.487246] [Quectel]backup area data is empty or invaild
+Jan 01 00:00:00.425 [D4]  [INIT][    0.488741] Starting Watchdog timer
+Jan 01 00:00:00.427 [D4]  [INIT][    0.490347] Internal MCU is detected - Setting HIFC to mode B
+Jan 01 00:00:00.428 [D4]  [INIT][    0.491379] HIFC HOST_TO_MODEM LINE is LOW
+Jan 01 00:00:00.428 [D4]  [INIT][    0.491561] HIFC configured line HOST_TO_MODEM=0, MODEM_TO_HOST=1 mode=B
+Jan 01 00:00:00.436 [D4]  [INIT][    0.499403] Binding UART0
+Read RFBP File (2306181)
+
+Sleep mode allowed
+[2024/4/27 15:41:51][LOG]: 等待0秒后开始测试
+[2024/4/27 15:41:51][LOG]: pm-sleep disable
+
+[2024/4/27 15:41:52][LOG]: 等待0秒后开始测试
+[2024/4/27 15:41:52][DATARECV]: 
+pm-sleep disable
+[2024/4/27 15:41:52][DATARECV]: 
+PM Sleep - Disable
+[2024/4/27 15:41:52][LOG]: Test Item 'pm-sleep disable
+' PASS. Data is '
+pm-sleep disable
+PM Sleep - Disable'
+[2024/4/27 15:41:52][LOG]: at AT+CFUN=0
+
+[2024/4/27 15:41:52][LOG]: 等待1秒后开始测试
+[2024/4/27 15:41:52][DATARECV]: 
+[INIT_INIT_Handler:2963] APP_TRACE
+[2024/4/27 15:41:52][DATARECV]: 
+[INIT_INIT_Handler:2966] EVT_SEND(eventId=16)
+[2024/4/27 15:41:52][DATARECV]: 
+[restartWatchdogTimer:982] Watchdog re-enabled! Timeout in 90 seconds.
+[2024/4/27 15:41:52][DATARECV]: 
+[appMainLoopTask:6714] [STM]nextState: IDLE(1)
+[2024/4/27 15:41:52][DATARECV]: 
+[appMainLoopTask:6676] [STM]currState: IDLE(1), evt: SENSE(16)
+[2024/4/27 15:41:52][DATARECV]: 
+[IDLE_SENSE_Handler:4081] APP_TRACE
+[2024/4/27 15:41:52][DATARECV]: 
+Cold start epochFromModemTime() 3
+[2024/4/27 15:41:52][DATARECV]: 
+	CCID: 89320420000001826989 
+[2024/4/27 15:41:52][DATARECV]: 
+**EXCMON initial Status: state: 1
+[2024/4/27 15:41:52][DATARECV]: 
+[IDLE_SENSE_Handler:4114] ***EXCMON 1 excmon_initialized = true;
+[2024/4/27 15:41:52][DATARECV]: 
+SSL3_00_L_00_52
+[2024/4/27 15:41:52][DATARECV]: 
+==========IMEI:868617060284546===========
+[2024/4/27 15:41:52][DATARECV]: 
+	Temp=27.35 degC, RH=0.00%
+[2024/4/27 15:41:52][DATARECV]: 
+	Accl: i=0 x=0.05 y=0.00 z=-1.00
+[2024/4/27 15:41:52][DATARECV]: 
+LPS22 boot complete!
+[2024/4/27 15:41:52][DATARECV]: 
+	Pressure=996.99 hPa
+[2024/4/27 15:41:52][DATARECV]: 
+	Light intensity=0 lux
+[2024/4/27 15:41:53][DATARECV]: 
+	VBAT=3154 mV
+[2024/4/27 15:41:53][DATARECV]: 
+	Operating Mode: TEST
+[2024/4/27 15:41:53][DATARECV]: 
+	Push Btn Value: 0
+[2024/4/27 15:41:53][DATARECV]: 
+========================================
+[2024/4/27 15:41:53][DATARECV]: 
+Set LCM_3.3V_EN=1
+[2024/4/27 15:41:53][DATARECV]: 
+WIFI ESP32 enabled.
+[2024/4/27 15:41:53][DATARECV]: 
+at AT+CFUN=0
+[2024/4/27 15:41:53][DATARECV]: 
+
+[2024/4/27 15:41:53][DATARECV]: 
+OK
+[2024/4/27 15:41:53][DATARECV]: 
+>> [check_test_mode:3129] Device is in test mode.
+[2024/4/27 15:41:53][DATARECV]: 
+Enter a test command.
+[2024/4/27 15:41:54][LOG]: Test Item 'at AT+CFUN=0
+' PASS. Data is '
+[INIT_INIT_Handler:2963] APP_TRACE
+[INIT_INIT_Handler:2966] EVT_SEND(eventId=16)
+[restartWatchdogTimer:982] Watchdog re-enabled! Timeout in 90 seconds.
+[appMainLoopTask:6714] [STM]nextState: IDLE(1)
+[appMainLoopTask:6676] [STM]currState: IDLE(1), evt: SENSE(16)
+[IDLE_SENSE_Handler:4081] APP_TRACE
+Cold start epochFromModemTime() 3
+	CCID: 89320420000001826989 
+**EXCMON initial Status: state: 1
+[IDLE_SENSE_Handler:4114] ***EXCMON 1 excmon_initialized = true;
+SSL3_00_L_00_52
+==========IMEI:868617060284546===========
+	Temp=27.35 degC, RH=0.00%
+	Accl: i=0 x=0.05 y=0.00 z=-1.00
+LPS22 boot complete!
+	Pressure=996.99 hPa
+	Light intensity=0 lux
+	VBAT=3154 mV
+	Operating Mode: TEST
+	Push Btn Value: 0
+========================================
+Set LCM_3.3V_EN=1
+WIFI ESP32 enabled.
+at AT+CFUN=0
+
+OK
+>> [check_test_mode:3129] Device is in test mode.
+Enter a test command.'
+[2024/4/27 15:41:54][LOG]: at AT+CFUN?
+
+[2024/4/27 15:41:54][LOG]: 等待1秒后开始测试
+[2024/4/27 15:41:54][DATARECV]: 
+at AT+CFUN?
+[2024/4/27 15:41:54][DATARECV]: 
+
+[2024/4/27 15:41:54][DATARECV]: 
++CFUN: 0
+[2024/4/27 15:41:54][DATARECV]: 
+
+[2024/4/27 15:41:54][DATARECV]: 
+OK
+[2024/4/27 15:41:55][LOG]: Test Item 'at AT+CFUN?
+' PASS. Data is '
+at AT+CFUN?
+
++CFUN: 0
+
+OK'
+[2024/4/27 15:41:55][LOG]: at+gps on
+
+[2024/4/27 15:41:55][LOG]: 等待0秒后开始测试
+[2024/4/27 15:41:55][DATARECV]: 
+>> at+gps on
+[2024/4/27 15:41:55][DATARECV]: 
+[gpsTest:1493] Set LTE CFUN=0
+[2024/4/27 15:41:55][LOG]: Test Item 'at+gps on
+' PASS. Data is '
+>> at+gps on
+[gpsTest:1493] Set LTE CFUN=0'
+[2024/4/27 15:41:55][LOG]: Setup_GNSS_Cmd
+[2024/4/27 15:41:55][LOG]: VSG1;FREQ:cent 1575.42E+006
+
+[2024/4/27 15:41:55][LOG]: VSG1;WAVE:LOAD '/user/gps_glonass_beidou_300ms.iqvsg'
+
+[2024/4/27 15:41:55][LOG]: VSG1;MOD:STAT 1
+
+[2024/4/27 15:41:55][LOG]: VSG1;POW:STAT 1
+
+[2024/4/27 15:41:55][LOG]: VSG1;FREQ:LOOF 10e6
+
+[2024/4/27 15:41:55][LOG]: VSG1;WAVE:EXEC ON
+
+[2024/4/27 15:41:56][LOG]: Test Item 'Setup_GNSS_Cmd' PASS. Data is 'PASS'
+[2024/4/27 15:41:56][LOG]: 配置综测仪的LTE 成功
+[2024/4/27 15:41:56][LOG]: Setup_GNSS_Routing_Port_RX
+[2024/4/27 15:41:56][LOG]: ROUT1;PORT:RES:ADD:BANK1 RF1,VSG1
+
+[2024/4/27 15:41:56][LOG]: Test Item 'Setup_GNSS_Routing_Port_RX' PASS. Data is 'PASS'
+[2024/4/27 15:41:56][LOG]: 配置综测仪的LTE成功
+[2024/4/27 15:41:56][LOG]: Setup_GNSS_EATTenuation
+[2024/4/27 15:41:56][LOG]: MEM:TABLE "VSG1_BANK1_GNSS_RX_RF1";MEM:TABLE:DEFINE "FREQ,LOSS";MEMory:TABLe:INSert:POINt 1575.42 MHz,20
+
+[2024/4/27 15:41:56][LOG]: VSG1;RFC:USE:BANK1 "VSG1_BANK1_GNSS_RX_RF1",RF1
+
+[2024/4/27 15:41:56][LOG]: MEMory:TABLe "VSG1_BANK1_GNSS_RX_RF1";MEMory:TABLe:STORe
+
+[2024/4/27 15:41:56][LOG]: VSG;freq:loof 10e6;
+[2024/4/27 15:41:56][LOG]: 
+[2024/4/27 15:41:56][LOG]: Test Item 'Setup_GNSS_EATTenuation' PASS. Data is '20'
+[2024/4/27 15:41:56][LOG]: 配置综测仪的LTE线损成功
+[2024/4/27 15:41:56][LOG]: Setup_GNSS_DL_Power
+[2024/4/27 15:41:56][LOG]: VSG1;POW:lev -120
+
+[2024/4/27 15:41:56][LOG]: Test Item 'Setup_GNSS_DL_Power' PASS. Data is 'PASS'
+[2024/4/27 15:41:56][LOG]: 配置综测仪的 GNSS 下行功率成功
+[2024/4/27 15:41:56][LOG]: vir_Test_QUALCOMM__GNSS_CNo_L_35_H_55
+[2024/4/27 15:41:56][LOG]: 等待1秒后开始测试
+[2024/4/27 15:41:58][LOG]: 等待1秒后开始测试
+[2024/4/27 15:41:58][DATARECV]: 
+>> $GPGGA,3.000000,0.000000,,0.000000,,0,0,0.000000,0.000000,,0.000000,,0.000000,0,*4b
+[2024/4/27 15:41:58][DATARECV]: 
+$GNGLL,,,,,000003.00,V,N*57
+[2024/4/27 15:41:58][DATARECV]: 
+$GNGSA,A,1,,,,,,,,,,,,,,,*00
+[2024/4/27 15:41:58][DATARECV]: 
+$GNRMC,000003.00,V,,,,,,,060180,,,N*6F
+[2024/4/27 15:41:58][DATARECV]: 
+$GNVTG,,T,,M,,N,,K,N*32
+[2024/4/27 15:41:58][DATARECV]: 
+$GNZDA,000003.00,06,01,1980,,*7C
+[2024/4/27 15:41:58][DATARECV]: 
+$PSGSA,1,,,,,,,,,,,,,,,,0,,,,0,00,3,0,B,,0,0,0,0,0,0,0,0,0,,0*0A
+[2024/4/27 15:41:58][DATARECV]: 
+$PSIDX,,,,,,,,*56
+[2024/4/27 15:41:58][DATARECV]: 
+$PSRMC,000003.00,V,,,,,,,060180,,,N,,,*49
+[2024/4/27 15:41:58][DATARECV]: 
+$PSSST,4,1,00,00,0,0,0,0,00000,P,-,,00,00,0,0,0,0,00000,P,-,,00,00,0,0,0,0,00000,P,-,*1F
+[2024/4/27 15:41:58][DATARECV]: 
+$PSSST,4,2,00,00,0,0,0,0,00000,P,-,,00,00,0,0,0,0,00000,P,-,,00,00,0,0,0,0,00000,P,-,*1C
+[2024/4/27 15:41:58][DATARECV]: 
+$PSSST,4,3,00,00,0,0,0,0,00000,P,-,,00,00,0,0,0,0,00000,P,-,,00,00,0,0,0,0,00000,P,-,*1D
+[2024/4/27 15:41:59][DATARECV]: 
+$PSSST,4,4,00,00,0,0,0,0,00000,P,-,,00,00,0,0,0,0,00000,P,-,,00,00,0,0,0,0,00000,P,-,*1A
+[2024/4/27 15:41:59][DATARECV]: 
+$PSEPU,,,,,,,,,,,*6F
+[2024/4/27 15:41:59][DATARECV]: 
+$PSVLF,,,,,,,*73
+[2024/4/27 15:41:59][DATARECV]: 
+$PSVLR,,,,,,,*67
+[2024/4/27 15:41:59][DATARECV]: 
+$GPGGA,4.000000,0.000000,,0.000000,,0,0,0.000000,0.000000,,0.000000,,0.000000,0,*4c
+[2024/4/27 15:41:59][DATARECV]: 
+$GNGLL,,,,,000004.00,V,N*50
+[2024/4/27 15:41:59][DATARECV]: 
+$GNGSA,A,1,,,,,,,,,,,,,,,*00
+[2024/4/27 15:41:59][DATARECV]: 
+$GNRMC,000004.00,V,,,,,,,060180,,,N*68
+[2024/4/27 15:41:59][DATARECV]: 
+$GNVTG,,T,,M,,N,,K,N*32
+[2024/4/27 15:41:59][DATARECV]: 
+$GNZDA,000004.00,06,01,1980,,*7B
+[2024/4/27 15:41:59][LOG]: 等待1秒后开始测试
+[2024/4/27 15:41:59][DATARECV]: 
+$PSGSA,1,,,,,,,,,,,,,,,,0,,,,0,00,3,0,B,,0,0,0,0,0,0,0,0,0,,0*0A
+[2024/4/27 15:41:59][DATARECV]: 
+$PSIDX,,,,,,,,*56
+[2024/4/27 15:41:59][DATARECV]: 
+$PSRMC,000004.00,V,,,,,,,060180,,,N,,,*4E
+[2024/4/27 15:41:59][DATARECV]: 
+$PSSST,4,1,00,00,0,0,0,0,00000,P,-,,00,00,0,0,0,0,00000,P,-,,00,00,0,0,0,0,00000,P,-,*1F
+[2024/4/27 15:41:59][DATARECV]: 
+$PSSST,4,2,00,00,0,0,0,0,00000,P,-,,00,00,0,0,0,0,00000,P,-,,00,00,0,0,0,0,00000,P,-,*1C
+[2024/4/27 15:41:59][DATARECV]: 
+$PSSST,4,3,00,00,0,0,0,0,00000,P,-,,00,00,0,0,0,0,00000,P,-,,00,00,0,0,0,0,00000,P,-,*1D
+[2024/4/27 15:42:00][DATARECV]: 
+$PSSST,4,4,00,00,0,0,0,0,00000,P,-,,00,00,0,0,0,0,00000,P,-,,00,00,0,0,0,0,00000,P,-,*1A
+[2024/4/27 15:42:00][DATARECV]: 
+$PSEPU,,,,,,,,,,,*6F
+[2024/4/27 15:42:00][DATARECV]: 
+$PSVLF,,,,,,,*73
+[2024/4/27 15:42:00][DATARECV]: 
+$PSVLR,,,,,,,*67
+[2024/4/27 15:42:00][DATARECV]: 
+$GPGGA,5.000000,0.000000,,0.000000,,0,0,0.000000,0.000000,,0.000000,,0.000000,0,*4d
+[2024/4/27 15:42:00][DATARECV]: 
+$GNGLL,,,,,000005.00,V,N*51
+[2024/4/27 15:42:00][DATARECV]: 
+$GNGSA,A,1,,,,,,,,,,,,,,,*00
+[2024/4/27 15:42:00][DATARECV]: 
+$GPGSV,10,1,0,0,34,4,0,0,22,5,0,0,18,9,0,0,26,11,0,0,28,12,0,0,24,17,0,0,24,19,0,0,26,20,0,0,14,22,0,0,24
+[2024/4/27 15:42:00][DATARECV]: 
+$GNRMC,000005.00,V,,,,,,,060180,,,N*69
+[2024/4/27 15:42:00][DATARECV]: 
+$GNVTG,,T,,M,,N,,K,N*32
+[2024/4/27 15:42:00][DATARECV]: 
+$GNZDA,000005.00,06,01,1980,,*7A
+[2024/4/27 15:42:00][DATARECV]: 
+$PSGSA,1,,,,,,,,,,,,,,,,0,,,,0,28,3,1,B,,0,0,10,0,0,0,0,0,0,,0*30
+[2024/4/27 15:42:00][DATARECV]: 
+$PSIDX,,,,,,,,*56
+[2024/4/27 15:42:00][DATARECV]: 
+$PSRMC,000005.00,V,,,,,,,060180,,,N,,,*4F
+[2024/4/27 15:42:00][DATARECV]: 
+$PSSST,4,1,01,34,0,1,1,0,00703,P,-,,04,22,0,1,1,0,00999,N,-,,05,18,0,1,1,0,03652,P,-,*00
+[2024/4/27 15:42:00][DATARECV]: 
+$PSSST,4,2,09,26,0,1,1,0,00596,P,-,,11,28,0,1,1,0,01249,P,-,,12,24,0,1,1,0,02348,P,-,*17
+[2024/4/27 15:42:01][DATARECV]: 
+$PSSST,4,3,17,24,0,1,1,0,00799,N,-,,19,26,0,1,1,0,00199,P,-,,20,14,0,1,1,0,01999,P,-,*06
+[2024/4/27 15:42:01][DATARECV]: 
+$PSSST,4,4,22,24,0,1,1,0,02349,N,-,,00,00,0,0,0,0,00000,P,-,,00,00,0,0,0,0,00000,P,-,*0E
+[2024/4/27 15:42:01][DATARECV]: 
+$PSEPU,,,,,,,,,,,*6F
+[2024/4/27 15:42:01][DATARECV]: 
+$PSVLF,,,,,,,*73
+[2024/4/27 15:42:01][DATARECV]: 
+$PSVLR,,,,,,,*67
+[2024/4/27 15:42:01][LOG]: ref_Data::
+[2024/4/27 15:42:01][LOG]: Test Item 'vir_Test_QUALCOMM__GNSS_CNo_L_35_H_55' FAIL.Data is '34'
+[2024/4/27 15:42:01][LOG]: 比较CNo值对比失败不符合要求
+[2024/4/27 15:42:01][LOG]: 等待0秒后开始测试
+[2024/4/27 15:42:01][LOG]: 等待1秒后开始测试
+[2024/4/27 15:42:01][DATARECV]: 
+$GPGGA,6.000000,0.000000,,0.000000,,0,0,0.000000,0.000000,,0.000000,,0.000000,0,*4e
+[2024/4/27 15:42:01][DATARECV]: 
+$GNGLL,,,,,000006.00,V,N*52
+[2024/4/27 15:42:01][DATARECV]: 
+$GNGSA,A,1,,,,,,,,,,,,,,,*00
+[2024/4/27 15:42:01][DATARECV]: 
+$GPGSV,11,1,0,0,33,4,0,0,29,5,0,0,32,9,0,0,29,11,0,0,34,12,0,0,34,17,0,0,32,19,0,0,33,20,0,0,33,22,0,0,32,25,0,0,26
+[2024/4/27 15:42:01][DATARECV]: 
+$GNRMC,000006.00,V,,,,,,,060180,,,N*6A
+[2024/4/27 15:42:01][DATARECV]: 
+$GNVTG,,T,,M,,N,,K,N*32
+[2024/4/27 15:42:01][DATARECV]: 
+$GNZDA,000006.00,06,01,1980,,*79
+[2024/4/27 15:42:01][DATARECV]: 
+$PSGSA,1,,,,,,,,,,,,,,,,0,,,,0,33,3,1,B,,0,0,11,0,0,0,0,0,0,,0*3B
+[2024/4/27 15:42:01][DATARECV]: 
+$PSIDX,,,,,,,,*56
+[2024/4/27 15:42:01][DATARECV]: 
+$PSRMC,000006.00,V,,,,,,,060180,,,N,,,*4C
+[2024/4/27 15:42:01][DATARECV]: 
+$PSSST,4,1,01,33,9,1,1,0,00719,P,-,,04,29,9,1,1,0,00988,N,-,,05,32,9,2,1,0,03679,P,-,*0C
+[2024/4/27 15:42:02][DATARECV]: 
+$PSSST,4,2,09,29,9,2,1,0,00582,P,-,,11,34,9,1,1,0,01245,P,-,,12,34,9,2,1,0,02333,P,-,*18
+[2024/4/27 15:42:02][DATARECV]: 
+$PSSST,4,3,17,32,9,1,1,0,00778,N,-,,19,33,9,1,1,0,00206,P,-,,20,33,9,1,1,0,01993,P,-,*09
+[2024/4/27 15:42:02][DATARECV]: 
+$PSSST,4,4,22,32,9,2,1,0,02371,N,-,,25,26,0,1,1,0,03139,P,-,,00,00,0,0,0,0,00000,P,-,*03
+[2024/4/27 15:42:02][DATARECV]: 
+$PSEPU,,,,,,,,,,,*6F
+[2024/4/27 15:42:02][DATARECV]: 
+$PSVLF,,,,,,,*73
+[2024/4/27 15:42:02][DATARECV]: 
+$PSVLR,,,,,,,*67
+[2024/4/27 15:42:02][DATARECV]: 
+$GPGGA,7.000000,0.000000,,0.000000,,0,0,0.000000,0.000000,,0.000000,,0.000000,0,*4f
+[2024/4/27 15:42:02][DATARECV]: 
+$GNGLL,,,,,000007.00,V,N*53
+[2024/4/27 15:42:02][DATARECV]: 
+$GNGSA,A,1,,,,,,,,,,,,,,,*00
+[2024/4/27 15:42:02][DATARECV]: 
+$GPGSV,11,1,0,0,43,4,0,0,30,5,0,0,39,9,0,0,34,11,0,0,42,12,0,0,39,17,0,0,38,19,0,0,39,20,0,0,40,22,0,0,36,25,0,0,27
+[2024/4/27 15:42:02][DATARECV]: 
+$GNRMC,000007.00,V,,,,,,,060180,,,N*6B
+[2024/4/27 15:42:02][DATARECV]: 
+$GNVTG,,T,,M,,N,,K,N*32
+[2024/4/27 15:42:02][DATARECV]: 
+$GNZDA,000007.00,06,01,1980,,*78
+[2024/4/27 15:42:02][DATARECV]: 
+$PSGSA,1,,,,,,,,,,,,,,,,0,,,,0,41,3,1,B,,0,0,11,0,0,0,0,0,0,,0*3E
+[2024/4/27 15:42:02][DATARECV]: 
+$PSIDX,,,,,,,,*56
+[2024/4/27 15:42:02][DATARECV]: 
+$PSRMC,000007.00,V,,,,,,,060180,,,N,,,*4D
+[2024/4/27 15:42:02][DATARECV]: 
+$PSSST,4,1,01,43,9,1,1,0,00718,P,-,,04,30,9,1,1,0,00990,N,-,,05,39,9,2,1,0,03677,P,-,*0E
+[2024/4/27 15:42:03][DATARECV]: 
+$PSSST,4,2,09,34,9,3,1,0,00580,P,-,,11,42,9,1,1,0,01243,P,-,,12,39,9,3,1,0,02332,P,-,*1D
+[2024/4/27 15:42:03][DATARECV]: 
+$PSSST,4,3,17,38,9,1,1,0,00780,N,-,,19,39,9,1,1,0,00205,P,-,,20,40,9,1,1,0,01991,P,-,*0B
+[2024/4/27 15:42:03][DATARECV]: 
+$PSSST,4,4,22,36,9,3,1,0,02373,N,-,,25,27,9,1,1,0,03136,P,-,,00,00,0,0,0,0,00000,P,-,*03
+[2024/4/27 15:42:03][DATARECV]: 
+$PSEPU,,,,,,,,,,,*6F
+[2024/4/27 15:42:03][DATARECV]: 
+$PSVLF,,,,,,,*73
+[2024/4/27 15:42:03][DATARECV]: 
+$PSVLR,,,,,,,*67
+[2024/4/27 15:42:03][LOG]: ref_Data::
+[2024/4/27 15:42:03][LOG]: Test Item 'vir_Test_QUALCOMM__GNSS_CNo_L_35_H_55' FAIL.Data is '33'
+[2024/4/27 15:42:03][LOG]: 比较CNo值对比失败不符合要求
+[2024/4/27 15:42:03][LOG]: 等待0秒后开始测试
+[2024/4/27 15:42:03][LOG]: 等待1秒后开始测试
+[2024/4/27 15:42:03][DATARECV]: 
+$GPGGA,8.000000,0.000000,,0.000000,,0,0,0.000000,0.000000,,0.000000,,0.000000,0,*40
+[2024/4/27 15:42:03][DATARECV]: 
+$GNGLL,,,,,000008.00,V,N*5C
+[2024/4/27 15:42:03][DATARECV]: 
+$GNGSA,A,1,,,,,,,,,,,,,,,*00
+[2024/4/27 15:42:03][DATARECV]: 
+$GPGSV,11,1,0,0,42,4,0,0,30,5,0,0,39,9,0,0,34,11,0,0,42,12,0,0,40,17,0,0,39,19,0,0,40,20,0,0,41,22,0,0,36,25,0,0,27
+[2024/4/27 15:42:03][DATARECV]: 
+$GNRMC,000008.00,V,,,,,,,060180,,,N*64
+[2024/4/27 15:42:03][DATARECV]: 
+$GNVTG,,T,,M,,N,,K,N*32
+[2024/4/27 15:42:03][DATARECV]: 
+$GNZDA,000008.00,06,01,1980,,*77
+[2024/4/27 15:42:03][DATARECV]: 
+$PSGSA,1,,,,,,,,,,,,,,,,0,,,,0,41,3,1,B,,0,0,11,0,0,0,0,0,0,,0*3E
+[2024/4/27 15:42:03][DATARECV]: 
+$PSIDX,,,,,,,,*56
+[2024/4/27 15:42:03][DATARECV]: 
+$PSRMC,000008.00,V,,,,,,,060180,,,N,,,*42
+[2024/4/27 15:42:03][DATARECV]: 
+$PSSST,4,1,01,42,9,1,1,0,00718,P,-,,04,30,9,1,1,0,00991,N,-,,05,39,9,2,1,0,03677,P,-,*0E
+[2024/4/27 15:42:04][DATARECV]: 
+$PSSST,4,2,09,34,9,3,1,0,00579,P,-,,11,42,9,1,1,0,01243,P,-,,12,40,9,3,1,0,02330,P,-,*17
+[2024/4/27 15:42:04][DATARECV]: 
+$PSSST,4,3,17,39,9,1,1,0,00781,N,-,,19,40,9,1,1,0,00204,P,-,,20,41,9,1,1,0,01990,P,-,*04
+[2024/4/27 15:42:04][DATARECV]: 
+$PSSST,4,4,22,36,9,3,1,0,02374,N,-,,25,27,9,1,1,0,03132,P,-,,00,00,0,0,0,0,00000,P,-,*00
+[2024/4/27 15:42:04][DATARECV]: 
+$PSEPU,,,,,,,,,,,*6F
+[2024/4/27 15:42:04][DATARECV]: 
+$PSVLF,,,,,,,*73
+[2024/4/27 15:42:04][DATARECV]: 
+$PSVLR,,,,,,,*67
+[2024/4/27 15:42:04][LOG]: ref_Data::
+[2024/4/27 15:42:04][LOG]: Test Item 'vir_Test_QUALCOMM__GNSS_CNo_L_35_H_55' FAIL.Data is 'Eligible Cout Less than 5.CNo:42'
+[2024/4/27 15:42:04][LOG]: 比较CNo值对比失败不符合要求
+[2024/4/27 15:42:04][LOG]: 等待0秒后开始测试
+[2024/4/27 15:42:05][LOG]: 等待1秒后开始测试
+[2024/4/27 15:42:05][DATARECV]: 
+$PSSST,4,4,22,37,9,3,1,0,02374,N,-,,25,27,9,1,1,0,03131,P,-,,00,00,0,0,0,0,00000,P,-,*02
+[2024/4/27 15:42:05][DATARECV]: 
+$PSEPU,,,,,,,,,,,*6F
+[2024/4/27 15:42:05][DATARECV]: 
+$PSVLF,,,,,,,*73
+[2024/4/27 15:42:05][DATARECV]: 
+$PSVLR,,,,,,,*67
+[2024/4/27 15:42:05][DATARECV]: 
+$GPGGA,10.000000,0.000000,,0.000000,,0,0,0.000000,0.000000,,0.000000,,0.000000,0,*49
+[2024/4/27 15:42:05][DATARECV]: 
+$GNGLL,,,,,000010.00,V,N*55
+[2024/4/27 15:42:05][DATARECV]: 
+$GNGSA,A,1,,,,,,,,,,,,,,,*00
+[2024/4/27 15:42:05][DATARECV]: 
+$GPGSV,12,1,0,0,42,4,0,0,30,5,0,0,39,9,0,0,35,11,0,0,42,12,0,0,40,14,0,0,26,17,0,0,39,19,0,0,40,20,0,0,40,22,0,0,37,25,0,0,26
+[2024/4/27 15:42:05][DATARECV]: 
+$GNRMC,000010.00,V,,,,,,,060180,,,N*6D
+[2024/4/27 15:42:05][DATARECV]: 
+$GNVTG,,T,,M,,N,,K,N*32
+[2024/4/27 15:42:05][DATARECV]: 
+$GNZDA,000010.00,06,01,1980,,*7E
+[2024/4/27 15:42:05][DATARECV]: 
+$PSGSA,1,,,,,,,,,,,,,,,,0,,,,0,41,3,1,B,,0,0,12,0,0,0,0,0,0,,0*3D
+[2024/4/27 15:42:05][DATARECV]: 
+$PSIDX,,,,,,,,*56
+[2024/4/27 15:42:05][DATARECV]: 
+$PSRMC,000010.00,V,,,,,,,060180,,,N,,,*4B
+[2024/4/27 15:42:05][DATARECV]: 
+$PSSST,4,1,01,42,9,1,1,0,00717,P,-,,04,30,9,1,1,0,00992,N,-,,05,39,9,2,1,0,03676,P,-,*03
+[2024/4/27 15:42:06][DATARECV]: 
+$PSSST,4,2,09,35,9,3,1,0,00578,P,-,,11,42,9,1,1,0,01242,P,-,,12,40,9,3,1,0,02329,P,-,*1E
+[2024/4/27 15:42:06][DATARECV]: 
+$PSSST,4,3,17,39,9,1,1,0,00782,N,-,,19,40,9,1,1,0,00202,P,-,,20,40,9,1,1,0,01989,P,-,*08
+[2024/4/27 15:42:06][DATARECV]: 
+$PSSST,4,4,22,37,9,3,1,0,02374,N,-,,25,26,9,1,1,0,03131,P,-,,14,26,9,1,1,0,02825,N,-,*18
+[2024/4/27 15:42:06][DATARECV]: 
+$PSEPU,,,,,,,,,,,*6F
+[2024/4/27 15:42:06][DATARECV]: 
+$PSVLF,,,,,,,*73
+[2024/4/27 15:42:06][DATARECV]: 
+$PSVLR,,,,,,,*67
+[2024/4/27 15:42:06][LOG]: ref_Data::
+[2024/4/27 15:42:06][LOG]: Test Item 'vir_Test_QUALCOMM__GNSS_CNo_L_35_H_55' FAIL.Data is 'Eligible Cout Less than 5.CNo:42'
+[2024/4/27 15:42:06][LOG]: 比较CNo值对比失败不符合要求
+[2024/4/27 15:42:06][LOG]: 等待0秒后开始测试
+[2024/4/27 15:42:06][LOG]: 等待1秒后开始测试
+[2024/4/27 15:42:06][DATARECV]: 
+$GPGGA,11.000000,0.000000,,0.000000,,0,0,0.000000,0.000000,,0.000000,,0.000000,0,*48
+[2024/4/27 15:42:06][DATARECV]: 
+$GNGLL,,,,,000011.00,V,N*54
+[2024/4/27 15:42:06][DATARECV]: 
+$GNGSA,A,1,,,,,,,,,,,,,,,*00
+[2024/4/27 15:42:06][DATARECV]: 
+$GPGSV,12,1,0,0,42,4,0,0,30,5,0,0,39,9,0,0,35,11,0,0,42,12,0,0,40,14,0,0,27,17,0,0,39,19,0,0,40,20,0,0,40,22,0,0,37,25,0,0,27
+[2024/4/27 15:42:06][DATARECV]: 
+$GNRMC,000011.00,V,,,,,,,060180,,,N*6C
+[2024/4/27 15:42:06][DATARECV]: 
+$GNVTG,,T,,M,,N,,K,N*32
+[2024/4/27 15:42:06][DATARECV]: 
+$GNZDA,000011.00,06,01,1980,,*7F
+[2024/4/27 15:42:06][DATARECV]: 
+$PSGSA,1,,,,,,,,,,,,,,,,0,,,,0,41,3,1,B,,0,0,12,0,0,0,0,0,0,,0*3D
+[2024/4/27 15:42:06][DATARECV]: 
+$PSIDX,,,,,,,,*56
+[2024/4/27 15:42:06][DATARECV]: 
+$PSRMC,000011.00,V,,,,,,,060180,,,N,,,*4A
+[2024/4/27 15:42:06][DATARECV]: 
+$PSSST,4,1,01,42,9,1,1,0,00717,P,-,,04,30,9,1,1,0,00993,N,-,,05,39,9,2,1,0,03675,P,-,*01
+[2024/4/27 15:42:07][DATARECV]: 
+$PSSST,4,2,09,35,9,3,1,0,00577,P,-,,11,42,9,1,1,0,01242,P,-,,12,40,9,3,1,0,02328,P,-,*10
+[2024/4/27 15:42:07][DATARECV]: 
+$PSSST,4,3,17,39,9,1,1,0,00783,N,-,,19,40,9,1,1,0,00201,P,-,,20,40,9,1,1,0,01988,P,-,*0B
+[2024/4/27 15:42:07][DATARECV]: 
+$PSSST,4,4,22,37,9,3,1,0,02375,N,-,,25,27,9,1,1,0,03130,P,-,,14,27,9,1,1,0,02830,N,-,*1C
+[2024/4/27 15:42:07][DATARECV]: 
+$PSEPU,,,,,,,,,,,*6F
+[2024/4/27 15:42:07][DATARECV]: 
+$PSVLF,,,,,,,*73
+[2024/4/27 15:42:07][DATARECV]: 
+$PSVLR,,,,,,,*67
+[2024/4/27 15:42:07][DATARECV]: 
+$GPGGA,12.000000,0.000000,,0.000000,,0,0,0.000000,0.000000,,0.000000,,0.000000,0,*4b
+[2024/4/27 15:42:07][DATARECV]: 
+$GNGLL,,,,,000012.00,V,N*57
+[2024/4/27 15:42:07][DATARECV]: 
+$GNGSA,A,1,,,,,,,,,,,,,,,*00
+[2024/4/27 15:42:07][DATARECV]: 
+$GPGSV,12,1,0,0,42,4,0,0,30,5,0,0,39,9,0,0,35,11,0,0,42,12,0,0,40,14,0,0,23,17,0,0,38,19,0,0,40,20,0,0,40,22,0,0,37,25,0,0,28
+[2024/4/27 15:42:07][DATARECV]: 
+$GNRMC,000012.00,V,,,,,,,060180,,,N*6F
+[2024/4/27 15:42:07][DATARECV]: 
+$GNVTG,,T,,M,,N,,K,N*32
+[2024/4/27 15:42:07][DATARECV]: 
+$GNZDA,000012.00,06,01,1980,,*7C
+[2024/4/27 15:42:07][DATARECV]: 
+$PSGSA,1,,,,,,,,,,,,,,,,0,,,,0,41,3,1,B,,0,0,12,0,0,0,0,0,0,,0*3D
+[2024/4/27 15:42:07][DATARECV]: 
+$PSIDX,,,,,,,,*56
+[2024/4/27 15:42:07][DATARECV]: 
+$PSRMC,000012.00,V,,,,,,,060180,,,N,,,*49
+[2024/4/27 15:42:07][DATARECV]: 
+$PSSST,4,1,01,42,9,1,1,0,00717,P,-,,04,30,9,2,1,0,00993,N,-,,05,39,9,2,1,0,03675,P,-,*02
+[2024/4/27 15:42:08][DATARECV]: 
+$PSSST,4,2,09,35,9,3,1,0,00576,P,-,,11,42,9,2,1,0,01241,P,-,,12,40,9,3,1,0,02327,P,-,*1E
+[2024/4/27 15:42:08][DATARECV]: 
+$PSSST,4,3,17,38,9,2,1,0,00783,N,-,,19,40,9,2,1,0,00201,P,-,,20,40,9,2,1,0,01988,P,-,*09
+[2024/4/27 15:42:08][DATARECV]: 
+$PSSST,4,4,22,37,9,3,1,0,02375,N,-,,25,28,9,2,1,0,03130,P,-,,14,23,9,1,1,0,02846,N,-,*15
+[2024/4/27 15:42:08][DATARECV]: 
+$PSEPU,,,,,,,,,,,*6F
+[2024/4/27 15:42:08][DATARECV]: 
+$PSVLF,,,,,,,*73
+[2024/4/27 15:42:08][DATARECV]: 
+$PSVLR,,,,,,,*67
+[2024/4/27 15:42:08][LOG]: ref_Data::
+[2024/4/27 15:42:08][LOG]: Test Item 'vir_Test_QUALCOMM__GNSS_CNo_L_35_H_55' FAIL.Data is 'Eligible Cout Less than 5.CNo:42'
+[2024/4/27 15:42:08][LOG]: 比较CNo值对比失败不符合要求
+[2024/4/27 15:42:08][LOG]: 等待0秒后开始测试
+[2024/4/27 15:42:08][LOG]: 等待1秒后开始测试
+[2024/4/27 15:42:08][DATARECV]: 
+$GPGGA,13.000000,0.000000,,0.000000,,0,0,0.000000,0.000000,,0.000000,,0.000000,0,*4a
+[2024/4/27 15:42:08][DATARECV]: 
+$GNGLL,,,,,000013.00,V,N*56
+[2024/4/27 15:42:08][DATARECV]: 
+$GNGSA,A,1,,,,,,,,,,,,,,,*00
+[2024/4/27 15:42:08][DATARECV]: 
+$GPGSV,12,1,0,0,42,4,0,0,29,5,0,0,39,9,0,0,35,11,0,0,42,12,0,0,40,14,0,0,22,17,0,0,39,19,0,0,40,20,0,0,40,22,0,0,37,25,0,0,29
+[2024/4/27 15:42:08][DATARECV]: 
+$GNRMC,000013.00,V,,,,,,,060180,,,N*6E
+[2024/4/27 15:42:08][DATARECV]: 
+$GNVTG,,T,,M,,N,,K,N*32
+[2024/4/27 15:42:08][DATARECV]: 
+$GNZDA,000013.00,06,01,1980,,*7D
+[2024/4/27 15:42:08][DATARECV]: 
+$PSGSA,1,,,,,,,,,,,,,,,,0,,,,0,41,3,1,B,,0,0,9,3,0,0,0,0,0,,0*04
+[2024/4/27 15:42:08][DATARECV]: 
+$PSIDX,,,,,,,,*56
+[2024/4/27 15:42:08][DATARECV]: 
+$PSRMC,000013.00,V,,,,,,,060180,,,N,,,*48
+[2024/4/27 15:42:08][DATARECV]: 
+$PSSST,4,1,01,42,9,1,1,0,00717,P,-,,04,29,9,3,1,0,00994,N,-,,05,39,9,3,1,0,03674,P,-,*0C
+[2024/4/27 15:42:09][DATARECV]: 
+$PSSST,4,2,09,35,9,4,1,0,00576,P,-,,11,42,9,3,1,0,01241,P,-,,12,40,9,4,1,0,02327,P,-,*1F
+[2024/4/27 15:42:09][DATARECV]: 
+$PSSST,4,3,17,39,9,3,1,0,00784,N,-,,19,40,9,3,1,0,00200,P,-,,20,40,9,3,1,0,01987,P,-,*00
+[2024/4/27 15:42:09][DATARECV]: 
+$PSSST,4,4,22,37,9,4,1,0,02375,N,-,,25,29,9,3,1,0,03130,P,-,,14,22,9,1,1,0,02850,N,-,*14
+[2024/4/27 15:42:09][DATARECV]: 
+$PSEPU,,,,,,,,,,,*6F
+[2024/4/27 15:42:09][DATARECV]: 
+$PSVLF,,,,,,,*73
+[2024/4/27 15:42:09][DATARECV]: 
+$PSVLR,,,,,,,*67
+[2024/4/27 15:42:09][DATARECV]: 
+$GPGGA,14.000000,0.000000,,0.000000,,0,0,0.000000,0.000000,,0.000000,,0.000000,0,*4d
+[2024/4/27 15:42:09][DATARECV]: 
+$GNGLL,,,,,000014.00,V,N*51
+[2024/4/27 15:42:09][DATARECV]: 
+$GNGSA,A,1,,,,,,,,,,,,,,,*00
+[2024/4/27 15:42:09][DATARECV]: 
+$GPGSV,12,1,0,0,42,4,0,0,29,5,0,0,39,9,0,0,35,11,0,0,42,12,0,0,39,14,0,0,22,17,0,0,39,19,0,0,39,20,0,0,39,22,0,0,37,25,0,0,29
+[2024/4/27 15:42:09][DATARECV]: 
+$GNRMC,000014.00,V,,,,,,,060180,,,N*69
+[2024/4/27 15:42:09][DATARECV]: 
+$GNVTG,,T,,M,,N,,K,N*32
+[2024/4/27 15:42:09][DATARECV]: 
+$GNZDA,000014.00,06,01,1980,,*7A
+[2024/4/27 15:42:09][LOG]: ref_Data::
+[2024/4/27 15:42:09][LOG]: Test Item 'vir_Test_QUALCOMM__GNSS_CNo_L_35_H_55' FAIL.Data is 'Eligible Cout Less than 5.CNo:42'
+[2024/4/27 15:42:09][LOG]: 比较CNo值对比失败不符合要求
+[2024/4/27 15:42:09][LOG]: 等待0秒后开始测试
+[2024/4/27 15:42:10][LOG]: 等待1秒后开始测试
+[2024/4/27 15:42:10][DATARECV]: 
+$GPGGA,15.000000,0.000000,,0.000000,,0,0,0.000000,0.000000,,0.000000,,0.000000,0,*4c
+[2024/4/27 15:42:10][DATARECV]: 
+$GNGLL,,,,,000015.00,V,N*50
+[2024/4/27 15:42:10][DATARECV]: 
+$GNGSA,A,1,,,,,,,,,,,,,,,*00
+[2024/4/27 15:42:10][DATARECV]: 
+$GPGSV,12,1,0,0,42,4,0,0,29,5,0,0,39,9,0,0,35,11,0,0,42,12,0,0,39,14,0,0,25,17,0,0,39,19,0,0,40,20,0,0,39,22,0,0,37,25,0,0,29
+[2024/4/27 15:42:10][DATARECV]: 
+$GNRMC,000015.00,V,,,,,,,060180,,,N*68
+[2024/4/27 15:42:10][DATARECV]: 
+$GNVTG,,T,,M,,N,,K,N*32
+[2024/4/27 15:42:10][DATARECV]: 
+$GNZDA,000015.00,06,01,1980,,*7B
+[2024/4/27 15:42:10][DATARECV]: 
+$PSGSA,1,,,,,,,,,,,,,,,,0,,,,0,40,3,1,B,,0,0,9,3,0,0,0,0,0,,0*05
+[2024/4/27 15:42:10][DATARECV]: 
+$PSIDX,,,,,,,,*56
+[2024/4/27 15:42:10][DATARECV]: 
+$PSRMC,000015.00,V,,,,,,,060180,,,N,,,*4E
+[2024/4/27 15:42:10][DATARECV]: 
+$PSSST,4,1,01,42,9,1,1,0,00716,P,-,,04,29,9,3,1,0,00996,N,-,,05,39,9,3,1,0,03673,P,-,*08
+[2024/4/27 15:42:11][DATARECV]: 
+$PSSST,4,2,09,35,9,4,1,0,00574,P,-,,11,42,9,3,1,0,01241,P,-,,12,39,9,4,1,0,02325,P,-,*11
+[2024/4/27 15:42:11][DATARECV]: 
+$PSSST,4,3,17,39,9,3,1,0,00785,N,-,,19,40,9,3,1,0,00199,P,-,,20,39,9,3,1,0,01985,P,-,*0E
+[2024/4/27 15:42:11][DATARECV]: 
+$PSSST,4,4,22,37,9,4,1,0,02376,N,-,,25,29,9,3,1,0,03128,P,-,,14,25,9,1,1,0,02841,N,-,*19
+[2024/4/27 15:42:11][DATARECV]: 
+$PSEPU,,,,,,,,,,,*6F
+[2024/4/27 15:42:11][DATARECV]: 
+$PSVLF,,,,,,,*73
+[2024/4/27 15:42:11][DATARECV]: 
+$PSVLR,,,,,,,*67
+[2024/4/27 15:42:11][LOG]: ref_Data::
+[2024/4/27 15:42:11][LOG]: Test Item 'vir_Test_QUALCOMM__GNSS_CNo_L_35_H_55' PASS. Data is '42'
+[2024/4/27 15:42:11][LOG]: 比较CNo值成功
+[2024/4/27 15:42:11][LOG]: ROUT1;PORT:RES:SUBT:BANK1 RF1,VSG1
+
+[2024/4/27 15:42:11][LOG]: ROUT1;PORT:RES:SUBT:BANK1 RF1,VSG1
+
+[2024/4/27 15:42:11][LOG]: ROUT1;PORT:RES:SUBT:BANK1 RF2,VSG1
+
+[2024/4/27 15:42:11][LOG]: ROUT1;PORT:RES:SUBT:BANK1 RF2,VSG1
+
+[2024/4/27 15:42:11][LOG]: ROUT1;PORT:RES:SUBT:BANK1 RF3,VSG1
+
+[2024/4/27 15:42:11][LOG]: ROUT1;PORT:RES:SUBT:BANK1 RF3,VSG1
+
+[2024/4/27 15:42:11][LOG]: ROUT1;PORT:RES:SUBT:BANK1 RF4,VSG1
+
+[2024/4/27 15:42:11][LOG]: ROUT1;PORT:RES:SUBT:BANK1 RF4,VSG1
+
+[2024/4/27 15:42:11][LOG]: ROUT1;PORT:RES:SUBT:BANK2 RF1,VSG1
+
+[2024/4/27 15:42:11][LOG]: ROUT1;PORT:RES:SUBT:BANK2 RF1,VSG1
+
+[2024/4/27 15:42:11][LOG]: ROUT1;PORT:RES:SUBT:BANK2 RF2,VSG1
+
+[2024/4/27 15:42:11][LOG]: ROUT1;PORT:RES:SUBT:BANK2 RF2,VSG1
+
+[2024/4/27 15:42:11][LOG]: ROUT1;PORT:RES:SUBT:BANK2 RF3,VSG1
+
+[2024/4/27 15:42:11][LOG]: ROUT1;PORT:RES:SUBT:BANK2 RF3,VSG1
+
+[2024/4/27 15:42:11][LOG]: ROUT1;PORT:RES:SUBT:BANK2 RF4,VSG1
+
+[2024/4/27 15:42:11][LOG]: ROUT1;PORT:RES:SUBT:BANK2 RF4,VSG1
+
+[2024/4/27 15:42:11][LOG]: VSG1;FREQ:LOOF 10e6
+
+[2024/4/27 15:42:11][LOG]: VSG1;FREQ:LOOF 10e6
+
+[2024/4/27 15:42:11][LOG]: 查找GNSS RX 调制平均值成功
+[2024/4/27 15:42:11][LOG]: at+gps off
+
+[2024/4/27 15:42:11][LOG]: 等待2秒后开始测试
+[2024/4/27 15:42:12][DATARECV]: 
+$GNGSA,A,1,,,,,,,,,,,,,,,*00
+[2024/4/27 15:42:12][DATARECV]: 
+$GPGSV,12,1,0,0,42,4,0,0,29,5,0,0,39,9,0,0,35,11,0,0,42,12,0,0,39,14,0,0,26,17,0,0,39,19,0,0,39,20,0,0,39,22,0,0,37,25,0,0,27
+[2024/4/27 15:42:12][DATARECV]: 
+$GNRMC,000016.00,V,,,,,,,060180,,,N*6B
+[2024/4/27 15:42:12][DATARECV]: 
+$GNVTG,,T,,M,,N,,K,N*32
+[2024/4/27 15:42:12][DATARECV]: 
+$GNZDA,000016.00,06,01,1980,,*78
+[2024/4/27 15:42:12][DATARECV]: 
+$PSGSA,1,,,,,,,,,,,,,,,,0,,,,0,40,3,1,B,,0,0,9,3,0,0,0,0,0,,0*05
+[2024/4/27 15:42:12][DATARECV]: 
+$PSIDX,,,,,,,,*56
+[2024/4/27 15:42:12][DATARECV]: 
+$PSRMC,000016.00,V,,,,,,,060180,,,N,,,*4D
+[2024/4/27 15:42:12][DATARECV]: 
+$PSSST,4,1,01,42,9,1,1,0,00716,P,-,,04,29,9,3,1,0,00996,N,-,,05,39,9,3,1,0,03673,P,-,*08
+[2024/4/27 15:42:12][DATARECV]: 
+$PSSST,4,2,09,35,9,4,1,0,00573,P,-,,11,42,9,3,1,0,01240,P,-,,12,39,9,4,1,0,02324,P,-,*16
+[2024/4/27 15:42:12][DATARECV]: 
+$PSSST,4,3,17,39,9,3,1,0,00785,N,-,,19,39,9,3,1,0,00198,P,-,,20,39,9,3,1,0,01985,P,-,*01
+[2024/4/27 15:42:12][DATARECV]: 
+$PSSST,4,4,22,37,9,4,1,0,02377,N,-,,25,27,9,3,1,0,03127,P,-,,14,26,9,1,1,0,02830,N,-,*1C
+[2024/4/27 15:42:12][DATARECV]: 
+$PSEPU,,,,,,,,,,,*6F
+[2024/4/27 15:42:12][DATARECV]: 
+$PSVLF,,,,,,,*73
+[2024/4/27 15:42:12][DATARECV]: 
+$PSVLR,,,,,,,*67
+[2024/4/27 15:42:12][DATARECV]: 
+at+gps off
+[2024/4/27 15:42:13][LOG]: Test Item 'at+gps off
+' PASS. Data is '
+$GNGSA,A,1,,,,,,,,,,,,,,,*00
+$GPGSV,12,1,0,0,42,4,0,0,29,5,0,0,39,9,0,0,35,11,0,0,42,12,0,0,39,14,0,0,26,17,0,0,39,19,0,0,39,20,0,0,39,22,0,0,37,25,0,0,27
+$GNRMC,000016.00,V,,,,,,,060180,,,N*6B
+$GNVTG,,T,,M,,N,,K,N*32
+$GNZDA,000016.00,06,01,1980,,*78
+$PSGSA,1,,,,,,,,,,,,,,,,0,,,,0,40,3,1,B,,0,0,9,3,0,0,0,0,0,,0*05
+$PSIDX,,,,,,,,*56
+$PSRMC,000016.00,V,,,,,,,060180,,,N,,,*4D
+$PSSST,4,1,01,42,9,1,1,0,00716,P,-,,04,29,9,3,1,0,00996,N,-,,05,39,9,3,1,0,03673,P,-,*08
+$PSSST,4,2,09,35,9,4,1,0,00573,P,-,,11,42,9,3,1,0,01240,P,-,,12,39,9,4,1,0,02324,P,-,*16
+$PSSST,4,3,17,39,9,3,1,0,00785,N,-,,19,39,9,3,1,0,00198,P,-,,20,39,9,3,1,0,01985,P,-,*01
+$PSSST,4,4,22,37,9,4,1,0,02377,N,-,,25,27,9,3,1,0,03127,P,-,,14,26,9,1,1,0,02830,N,-,*1C
+$PSEPU,,,,,,,,,,,*6F
+$PSVLF,,,,,,,*73
+$PSVLR,,,,,,,*67
+at+gps off'
+[2024/4/27 15:42:13][LOG]: config -s pm.conf.sleep_mode enable
+
+[2024/4/27 15:42:14][LOG]: 等待0秒后开始测试
+[2024/4/27 15:42:14][DATARECV]: 
+config -s pm.conf.sleep_mode enable
+[2024/4/27 15:42:14][DATARECV]: 
+Done
+[2024/4/27 15:42:14][LOG]: Test Item 'config -s pm.conf.sleep_mode enable
+' PASS. Data is '
+config -s pm.conf.sleep_mode enable
+Done'
+[2024/4/27 15:42:14][LOG]: at AT+CFUN=1
+
+[2024/4/27 15:42:14][LOG]: 等待1秒后开始测试
+[2024/4/27 15:42:14][DATARECV]: 
+>> at AT+CFUN=1
+[2024/4/27 15:42:15][LOG]: Test Item 'at AT+CFUN=1
+' FAIL.Data is '
+>> at AT+CFUN=1'
+[2024/4/27 15:42:15][LOG]: 等待1秒后开始测试
+[2024/4/27 15:42:15][DATARECV]: 
+
+[2024/4/27 15:42:15][DATARECV]: 
+OK
+[2024/4/27 15:42:15][DATARECV]: 
+>> at AT+CFUN=1
+[2024/4/27 15:42:16][DATARECV]: 
+
+[2024/4/27 15:42:16][DATARECV]: 
+OK
+[2024/4/27 15:42:16][LOG]: Test Item 'at AT+CFUN=1
+' PASS. Data is '
+>> at AT+CFUN=1
+
+OK
+>> at AT+CFUN=1
+
+OK'
+[2024/4/27 15:42:16][LOG]: at AT+CFUN?
+
+[2024/4/27 15:42:16][LOG]: 等待1秒后开始测试
+[2024/4/27 15:42:17][DATARECV]: 
+>> at AT+CFUN?
+[2024/4/27 15:42:17][DATARECV]: 
+
+[2024/4/27 15:42:17][DATARECV]: 
++CFUN: 1
+[2024/4/27 15:42:17][DATARECV]: 
+
+[2024/4/27 15:42:17][DATARECV]: 
+OK
+[2024/4/27 15:42:17][LOG]: Test Item 'at AT+CFUN?
+' PASS. Data is '
+>> at AT+CFUN?
+
++CFUN: 1
+
+OK'
+[2024/4/27 15:42:17][LOG]: ROUT1;PORT:RES:SUBT:BANK1 RF1,VSG1
+
+[2024/4/27 15:42:17][LOG]: ROUT1;PORT:RES:SUBT:BANK1 RF1,VSG1
+
+[2024/4/27 15:42:18][LOG]: ROUT1;PORT:RES:SUBT:BANK1 RF2,VSG1
+
+[2024/4/27 15:42:18][LOG]: ROUT1;PORT:RES:SUBT:BANK1 RF2,VSG1
+
+[2024/4/27 15:42:18][LOG]: ROUT1;PORT:RES:SUBT:BANK1 RF3,VSG1
+
+[2024/4/27 15:42:18][LOG]: ROUT1;PORT:RES:SUBT:BANK1 RF3,VSG1
+
+[2024/4/27 15:42:18][LOG]: ROUT1;PORT:RES:SUBT:BANK1 RF4,VSG1
+
+[2024/4/27 15:42:18][LOG]: ROUT1;PORT:RES:SUBT:BANK1 RF4,VSG1
+
+[2024/4/27 15:42:18][LOG]: ROUT1;PORT:RES:SUBT:BANK2 RF1,VSG1
+
+[2024/4/27 15:42:18][LOG]: ROUT1;PORT:RES:SUBT:BANK2 RF1,VSG1
+
+[2024/4/27 15:42:18][LOG]: ROUT1;PORT:RES:SUBT:BANK2 RF2,VSG1
+
+[2024/4/27 15:42:18][LOG]: ROUT1;PORT:RES:SUBT:BANK2 RF2,VSG1
+
+[2024/4/27 15:42:18][LOG]: ROUT1;PORT:RES:SUBT:BANK2 RF3,VSG1
+
+[2024/4/27 15:42:18][LOG]: ROUT1;PORT:RES:SUBT:BANK2 RF3,VSG1
+
+[2024/4/27 15:42:18][LOG]: ROUT1;PORT:RES:SUBT:BANK2 RF4,VSG1
+
+[2024/4/27 15:42:18][LOG]: ROUT1;PORT:RES:SUBT:BANK2 RF4,VSG1
+
+[2024/4/27 15:42:18][LOG]: 查找LTE RX 调制平均值成功
+[2024/4/27 15:42:18][LOG]: ROUT1;PORT:RES:SUBT:BANK1 RF1,VSG1
+
+[2024/4/27 15:42:18][LOG]: ROUT1;PORT:RES:SUBT:BANK1 RF1,VSG1
+
+[2024/4/27 15:42:18][LOG]: ROUT1;PORT:RES:SUBT:BANK1 RF2,VSG1
+
+[2024/4/27 15:42:18][LOG]: ROUT1;PORT:RES:SUBT:BANK1 RF2,VSG1
+
+[2024/4/27 15:42:18][LOG]: ROUT1;PORT:RES:SUBT:BANK1 RF3,VSG1
+
+[2024/4/27 15:42:18][LOG]: ROUT1;PORT:RES:SUBT:BANK1 RF3,VSG1
+
+[2024/4/27 15:42:18][LOG]: ROUT1;PORT:RES:SUBT:BANK1 RF4,VSG1
+
+[2024/4/27 15:42:18][LOG]: ROUT1;PORT:RES:SUBT:BANK1 RF4,VSG1
+
+[2024/4/27 15:42:18][LOG]: ROUT1;PORT:RES:SUBT:BANK2 RF1,VSG1
+
+[2024/4/27 15:42:18][LOG]: ROUT1;PORT:RES:SUBT:BANK2 RF1,VSG1
+
+[2024/4/27 15:42:18][LOG]: ROUT1;PORT:RES:SUBT:BANK2 RF2,VSG1
+
+[2024/4/27 15:42:18][LOG]: ROUT1;PORT:RES:SUBT:BANK2 RF2,VSG1
+
+[2024/4/27 15:42:18][LOG]: ROUT1;PORT:RES:SUBT:BANK2 RF3,VSG1
+
+[2024/4/27 15:42:18][LOG]: ROUT1;PORT:RES:SUBT:BANK2 RF3,VSG1
+
+[2024/4/27 15:42:18][LOG]: ROUT1;PORT:RES:SUBT:BANK2 RF4,VSG1
+
+[2024/4/27 15:42:18][LOG]: ROUT1;PORT:RES:SUBT:BANK2 RF4,VSG1
+
+[2024/4/27 15:42:18][LOG]: VSG1;FREQ:LOOF 10e6
+
+[2024/4/27 15:42:18][LOG]: VSG1;FREQ:LOOF 10e6
+
+[2024/4/27 15:42:18][LOG]: 查找GNSS RX 调制平均值成功
+[2024/4/27 15:42:18][DATARECV]: 
+Kill_Pipe 正常关闭串口
+[2024/4/27 15:42:18][DATARECV]: 
+Kill_Pipe 正常关闭线程
+[2024/4/27 15:42:18][LOG]: 关闭串口COM4
+[2024/4/27 15:42:18][DATARECV]: 
+ Kill_Pipe isGetText: True
+[2024/4/27 15:42:18][DATARECV]: 
+Kill_Pipe 正常关闭串口
+[2024/4/27 15:42:18][DATARECV]: 
+Kill_Pipe 正常关闭线程
+[2024/4/27 15:42:19][LOG]: 关闭串口COM16
+[2024/4/27 15:42:19][DATARECV]: 
+ Kill_Pipe isGetText: True
+[2024/4/27 15:42:19][DATARECV]: 指令OUTP OFF
+写入成功
+[2024/4/27 15:42:19][LOG]: Power_OFF指令成功
+[2024/4/27 15:42:19][LOG]: 打开串口COM4 Result:True
+[2024/4/27 15:42:19][LOG]: 打开串口COM16 Result:True
+[2024/4/27 15:42:19][LOG]: OpenVISA Result:True
+[2024/4/27 15:42:19][LOG]: SendVolt Result:True
+[2024/4/27 15:42:19][LOG]: SendCurr Result:True
+[2024/4/27 15:42:19][LOG]: Send_Power_ON Result:True
+[2024/4/27 15:42:19][LOG]: CheckRFVer Result:True
+[2024/4/27 15:42:19][LOG]: Check Sleep mode allowed Result:True
+[2024/4/27 15:42:19][LOG]: pm-sleep disable
+ Result:True
+[2024/4/27 15:42:19][LOG]: config -s pm.conf.sleep_mode disable
+ Result:True
+[2024/4/27 15:42:19][LOG]: at AT+EGMR=0,7
+ Result:True
+[2024/4/27 15:42:19][LOG]: at AT+CFUN=0
+ Result:True
+[2024/4/27 15:42:19][LOG]: at AT+QRFTESTMODE=1
+ Result:True
+[2024/4/27 15:42:19][LOG]: at AT+QRFTESTMODE?
+ Result:True
+[2024/4/27 15:42:19][LOG]: at AT+QRFTEST=3,18300,0,0,2300,0,0,6,0
+ Result:True
+[2024/4/27 15:42:19][LOG]: Setup_LTE_Cmd_TX Result:True
+[2024/4/27 15:42:19][LOG]: Setup_LTE_Routing_Port_TX Result:True
+[2024/4/27 15:42:19][LOG]: Setup_LTE_EATTenuation_TX Result:True
+[2024/4/27 15:42:19][LOG]: Test_LTE_TX_Power_L_BAND_1_L_18_H_28 Result:True
+[2024/4/27 15:42:19][LOG]: at AT+QRFTESTMODE=0
+ Result:True
+[2024/4/27 15:42:19][LOG]: at AT+QRFTEST=3,19575,0,0,2300,0,0,6,0
+ Result:True
+[2024/4/27 15:42:19][LOG]: Test_LTE_TX_Power_L_BAND_3_L_18_H_28 Result:True
+[2024/4/27 15:42:19][LOG]: at AT+QRFTEST=3,20525,0,0,2300,0,0,6,0
+ Result:True
+[2024/4/27 15:42:19][LOG]: Test_LTE_TX_Power_L_BAND_5_L_18_H_28 Result:True
+[2024/4/27 15:42:19][LOG]: at AT+CFUN?
+ Result:True
+[2024/4/27 15:42:19][LOG]: at+gps on
+ Result:True
+[2024/4/27 15:42:19][LOG]: Setup_GNSS_Cmd Result:True
+[2024/4/27 15:42:19][LOG]: Setup_GNSS_Routing_Port_RX Result:True
+[2024/4/27 15:42:19][LOG]: Setup_GNSS_EATTenuation Result:True
+[2024/4/27 15:42:19][LOG]: Setup_GNSS_DL_Power Result:True
+[2024/4/27 15:42:19][LOG]: vir_Test_QUALCOMM__GNSS_CNo_L_35_H_55 Result:True
+[2024/4/27 15:42:19][LOG]: at+gps off
+ Result:True
+[2024/4/27 15:42:19][LOG]: config -s pm.conf.sleep_mode enable
+ Result:True
+[2024/4/27 15:42:19][LOG]: at AT+CFUN=1
+ Result:True
+[2024/4/27 15:42:19][LOG]: 自定义站位信息：{"TestFlow":[{"Id":"1","Station":"SilverLabel","Status":"AUTO_SN_GEN","SNFlag":"","TestTool":"ODM_MOB_Label_Print"},{"Id":"2","Station":"DL_MCU","Status":"AUTO_DL_MCU","SNFlag":"","TestTool":"MCU_FW_DL_ODM"},{"Id":"3","Station":"DL_FW","Status":"AUTO_DL_FW","SNFlag":"","TestTool":"FW_DL_And_Format_ODM"},{"Id":"4","Station":"RF_FT","Status":"AUTO_FT","SNFlag":"","TestTool":"ODM_MOB_FT"},{"Id":"5","Station":"RF_FT2","Status":"AUTO_RF_FT2","SNFlag":"","TestTool":"ODM_MOB_FT_ASM"},{"Id":"6","Station":"FCT","Status":"AUTO_FCT","SNFlag":"","TestTool":"ODM_FCT_Test_MOB"},{"Id":"7","Station":"Collect","Status":"AUTO_PACK","SNFlag":"","TestTool":"ODM_Collect"},{"Id":"8","Station":"Ship","Status":"AUTO_SHIP","SNFlag":"","TestTool":"出货管理系统_ODM"}]}
+[2024/4/27 15:42:19][LOG]: 旧站位：AUTO_FT
+[2024/4/27 15:42:19][LOG]: 新站位：AUTO_RF_FT2
+[2024/4/27 15:42:19][LOG]: 保存数据库的数据:EXEC [dbo].[usp_HandleMOBTestResult]@IMEI = N'P14K4DQ02000064',@SN = N'P14K4DQ02000064',@StationName = N'RF_FT2',@TSNum = N'测试通道1(Channel1)_QDC526-SP-BTFT-12-004-M',@TestResult = '1',@TestTool = N'ODM_MOB_FT_ASM1.0.48',@ErrCode = '',@ErrInfo = N'78.8',@MO = N'SUGQ5000048706',@TestPC = N'SUGA-LOGIX009',@TestPCIp = N'[IP:192.168.14.253][MAC:207BD24038AA]',@Line ='1',@Operator = N'1',@TestFailureCol='FCT_NGTimes',@Status ='AUTO_RF_FT2'
+[2024/4/27 15:42:19][LOG]: 保存数据库成功
+[2024/4/27 15:41:00][LOG]: OC:QDM065EABAN06AAAAA
+[2024/4/27 15:41:00][LOG]: 测试软件信息:1.0.48
+[2024/4/27 15:41:00][LOG]: 20240426_10:43
+[2024/4/27 15:41:00][LOG]: 当前夹具编号:QDC526-SP-BTFT-12-004-M
+[2024/4/27 15:41:00][LOG]: 工单号:SUGQ5000048706
+[2024/4/27 15:41:00][LOG]: 当前SN:P14K4DQ02000064
+[2024/4/27 15:41:00][LOG]:  MOB_Barcode号数据获取成功 SN当前站位：AUTO_FT
+[2024/4/27 15:41:00][LOG]: 符合测试条件，即将进行测试
+[2024/4/27 15:41:00][LOG]: 打开串口COM4
+[2024/4/27 15:41:00][LOG]: 打开串口COM4成功
+[2024/4/27 15:41:00][LOG]: Test Item '打开串口COM4' PASS. Data is 'PASS'
+[2024/4/27 15:41:00][LOG]: 打开串口COM16
+[2024/4/27 15:41:00][LOG]: 打开串口COM16成功
+[2024/4/27 15:41:00][LOG]: Test Item '打开串口COM16' PASS. Data is 'PASS'
+[2024/4/27 15:41:00][LOG]: OpenVISA
+[2024/4/27 15:41:01][DATARECV]: 打开GPIB1::5::INSTR成功
+[2024/4/27 15:41:01][LOG]: Test Item 'OpenVISA' PASS. Data is '==='
+[2024/4/27 15:41:01][LOG]: 打开电源接口成功
+[2024/4/27 15:41:01][DATARECV]: 指令OUTP OFF
+写入成功
+[2024/4/27 15:41:01][LOG]: Power_OFF指令成功
+[2024/4/27 15:41:01][LOG]: 等待2秒后开始测试
+[2024/4/27 15:41:03][LOG]: 电源名称：KEYSIGHT_E3640A
+[2024/4/27 15:41:03][DATARECV]: 指令VOLT:RANG P20V
+写入成功
+[2024/4/27 15:41:03][DATARECV]: 指令VOLT 3.7
+写入成功
+[2024/4/27 15:41:03][LOG]: Test Item 'SendVolt' PASS. Data is '==='
+[2024/4/27 15:41:03][LOG]: 写入VOLT指令成功
+[2024/4/27 15:41:03][DATARECV]: 指令CURR 1.5
+写入成功
+[2024/4/27 15:41:03][LOG]: Test Item 'SendCurr' PASS. Data is '==='
+[2024/4/27 15:41:03][LOG]: 写入CURR指令成功
+[2024/4/27 15:41:03][DATARECV]: 指令OUTP ON
+写入成功
+[2024/4/27 15:41:03][LOG]: Test Item 'Send_Power_ON' PASS. Data is '==='
+[2024/4/27 15:41:03][LOG]: Power_ON指令成功
+[2024/4/27 15:41:03][LOG]: OpenRFVISA
+[2024/4/27 15:41:03][DATARECV]: TCPIP0::192.168.100.254::hislip0::INSTR打开成功
+[2024/4/27 15:41:03][LOG]: Test Item 'OpenVISA' PASS. Data is 'PASS'
+[2024/4/27 15:41:03][LOG]: 打开电源接口成功
+[2024/4/27 15:41:03][LOG]: CheckRFVer
+[2024/4/27 15:41:03][DATARECV]: LitePoint,IQxstream-M,IQ1414D0001X,1.16.0\n
+[2024/4/27 15:41:03][LOG]: LitePoint,IQxstream-M,IQ1414D0001X,1.16.0\n
+[2024/4/27 15:41:03][LOG]: Test Item 'CheckRFVer' PASS. Data is 'PASS'
+[2024/4/27 15:41:03][LOG]: 检查RF设备版本成功
+[2024/4/27 15:41:03][LOG]: Check Sleep mode allowed
+[2024/4/27 15:41:04][DATARECV]: 
+DRAM:  2.5 MiB
+[2024/4/27 15:41:04][DATARECV]: 
+Now running in RAM - U-Boot at: 902a8000
+[2024/4/27 15:41:04][DATARECV]: 
+Boot mode 3
+[2024/4/27 15:41:04][DATARECV]: 
+Flash Manufacturer/Device ID is: 0xef6018
+[2024/4/27 15:41:04][DATARECV]: 
+Enable QUAD mode
+[2024/4/27 15:41:04][DATARECV]: 
+Flash: 16 MiB
+[2024/4/27 15:41:04][DATARECV]: 
+map import OK
+[2024/4/27 15:41:04][DATARECV]: 
+USB CTRL has been successfully initialized!
+[2024/4/27 15:41:04][DATARECV]: 
+In:    usbtty
+[2024/4/27 15:41:04][DATARECV]: 
+Out:   usbtty
+[2024/4/27 15:41:04][DATARECV]: 
+Err:   usbtty
+[2024/4/27 15:41:04][DATARECV]: 
+Configuring Flash Write Protection (offset 0x192e00)
+[2024/4/27 15:41:04][DATARECV]: 
+new_ce_val = 0x3a00f8f0
+[2024/4/27 15:41:04][DATARECV]: 
+Rst info: power button : power on, no reset 
+[2024/4/27 15:41:06][DATARECV]: 
+Hit any key to stop autoboot:  2  1  0 
+[2024/4/27 15:41:06][DATARECV]: 
+Version: 2.0
+[2024/4/27 15:41:06][DATARECV]: 
+
+[2024/4/27 15:41:06][DATARECV]: 
+Nothing to upgrade...
+[2024/4/27 15:41:06][DATARECV]: 
+hbsb ok. 1 ms 
+[2024/4/27 15:41:06][DATARECV]: 
+## Starting appli?initGnssAppWithLogicalSerialPort lsid=27
+[2024/4/27 15:41:06][DATARECV]: 
+>eLC_app_entry
+[2024/4/27 15:41:06][DATARECV]: 
+Skip audio hub init - Audio hub is not enabled
+[2024/4/27 15:41:06][DATARECV]: 
+[is_backup_valid() 608]is_backup_valid
+[2024/4/27 15:41:06][DATARECV]: 
+[get_backup_area_fileinfo() 547]backup is empty 
+[2024/4/27 15:41:07][DATARECV]: 
+
+[2024/4/27 15:41:07][DATARECV]: 
+Init logs:
+[2024/4/27 15:41:07][DATARECV]: 
+Jan 01 00:00:00.000 [D4]  [INIT][    0.63129] Starting PM
+[2024/4/27 15:41:07][DATARECV]: 
+Jan 01 00:00:00.000 [D4]  [INIT][    0.63240] Starting SM
+[2024/4/27 15:41:07][DATARECV]: 
+Jan 01 00:00:00.000 [D4]  [INIT][    0.63383] Normal boot from u-boot
+[2024/4/27 15:41:07][DATARECV]: 
+Jan 01 00:00:00.000 [D4]  [INIT][    0.63404] Cold boot
+[2024/4/27 15:41:07][DATARECV]: 
+Jan 01 00:00:00.022 [D4]  [INIT][    0.85329] Error [5] failed to open file: d:/resetcause
+[2024/4/27 15:41:07][DATARECV]: 
+Jan 01 00:00:00.022 [D4]  [INIT][    0.85423] MAP reset cause: 0
+[2024/4/27 15:41:07][DATARECV]: 
+Jan 01 00:00:00.022 [D4]  [INIT][    0.85516] MCU present: 1
+[2024/4/27 15:41:07][DATARECV]: 
+Jan 01 00:00:00.029 [D4]  [INIT][    0.92704] Host Interface port not present UARTB mapped to [N]
+[2024/4/27 15:41:07][DATARECV]: 
+Jan 01 00:00:00.045 [D4]  [INIT][    0.108194] RAM start = 901ec000
+[2024/4/27 15:41:07][DATARECV]: 
+Jan 01 00:00:00.045 [D4]  [INIT][    0.108224] heap start = 901ec000
+[2024/4/27 15:41:07][DATARECV]: 
+Jan 01 00:00:00.045 [D4]  [INIT][    0.108241] Computed heap size=1130496
+[2024/4/27 15:41:07][DATARECV]: 
+Jan 01 00:00:00.058 [D4]  [INIT][    0.121793] Calling lte driver with uart:N baudrate:921600 flow_ctrl:0
+[2024/4/27 15:41:07][DATARECV]: 
+Jan 01 00:00:00.059 [D4]  [INIT][    0.122399] LTE driver init complete
+[2024/4/27 15:41:07][DATARECV]: 
+Jan 01 00:00:00.062 [D4]  [INIT][    0.125209] alt1250_usb_init()=-1
+[2024/4/27 15:41:07][DATARECV]: 
+Jan 01 00:00:00.062 [D4]  [INIT][    0.125914] Setup AT/PPP [N] & CLI/AT [A] & AT [N] & AT_2 [N] & ALTCOM [UART0]!
+[2024/4/27 15:41:07][DATARECV]: 
+Jan 01 00:00:00.062 [D4]  [INIT][    0.125944] Setup TCP dump [N] & SFP logger [C] & LTE driver FW [N] & MUX A [N] & MUX B [N] !
+[2024/4/27 15:41:07][DATARECV]: 
+Jan 01 00:00:00.062 [D4]  [INIT][    0.125995] Open UART-A base = 0xbc118000 cfg =0x0 intrp=72
+[2024/4/27 15:41:07][DATARECV]: 
+Jan 01 00:00:00.062 [D4]  [INIT][    0.126063] Setup rx_interrupt_only for uart 0
+[2024/4/27 15:41:07][DATARECV]: 
+Jan 01 00:00:00.063 [D4]  [INIT][    0.126137] serialMngrOpen:451, device=A 0x9c0d5a50
+[2024/4/27 15:41:07][DATARECV]: 
+Jan 01 00:00:00.068 [D4]  [INIT][    0.131404] Setup UART A in Tx blocking mode
+[2024/4/27 15:41:07][DATARECV]: 
+Jan 01 00:00:00.068 [D4]  [INIT][    0.131433] Open UART-C base = 0xbf0a1000 cfg =0xbf021000 intrp=77
+[2024/4/27 15:41:07][DATARECV]: 
+Jan 01 00:00:00.068 [D4]  [INIT][    0.131470] Setup rx_interrupt_only for uart 2
+[2024/4/27 15:41:07][DATARECV]: 
+Jan 01 00:00:00.068 [D4]  [INIT][    0.131494] serialMngrOpen:451, device=C 0x9c0d5f20
+[2024/4/27 15:41:07][DATARECV]: 
+Jan 01 00:00:00.068 [D4]  [INIT][    0.131517] Setup UART C in Tx blocking mode
+[2024/4/27 15:41:07][DATARECV]: 
+Jan 01 00:00:00.068 [D4]  [INIT][    0.131534] Setup rx_tx_interrupt_ for uart 2
+[2024/4/27 15:41:07][DATARECV]: 
+Jan 01 00:00:00.068 [D4]  [INIT][    0.131559] Calling irq_moveInterruptToHW2() with uart id=2
+[2024/4/27 15:41:07][DATARECV]: 
+Jan 01 00:00:00.073 [D4]  [INIT][    0.136767] Setup ALTCOM device: UART0 
+[2024/4/27 15:41:07][DATARECV]: 
+Jan 01 00:00:00.073 [D4]  [INIT][    0.136788] Open UART-0 base = 0xbf0a3000 cfg =0x0 intrp=123
+[2024/4/27 15:41:07][DATARECV]: 
+Jan 01 00:00:00.073 [D4]  [INIT][    0.136824] serialMngrOpen:451, device=UART0 0x9c0d63f0
+[2024/4/27 15:41:07][DATARECV]: 
+Jan 01 00:00:00.073 [D4]  [INIT][    0.136847] Setup UART UART0 in Tx blocking mode
+[2024/4/27 15:41:07][DATARECV]: 
+Jan 01 00:00:00.073 [D4]  [INIT][    0.136866] Setup rx_tx_interrupt_ for uart 4
+[2024/4/27 15:41:07][DATARECV]: 
+Jan 01 00:00:00.073 [D4]  [INIT][    0.136883] Calling irq_moveInterruptToHW2() with uart id=4
+[2024/4/27 15:41:07][DATARECV]: 
+Jan 01 00:00:00.077 [D4]  [INIT][    0.140195] hifc_register_uart_CBs was called for internal HIFC
+[2024/4/27 15:41:07][DATARECV]: 
+Jan 01 00:00:00.242 [D4]  [INIT][    0.305239] LteDriver - init task ended
+[2024/4/27 15:41:07][DATARECV]: 
+Jan 01 00:00:00.311 [D4]  [INIT][    0.374627] 1st AT cmd: AT+CEREG=0
+[2024/4/27 15:41:07][DATARECV]: 
+ - sent/rcv -> 3151/3359 Msec
+[2024/4/27 15:41:07][DATARECV]: 
+
+[2024/4/27 15:41:08][DATARECV]: 
+Jan 01 00:00:00.313 [D4]  [INIT][    0.376915] Binding C
+[2024/4/27 15:41:08][DATARECV]: 
+Jan 01 00:00:00.313 [D4]  [INIT][    0.376960] Calling main app init
+[2024/4/27 15:41:08][DATARECV]: 
+Jan 01 00:00:00.315 [D4]  [INIT][    0.378145] CLI is enable!
+[2024/4/27 15:41:08][DATARECV]: 
+Jan 01 00:00:00.320 [D4]  [INIT][    0.383978] lwip_stats ready
+[2024/4/27 15:41:08][DATARECV]: 
+Jan 01 00:00:00.320 [D4]  [INIT][    0.384068] lwip_ipsec ready
+[2024/4/27 15:41:08][DATARECV]: 
+Jan 01 00:00:00.321 [D4]  [INIT][    0.384352] quectel_apptcpip_app_entry
+[2024/4/27 15:41:08][DATARECV]: 
+Jan 01 00:00:00.322 [D4]  [INIT][    0.385906] quectel_atcop_app_entry
+[2024/4/27 15:41:08][DATARECV]: 
+Jan 01 00:00:00.322 [D4]  [INIT][    0.385937] quectel_atcmd_init
+[2024/4/27 15:41:08][DATARECV]: 
+Jan 01 00:00:00.329 [D4]  [INIT][    0.392204] CLI AT cmd buff len is 3092
+[2024/4/27 15:41:08][DATARECV]: 
+Jan 01 00:00:00.332 [D4]  [INIT][    0.395357] [OTA] xTimerCreate created
+[2024/4/27 15:41:08][DATARECV]: 
+
+[2024/4/27 15:41:08][DATARECV]: 
+Jan 01 00:00:00.335 [D4]  [INIT][    0.398135] AP_RDY Timer init
+[2024/4/27 15:41:08][DATARECV]: 
+
+[2024/4/27 15:41:08][DATARECV]: 
+Jan 01 00:00:00.335 [D4]  [INIT][    0.398172] AP_RDY Timer init done
+[2024/4/27 15:41:08][DATARECV]: 
+
+[2024/4/27 15:41:08][DATARECV]: 
+Jan 01 00:00:00.335 [D4]  [INIT][    0.398249] qsclk_resume_suspend_task_init
+[2024/4/27 15:41:08][DATARECV]: 
+Jan 01 00:00:00.335 [D4]  [INIT][    0.398351] QL_SVN_Set uSvn 35 
+[2024/4/27 15:41:08][DATARECV]: 
+
+[2024/4/27 15:41:08][DATARECV]: 
+Jan 01 00:00:00.335 [D4]  [INIT][    0.398764] quectel_backup_restore_entry
+[2024/4/27 15:41:08][DATARECV]: 
+Jan 01 00:00:00.335 [D4]  [INIT][    0.398796] quectel_cell_rf_jamming_atcmd_init
+[2024/4/27 15:41:08][DATARECV]: 
+Jan 01 00:00:00.338 [D4]  [INIT][    0.401477] quectel_coap_app_entry
+[2024/4/27 15:41:08][DATARECV]: 
+Jan 01 00:00:00.339 [D4]  [INIT][    0.402398] quectel_dfota_app_entry
+[2024/4/27 15:41:08][DATARECV]: 
+Jan 01 00:00:00.339 [D4]  [INIT][    0.402543] [Harding][quectel_load_ap_ready_info_from_nv]
+[2024/4/27 15:41:08][DATARECV]: 
+
+[2024/4/27 15:41:08][DATARECV]: 
+Jan 01 00:00:00.339 [D4]  [INIT][    0.402983] [Harding][quectel_ap_ready_nv_init] Ap reaady init SUCCESSFULLY!!!
+[2024/4/27 15:41:08][DATARECV]: 
+Jan 01 00:00:00.339 [D4]  [INIT][    0.403029] quectel_ftm_app_entry
+[2024/4/27 15:41:08][DATARECV]: 
+Jan 01 00:00:00.339 [D4]  [INIT][    0.403059] quectel_ftp_app_entry
+[2024/4/27 15:41:08][DATARECV]: 
+Jan 01 00:00:00.340 [D4]  [INIT][    0.403639] quectel_gnss_app_entry
+[2024/4/27 15:41:08][DATARECV]: 
+Jan 01 00:00:00.340 [D4]  [INIT][    0.403661] quectel_gnss_atcmd_init
+[2024/4/27 15:41:08][DATARECV]: 
+Jan 01 00:00:00.340 [D4]  [INIT][    0.404042] quectel_gpio_init
+[2024/4/27 15:41:08][DATARECV]: 
+Jan 01 00:00:00.402 [D4]  [INIT][    0.465138] quectel_http_app_entry
+[2024/4/27 15:41:08][DATARECV]: 
+Jan 01 00:00:00.402 [D4]  [INIT][    0.465565] quectel_mqtt_app_entry
+[2024/4/27 15:41:08][DATARECV]: 
+Jan 01 00:00:00.405 [D4]  [INIT][    0.468427] quectel_ntp_app_entry
+[2024/4/27 15:41:08][DATARECV]: 
+Jan 01 00:00:00.417 [D4]  [INIT][    0.480719] [Quectel]quectel_restore_process 
+[2024/4/27 15:41:08][DATARECV]: 
+
+[2024/4/27 15:41:08][DATARECV]: 
+Jan 01 00:00:00.424 [D4]  [INIT][    0.487493] [Quectel]backup area data is empty or invaild
+[2024/4/27 15:41:08][DATARECV]: 
+Jan 01 00:00:00.425 [D4]  [INIT][    0.488988] Starting Watchdog timer
+[2024/4/27 15:41:08][DATARECV]: 
+Jan 01 00:00:00.427 [D4]  [INIT][    0.490465] Internal MCU is detected - Setting HIFC to mode B
+[2024/4/27 15:41:08][DATARECV]: 
+Jan 01 00:00:00.428 [D4]  [INIT][    0.491473] HIFC HOST_TO_MODEM LINE is LOW
+[2024/4/27 15:41:08][DATARECV]: 
+Jan 01 00:00:00.428 [D4]  [INIT][    0.491640] HIFC configured line HOST_TO_MODEM=0, MODEM_TO_HOST=1 mode=B
+[2024/4/27 15:41:08][DATARECV]: 
+Jan 01 00:00:00.435 [D4]  [INIT][    0.498954] Binding UART0
+[2024/4/27 15:41:08][DATARECV]: 
+Read RFBP File (2336623)
+[2024/4/27 15:41:09][DATARECV]: 
+
+[2024/4/27 15:41:09][DATARECV]: 
+Sleep mode allowed
+[2024/4/27 15:41:09][LOG]: Test Item 'Check Sleep mode allowed' PASS. Data is 'PASS'
+[2024/4/27 15:41:09][LOG]: COM16串口返回：
+DRAM:  2.5 MiB
+Now running in RAM - U-Boot at: 902a8000
+Boot mode 3
+Flash Manufacturer/Device ID is: 0xef6018
+Enable QUAD mode
+Flash: 16 MiB
+map import OK
+USB CTRL has been successfully initialized!
+In:    usbtty
+Out:   usbtty
+Err:   usbtty
+Configuring Flash Write Protection (offset 0x192e00)
+new_ce_val = 0x3a00f8f0
+Rst info: power button : power on, no reset 
+Hit any key to stop autoboot:  2  1  0 
+Version: 2.0
+
+Nothing to upgrade...
+hbsb ok. 1 ms 
+## Starting appli?initGnssAppWithLogicalSerialPort lsid=27
+>eLC_app_entry
+Skip audio hub init - Audio hub is not enabled
+[is_backup_valid() 608]is_backup_valid
+[get_backup_area_fileinfo() 547]backup is empty 
+
+Init logs:
+Jan 01 00:00:00.000 [D4]  [INIT][    0.63129] Starting PM
+Jan 01 00:00:00.000 [D4]  [INIT][    0.63240] Starting SM
+Jan 01 00:00:00.000 [D4]  [INIT][    0.63383] Normal boot from u-boot
+Jan 01 00:00:00.000 [D4]  [INIT][    0.63404] Cold boot
+Jan 01 00:00:00.022 [D4]  [INIT][    0.85329] Error [5] failed to open file: d:/resetcause
+Jan 01 00:00:00.022 [D4]  [INIT][    0.85423] MAP reset cause: 0
+Jan 01 00:00:00.022 [D4]  [INIT][    0.85516] MCU present: 1
+Jan 01 00:00:00.029 [D4]  [INIT][    0.92704] Host Interface port not present UARTB mapped to [N]
+Jan 01 00:00:00.045 [D4]  [INIT][    0.108194] RAM start = 901ec000
+Jan 01 00:00:00.045 [D4]  [INIT][    0.108224] heap start = 901ec000
+Jan 01 00:00:00.045 [D4]  [INIT][    0.108241] Computed heap size=1130496
+Jan 01 00:00:00.058 [D4]  [INIT][    0.121793] Calling lte driver with uart:N baudrate:921600 flow_ctrl:0
+Jan 01 00:00:00.059 [D4]  [INIT][    0.122399] LTE driver init complete
+Jan 01 00:00:00.062 [D4]  [INIT][    0.125209] alt1250_usb_init()=-1
+Jan 01 00:00:00.062 [D4]  [INIT][    0.125914] Setup AT/PPP [N] & CLI/AT [A] & AT [N] & AT_2 [N] & ALTCOM [UART0]!
+Jan 01 00:00:00.062 [D4]  [INIT][    0.125944] Setup TCP dump [N] & SFP logger [C] & LTE driver FW [N] & MUX A [N] & MUX B [N] !
+Jan 01 00:00:00.062 [D4]  [INIT][    0.125995] Open UART-A base = 0xbc118000 cfg =0x0 intrp=72
+Jan 01 00:00:00.062 [D4]  [INIT][    0.126063] Setup rx_interrupt_only for uart 0
+Jan 01 00:00:00.063 [D4]  [INIT][    0.126137] serialMngrOpen:451, device=A 0x9c0d5a50
+Jan 01 00:00:00.068 [D4]  [INIT][    0.131404] Setup UART A in Tx blocking mode
+Jan 01 00:00:00.068 [D4]  [INIT][    0.131433] Open UART-C base = 0xbf0a1000 cfg =0xbf021000 intrp=77
+Jan 01 00:00:00.068 [D4]  [INIT][    0.131470] Setup rx_interrupt_only for uart 2
+Jan 01 00:00:00.068 [D4]  [INIT][    0.131494] serialMngrOpen:451, device=C 0x9c0d5f20
+Jan 01 00:00:00.068 [D4]  [INIT][    0.131517] Setup UART C in Tx blocking mode
+Jan 01 00:00:00.068 [D4]  [INIT][    0.131534] Setup rx_tx_interrupt_ for uart 2
+Jan 01 00:00:00.068 [D4]  [INIT][    0.131559] Calling irq_moveInterruptToHW2() with uart id=2
+Jan 01 00:00:00.073 [D4]  [INIT][    0.136767] Setup ALTCOM device: UART0 
+Jan 01 00:00:00.073 [D4]  [INIT][    0.136788] Open UART-0 base = 0xbf0a3000 cfg =0x0 intrp=123
+Jan 01 00:00:00.073 [D4]  [INIT][    0.136824] serialMngrOpen:451, device=UART0 0x9c0d63f0
+Jan 01 00:00:00.073 [D4]  [INIT][    0.136847] Setup UART UART0 in Tx blocking mode
+Jan 01 00:00:00.073 [D4]  [INIT][    0.136866] Setup rx_tx_interrupt_ for uart 4
+Jan 01 00:00:00.073 [D4]  [INIT][    0.136883] Calling irq_moveInterruptToHW2() with uart id=4
+Jan 01 00:00:00.077 [D4]  [INIT][    0.140195] hifc_register_uart_CBs was called for internal HIFC
+Jan 01 00:00:00.242 [D4]  [INIT][    0.305239] LteDriver - init task ended
+Jan 01 00:00:00.311 [D4]  [INIT][    0.374627] 1st AT cmd: AT+CEREG=0
+ - sent/rcv -> 3151/3359 Msec
+
+Jan 01 00:00:00.313 [D4]  [INIT][    0.376915] Binding C
+Jan 01 00:00:00.313 [D4]  [INIT][    0.376960] Calling main app init
+Jan 01 00:00:00.315 [D4]  [INIT][    0.378145] CLI is enable!
+Jan 01 00:00:00.320 [D4]  [INIT][    0.383978] lwip_stats ready
+Jan 01 00:00:00.320 [D4]  [INIT][    0.384068] lwip_ipsec ready
+Jan 01 00:00:00.321 [D4]  [INIT][    0.384352] quectel_apptcpip_app_entry
+Jan 01 00:00:00.322 [D4]  [INIT][    0.385906] quectel_atcop_app_entry
+Jan 01 00:00:00.322 [D4]  [INIT][    0.385937] quectel_atcmd_init
+Jan 01 00:00:00.329 [D4]  [INIT][    0.392204] CLI AT cmd buff len is 3092
+Jan 01 00:00:00.332 [D4]  [INIT][    0.395357] [OTA] xTimerCreate created
+
+Jan 01 00:00:00.335 [D4]  [INIT][    0.398135] AP_RDY Timer init
+
+Jan 01 00:00:00.335 [D4]  [INIT][    0.398172] AP_RDY Timer init done
+
+Jan 01 00:00:00.335 [D4]  [INIT][    0.398249] qsclk_resume_suspend_task_init
+Jan 01 00:00:00.335 [D4]  [INIT][    0.398351] QL_SVN_Set uSvn 35 
+
+Jan 01 00:00:00.335 [D4]  [INIT][    0.398764] quectel_backup_restore_entry
+Jan 01 00:00:00.335 [D4]  [INIT][    0.398796] quectel_cell_rf_jamming_atcmd_init
+Jan 01 00:00:00.338 [D4]  [INIT][    0.401477] quectel_coap_app_entry
+Jan 01 00:00:00.339 [D4]  [INIT][    0.402398] quectel_dfota_app_entry
+Jan 01 00:00:00.339 [D4]  [INIT][    0.402543] [Harding][quectel_load_ap_ready_info_from_nv]
+
+Jan 01 00:00:00.339 [D4]  [INIT][    0.402983] [Harding][quectel_ap_ready_nv_init] Ap reaady init SUCCESSFULLY!!!
+Jan 01 00:00:00.339 [D4]  [INIT][    0.403029] quectel_ftm_app_entry
+Jan 01 00:00:00.339 [D4]  [INIT][    0.403059] quectel_ftp_app_entry
+Jan 01 00:00:00.340 [D4]  [INIT][    0.403639] quectel_gnss_app_entry
+Jan 01 00:00:00.340 [D4]  [INIT][    0.403661] quectel_gnss_atcmd_init
+Jan 01 00:00:00.340 [D4]  [INIT][    0.404042] quectel_gpio_init
+Jan 01 00:00:00.402 [D4]  [INIT][    0.465138] quectel_http_app_entry
+Jan 01 00:00:00.402 [D4]  [INIT][    0.465565] quectel_mqtt_app_entry
+Jan 01 00:00:00.405 [D4]  [INIT][    0.468427] quectel_ntp_app_entry
+Jan 01 00:00:00.417 [D4]  [INIT][    0.480719] [Quectel]quectel_restore_process 
+
+Jan 01 00:00:00.424 [D4]  [INIT][    0.487493] [Quectel]backup area data is empty or invaild
+Jan 01 00:00:00.425 [D4]  [INIT][    0.488988] Starting Watchdog timer
+Jan 01 00:00:00.427 [D4]  [INIT][    0.490465] Internal MCU is detected - Setting HIFC to mode B
+Jan 01 00:00:00.428 [D4]  [INIT][    0.491473] HIFC HOST_TO_MODEM LINE is LOW
+Jan 01 00:00:00.428 [D4]  [INIT][    0.491640] HIFC configured line HOST_TO_MODEM=0, MODEM_TO_HOST=1 mode=B
+Jan 01 00:00:00.435 [D4]  [INIT][    0.498954] Binding UART0
+Read RFBP File (2336623)
+
+Sleep mode allowed
+[2024/4/27 15:41:09][LOG]: 等待0秒后开始测试
+[2024/4/27 15:41:09][LOG]: pm-sleep disable
+
+[2024/4/27 15:41:09][LOG]: 等待0秒后开始测试
+[2024/4/27 15:41:09][DATARECV]: 
+pm-sleep disable
+[2024/4/27 15:41:09][DATARECV]: 
+PM Sleep - Disable
+[2024/4/27 15:41:10][LOG]: Test Item 'pm-sleep disable
+' PASS. Data is '
+pm-sleep disable
+PM Sleep - Disable'
+[2024/4/27 15:41:10][LOG]: config -s pm.conf.sleep_mode disable
+
+[2024/4/27 15:41:10][LOG]: 等待0秒后开始测试
+[2024/4/27 15:41:10][DATARECV]: 
+>config -s pm.conf.sleep_mode disable
+[2024/4/27 15:41:10][DATARECV]: 
+Done
+[2024/4/27 15:41:11][LOG]: Test Item 'config -s pm.conf.sleep_mode disable
+' PASS. Data is '
+>config -s pm.conf.sleep_mode disable
+Done'
+[2024/4/27 15:41:11][LOG]: at AT+EGMR=0,7
+
+[2024/4/27 15:41:11][LOG]: 等待2秒后开始测试
+[2024/4/27 15:41:11][DATARECV]: 
+at AT+EGMR=0,7
+[2024/4/27 15:41:11][DATARECV]: 
+
+[2024/4/27 15:41:11][DATARECV]: 
++EGMR: 868617060284546
+[2024/4/27 15:41:11][DATARECV]: 
+
+[2024/4/27 15:41:11][DATARECV]: 
+OK
+[2024/4/27 15:41:13][LOG]: Test Item 'at AT+EGMR=0,7
+' PASS. Data is '
+at AT+EGMR=0,7
+
++EGMR: 868617060284546
+
+OK'
+[2024/4/27 15:41:13][LOG]: at AT+CFUN=0
+
+[2024/4/27 15:41:13][LOG]: 等待1秒后开始测试
+[2024/4/27 15:41:13][DATARECV]: 
+>> at AT+CFUN=0
+[2024/4/27 15:41:13][DATARECV]: 
+
+[2024/4/27 15:41:13][DATARECV]: 
+OK
+[2024/4/27 15:41:14][LOG]: Test Item 'at AT+CFUN=0
+' PASS. Data is '
+>> at AT+CFUN=0
+
+OK'
+[2024/4/27 15:41:14][LOG]: 等待0秒后开始测试
+[2024/4/27 15:41:15][LOG]: at AT+QRFTESTMODE=1
+
+[2024/4/27 15:41:15][LOG]: 等待1秒后开始测试
+[2024/4/27 15:41:15][DATARECV]: 
+>> at AT+QRFTESTMODE=1
+[2024/4/27 15:41:15][DATARECV]: 
+
+[2024/4/27 15:41:15][DATARECV]: 
+OK
+[2024/4/27 15:41:16][LOG]: Test Item 'at AT+QRFTESTMODE=1
+' PASS. Data is '
+>> at AT+QRFTESTMODE=1
+
+OK'
+[2024/4/27 15:41:16][LOG]: at AT+QRFTESTMODE?
+
+[2024/4/27 15:41:16][LOG]: 等待2秒后开始测试
+[2024/4/27 15:41:16][DATARECV]: 
+>> at AT+QRFTESTMODE?
+[2024/4/27 15:41:16][DATARECV]: 
+
+[2024/4/27 15:41:16][DATARECV]: 
++QRFTESTMODE: 1
+[2024/4/27 15:41:16][DATARECV]: 
+
+[2024/4/27 15:41:16][DATARECV]: 
+OK
+[2024/4/27 15:41:16][DATARECV]: 
+>> +STA_CONNECTED:"32:ef:a2:94:a5:40"..
+[2024/4/27 15:41:16][DATARECV]: 
++DIST_STA_IP:"32:ef:a2:94:a5:40","192.168.4.2"..
+[2024/4/27 15:41:18][LOG]: Test Item 'at AT+QRFTESTMODE?
+' PASS. Data is '
+>> at AT+QRFTESTMODE?
+
++QRFTESTMODE: 1
+
+OK
+>> +STA_CONNECTED:"32:ef:a2:94:a5:40"..
++DIST_STA_IP:"32:ef:a2:94:a5:40","192.168.4.2"..'
+[2024/4/27 15:41:18][LOG]: at AT+QRFTEST=3,18300,0,0,2300,0,0,6,0
+
+[2024/4/27 15:41:18][LOG]: 等待1秒后开始测试
+[2024/4/27 15:41:18][DATARECV]: 
+at AT+QRFTEST=3,18300,0,0,2300,0,0,6,0
+[2024/4/27 15:41:18][DATARECV]: 
+
+[2024/4/27 15:41:18][DATARECV]: 
+OK
+[2024/4/27 15:41:20][LOG]: Test Item 'at AT+QRFTEST=3,18300,0,0,2300,0,0,6,0
+' PASS. Data is '
+at AT+QRFTEST=3,18300,0,0,2300,0,0,6,0
+
+OK'
+[2024/4/27 15:41:20][LOG]: Setup_LTE_Cmd_TX
+[2024/4/27 15:41:20][LOG]: CHAN1;LTE;CONF:BAND 1.00
+
+[2024/4/27 15:41:20][LOG]: CHAN1;LTE;CONF:EARF:UL:cc1 18300
+
+[2024/4/27 15:41:20][LOG]: CHAN1;LTE;CONF:ENP:UL 23
+
+[2024/4/27 15:41:20][LOG]: CHAN1;LTE;CONF:FTYP MIN
+
+[2024/4/27 15:41:20][LOG]: CHAN1;LTE;CONF:CBW:CC1 100000000
+
+[2024/4/27 15:41:20][LOG]: CHAN1;LTE;CONF:UMAR 0
+
+[2024/4/27 15:41:20][LOG]: CHAN1;LTE; HSET:ALL VSA1
+
+[2024/4/27 15:41:20][LOG]: VSA1;TRIG:SOUR Free Run (No Sync)
+
+[2024/4/27 15:41:20][LOG]: VSA1;SRAT 40000000
+
+[2024/4/27 15:41:20][LOG]: VSA1;CAPT:TIME 0.01
+
+[2024/4/27 15:41:20][LOG]: Test Item 'Setup_LTE_Cmd_TX' PASS. Data is 'PASS'
+[2024/4/27 15:41:20][LOG]: 配置综测仪的LTE成功
+[2024/4/27 15:41:20][LOG]: Setup_LTE_Routing_Port_TX
+[2024/4/27 15:41:20][LOG]: ROUT1;PORT:RES:ADD:BANK1 RF1,VSA1
+
+[2024/4/27 15:41:20][LOG]: Test Item 'Setup_LTE_Routing_Port_TX' PASS. Data is 'PASS'
+[2024/4/27 15:41:20][LOG]: 配置综测仪的LTE成功
+[2024/4/27 15:41:20][LOG]: Setup_LTE_EATTenuation_TX
+[2024/4/27 15:41:20][LOG]: MEM:TABLE "VSA1_BANK1_LTE_TX_RF1";MEM:TABLE:DEFINE "FREQ,LOSS";MEMory:TABLe:INSert:POINt 1950 MHz,20
+
+[2024/4/27 15:41:20][LOG]: VSA1;RFC:USE:BANK1 "VSA1_BANK1_LTE_TX_RF1",RF1
+
+[2024/4/27 15:41:20][LOG]: MEMory:TABLe "VSA1_BANK1_LTE_TX_RF1";MEMory:TABLe:STORe
+
+[2024/4/27 15:41:20][LOG]: VSA1;init
+LTE
+
+[2024/4/27 15:41:20][LOG]: Test Item 'Setup_LTE_EATTenuation_TX' PASS. Data is '20'
+[2024/4/27 15:41:20][LOG]: 配置综测仪的LTE线损成功
+[2024/4/27 15:41:20][LOG]: Test_LTE_TX_Power_L_BAND_1_L_18_H_28
+[2024/4/27 15:41:21][LOG]: VSA1;init
+LTE
+calc:pow 0,2
+calc:spec 0,2
+calc:ccdf 0,2
+calc:txq 0,2
+FETC:SEGM1:POW:AVER?
+
+[2024/4/27 15:41:21][DATARECV]: 0,2.1942924e+01\n
+[2024/4/27 15:41:21][LOG]: 查找LTE TX 调制平均值成功
+[2024/4/27 15:41:21][LOG]: Test Item 'Test_LTE_TX_Power_L_BAND_1_L_18_H_28' PASS. Data is '21.94292'
+[2024/4/27 15:41:21][LOG]: 对比LTE TX 平均功率成功
+[2024/4/27 15:41:21][LOG]: at AT+QRFTESTMODE=0
+
+[2024/4/27 15:41:21][LOG]: 等待2秒后开始测试
+[2024/4/27 15:41:21][DATARECV]: 
+>> at AT+QRFTESTMODE=0
+[2024/4/27 15:41:21][DATARECV]: 
+
+[2024/4/27 15:41:21][DATARECV]: 
+OK
+[2024/4/27 15:41:23][LOG]: Test Item 'at AT+QRFTESTMODE=0
+' PASS. Data is '
+>> at AT+QRFTESTMODE=0
+
+OK'
+[2024/4/27 15:41:23][LOG]: at AT+QRFTESTMODE?
+
+[2024/4/27 15:41:23][LOG]: 等待1秒后开始测试
+[2024/4/27 15:41:23][DATARECV]: 
+>> at AT+QRFTESTMODE?
+[2024/4/27 15:41:23][DATARECV]: 
+
+[2024/4/27 15:41:23][DATARECV]: 
++QRFTESTMODE: 0
+[2024/4/27 15:41:23][DATARECV]: 
+
+[2024/4/27 15:41:23][DATARECV]: 
+OK
+[2024/4/27 15:41:24][LOG]: Test Item 'at AT+QRFTESTMODE?
+' PASS. Data is '
+>> at AT+QRFTESTMODE?
+
++QRFTESTMODE: 0
+
+OK'
+[2024/4/27 15:41:24][LOG]: at AT+QRFTESTMODE=1
+
+[2024/4/27 15:41:24][LOG]: 等待1秒后开始测试
+[2024/4/27 15:41:24][DATARECV]: 
+>> at AT+QRFTESTMODE=1
+[2024/4/27 15:41:24][DATARECV]: 
+
+[2024/4/27 15:41:24][DATARECV]: 
+OK
+[2024/4/27 15:41:25][LOG]: Test Item 'at AT+QRFTESTMODE=1
+' PASS. Data is '
+>> at AT+QRFTESTMODE=1
+
+OK'
+[2024/4/27 15:41:25][LOG]: at AT+QRFTESTMODE?
+
+[2024/4/27 15:41:26][LOG]: 等待2秒后开始测试
+[2024/4/27 15:41:26][DATARECV]: 
+>> at AT+QRFTESTMODE?
+[2024/4/27 15:41:26][DATARECV]: 
+
+[2024/4/27 15:41:26][DATARECV]: 
++QRFTESTMODE: 1
+[2024/4/27 15:41:26][DATARECV]: 
+
+[2024/4/27 15:41:26][DATARECV]: 
+OK
+[2024/4/27 15:41:28][LOG]: Test Item 'at AT+QRFTESTMODE?
+' PASS. Data is '
+>> at AT+QRFTESTMODE?
+
++QRFTESTMODE: 1
+
+OK'
+[2024/4/27 15:41:28][LOG]: at AT+QRFTEST=3,19575,0,0,2300,0,0,6,0
+
+[2024/4/27 15:41:28][LOG]: 等待1秒后开始测试
+[2024/4/27 15:41:28][DATARECV]: 
+>> at AT+QRFTEST=3,19575,0,0,2300,0,0,6,0
+[2024/4/27 15:41:28][DATARECV]: 
+
+[2024/4/27 15:41:28][DATARECV]: 
+OK
+[2024/4/27 15:41:29][LOG]: Test Item 'at AT+QRFTEST=3,19575,0,0,2300,0,0,6,0
+' PASS. Data is '
+>> at AT+QRFTEST=3,19575,0,0,2300,0,0,6,0
+
+OK'
+[2024/4/27 15:41:29][LOG]: Setup_LTE_Cmd_TX
+[2024/4/27 15:41:30][LOG]: CHAN1;LTE;CONF:BAND 3.00
+
+[2024/4/27 15:41:30][LOG]: CHAN1;LTE;CONF:EARF:UL:cc1 19575
+
+[2024/4/27 15:41:30][LOG]: CHAN1;LTE;CONF:ENP:UL 23
+
+[2024/4/27 15:41:30][LOG]: CHAN1;LTE;CONF:FTYP MIN
+
+[2024/4/27 15:41:30][LOG]: CHAN1;LTE;CONF:CBW:CC1 100000000
+
+[2024/4/27 15:41:30][LOG]: CHAN1;LTE;CONF:UMAR 0
+
+[2024/4/27 15:41:30][LOG]: CHAN1;LTE; HSET:ALL VSA1
+
+[2024/4/27 15:41:30][LOG]: VSA1;TRIG:SOUR Free Run (No Sync)
+
+[2024/4/27 15:41:30][LOG]: VSA1;SRAT 40000000
+
+[2024/4/27 15:41:30][LOG]: VSA1;CAPT:TIME 0.01
+
+[2024/4/27 15:41:30][LOG]: Test Item 'Setup_LTE_Cmd_TX' PASS. Data is 'PASS'
+[2024/4/27 15:41:30][LOG]: 配置综测仪的LTE成功
+[2024/4/27 15:41:30][LOG]: Setup_LTE_Routing_Port_TX
+[2024/4/27 15:41:30][LOG]: ROUT1;PORT:RES:ADD:BANK1 RF1,VSA1
+
+[2024/4/27 15:41:30][LOG]: Test Item 'Setup_LTE_Routing_Port_TX' PASS. Data is 'PASS'
+[2024/4/27 15:41:30][LOG]: 配置综测仪的LTE成功
+[2024/4/27 15:41:30][LOG]: Setup_LTE_EATTenuation_TX
+[2024/4/27 15:41:30][LOG]: MEM:TABLE "VSA1_BANK1_LTE_TX_RF1";MEM:TABLE:DEFINE "FREQ,LOSS";MEMory:TABLe:INSert:POINt 1747.5 MHz,20
+
+[2024/4/27 15:41:30][LOG]: VSA1;RFC:USE:BANK1 "VSA1_BANK1_LTE_TX_RF1",RF1
+
+[2024/4/27 15:41:30][LOG]: MEMory:TABLe "VSA1_BANK1_LTE_TX_RF1";MEMory:TABLe:STORe
+
+[2024/4/27 15:41:30][LOG]: VSA1;init
+LTE
+
+[2024/4/27 15:41:30][LOG]: Test Item 'Setup_LTE_EATTenuation_TX' PASS. Data is '20'
+[2024/4/27 15:41:30][LOG]: 配置综测仪的LTE线损成功
+[2024/4/27 15:41:30][LOG]: Test_LTE_TX_Power_L_BAND_3_L_18_H_28
+[2024/4/27 15:41:30][LOG]: VSA1;init
+LTE
+calc:pow 0,2
+calc:spec 0,2
+calc:ccdf 0,2
+calc:txq 0,2
+FETC:SEGM1:POW:AVER?
+
+[2024/4/27 15:41:30][DATARECV]: 0,2.4504177e+01\n
+[2024/4/27 15:41:30][LOG]: 查找LTE TX 调制平均值成功
+[2024/4/27 15:41:30][LOG]: Test Item 'Test_LTE_TX_Power_L_BAND_3_L_18_H_28' PASS. Data is '24.50418'
+[2024/4/27 15:41:30][LOG]: 对比LTE TX 平均功率成功
+[2024/4/27 15:41:30][LOG]: at AT+QRFTESTMODE=0
+
+[2024/4/27 15:41:31][LOG]: 等待2秒后开始测试
+[2024/4/27 15:41:31][DATARECV]: 
+>> at AT+QRFTESTMODE=0
+[2024/4/27 15:41:31][DATARECV]: 
+
+[2024/4/27 15:41:31][DATARECV]: 
+OK
+[2024/4/27 15:41:31][DATARECV]: 
+>> +STA_DISCONNECTED:"32:ef:a2:94:a5:40"..
+[2024/4/27 15:41:33][LOG]: Test Item 'at AT+QRFTESTMODE=0
+' PASS. Data is '
+>> at AT+QRFTESTMODE=0
+
+OK
+>> +STA_DISCONNECTED:"32:ef:a2:94:a5:40"..'
+[2024/4/27 15:41:33][LOG]: at AT+QRFTESTMODE?
+
+[2024/4/27 15:41:33][LOG]: 等待1秒后开始测试
+[2024/4/27 15:41:33][DATARECV]: 
+at AT+QRFTESTMODE?
+[2024/4/27 15:41:33][DATARECV]: 
+
+[2024/4/27 15:41:33][DATARECV]: 
++QRFTESTMODE: 0
+[2024/4/27 15:41:33][DATARECV]: 
+
+[2024/4/27 15:41:33][DATARECV]: 
+OK
+[2024/4/27 15:41:34][LOG]: Test Item 'at AT+QRFTESTMODE?
+' PASS. Data is '
+at AT+QRFTESTMODE?
+
++QRFTESTMODE: 0
+
+OK'
+[2024/4/27 15:41:34][LOG]: at AT+QRFTESTMODE=1
+
+[2024/4/27 15:41:34][LOG]: 等待1秒后开始测试
+[2024/4/27 15:41:34][DATARECV]: 
+>> at AT+QRFTESTMODE=1
+[2024/4/27 15:41:34][DATARECV]: 
+
+[2024/4/27 15:41:34][DATARECV]: 
+OK
+[2024/4/27 15:41:35][LOG]: Test Item 'at AT+QRFTESTMODE=1
+' PASS. Data is '
+>> at AT+QRFTESTMODE=1
+
+OK'
+[2024/4/27 15:41:35][LOG]: at AT+QRFTESTMODE?
+
+[2024/4/27 15:41:35][LOG]: 等待2秒后开始测试
+[2024/4/27 15:41:35][DATARECV]: 
+>> at AT+QRFTESTMODE?
+[2024/4/27 15:41:35][DATARECV]: 
+
+[2024/4/27 15:41:35][DATARECV]: 
++QRFTESTMODE: 1
+[2024/4/27 15:41:35][DATARECV]: 
+
+[2024/4/27 15:41:35][DATARECV]: 
+OK
+[2024/4/27 15:41:37][LOG]: Test Item 'at AT+QRFTESTMODE?
+' PASS. Data is '
+>> at AT+QRFTESTMODE?
+
++QRFTESTMODE: 1
+
+OK'
+[2024/4/27 15:41:37][LOG]: at AT+QRFTEST=3,20525,0,0,2300,0,0,6,0
+
+[2024/4/27 15:41:37][LOG]: 等待1秒后开始测试
+[2024/4/27 15:41:37][DATARECV]: 
+>> at AT+QRFTEST=3,20525,0,0,2300,0,0,6,0
+[2024/4/27 15:41:37][DATARECV]: 
+
+[2024/4/27 15:41:38][DATARECV]: 
+OK
+[2024/4/27 15:41:39][LOG]: Test Item 'at AT+QRFTEST=3,20525,0,0,2300,0,0,6,0
+' PASS. Data is '
+>> at AT+QRFTEST=3,20525,0,0,2300,0,0,6,0
+
+OK'
+[2024/4/27 15:41:39][LOG]: Setup_LTE_Cmd_TX
+[2024/4/27 15:41:39][LOG]: CHAN1;LTE;CONF:BAND 5.00
+
+[2024/4/27 15:41:39][LOG]: CHAN1;LTE;CONF:EARF:UL:cc1 20525
+
+[2024/4/27 15:41:39][LOG]: CHAN1;LTE;CONF:ENP:UL 23
+
+[2024/4/27 15:41:39][LOG]: CHAN1;LTE;CONF:FTYP MIN
+
+[2024/4/27 15:41:39][LOG]: CHAN1;LTE;CONF:CBW:CC1 100000000
+
+[2024/4/27 15:41:39][LOG]: CHAN1;LTE;CONF:UMAR 0
+
+[2024/4/27 15:41:39][LOG]: CHAN1;LTE; HSET:ALL VSA1
+
+[2024/4/27 15:41:39][LOG]: VSA1;TRIG:SOUR Free Run (No Sync)
+
+[2024/4/27 15:41:39][LOG]: VSA1;SRAT 40000000
+
+[2024/4/27 15:41:39][LOG]: VSA1;CAPT:TIME 0.01
+
+[2024/4/27 15:41:39][LOG]: Test Item 'Setup_LTE_Cmd_TX' PASS. Data is 'PASS'
+[2024/4/27 15:41:39][LOG]: 配置综测仪的LTE成功
+[2024/4/27 15:41:39][LOG]: Setup_LTE_Routing_Port_TX
+[2024/4/27 15:41:39][LOG]: ROUT1;PORT:RES:ADD:BANK1 RF1,VSA1
+
+[2024/4/27 15:41:39][LOG]: Test Item 'Setup_LTE_Routing_Port_TX' PASS. Data is 'PASS'
+[2024/4/27 15:41:39][LOG]: 配置综测仪的LTE成功
+[2024/4/27 15:41:40][LOG]: Setup_LTE_EATTenuation_TX
+[2024/4/27 15:41:40][LOG]: MEM:TABLE "VSA1_BANK1_LTE_TX_RF1";MEM:TABLE:DEFINE "FREQ,LOSS";MEMory:TABLe:INSert:POINt 836.5 MHz,20
+
+[2024/4/27 15:41:40][LOG]: VSA1;RFC:USE:BANK1 "VSA1_BANK1_LTE_TX_RF1",RF1
+
+[2024/4/27 15:41:40][LOG]: MEMory:TABLe "VSA1_BANK1_LTE_TX_RF1";MEMory:TABLe:STORe
+
+[2024/4/27 15:41:40][LOG]: VSA1;init
+LTE
+
+[2024/4/27 15:41:40][LOG]: Test Item 'Setup_LTE_EATTenuation_TX' PASS. Data is '20'
+[2024/4/27 15:41:40][LOG]: 配置综测仪的LTE线损成功
+[2024/4/27 15:41:40][LOG]: Test_LTE_TX_Power_L_BAND_5_L_18_H_28
+[2024/4/27 15:41:40][LOG]: VSA1;init
+LTE
+calc:pow 0,2
+calc:spec 0,2
+calc:ccdf 0,2
+calc:txq 0,2
+FETC:SEGM1:POW:AVER?
+
+[2024/4/27 15:41:40][DATARECV]: 0,2.5080025e+01\n
+[2024/4/27 15:41:40][LOG]: 查找LTE TX 调制平均值成功
+[2024/4/27 15:41:40][LOG]: Test Item 'Test_LTE_TX_Power_L_BAND_5_L_18_H_28' PASS. Data is '25.08002'
+[2024/4/27 15:41:40][LOG]: 对比LTE TX 平均功率成功
+[2024/4/27 15:41:40][LOG]: at AT+QRFTESTMODE=0
+
+[2024/4/27 15:41:40][LOG]: 等待2秒后开始测试
+[2024/4/27 15:41:40][DATARECV]: 
+>> at AT+QRFTESTMODE=0
+[2024/4/27 15:41:40][DATARECV]: 
+
+[2024/4/27 15:41:40][DATARECV]: 
+OK
+[2024/4/27 15:41:42][LOG]: Test Item 'at AT+QRFTESTMODE=0
+' PASS. Data is '
+>> at AT+QRFTESTMODE=0
+
+OK'
+[2024/4/27 15:41:42][LOG]: at AT+QRFTESTMODE?
+
+[2024/4/27 15:41:42][LOG]: 等待1秒后开始测试
+[2024/4/27 15:41:43][DATARECV]: 
+>> at AT+QRFTESTMODE?
+[2024/4/27 15:41:43][DATARECV]: 
+
+[2024/4/27 15:41:43][DATARECV]: 
++QRFTESTMODE: 0
+[2024/4/27 15:41:43][DATARECV]: 
+
+[2024/4/27 15:41:43][DATARECV]: 
+OK
+[2024/4/27 15:41:43][LOG]: Test Item 'at AT+QRFTESTMODE?
+' PASS. Data is '
+>> at AT+QRFTESTMODE?
+
++QRFTESTMODE: 0
+
+OK'
+[2024/4/27 15:41:43][LOG]: 断电重启
+[2024/4/27 15:41:43][DATARECV]: 指令OUTP OFF
+写入成功
+[2024/4/27 15:41:43][LOG]: Power_OFF指令成功
+[2024/4/27 15:41:43][LOG]: 等待2秒后开始测试
+[2024/4/27 15:41:45][DATARECV]: 指令OUTP ON
+写入成功
+[2024/4/27 15:41:46][LOG]: Test Item 'Send_Power_ON' PASS. Data is '==='
+[2024/4/27 15:41:46][LOG]: Power_ON指令成功
+[2024/4/27 15:41:46][LOG]: Check Sleep mode allowed
+[2024/4/27 15:41:46][DATARECV]: 
+
+[2024/4/27 15:41:46][DATARECV]: 
+
+[2024/4/27 15:41:46][DATARECV]: 
+U-Boot 2012.10 (Feb 06 2023 - 15:13:44) ALT1250_03_00_00_00_30621_UB
+[2024/4/27 15:41:46][DATARECV]: 
+
+[2024/4/27 15:41:46][DATARECV]: 
+Board: ALT1250 Ver: 0.32-BZ-E0 (PMP CPU Speed 120 MHz)
+[2024/4/27 15:41:46][DATARECV]: 
+DRAM:  2.5 MiB
+[2024/4/27 15:41:46][DATARECV]: 
+Now running in RAM - U-Boot at: 902a8000
+[2024/4/27 15:41:46][DATARECV]: 
+Boot mode 3
+[2024/4/27 15:41:46][DATARECV]: 
+Flash Manufacturer/Device ID is: 0xef6018
+[2024/4/27 15:41:46][DATARECV]: 
+Enable QUAD mode
+[2024/4/27 15:41:47][DATARECV]: 
+Flash: 16 MiB
+[2024/4/27 15:41:47][DATARECV]: 
+map import OK
+[2024/4/27 15:41:47][DATARECV]: 
+USB CTRL has been successfully initialized!
+[2024/4/27 15:41:47][DATARECV]: 
+In:    usbtty
+[2024/4/27 15:41:47][DATARECV]: 
+Out:   usbtty
+[2024/4/27 15:41:47][DATARECV]: 
+Err:   usbtty
+[2024/4/27 15:41:47][DATARECV]: 
+Configuring Flash Write Protection (offset 0x192e00)
+[2024/4/27 15:41:47][DATARECV]: 
+new_ce_val = 0x3a00f8f0
+[2024/4/27 15:41:47][DATARECV]: 
+Rst info: power button : power on, no reset 
+[2024/4/27 15:41:48][DATARECV]: 
+Hit any key to stop autoboot:  2  1  0 
+[2024/4/27 15:41:48][DATARECV]: 
+Version: 2.0
+[2024/4/27 15:41:48][DATARECV]: 
+
+[2024/4/27 15:41:48][DATARECV]: 
+Nothing to upgrade...
+[2024/4/27 15:41:48][DATARECV]: 
+hbsb ok. 1 ms 
+[2024/4/27 15:41:49][DATARECV]: 
+## Starting appli?initGnssAppWithLogicalSerialPort lsid=27
+[2024/4/27 15:41:49][DATARECV]: 
+>eLC_app_entry
+[2024/4/27 15:41:49][DATARECV]: 
+Skip audio hub init - Audio hub is not enabled
+[2024/4/27 15:41:49][DATARECV]: 
+[is_backup_valid() 608]is_backup_valid
+[2024/4/27 15:41:49][DATARECV]: 
+[get_backup_area_fileinfo() 547]backup is empty 
+[2024/4/27 15:41:50][DATARECV]: 
+
+[2024/4/27 15:41:50][DATARECV]: 
+Init logs:
+[2024/4/27 15:41:50][DATARECV]: 
+Jan 01 00:00:00.000 [D4]  [INIT][    0.63043] Starting PM
+[2024/4/27 15:41:50][DATARECV]: 
+Jan 01 00:00:00.000 [D4]  [INIT][    0.63153] Starting SM
+[2024/4/27 15:41:50][DATARECV]: 
+Jan 01 00:00:00.000 [D4]  [INIT][    0.63297] Normal boot from u-boot
+[2024/4/27 15:41:50][DATARECV]: 
+Jan 01 00:00:00.000 [D4]  [INIT][    0.63317] Cold boot
+[2024/4/27 15:41:50][DATARECV]: 
+Jan 01 00:00:00.022 [D4]  [INIT][    0.85230] Error [5] failed to open file: d:/resetcause
+[2024/4/27 15:41:50][DATARECV]: 
+Jan 01 00:00:00.022 [D4]  [INIT][    0.85330] MAP reset cause: 0
+[2024/4/27 15:41:50][DATARECV]: 
+Jan 01 00:00:00.022 [D4]  [INIT][    0.85423] MCU present: 1
+[2024/4/27 15:41:50][DATARECV]: 
+Jan 01 00:00:00.029 [D4]  [INIT][    0.92574] Host Interface port not present UARTB mapped to [N]
+[2024/4/27 15:41:50][DATARECV]: 
+Jan 01 00:00:00.045 [D4]  [INIT][    0.108146] RAM start = 901ec000
+[2024/4/27 15:41:50][DATARECV]: 
+Jan 01 00:00:00.045 [D4]  [INIT][    0.108177] heap start = 901ec000
+[2024/4/27 15:41:50][DATARECV]: 
+Jan 01 00:00:00.045 [D4]  [INIT][    0.108194] Computed heap size=1130496
+[2024/4/27 15:41:50][DATARECV]: 
+Jan 01 00:00:00.058 [D4]  [INIT][    0.121743] Calling lte driver with uart:N baudrate:921600 flow_ctrl:0
+[2024/4/27 15:41:50][DATARECV]: 
+Jan 01 00:00:00.059 [D4]  [INIT][    0.122339] LTE driver init complete
+[2024/4/27 15:41:50][DATARECV]: 
+Jan 01 00:00:00.062 [D4]  [INIT][    0.125144] alt1250_usb_init()=-1
+[2024/4/27 15:41:50][DATARECV]: 
+Jan 01 00:00:00.062 [D4]  [INIT][    0.125855] Setup AT/PPP [N] & CLI/AT [A] & AT [N] & AT_2 [N] & ALTCOM [UART0]!
+[2024/4/27 15:41:50][DATARECV]: 
+Jan 01 00:00:00.062 [D4]  [INIT][    0.125885] Setup TCP dump [N] & SFP logger [C] & LTE driver FW [N] & MUX A [N] & MUX B [N] !
+[2024/4/27 15:41:50][DATARECV]: 
+Jan 01 00:00:00.062 [D4]  [INIT][    0.125936] Open UART-A base = 0xbc118000 cfg =0x0 intrp=72
+[2024/4/27 15:41:50][DATARECV]: 
+Jan 01 00:00:00.063 [D4]  [INIT][    0.126004] Setup rx_interrupt_only for uart 0
+[2024/4/27 15:41:50][DATARECV]: 
+Jan 01 00:00:00.063 [D4]  [INIT][    0.126078] serialMngrOpen:451, device=A 0x9c0d5a50
+[2024/4/27 15:41:50][DATARECV]: 
+Jan 01 00:00:00.068 [D4]  [INIT][    0.131360] Setup UART A in Tx blocking mode
+[2024/4/27 15:41:50][DATARECV]: 
+Jan 01 00:00:00.068 [D4]  [INIT][    0.131389] Open UART-C base = 0xbf0a1000 cfg =0xbf021000 intrp=77
+[2024/4/27 15:41:50][DATARECV]: 
+Jan 01 00:00:00.068 [D4]  [INIT][    0.131426] Setup rx_interrupt_only for uart 2
+[2024/4/27 15:41:50][DATARECV]: 
+Jan 01 00:00:00.068 [D4]  [INIT][    0.131450] serialMngrOpen:451, device=C 0x9c0d5f20
+[2024/4/27 15:41:50][DATARECV]: 
+Jan 01 00:00:00.068 [D4]  [INIT][    0.131472] Setup UART C in Tx blocking mode
+[2024/4/27 15:41:50][DATARECV]: 
+Jan 01 00:00:00.068 [D4]  [INIT][    0.131490] Setup rx_tx_interrupt_ for uart 2
+[2024/4/27 15:41:50][DATARECV]: 
+Jan 01 00:00:00.068 [D4]  [INIT][    0.131515] Calling irq_moveInterruptToHW2() with uart id=2
+[2024/4/27 15:41:50][DATARECV]: 
+Jan 01 00:00:00.073 [D4]  [INIT][    0.136710] Setup ALTCOM device: UART0 
+[2024/4/27 15:41:50][DATARECV]: 
+Jan 01 00:00:00.073 [D4]  [INIT][    0.136731] Open UART-0 base = 0xbf0a3000 cfg =0x0 intrp=123
+[2024/4/27 15:41:50][DATARECV]: 
+Jan 01 00:00:00.073 [D4]  [INIT][    0.136767] serialMngrOpen:451, device=UART0 0x9c0d63f0
+[2024/4/27 15:41:50][DATARECV]: 
+Jan 01 00:00:00.073 [D4]  [INIT][    0.136789] Setup UART UART0 in Tx blocking mode
+[2024/4/27 15:41:50][DATARECV]: 
+Jan 01 00:00:00.073 [D4]  [INIT][    0.136808] Setup rx_tx_interrupt_ for uart 4
+[2024/4/27 15:41:50][DATARECV]: 
+Jan 01 00:00:00.073 [D4]  [INIT][    0.136825] Calling irq_moveInterruptToHW2() with uart id=4
+[2024/4/27 15:41:50][DATARECV]: 
+Jan 01 00:00:00.077 [D4]  [INIT][    0.140141] hifc_register_uart_CBs was called for internal HIFC
+[2024/4/27 15:41:50][DATARECV]: 
+Jan 01 00:00:00.242 [D4]  [INIT][    0.305184] LteDriver - init task ended
+[2024/4/27 15:41:50][DATARECV]: 
+Jan 01 00:00:00.311 [D4]  [INIT][    0.374671] 1st AT cmd: AT+CEREG=0
+[2024/4/27 15:41:50][DATARECV]: 
+ - sent/rcv -> 3144/3352 Msec
+[2024/4/27 15:41:50][DATARECV]: 
+
+[2024/4/27 15:41:50][DATARECV]: 
+Jan 01 00:00:00.313 [D4]  [INIT][    0.376954] Binding C
+[2024/4/27 15:41:50][DATARECV]: 
+Jan 01 00:00:00.314 [D4]  [INIT][    0.377000] Calling main app init
+[2024/4/27 15:41:50][DATARECV]: 
+Jan 01 00:00:00.315 [D4]  [INIT][    0.378187] CLI is enable!
+[2024/4/27 15:41:50][DATARECV]: 
+Jan 01 00:00:00.321 [D4]  [INIT][    0.384066] lwip_stats ready
+[2024/4/27 15:41:50][DATARECV]: 
+Jan 01 00:00:00.321 [D4]  [INIT][    0.384164] lwip_ipsec ready
+[2024/4/27 15:41:50][DATARECV]: 
+Jan 01 00:00:00.321 [D4]  [INIT][    0.384435] quectel_apptcpip_app_entry
+[2024/4/27 15:41:50][DATARECV]: 
+Jan 01 00:00:00.322 [D4]  [INIT][    0.385980] quectel_atcop_app_entry
+[2024/4/27 15:41:50][DATARECV]: 
+Jan 01 00:00:00.323 [D4]  [INIT][    0.386019] quectel_atcmd_init
+[2024/4/27 15:41:50][DATARECV]: 
+Jan 01 00:00:00.329 [D4]  [INIT][    0.392272] CLI AT cmd buff len is 3092
+[2024/4/27 15:41:50][DATARECV]: 
+Jan 01 00:00:00.332 [D4]  [INIT][    0.395270] [OTA] xTimerCreate created
+[2024/4/27 15:41:50][DATARECV]: 
+
+[2024/4/27 15:41:50][DATARECV]: 
+Jan 01 00:00:00.335 [D4]  [INIT][    0.398208] AP_RDY Timer init
+[2024/4/27 15:41:50][DATARECV]: 
+
+[2024/4/27 15:41:50][DATARECV]: 
+Jan 01 00:00:00.335 [D4]  [INIT][    0.398245] AP_RDY Timer init done
+[2024/4/27 15:41:50][DATARECV]: 
+
+[2024/4/27 15:41:50][DATARECV]: 
+Jan 01 00:00:00.335 [D4]  [INIT][    0.398321] qsclk_resume_suspend_task_init
+[2024/4/27 15:41:50][DATARECV]: 
+Jan 01 00:00:00.335 [D4]  [INIT][    0.398423] QL_SVN_Set uSvn 35 
+[2024/4/27 15:41:50][DATARECV]: 
+
+[2024/4/27 15:41:50][DATARECV]: 
+Jan 01 00:00:00.335 [D4]  [INIT][    0.398843] quectel_backup_restore_entry
+[2024/4/27 15:41:51][DATARECV]: 
+Jan 01 00:00:00.335 [D4]  [INIT][    0.398874] quectel_cell_rf_jamming_atcmd_init
+[2024/4/27 15:41:51][DATARECV]: 
+Jan 01 00:00:00.338 [D4]  [INIT][    0.401552] quectel_coap_app_entry
+[2024/4/27 15:41:51][DATARECV]: 
+Jan 01 00:00:00.339 [D4]  [INIT][    0.402464] quectel_dfota_app_entry
+[2024/4/27 15:41:51][DATARECV]: 
+Jan 01 00:00:00.339 [D4]  [INIT][    0.402608] [Harding][quectel_load_ap_ready_info_from_nv]
+[2024/4/27 15:41:51][DATARECV]: 
+
+[2024/4/27 15:41:51][DATARECV]: 
+Jan 01 00:00:00.340 [D4]  [INIT][    0.403022] [Harding][quectel_ap_ready_nv_init] Ap reaady init SUCCESSFULLY!!!
+[2024/4/27 15:41:51][DATARECV]: 
+Jan 01 00:00:00.340 [D4]  [INIT][    0.403069] quectel_ftm_app_entry
+[2024/4/27 15:41:51][DATARECV]: 
+Jan 01 00:00:00.340 [D4]  [INIT][    0.403098] quectel_ftp_app_entry
+[2024/4/27 15:41:51][DATARECV]: 
+Jan 01 00:00:00.340 [D4]  [INIT][    0.403674] quectel_gnss_app_entry
+[2024/4/27 15:41:51][DATARECV]: 
+Jan 01 00:00:00.340 [D4]  [INIT][    0.403696] quectel_gnss_atcmd_init
+[2024/4/27 15:41:51][DATARECV]: 
+Jan 01 00:00:00.341 [D4]  [INIT][    0.404082] quectel_gpio_init
+[2024/4/27 15:41:51][DATARECV]: 
+Jan 01 00:00:00.402 [D4]  [INIT][    0.465445] quectel_http_app_entry
+[2024/4/27 15:41:51][DATARECV]: 
+Jan 01 00:00:00.402 [D4]  [INIT][    0.465873] quectel_mqtt_app_entry
+[2024/4/27 15:41:51][DATARECV]: 
+Jan 01 00:00:00.406 [D4]  [INIT][    0.469373] quectel_ntp_app_entry
+[2024/4/27 15:41:51][DATARECV]: 
+Jan 01 00:00:00.417 [D4]  [INIT][    0.480480] [Quectel]quectel_restore_process 
+[2024/4/27 15:41:51][DATARECV]: 
+
+[2024/4/27 15:41:51][DATARECV]: 
+Jan 01 00:00:00.424 [D4]  [INIT][    0.487246] [Quectel]backup area data is empty or invaild
+[2024/4/27 15:41:51][DATARECV]: 
+Jan 01 00:00:00.425 [D4]  [INIT][    0.488741] Starting Watchdog timer
+[2024/4/27 15:41:51][DATARECV]: 
+Jan 01 00:00:00.427 [D4]  [INIT][    0.490347] Internal MCU is detected - Setting HIFC to mode B
+[2024/4/27 15:41:51][DATARECV]: 
+Jan 01 00:00:00.428 [D4]  [INIT][    0.491379] HIFC HOST_TO_MODEM LINE is LOW
+[2024/4/27 15:41:51][DATARECV]: 
+Jan 01 00:00:00.428 [D4]  [INIT][    0.491561] HIFC configured line HOST_TO_MODEM=0, MODEM_TO_HOST=1 mode=B
+[2024/4/27 15:41:51][DATARECV]: 
+Jan 01 00:00:00.436 [D4]  [INIT][    0.499403] Binding UART0
+[2024/4/27 15:41:51][DATARECV]: 
+Read RFBP File (2306181)
+[2024/4/27 15:41:51][DATARECV]: 
+
+[2024/4/27 15:41:51][DATARECV]: 
+Sleep mode allowed
+[2024/4/27 15:41:51][LOG]: Test Item 'Check Sleep mode allowed' PASS. Data is 'PASS'
+[2024/4/27 15:41:51][LOG]: COM16串口返回：
+
+
+U-Boot 2012.10 (Feb 06 2023 - 15:13:44) ALT1250_03_00_00_00_30621_UB
+
+Board: ALT1250 Ver: 0.32-BZ-E0 (PMP CPU Speed 120 MHz)
+DRAM:  2.5 MiB
+Now running in RAM - U-Boot at: 902a8000
+Boot mode 3
+Flash Manufacturer/Device ID is: 0xef6018
+Enable QUAD mode
+Flash: 16 MiB
+map import OK
+USB CTRL has been successfully initialized!
+In:    usbtty
+Out:   usbtty
+Err:   usbtty
+Configuring Flash Write Protection (offset 0x192e00)
+new_ce_val = 0x3a00f8f0
+Rst info: power button : power on, no reset 
+Hit any key to stop autoboot:  2  1  0 
+Version: 2.0
+
+Nothing to upgrade...
+hbsb ok. 1 ms 
+## Starting appli?initGnssAppWithLogicalSerialPort lsid=27
+>eLC_app_entry
+Skip audio hub init - Audio hub is not enabled
+[is_backup_valid() 608]is_backup_valid
+[get_backup_area_fileinfo() 547]backup is empty 
+
+Init logs:
+Jan 01 00:00:00.000 [D4]  [INIT][    0.63043] Starting PM
+Jan 01 00:00:00.000 [D4]  [INIT][    0.63153] Starting SM
+Jan 01 00:00:00.000 [D4]  [INIT][    0.63297] Normal boot from u-boot
+Jan 01 00:00:00.000 [D4]  [INIT][    0.63317] Cold boot
+Jan 01 00:00:00.022 [D4]  [INIT][    0.85230] Error [5] failed to open file: d:/resetcause
+Jan 01 00:00:00.022 [D4]  [INIT][    0.85330] MAP reset cause: 0
+Jan 01 00:00:00.022 [D4]  [INIT][    0.85423] MCU present: 1
+Jan 01 00:00:00.029 [D4]  [INIT][    0.92574] Host Interface port not present UARTB mapped to [N]
+Jan 01 00:00:00.045 [D4]  [INIT][    0.108146] RAM start = 901ec000
+Jan 01 00:00:00.045 [D4]  [INIT][    0.108177] heap start = 901ec000
+Jan 01 00:00:00.045 [D4]  [INIT][    0.108194] Computed heap size=1130496
+Jan 01 00:00:00.058 [D4]  [INIT][    0.121743] Calling lte driver with uart:N baudrate:921600 flow_ctrl:0
+Jan 01 00:00:00.059 [D4]  [INIT][    0.122339] LTE driver init complete
+Jan 01 00:00:00.062 [D4]  [INIT][    0.125144] alt1250_usb_init()=-1
+Jan 01 00:00:00.062 [D4]  [INIT][    0.125855] Setup AT/PPP [N] & CLI/AT [A] & AT [N] & AT_2 [N] & ALTCOM [UART0]!
+Jan 01 00:00:00.062 [D4]  [INIT][    0.125885] Setup TCP dump [N] & SFP logger [C] & LTE driver FW [N] & MUX A [N] & MUX B [N] !
+Jan 01 00:00:00.062 [D4]  [INIT][    0.125936] Open UART-A base = 0xbc118000 cfg =0x0 intrp=72
+Jan 01 00:00:00.063 [D4]  [INIT][    0.126004] Setup rx_interrupt_only for uart 0
+Jan 01 00:00:00.063 [D4]  [INIT][    0.126078] serialMngrOpen:451, device=A 0x9c0d5a50
+Jan 01 00:00:00.068 [D4]  [INIT][    0.131360] Setup UART A in Tx blocking mode
+Jan 01 00:00:00.068 [D4]  [INIT][    0.131389] Open UART-C base = 0xbf0a1000 cfg =0xbf021000 intrp=77
+Jan 01 00:00:00.068 [D4]  [INIT][    0.131426] Setup rx_interrupt_only for uart 2
+Jan 01 00:00:00.068 [D4]  [INIT][    0.131450] serialMngrOpen:451, device=C 0x9c0d5f20
+Jan 01 00:00:00.068 [D4]  [INIT][    0.131472] Setup UART C in Tx blocking mode
+Jan 01 00:00:00.068 [D4]  [INIT][    0.131490] Setup rx_tx_interrupt_ for uart 2
+Jan 01 00:00:00.068 [D4]  [INIT][    0.131515] Calling irq_moveInterruptToHW2() with uart id=2
+Jan 01 00:00:00.073 [D4]  [INIT][    0.136710] Setup ALTCOM device: UART0 
+Jan 01 00:00:00.073 [D4]  [INIT][    0.136731] Open UART-0 base = 0xbf0a3000 cfg =0x0 intrp=123
+Jan 01 00:00:00.073 [D4]  [INIT][    0.136767] serialMngrOpen:451, device=UART0 0x9c0d63f0
+Jan 01 00:00:00.073 [D4]  [INIT][    0.136789] Setup UART UART0 in Tx blocking mode
+Jan 01 00:00:00.073 [D4]  [INIT][    0.136808] Setup rx_tx_interrupt_ for uart 4
+Jan 01 00:00:00.073 [D4]  [INIT][    0.136825] Calling irq_moveInterruptToHW2() with uart id=4
+Jan 01 00:00:00.077 [D4]  [INIT][    0.140141] hifc_register_uart_CBs was called for internal HIFC
+Jan 01 00:00:00.242 [D4]  [INIT][    0.305184] LteDriver - init task ended
+Jan 01 00:00:00.311 [D4]  [INIT][    0.374671] 1st AT cmd: AT+CEREG=0
+ - sent/rcv -> 3144/3352 Msec
+
+Jan 01 00:00:00.313 [D4]  [INIT][    0.376954] Binding C
+Jan 01 00:00:00.314 [D4]  [INIT][    0.377000] Calling main app init
+Jan 01 00:00:00.315 [D4]  [INIT][    0.378187] CLI is enable!
+Jan 01 00:00:00.321 [D4]  [INIT][    0.384066] lwip_stats ready
+Jan 01 00:00:00.321 [D4]  [INIT][    0.384164] lwip_ipsec ready
+Jan 01 00:00:00.321 [D4]  [INIT][    0.384435] quectel_apptcpip_app_entry
+Jan 01 00:00:00.322 [D4]  [INIT][    0.385980] quectel_atcop_app_entry
+Jan 01 00:00:00.323 [D4]  [INIT][    0.386019] quectel_atcmd_init
+Jan 01 00:00:00.329 [D4]  [INIT][    0.392272] CLI AT cmd buff len is 3092
+Jan 01 00:00:00.332 [D4]  [INIT][    0.395270] [OTA] xTimerCreate created
+
+Jan 01 00:00:00.335 [D4]  [INIT][    0.398208] AP_RDY Timer init
+
+Jan 01 00:00:00.335 [D4]  [INIT][    0.398245] AP_RDY Timer init done
+
+Jan 01 00:00:00.335 [D4]  [INIT][    0.398321] qsclk_resume_suspend_task_init
+Jan 01 00:00:00.335 [D4]  [INIT][    0.398423] QL_SVN_Set uSvn 35 
+
+Jan 01 00:00:00.335 [D4]  [INIT][    0.398843] quectel_backup_restore_entry
+Jan 01 00:00:00.335 [D4]  [INIT][    0.398874] quectel_cell_rf_jamming_atcmd_init
+Jan 01 00:00:00.338 [D4]  [INIT][    0.401552] quectel_coap_app_entry
+Jan 01 00:00:00.339 [D4]  [INIT][    0.402464] quectel_dfota_app_entry
+Jan 01 00:00:00.339 [D4]  [INIT][    0.402608] [Harding][quectel_load_ap_ready_info_from_nv]
+
+Jan 01 00:00:00.340 [D4]  [INIT][    0.403022] [Harding][quectel_ap_ready_nv_init] Ap reaady init SUCCESSFULLY!!!
+Jan 01 00:00:00.340 [D4]  [INIT][    0.403069] quectel_ftm_app_entry
+Jan 01 00:00:00.340 [D4]  [INIT][    0.403098] quectel_ftp_app_entry
+Jan 01 00:00:00.340 [D4]  [INIT][    0.403674] quectel_gnss_app_entry
+Jan 01 00:00:00.340 [D4]  [INIT][    0.403696] quectel_gnss_atcmd_init
+Jan 01 00:00:00.341 [D4]  [INIT][    0.404082] quectel_gpio_init
+Jan 01 00:00:00.402 [D4]  [INIT][    0.465445] quectel_http_app_entry
+Jan 01 00:00:00.402 [D4]  [INIT][    0.465873] quectel_mqtt_app_entry
+Jan 01 00:00:00.406 [D4]  [INIT][    0.469373] quectel_ntp_app_entry
+Jan 01 00:00:00.417 [D4]  [INIT][    0.480480] [Quectel]quectel_restore_process 
+
+Jan 01 00:00:00.424 [D4]  [INIT][    0.487246] [Quectel]backup area data is empty or invaild
+Jan 01 00:00:00.425 [D4]  [INIT][    0.488741] Starting Watchdog timer
+Jan 01 00:00:00.427 [D4]  [INIT][    0.490347] Internal MCU is detected - Setting HIFC to mode B
+Jan 01 00:00:00.428 [D4]  [INIT][    0.491379] HIFC HOST_TO_MODEM LINE is LOW
+Jan 01 00:00:00.428 [D4]  [INIT][    0.491561] HIFC configured line HOST_TO_MODEM=0, MODEM_TO_HOST=1 mode=B
+Jan 01 00:00:00.436 [D4]  [INIT][    0.499403] Binding UART0
+Read RFBP File (2306181)
+
+Sleep mode allowed
+[2024/4/27 15:41:51][LOG]: 等待0秒后开始测试
+[2024/4/27 15:41:51][LOG]: pm-sleep disable
+
+[2024/4/27 15:41:52][LOG]: 等待0秒后开始测试
+[2024/4/27 15:41:52][DATARECV]: 
+pm-sleep disable
+[2024/4/27 15:41:52][DATARECV]: 
+PM Sleep - Disable
+[2024/4/27 15:41:52][LOG]: Test Item 'pm-sleep disable
+' PASS. Data is '
+pm-sleep disable
+PM Sleep - Disable'
+[2024/4/27 15:41:52][LOG]: at AT+CFUN=0
+
+[2024/4/27 15:41:52][LOG]: 等待1秒后开始测试
+[2024/4/27 15:41:52][DATARECV]: 
+[INIT_INIT_Handler:2963] APP_TRACE
+[2024/4/27 15:41:52][DATARECV]: 
+[INIT_INIT_Handler:2966] EVT_SEND(eventId=16)
+[2024/4/27 15:41:52][DATARECV]: 
+[restartWatchdogTimer:982] Watchdog re-enabled! Timeout in 90 seconds.
+[2024/4/27 15:41:52][DATARECV]: 
+[appMainLoopTask:6714] [STM]nextState: IDLE(1)
+[2024/4/27 15:41:52][DATARECV]: 
+[appMainLoopTask:6676] [STM]currState: IDLE(1), evt: SENSE(16)
+[2024/4/27 15:41:52][DATARECV]: 
+[IDLE_SENSE_Handler:4081] APP_TRACE
+[2024/4/27 15:41:52][DATARECV]: 
+Cold start epochFromModemTime() 3
+[2024/4/27 15:41:52][DATARECV]: 
+	CCID: 89320420000001826989 
+[2024/4/27 15:41:52][DATARECV]: 
+**EXCMON initial Status: state: 1
+[2024/4/27 15:41:52][DATARECV]: 
+[IDLE_SENSE_Handler:4114] ***EXCMON 1 excmon_initialized = true;
+[2024/4/27 15:41:52][DATARECV]: 
+SSL3_00_L_00_52
+[2024/4/27 15:41:52][DATARECV]: 
+==========IMEI:868617060284546===========
+[2024/4/27 15:41:52][DATARECV]: 
+	Temp=27.35 degC, RH=0.00%
+[2024/4/27 15:41:52][DATARECV]: 
+	Accl: i=0 x=0.05 y=0.00 z=-1.00
+[2024/4/27 15:41:52][DATARECV]: 
+LPS22 boot complete!
+[2024/4/27 15:41:52][DATARECV]: 
+	Pressure=996.99 hPa
+[2024/4/27 15:41:52][DATARECV]: 
+	Light intensity=0 lux
+[2024/4/27 15:41:53][DATARECV]: 
+	VBAT=3154 mV
+[2024/4/27 15:41:53][DATARECV]: 
+	Operating Mode: TEST
+[2024/4/27 15:41:53][DATARECV]: 
+	Push Btn Value: 0
+[2024/4/27 15:41:53][DATARECV]: 
+========================================
+[2024/4/27 15:41:53][DATARECV]: 
+Set LCM_3.3V_EN=1
+[2024/4/27 15:41:53][DATARECV]: 
+WIFI ESP32 enabled.
+[2024/4/27 15:41:53][DATARECV]: 
+at AT+CFUN=0
+[2024/4/27 15:41:53][DATARECV]: 
+
+[2024/4/27 15:41:53][DATARECV]: 
+OK
+[2024/4/27 15:41:53][DATARECV]: 
+>> [check_test_mode:3129] Device is in test mode.
+[2024/4/27 15:41:53][DATARECV]: 
+Enter a test command.
+[2024/4/27 15:41:54][LOG]: Test Item 'at AT+CFUN=0
+' PASS. Data is '
+[INIT_INIT_Handler:2963] APP_TRACE
+[INIT_INIT_Handler:2966] EVT_SEND(eventId=16)
+[restartWatchdogTimer:982] Watchdog re-enabled! Timeout in 90 seconds.
+[appMainLoopTask:6714] [STM]nextState: IDLE(1)
+[appMainLoopTask:6676] [STM]currState: IDLE(1), evt: SENSE(16)
+[IDLE_SENSE_Handler:4081] APP_TRACE
+Cold start epochFromModemTime() 3
+	CCID: 89320420000001826989 
+**EXCMON initial Status: state: 1
+[IDLE_SENSE_Handler:4114] ***EXCMON 1 excmon_initialized = true;
+SSL3_00_L_00_52
+==========IMEI:868617060284546===========
+	Temp=27.35 degC, RH=0.00%
+	Accl: i=0 x=0.05 y=0.00 z=-1.00
+LPS22 boot complete!
+	Pressure=996.99 hPa
+	Light intensity=0 lux
+	VBAT=3154 mV
+	Operating Mode: TEST
+	Push Btn Value: 0
+========================================
+Set LCM_3.3V_EN=1
+WIFI ESP32 enabled.
+at AT+CFUN=0
+
+OK
+>> [check_test_mode:3129] Device is in test mode.
+Enter a test command.'
+[2024/4/27 15:41:54][LOG]: at AT+CFUN?
+
+[2024/4/27 15:41:54][LOG]: 等待1秒后开始测试
+[2024/4/27 15:41:54][DATARECV]: 
+at AT+CFUN?
+[2024/4/27 15:41:54][DATARECV]: 
+
+[2024/4/27 15:41:54][DATARECV]: 
++CFUN: 0
+[2024/4/27 15:41:54][DATARECV]: 
+
+[2024/4/27 15:41:54][DATARECV]: 
+OK
+[2024/4/27 15:41:55][LOG]: Test Item 'at AT+CFUN?
+' PASS. Data is '
+at AT+CFUN?
+
++CFUN: 0
+
+OK'
+[2024/4/27 15:41:55][LOG]: at+gps on
+
+[2024/4/27 15:41:55][LOG]: 等待0秒后开始测试
+[2024/4/27 15:41:55][DATARECV]: 
+>> at+gps on
+[2024/4/27 15:41:55][DATARECV]: 
+[gpsTest:1493] Set LTE CFUN=0
+[2024/4/27 15:41:55][LOG]: Test Item 'at+gps on
+' PASS. Data is '
+>> at+gps on
+[gpsTest:1493] Set LTE CFUN=0'
+[2024/4/27 15:41:55][LOG]: Setup_GNSS_Cmd
+[2024/4/27 15:41:55][LOG]: VSG1;FREQ:cent 1575.42E+006
+
+[2024/4/27 15:41:55][LOG]: VSG1;WAVE:LOAD '/user/gps_glonass_beidou_300ms.iqvsg'
+
+[2024/4/27 15:41:55][LOG]: VSG1;MOD:STAT 1
+
+[2024/4/27 15:41:55][LOG]: VSG1;POW:STAT 1
+
+[2024/4/27 15:41:55][LOG]: VSG1;FREQ:LOOF 10e6
+
+[2024/4/27 15:41:55][LOG]: VSG1;WAVE:EXEC ON
+
+[2024/4/27 15:41:56][LOG]: Test Item 'Setup_GNSS_Cmd' PASS. Data is 'PASS'
+[2024/4/27 15:41:56][LOG]: 配置综测仪的LTE 成功
+[2024/4/27 15:41:56][LOG]: Setup_GNSS_Routing_Port_RX
+[2024/4/27 15:41:56][LOG]: ROUT1;PORT:RES:ADD:BANK1 RF1,VSG1
+
+[2024/4/27 15:41:56][LOG]: Test Item 'Setup_GNSS_Routing_Port_RX' PASS. Data is 'PASS'
+[2024/4/27 15:41:56][LOG]: 配置综测仪的LTE成功
+[2024/4/27 15:41:56][LOG]: Setup_GNSS_EATTenuation
+[2024/4/27 15:41:56][LOG]: MEM:TABLE "VSG1_BANK1_GNSS_RX_RF1";MEM:TABLE:DEFINE "FREQ,LOSS";MEMory:TABLe:INSert:POINt 1575.42 MHz,20
+
+[2024/4/27 15:41:56][LOG]: VSG1;RFC:USE:BANK1 "VSG1_BANK1_GNSS_RX_RF1",RF1
+
+[2024/4/27 15:41:56][LOG]: MEMory:TABLe "VSG1_BANK1_GNSS_RX_RF1";MEMory:TABLe:STORe
+
+[2024/4/27 15:41:56][LOG]: VSG;freq:loof 10e6;
+[2024/4/27 15:41:56][LOG]: 
+[2024/4/27 15:41:56][LOG]: Test Item 'Setup_GNSS_EATTenuation' PASS. Data is '20'
+[2024/4/27 15:41:56][LOG]: 配置综测仪的LTE线损成功
+[2024/4/27 15:41:56][LOG]: Setup_GNSS_DL_Power
+[2024/4/27 15:41:56][LOG]: VSG1;POW:lev -120
+
+[2024/4/27 15:41:56][LOG]: Test Item 'Setup_GNSS_DL_Power' PASS. Data is 'PASS'
+[2024/4/27 15:41:56][LOG]: 配置综测仪的 GNSS 下行功率成功
+[2024/4/27 15:41:56][LOG]: vir_Test_QUALCOMM__GNSS_CNo_L_35_H_55
+[2024/4/27 15:41:56][LOG]: 等待1秒后开始测试
+[2024/4/27 15:41:58][LOG]: 等待1秒后开始测试
+[2024/4/27 15:41:58][DATARECV]: 
+>> $GPGGA,3.000000,0.000000,,0.000000,,0,0,0.000000,0.000000,,0.000000,,0.000000,0,*4b
+[2024/4/27 15:41:58][DATARECV]: 
+$GNGLL,,,,,000003.00,V,N*57
+[2024/4/27 15:41:58][DATARECV]: 
+$GNGSA,A,1,,,,,,,,,,,,,,,*00
+[2024/4/27 15:41:58][DATARECV]: 
+$GNRMC,000003.00,V,,,,,,,060180,,,N*6F
+[2024/4/27 15:41:58][DATARECV]: 
+$GNVTG,,T,,M,,N,,K,N*32
+[2024/4/27 15:41:58][DATARECV]: 
+$GNZDA,000003.00,06,01,1980,,*7C
+[2024/4/27 15:41:58][DATARECV]: 
+$PSGSA,1,,,,,,,,,,,,,,,,0,,,,0,00,3,0,B,,0,0,0,0,0,0,0,0,0,,0*0A
+[2024/4/27 15:41:58][DATARECV]: 
+$PSIDX,,,,,,,,*56
+[2024/4/27 15:41:58][DATARECV]: 
+$PSRMC,000003.00,V,,,,,,,060180,,,N,,,*49
+[2024/4/27 15:41:58][DATARECV]: 
+$PSSST,4,1,00,00,0,0,0,0,00000,P,-,,00,00,0,0,0,0,00000,P,-,,00,00,0,0,0,0,00000,P,-,*1F
+[2024/4/27 15:41:58][DATARECV]: 
+$PSSST,4,2,00,00,0,0,0,0,00000,P,-,,00,00,0,0,0,0,00000,P,-,,00,00,0,0,0,0,00000,P,-,*1C
+[2024/4/27 15:41:58][DATARECV]: 
+$PSSST,4,3,00,00,0,0,0,0,00000,P,-,,00,00,0,0,0,0,00000,P,-,,00,00,0,0,0,0,00000,P,-,*1D
+[2024/4/27 15:41:59][DATARECV]: 
+$PSSST,4,4,00,00,0,0,0,0,00000,P,-,,00,00,0,0,0,0,00000,P,-,,00,00,0,0,0,0,00000,P,-,*1A
+[2024/4/27 15:41:59][DATARECV]: 
+$PSEPU,,,,,,,,,,,*6F
+[2024/4/27 15:41:59][DATARECV]: 
+$PSVLF,,,,,,,*73
+[2024/4/27 15:41:59][DATARECV]: 
+$PSVLR,,,,,,,*67
+[2024/4/27 15:41:59][DATARECV]: 
+$GPGGA,4.000000,0.000000,,0.000000,,0,0,0.000000,0.000000,,0.000000,,0.000000,0,*4c
+[2024/4/27 15:41:59][DATARECV]: 
+$GNGLL,,,,,000004.00,V,N*50
+[2024/4/27 15:41:59][DATARECV]: 
+$GNGSA,A,1,,,,,,,,,,,,,,,*00
+[2024/4/27 15:41:59][DATARECV]: 
+$GNRMC,000004.00,V,,,,,,,060180,,,N*68
+[2024/4/27 15:41:59][DATARECV]: 
+$GNVTG,,T,,M,,N,,K,N*32
+[2024/4/27 15:41:59][DATARECV]: 
+$GNZDA,000004.00,06,01,1980,,*7B
+[2024/4/27 15:41:59][LOG]: 等待1秒后开始测试
+[2024/4/27 15:41:59][DATARECV]: 
+$PSGSA,1,,,,,,,,,,,,,,,,0,,,,0,00,3,0,B,,0,0,0,0,0,0,0,0,0,,0*0A
+[2024/4/27 15:41:59][DATARECV]: 
+$PSIDX,,,,,,,,*56
+[2024/4/27 15:41:59][DATARECV]: 
+$PSRMC,000004.00,V,,,,,,,060180,,,N,,,*4E
+[2024/4/27 15:41:59][DATARECV]: 
+$PSSST,4,1,00,00,0,0,0,0,00000,P,-,,00,00,0,0,0,0,00000,P,-,,00,00,0,0,0,0,00000,P,-,*1F
+[2024/4/27 15:41:59][DATARECV]: 
+$PSSST,4,2,00,00,0,0,0,0,00000,P,-,,00,00,0,0,0,0,00000,P,-,,00,00,0,0,0,0,00000,P,-,*1C
+[2024/4/27 15:41:59][DATARECV]: 
+$PSSST,4,3,00,00,0,0,0,0,00000,P,-,,00,00,0,0,0,0,00000,P,-,,00,00,0,0,0,0,00000,P,-,*1D
+[2024/4/27 15:42:00][DATARECV]: 
+$PSSST,4,4,00,00,0,0,0,0,00000,P,-,,00,00,0,0,0,0,00000,P,-,,00,00,0,0,0,0,00000,P,-,*1A
+[2024/4/27 15:42:00][DATARECV]: 
+$PSEPU,,,,,,,,,,,*6F
+[2024/4/27 15:42:00][DATARECV]: 
+$PSVLF,,,,,,,*73
+[2024/4/27 15:42:00][DATARECV]: 
+$PSVLR,,,,,,,*67
+[2024/4/27 15:42:00][DATARECV]: 
+$GPGGA,5.000000,0.000000,,0.000000,,0,0,0.000000,0.000000,,0.000000,,0.000000,0,*4d
+[2024/4/27 15:42:00][DATARECV]: 
+$GNGLL,,,,,000005.00,V,N*51
+[2024/4/27 15:42:00][DATARECV]: 
+$GNGSA,A,1,,,,,,,,,,,,,,,*00
+[2024/4/27 15:42:00][DATARECV]: 
+$GPGSV,10,1,0,0,34,4,0,0,22,5,0,0,18,9,0,0,26,11,0,0,28,12,0,0,24,17,0,0,24,19,0,0,26,20,0,0,14,22,0,0,24
+[2024/4/27 15:42:00][DATARECV]: 
+$GNRMC,000005.00,V,,,,,,,060180,,,N*69
+[2024/4/27 15:42:00][DATARECV]: 
+$GNVTG,,T,,M,,N,,K,N*32
+[2024/4/27 15:42:00][DATARECV]: 
+$GNZDA,000005.00,06,01,1980,,*7A
+[2024/4/27 15:42:00][DATARECV]: 
+$PSGSA,1,,,,,,,,,,,,,,,,0,,,,0,28,3,1,B,,0,0,10,0,0,0,0,0,0,,0*30
+[2024/4/27 15:42:00][DATARECV]: 
+$PSIDX,,,,,,,,*56
+[2024/4/27 15:42:00][DATARECV]: 
+$PSRMC,000005.00,V,,,,,,,060180,,,N,,,*4F
+[2024/4/27 15:42:00][DATARECV]: 
+$PSSST,4,1,01,34,0,1,1,0,00703,P,-,,04,22,0,1,1,0,00999,N,-,,05,18,0,1,1,0,03652,P,-,*00
+[2024/4/27 15:42:00][DATARECV]: 
+$PSSST,4,2,09,26,0,1,1,0,00596,P,-,,11,28,0,1,1,0,01249,P,-,,12,24,0,1,1,0,02348,P,-,*17
+[2024/4/27 15:42:01][DATARECV]: 
+$PSSST,4,3,17,24,0,1,1,0,00799,N,-,,19,26,0,1,1,0,00199,P,-,,20,14,0,1,1,0,01999,P,-,*06
+[2024/4/27 15:42:01][DATARECV]: 
+$PSSST,4,4,22,24,0,1,1,0,02349,N,-,,00,00,0,0,0,0,00000,P,-,,00,00,0,0,0,0,00000,P,-,*0E
+[2024/4/27 15:42:01][DATARECV]: 
+$PSEPU,,,,,,,,,,,*6F
+[2024/4/27 15:42:01][DATARECV]: 
+$PSVLF,,,,,,,*73
+[2024/4/27 15:42:01][DATARECV]: 
+$PSVLR,,,,,,,*67
+[2024/4/27 15:42:01][LOG]: ref_Data::
+[2024/4/27 15:42:01][LOG]: Test Item 'vir_Test_QUALCOMM__GNSS_CNo_L_35_H_55' FAIL.Data is '34'
+[2024/4/27 15:42:01][LOG]: 比较CNo值对比失败不符合要求
+[2024/4/27 15:42:01][LOG]: 等待0秒后开始测试
+[2024/4/27 15:42:01][LOG]: 等待1秒后开始测试
+[2024/4/27 15:42:01][DATARECV]: 
+$GPGGA,6.000000,0.000000,,0.000000,,0,0,0.000000,0.000000,,0.000000,,0.000000,0,*4e
+[2024/4/27 15:42:01][DATARECV]: 
+$GNGLL,,,,,000006.00,V,N*52
+[2024/4/27 15:42:01][DATARECV]: 
+$GNGSA,A,1,,,,,,,,,,,,,,,*00
+[2024/4/27 15:42:01][DATARECV]: 
+$GPGSV,11,1,0,0,33,4,0,0,29,5,0,0,32,9,0,0,29,11,0,0,34,12,0,0,34,17,0,0,32,19,0,0,33,20,0,0,33,22,0,0,32,25,0,0,26
+[2024/4/27 15:42:01][DATARECV]: 
+$GNRMC,000006.00,V,,,,,,,060180,,,N*6A
+[2024/4/27 15:42:01][DATARECV]: 
+$GNVTG,,T,,M,,N,,K,N*32
+[2024/4/27 15:42:01][DATARECV]: 
+$GNZDA,000006.00,06,01,1980,,*79
+[2024/4/27 15:42:01][DATARECV]: 
+$PSGSA,1,,,,,,,,,,,,,,,,0,,,,0,33,3,1,B,,0,0,11,0,0,0,0,0,0,,0*3B
+[2024/4/27 15:42:01][DATARECV]: 
+$PSIDX,,,,,,,,*56
+[2024/4/27 15:42:01][DATARECV]: 
+$PSRMC,000006.00,V,,,,,,,060180,,,N,,,*4C
+[2024/4/27 15:42:01][DATARECV]: 
+$PSSST,4,1,01,33,9,1,1,0,00719,P,-,,04,29,9,1,1,0,00988,N,-,,05,32,9,2,1,0,03679,P,-,*0C
+[2024/4/27 15:42:02][DATARECV]: 
+$PSSST,4,2,09,29,9,2,1,0,00582,P,-,,11,34,9,1,1,0,01245,P,-,,12,34,9,2,1,0,02333,P,-,*18
+[2024/4/27 15:42:02][DATARECV]: 
+$PSSST,4,3,17,32,9,1,1,0,00778,N,-,,19,33,9,1,1,0,00206,P,-,,20,33,9,1,1,0,01993,P,-,*09
+[2024/4/27 15:42:02][DATARECV]: 
+$PSSST,4,4,22,32,9,2,1,0,02371,N,-,,25,26,0,1,1,0,03139,P,-,,00,00,0,0,0,0,00000,P,-,*03
+[2024/4/27 15:42:02][DATARECV]: 
+$PSEPU,,,,,,,,,,,*6F
+[2024/4/27 15:42:02][DATARECV]: 
+$PSVLF,,,,,,,*73
+[2024/4/27 15:42:02][DATARECV]: 
+$PSVLR,,,,,,,*67
+[2024/4/27 15:42:02][DATARECV]: 
+$GPGGA,7.000000,0.000000,,0.000000,,0,0,0.000000,0.000000,,0.000000,,0.000000,0,*4f
+[2024/4/27 15:42:02][DATARECV]: 
+$GNGLL,,,,,000007.00,V,N*53
+[2024/4/27 15:42:02][DATARECV]: 
+$GNGSA,A,1,,,,,,,,,,,,,,,*00
+[2024/4/27 15:42:02][DATARECV]: 
+$GPGSV,11,1,0,0,43,4,0,0,30,5,0,0,39,9,0,0,34,11,0,0,42,12,0,0,39,17,0,0,38,19,0,0,39,20,0,0,40,22,0,0,36,25,0,0,27
+[2024/4/27 15:42:02][DATARECV]: 
+$GNRMC,000007.00,V,,,,,,,060180,,,N*6B
+[2024/4/27 15:42:02][DATARECV]: 
+$GNVTG,,T,,M,,N,,K,N*32
+[2024/4/27 15:42:02][DATARECV]: 
+$GNZDA,000007.00,06,01,1980,,*78
+[2024/4/27 15:42:02][DATARECV]: 
+$PSGSA,1,,,,,,,,,,,,,,,,0,,,,0,41,3,1,B,,0,0,11,0,0,0,0,0,0,,0*3E
+[2024/4/27 15:42:02][DATARECV]: 
+$PSIDX,,,,,,,,*56
+[2024/4/27 15:42:02][DATARECV]: 
+$PSRMC,000007.00,V,,,,,,,060180,,,N,,,*4D
+[2024/4/27 15:42:02][DATARECV]: 
+$PSSST,4,1,01,43,9,1,1,0,00718,P,-,,04,30,9,1,1,0,00990,N,-,,05,39,9,2,1,0,03677,P,-,*0E
+[2024/4/27 15:42:03][DATARECV]: 
+$PSSST,4,2,09,34,9,3,1,0,00580,P,-,,11,42,9,1,1,0,01243,P,-,,12,39,9,3,1,0,02332,P,-,*1D
+[2024/4/27 15:42:03][DATARECV]: 
+$PSSST,4,3,17,38,9,1,1,0,00780,N,-,,19,39,9,1,1,0,00205,P,-,,20,40,9,1,1,0,01991,P,-,*0B
+[2024/4/27 15:42:03][DATARECV]: 
+$PSSST,4,4,22,36,9,3,1,0,02373,N,-,,25,27,9,1,1,0,03136,P,-,,00,00,0,0,0,0,00000,P,-,*03
+[2024/4/27 15:42:03][DATARECV]: 
+$PSEPU,,,,,,,,,,,*6F
+[2024/4/27 15:42:03][DATARECV]: 
+$PSVLF,,,,,,,*73
+[2024/4/27 15:42:03][DATARECV]: 
+$PSVLR,,,,,,,*67
+[2024/4/27 15:42:03][LOG]: ref_Data::
+[2024/4/27 15:42:03][LOG]: Test Item 'vir_Test_QUALCOMM__GNSS_CNo_L_35_H_55' FAIL.Data is '33'
+[2024/4/27 15:42:03][LOG]: 比较CNo值对比失败不符合要求
+[2024/4/27 15:42:03][LOG]: 等待0秒后开始测试
+[2024/4/27 15:42:03][LOG]: 等待1秒后开始测试
+[2024/4/27 15:42:03][DATARECV]: 
+$GPGGA,8.000000,0.000000,,0.000000,,0,0,0.000000,0.000000,,0.000000,,0.000000,0,*40
+[2024/4/27 15:42:03][DATARECV]: 
+$GNGLL,,,,,000008.00,V,N*5C
+[2024/4/27 15:42:03][DATARECV]: 
+$GNGSA,A,1,,,,,,,,,,,,,,,*00
+[2024/4/27 15:42:03][DATARECV]: 
+$GPGSV,11,1,0,0,42,4,0,0,30,5,0,0,39,9,0,0,34,11,0,0,42,12,0,0,40,17,0,0,39,19,0,0,40,20,0,0,41,22,0,0,36,25,0,0,27
+[2024/4/27 15:42:03][DATARECV]: 
+$GNRMC,000008.00,V,,,,,,,060180,,,N*64
+[2024/4/27 15:42:03][DATARECV]: 
+$GNVTG,,T,,M,,N,,K,N*32
+[2024/4/27 15:42:03][DATARECV]: 
+$GNZDA,000008.00,06,01,1980,,*77
+[2024/4/27 15:42:03][DATARECV]: 
+$PSGSA,1,,,,,,,,,,,,,,,,0,,,,0,41,3,1,B,,0,0,11,0,0,0,0,0,0,,0*3E
+[2024/4/27 15:42:03][DATARECV]: 
+$PSIDX,,,,,,,,*56
+[2024/4/27 15:42:03][DATARECV]: 
+$PSRMC,000008.00,V,,,,,,,060180,,,N,,,*42
+[2024/4/27 15:42:03][DATARECV]: 
+$PSSST,4,1,01,42,9,1,1,0,00718,P,-,,04,30,9,1,1,0,00991,N,-,,05,39,9,2,1,0,03677,P,-,*0E
+[2024/4/27 15:42:04][DATARECV]: 
+$PSSST,4,2,09,34,9,3,1,0,00579,P,-,,11,42,9,1,1,0,01243,P,-,,12,40,9,3,1,0,02330,P,-,*17
+[2024/4/27 15:42:04][DATARECV]: 
+$PSSST,4,3,17,39,9,1,1,0,00781,N,-,,19,40,9,1,1,0,00204,P,-,,20,41,9,1,1,0,01990,P,-,*04
+[2024/4/27 15:42:04][DATARECV]: 
+$PSSST,4,4,22,36,9,3,1,0,02374,N,-,,25,27,9,1,1,0,03132,P,-,,00,00,0,0,0,0,00000,P,-,*00
+[2024/4/27 15:42:04][DATARECV]: 
+$PSEPU,,,,,,,,,,,*6F
+[2024/4/27 15:42:04][DATARECV]: 
+$PSVLF,,,,,,,*73
+[2024/4/27 15:42:04][DATARECV]: 
+$PSVLR,,,,,,,*67
+[2024/4/27 15:42:04][LOG]: ref_Data::
+[2024/4/27 15:42:04][LOG]: Test Item 'vir_Test_QUALCOMM__GNSS_CNo_L_35_H_55' FAIL.Data is 'Eligible Cout Less than 5.CNo:42'
+[2024/4/27 15:42:04][LOG]: 比较CNo值对比失败不符合要求
+[2024/4/27 15:42:04][LOG]: 等待0秒后开始测试
+[2024/4/27 15:42:05][LOG]: 等待1秒后开始测试
+[2024/4/27 15:42:05][DATARECV]: 
+$PSSST,4,4,22,37,9,3,1,0,02374,N,-,,25,27,9,1,1,0,03131,P,-,,00,00,0,0,0,0,00000,P,-,*02
+[2024/4/27 15:42:05][DATARECV]: 
+$PSEPU,,,,,,,,,,,*6F
+[2024/4/27 15:42:05][DATARECV]: 
+$PSVLF,,,,,,,*73
+[2024/4/27 15:42:05][DATARECV]: 
+$PSVLR,,,,,,,*67
+[2024/4/27 15:42:05][DATARECV]: 
+$GPGGA,10.000000,0.000000,,0.000000,,0,0,0.000000,0.000000,,0.000000,,0.000000,0,*49
+[2024/4/27 15:42:05][DATARECV]: 
+$GNGLL,,,,,000010.00,V,N*55
+[2024/4/27 15:42:05][DATARECV]: 
+$GNGSA,A,1,,,,,,,,,,,,,,,*00
+[2024/4/27 15:42:05][DATARECV]: 
+$GPGSV,12,1,0,0,42,4,0,0,30,5,0,0,39,9,0,0,35,11,0,0,42,12,0,0,40,14,0,0,26,17,0,0,39,19,0,0,40,20,0,0,40,22,0,0,37,25,0,0,26
+[2024/4/27 15:42:05][DATARECV]: 
+$GNRMC,000010.00,V,,,,,,,060180,,,N*6D
+[2024/4/27 15:42:05][DATARECV]: 
+$GNVTG,,T,,M,,N,,K,N*32
+[2024/4/27 15:42:05][DATARECV]: 
+$GNZDA,000010.00,06,01,1980,,*7E
+[2024/4/27 15:42:05][DATARECV]: 
+$PSGSA,1,,,,,,,,,,,,,,,,0,,,,0,41,3,1,B,,0,0,12,0,0,0,0,0,0,,0*3D
+[2024/4/27 15:42:05][DATARECV]: 
+$PSIDX,,,,,,,,*56
+[2024/4/27 15:42:05][DATARECV]: 
+$PSRMC,000010.00,V,,,,,,,060180,,,N,,,*4B
+[2024/4/27 15:42:05][DATARECV]: 
+$PSSST,4,1,01,42,9,1,1,0,00717,P,-,,04,30,9,1,1,0,00992,N,-,,05,39,9,2,1,0,03676,P,-,*03
+[2024/4/27 15:42:06][DATARECV]: 
+$PSSST,4,2,09,35,9,3,1,0,00578,P,-,,11,42,9,1,1,0,01242,P,-,,12,40,9,3,1,0,02329,P,-,*1E
+[2024/4/27 15:42:06][DATARECV]: 
+$PSSST,4,3,17,39,9,1,1,0,00782,N,-,,19,40,9,1,1,0,00202,P,-,,20,40,9,1,1,0,01989,P,-,*08
+[2024/4/27 15:42:06][DATARECV]: 
+$PSSST,4,4,22,37,9,3,1,0,02374,N,-,,25,26,9,1,1,0,03131,P,-,,14,26,9,1,1,0,02825,N,-,*18
+[2024/4/27 15:42:06][DATARECV]: 
+$PSEPU,,,,,,,,,,,*6F
+[2024/4/27 15:42:06][DATARECV]: 
+$PSVLF,,,,,,,*73
+[2024/4/27 15:42:06][DATARECV]: 
+$PSVLR,,,,,,,*67
+[2024/4/27 15:42:06][LOG]: ref_Data::
+[2024/4/27 15:42:06][LOG]: Test Item 'vir_Test_QUALCOMM__GNSS_CNo_L_35_H_55' FAIL.Data is 'Eligible Cout Less than 5.CNo:42'
+[2024/4/27 15:42:06][LOG]: 比较CNo值对比失败不符合要求
+[2024/4/27 15:42:06][LOG]: 等待0秒后开始测试
+[2024/4/27 15:42:06][LOG]: 等待1秒后开始测试
+[2024/4/27 15:42:06][DATARECV]: 
+$GPGGA,11.000000,0.000000,,0.000000,,0,0,0.000000,0.000000,,0.000000,,0.000000,0,*48
+[2024/4/27 15:42:06][DATARECV]: 
+$GNGLL,,,,,000011.00,V,N*54
+[2024/4/27 15:42:06][DATARECV]: 
+$GNGSA,A,1,,,,,,,,,,,,,,,*00
+[2024/4/27 15:42:06][DATARECV]: 
+$GPGSV,12,1,0,0,42,4,0,0,30,5,0,0,39,9,0,0,35,11,0,0,42,12,0,0,40,14,0,0,27,17,0,0,39,19,0,0,40,20,0,0,40,22,0,0,37,25,0,0,27
+[2024/4/27 15:42:06][DATARECV]: 
+$GNRMC,000011.00,V,,,,,,,060180,,,N*6C
+[2024/4/27 15:42:06][DATARECV]: 
+$GNVTG,,T,,M,,N,,K,N*32
+[2024/4/27 15:42:06][DATARECV]: 
+$GNZDA,000011.00,06,01,1980,,*7F
+[2024/4/27 15:42:06][DATARECV]: 
+$PSGSA,1,,,,,,,,,,,,,,,,0,,,,0,41,3,1,B,,0,0,12,0,0,0,0,0,0,,0*3D
+[2024/4/27 15:42:06][DATARECV]: 
+$PSIDX,,,,,,,,*56
+[2024/4/27 15:42:06][DATARECV]: 
+$PSRMC,000011.00,V,,,,,,,060180,,,N,,,*4A
+[2024/4/27 15:42:06][DATARECV]: 
+$PSSST,4,1,01,42,9,1,1,0,00717,P,-,,04,30,9,1,1,0,00993,N,-,,05,39,9,2,1,0,03675,P,-,*01
+[2024/4/27 15:42:07][DATARECV]: 
+$PSSST,4,2,09,35,9,3,1,0,00577,P,-,,11,42,9,1,1,0,01242,P,-,,12,40,9,3,1,0,02328,P,-,*10
+[2024/4/27 15:42:07][DATARECV]: 
+$PSSST,4,3,17,39,9,1,1,0,00783,N,-,,19,40,9,1,1,0,00201,P,-,,20,40,9,1,1,0,01988,P,-,*0B
+[2024/4/27 15:42:07][DATARECV]: 
+$PSSST,4,4,22,37,9,3,1,0,02375,N,-,,25,27,9,1,1,0,03130,P,-,,14,27,9,1,1,0,02830,N,-,*1C
+[2024/4/27 15:42:07][DATARECV]: 
+$PSEPU,,,,,,,,,,,*6F
+[2024/4/27 15:42:07][DATARECV]: 
+$PSVLF,,,,,,,*73
+[2024/4/27 15:42:07][DATARECV]: 
+$PSVLR,,,,,,,*67
+[2024/4/27 15:42:07][DATARECV]: 
+$GPGGA,12.000000,0.000000,,0.000000,,0,0,0.000000,0.000000,,0.000000,,0.000000,0,*4b
+[2024/4/27 15:42:07][DATARECV]: 
+$GNGLL,,,,,000012.00,V,N*57
+[2024/4/27 15:42:07][DATARECV]: 
+$GNGSA,A,1,,,,,,,,,,,,,,,*00
+[2024/4/27 15:42:07][DATARECV]: 
+$GPGSV,12,1,0,0,42,4,0,0,30,5,0,0,39,9,0,0,35,11,0,0,42,12,0,0,40,14,0,0,23,17,0,0,38,19,0,0,40,20,0,0,40,22,0,0,37,25,0,0,28
+[2024/4/27 15:42:07][DATARECV]: 
+$GNRMC,000012.00,V,,,,,,,060180,,,N*6F
+[2024/4/27 15:42:07][DATARECV]: 
+$GNVTG,,T,,M,,N,,K,N*32
+[2024/4/27 15:42:07][DATARECV]: 
+$GNZDA,000012.00,06,01,1980,,*7C
+[2024/4/27 15:42:07][DATARECV]: 
+$PSGSA,1,,,,,,,,,,,,,,,,0,,,,0,41,3,1,B,,0,0,12,0,0,0,0,0,0,,0*3D
+[2024/4/27 15:42:07][DATARECV]: 
+$PSIDX,,,,,,,,*56
+[2024/4/27 15:42:07][DATARECV]: 
+$PSRMC,000012.00,V,,,,,,,060180,,,N,,,*49
+[2024/4/27 15:42:07][DATARECV]: 
+$PSSST,4,1,01,42,9,1,1,0,00717,P,-,,04,30,9,2,1,0,00993,N,-,,05,39,9,2,1,0,03675,P,-,*02
+[2024/4/27 15:42:08][DATARECV]: 
+$PSSST,4,2,09,35,9,3,1,0,00576,P,-,,11,42,9,2,1,0,01241,P,-,,12,40,9,3,1,0,02327,P,-,*1E
+[2024/4/27 15:42:08][DATARECV]: 
+$PSSST,4,3,17,38,9,2,1,0,00783,N,-,,19,40,9,2,1,0,00201,P,-,,20,40,9,2,1,0,01988,P,-,*09
+[2024/4/27 15:42:08][DATARECV]: 
+$PSSST,4,4,22,37,9,3,1,0,02375,N,-,,25,28,9,2,1,0,03130,P,-,,14,23,9,1,1,0,02846,N,-,*15
+[2024/4/27 15:42:08][DATARECV]: 
+$PSEPU,,,,,,,,,,,*6F
+[2024/4/27 15:42:08][DATARECV]: 
+$PSVLF,,,,,,,*73
+[2024/4/27 15:42:08][DATARECV]: 
+$PSVLR,,,,,,,*67
+[2024/4/27 15:42:08][LOG]: ref_Data::
+[2024/4/27 15:42:08][LOG]: Test Item 'vir_Test_QUALCOMM__GNSS_CNo_L_35_H_55' FAIL.Data is 'Eligible Cout Less than 5.CNo:42'
+[2024/4/27 15:42:08][LOG]: 比较CNo值对比失败不符合要求
+[2024/4/27 15:42:08][LOG]: 等待0秒后开始测试
+[2024/4/27 15:42:08][LOG]: 等待1秒后开始测试
+[2024/4/27 15:42:08][DATARECV]: 
+$GPGGA,13.000000,0.000000,,0.000000,,0,0,0.000000,0.000000,,0.000000,,0.000000,0,*4a
+[2024/4/27 15:42:08][DATARECV]: 
+$GNGLL,,,,,000013.00,V,N*56
+[2024/4/27 15:42:08][DATARECV]: 
+$GNGSA,A,1,,,,,,,,,,,,,,,*00
+[2024/4/27 15:42:08][DATARECV]: 
+$GPGSV,12,1,0,0,42,4,0,0,29,5,0,0,39,9,0,0,35,11,0,0,42,12,0,0,40,14,0,0,22,17,0,0,39,19,0,0,40,20,0,0,40,22,0,0,37,25,0,0,29
+[2024/4/27 15:42:08][DATARECV]: 
+$GNRMC,000013.00,V,,,,,,,060180,,,N*6E
+[2024/4/27 15:42:08][DATARECV]: 
+$GNVTG,,T,,M,,N,,K,N*32
+[2024/4/27 15:42:08][DATARECV]: 
+$GNZDA,000013.00,06,01,1980,,*7D
+[2024/4/27 15:42:08][DATARECV]: 
+$PSGSA,1,,,,,,,,,,,,,,,,0,,,,0,41,3,1,B,,0,0,9,3,0,0,0,0,0,,0*04
+[2024/4/27 15:42:08][DATARECV]: 
+$PSIDX,,,,,,,,*56
+[2024/4/27 15:42:08][DATARECV]: 
+$PSRMC,000013.00,V,,,,,,,060180,,,N,,,*48
+[2024/4/27 15:42:08][DATARECV]: 
+$PSSST,4,1,01,42,9,1,1,0,00717,P,-,,04,29,9,3,1,0,00994,N,-,,05,39,9,3,1,0,03674,P,-,*0C
+[2024/4/27 15:42:09][DATARECV]: 
+$PSSST,4,2,09,35,9,4,1,0,00576,P,-,,11,42,9,3,1,0,01241,P,-,,12,40,9,4,1,0,02327,P,-,*1F
+[2024/4/27 15:42:09][DATARECV]: 
+$PSSST,4,3,17,39,9,3,1,0,00784,N,-,,19,40,9,3,1,0,00200,P,-,,20,40,9,3,1,0,01987,P,-,*00
+[2024/4/27 15:42:09][DATARECV]: 
+$PSSST,4,4,22,37,9,4,1,0,02375,N,-,,25,29,9,3,1,0,03130,P,-,,14,22,9,1,1,0,02850,N,-,*14
+[2024/4/27 15:42:09][DATARECV]: 
+$PSEPU,,,,,,,,,,,*6F
+[2024/4/27 15:42:09][DATARECV]: 
+$PSVLF,,,,,,,*73
+[2024/4/27 15:42:09][DATARECV]: 
+$PSVLR,,,,,,,*67
+[2024/4/27 15:42:09][DATARECV]: 
+$GPGGA,14.000000,0.000000,,0.000000,,0,0,0.000000,0.000000,,0.000000,,0.000000,0,*4d
+[2024/4/27 15:42:09][DATARECV]: 
+$GNGLL,,,,,000014.00,V,N*51
+[2024/4/27 15:42:09][DATARECV]: 
+$GNGSA,A,1,,,,,,,,,,,,,,,*00
+[2024/4/27 15:42:09][DATARECV]: 
+$GPGSV,12,1,0,0,42,4,0,0,29,5,0,0,39,9,0,0,35,11,0,0,42,12,0,0,39,14,0,0,22,17,0,0,39,19,0,0,39,20,0,0,39,22,0,0,37,25,0,0,29
+[2024/4/27 15:42:09][DATARECV]: 
+$GNRMC,000014.00,V,,,,,,,060180,,,N*69
+[2024/4/27 15:42:09][DATARECV]: 
+$GNVTG,,T,,M,,N,,K,N*32
+[2024/4/27 15:42:09][DATARECV]: 
+$GNZDA,000014.00,06,01,1980,,*7A
+[2024/4/27 15:42:09][LOG]: ref_Data::
+[2024/4/27 15:42:09][LOG]: Test Item 'vir_Test_QUALCOMM__GNSS_CNo_L_35_H_55' FAIL.Data is 'Eligible Cout Less than 5.CNo:42'
+[2024/4/27 15:42:09][LOG]: 比较CNo值对比失败不符合要求
+[2024/4/27 15:42:09][LOG]: 等待0秒后开始测试
+[2024/4/27 15:42:10][LOG]: 等待1秒后开始测试
+[2024/4/27 15:42:10][DATARECV]: 
+$GPGGA,15.000000,0.000000,,0.000000,,0,0,0.000000,0.000000,,0.000000,,0.000000,0,*4c
+[2024/4/27 15:42:10][DATARECV]: 
+$GNGLL,,,,,000015.00,V,N*50
+[2024/4/27 15:42:10][DATARECV]: 
+$GNGSA,A,1,,,,,,,,,,,,,,,*00
+[2024/4/27 15:42:10][DATARECV]: 
+$GPGSV,12,1,0,0,42,4,0,0,29,5,0,0,39,9,0,0,35,11,0,0,42,12,0,0,39,14,0,0,25,17,0,0,39,19,0,0,40,20,0,0,39,22,0,0,37,25,0,0,29
+[2024/4/27 15:42:10][DATARECV]: 
+$GNRMC,000015.00,V,,,,,,,060180,,,N*68
+[2024/4/27 15:42:10][DATARECV]: 
+$GNVTG,,T,,M,,N,,K,N*32
+[2024/4/27 15:42:10][DATARECV]: 
+$GNZDA,000015.00,06,01,1980,,*7B
+[2024/4/27 15:42:10][DATARECV]: 
+$PSGSA,1,,,,,,,,,,,,,,,,0,,,,0,40,3,1,B,,0,0,9,3,0,0,0,0,0,,0*05
+[2024/4/27 15:42:10][DATARECV]: 
+$PSIDX,,,,,,,,*56
+[2024/4/27 15:42:10][DATARECV]: 
+$PSRMC,000015.00,V,,,,,,,060180,,,N,,,*4E
+[2024/4/27 15:42:10][DATARECV]: 
+$PSSST,4,1,01,42,9,1,1,0,00716,P,-,,04,29,9,3,1,0,00996,N,-,,05,39,9,3,1,0,03673,P,-,*08
+[2024/4/27 15:42:11][DATARECV]: 
+$PSSST,4,2,09,35,9,4,1,0,00574,P,-,,11,42,9,3,1,0,01241,P,-,,12,39,9,4,1,0,02325,P,-,*11
+[2024/4/27 15:42:11][DATARECV]: 
+$PSSST,4,3,17,39,9,3,1,0,00785,N,-,,19,40,9,3,1,0,00199,P,-,,20,39,9,3,1,0,01985,P,-,*0E
+[2024/4/27 15:42:11][DATARECV]: 
+$PSSST,4,4,22,37,9,4,1,0,02376,N,-,,25,29,9,3,1,0,03128,P,-,,14,25,9,1,1,0,02841,N,-,*19
+[2024/4/27 15:42:11][DATARECV]: 
+$PSEPU,,,,,,,,,,,*6F
+[2024/4/27 15:42:11][DATARECV]: 
+$PSVLF,,,,,,,*73
+[2024/4/27 15:42:11][DATARECV]: 
+$PSVLR,,,,,,,*67
+[2024/4/27 15:42:11][LOG]: ref_Data::
+[2024/4/27 15:42:11][LOG]: Test Item 'vir_Test_QUALCOMM__GNSS_CNo_L_35_H_55' PASS. Data is '42'
+[2024/4/27 15:42:11][LOG]: 比较CNo值成功
+[2024/4/27 15:42:11][LOG]: ROUT1;PORT:RES:SUBT:BANK1 RF1,VSG1
+
+[2024/4/27 15:42:11][LOG]: ROUT1;PORT:RES:SUBT:BANK1 RF1,VSG1
+
+[2024/4/27 15:42:11][LOG]: ROUT1;PORT:RES:SUBT:BANK1 RF2,VSG1
+
+[2024/4/27 15:42:11][LOG]: ROUT1;PORT:RES:SUBT:BANK1 RF2,VSG1
+
+[2024/4/27 15:42:11][LOG]: ROUT1;PORT:RES:SUBT:BANK1 RF3,VSG1
+
+[2024/4/27 15:42:11][LOG]: ROUT1;PORT:RES:SUBT:BANK1 RF3,VSG1
+
+[2024/4/27 15:42:11][LOG]: ROUT1;PORT:RES:SUBT:BANK1 RF4,VSG1
+
+[2024/4/27 15:42:11][LOG]: ROUT1;PORT:RES:SUBT:BANK1 RF4,VSG1
+
+[2024/4/27 15:42:11][LOG]: ROUT1;PORT:RES:SUBT:BANK2 RF1,VSG1
+
+[2024/4/27 15:42:11][LOG]: ROUT1;PORT:RES:SUBT:BANK2 RF1,VSG1
+
+[2024/4/27 15:42:11][LOG]: ROUT1;PORT:RES:SUBT:BANK2 RF2,VSG1
+
+[2024/4/27 15:42:11][LOG]: ROUT1;PORT:RES:SUBT:BANK2 RF2,VSG1
+
+[2024/4/27 15:42:11][LOG]: ROUT1;PORT:RES:SUBT:BANK2 RF3,VSG1
+
+[2024/4/27 15:42:11][LOG]: ROUT1;PORT:RES:SUBT:BANK2 RF3,VSG1
+
+[2024/4/27 15:42:11][LOG]: ROUT1;PORT:RES:SUBT:BANK2 RF4,VSG1
+
+[2024/4/27 15:42:11][LOG]: ROUT1;PORT:RES:SUBT:BANK2 RF4,VSG1
+
+[2024/4/27 15:42:11][LOG]: VSG1;FREQ:LOOF 10e6
+
+[2024/4/27 15:42:11][LOG]: VSG1;FREQ:LOOF 10e6
+
+[2024/4/27 15:42:11][LOG]: 查找GNSS RX 调制平均值成功
+[2024/4/27 15:42:11][LOG]: at+gps off
+
+[2024/4/27 15:42:11][LOG]: 等待2秒后开始测试
+[2024/4/27 15:42:12][DATARECV]: 
+$GNGSA,A,1,,,,,,,,,,,,,,,*00
+[2024/4/27 15:42:12][DATARECV]: 
+$GPGSV,12,1,0,0,42,4,0,0,29,5,0,0,39,9,0,0,35,11,0,0,42,12,0,0,39,14,0,0,26,17,0,0,39,19,0,0,39,20,0,0,39,22,0,0,37,25,0,0,27
+[2024/4/27 15:42:12][DATARECV]: 
+$GNRMC,000016.00,V,,,,,,,060180,,,N*6B
+[2024/4/27 15:42:12][DATARECV]: 
+$GNVTG,,T,,M,,N,,K,N*32
+[2024/4/27 15:42:12][DATARECV]: 
+$GNZDA,000016.00,06,01,1980,,*78
+[2024/4/27 15:42:12][DATARECV]: 
+$PSGSA,1,,,,,,,,,,,,,,,,0,,,,0,40,3,1,B,,0,0,9,3,0,0,0,0,0,,0*05
+[2024/4/27 15:42:12][DATARECV]: 
+$PSIDX,,,,,,,,*56
+[2024/4/27 15:42:12][DATARECV]: 
+$PSRMC,000016.00,V,,,,,,,060180,,,N,,,*4D
+[2024/4/27 15:42:12][DATARECV]: 
+$PSSST,4,1,01,42,9,1,1,0,00716,P,-,,04,29,9,3,1,0,00996,N,-,,05,39,9,3,1,0,03673,P,-,*08
+[2024/4/27 15:42:12][DATARECV]: 
+$PSSST,4,2,09,35,9,4,1,0,00573,P,-,,11,42,9,3,1,0,01240,P,-,,12,39,9,4,1,0,02324,P,-,*16
+[2024/4/27 15:42:12][DATARECV]: 
+$PSSST,4,3,17,39,9,3,1,0,00785,N,-,,19,39,9,3,1,0,00198,P,-,,20,39,9,3,1,0,01985,P,-,*01
+[2024/4/27 15:42:12][DATARECV]: 
+$PSSST,4,4,22,37,9,4,1,0,02377,N,-,,25,27,9,3,1,0,03127,P,-,,14,26,9,1,1,0,02830,N,-,*1C
+[2024/4/27 15:42:12][DATARECV]: 
+$PSEPU,,,,,,,,,,,*6F
+[2024/4/27 15:42:12][DATARECV]: 
+$PSVLF,,,,,,,*73
+[2024/4/27 15:42:12][DATARECV]: 
+$PSVLR,,,,,,,*67
+[2024/4/27 15:42:12][DATARECV]: 
+at+gps off
+[2024/4/27 15:42:13][LOG]: Test Item 'at+gps off
+' PASS. Data is '
+$GNGSA,A,1,,,,,,,,,,,,,,,*00
+$GPGSV,12,1,0,0,42,4,0,0,29,5,0,0,39,9,0,0,35,11,0,0,42,12,0,0,39,14,0,0,26,17,0,0,39,19,0,0,39,20,0,0,39,22,0,0,37,25,0,0,27
+$GNRMC,000016.00,V,,,,,,,060180,,,N*6B
+$GNVTG,,T,,M,,N,,K,N*32
+$GNZDA,000016.00,06,01,1980,,*78
+$PSGSA,1,,,,,,,,,,,,,,,,0,,,,0,40,3,1,B,,0,0,9,3,0,0,0,0,0,,0*05
+$PSIDX,,,,,,,,*56
+$PSRMC,000016.00,V,,,,,,,060180,,,N,,,*4D
+$PSSST,4,1,01,42,9,1,1,0,00716,P,-,,04,29,9,3,1,0,00996,N,-,,05,39,9,3,1,0,03673,P,-,*08
+$PSSST,4,2,09,35,9,4,1,0,00573,P,-,,11,42,9,3,1,0,01240,P,-,,12,39,9,4,1,0,02324,P,-,*16
+$PSSST,4,3,17,39,9,3,1,0,00785,N,-,,19,39,9,3,1,0,00198,P,-,,20,39,9,3,1,0,01985,P,-,*01
+$PSSST,4,4,22,37,9,4,1,0,02377,N,-,,25,27,9,3,1,0,03127,P,-,,14,26,9,1,1,0,02830,N,-,*1C
+$PSEPU,,,,,,,,,,,*6F
+$PSVLF,,,,,,,*73
+$PSVLR,,,,,,,*67
+at+gps off'
+[2024/4/27 15:42:13][LOG]: config -s pm.conf.sleep_mode enable
+
+[2024/4/27 15:42:14][LOG]: 等待0秒后开始测试
+[2024/4/27 15:42:14][DATARECV]: 
+config -s pm.conf.sleep_mode enable
+[2024/4/27 15:42:14][DATARECV]: 
+Done
+[2024/4/27 15:42:14][LOG]: Test Item 'config -s pm.conf.sleep_mode enable
+' PASS. Data is '
+config -s pm.conf.sleep_mode enable
+Done'
+[2024/4/27 15:42:14][LOG]: at AT+CFUN=1
+
+[2024/4/27 15:42:14][LOG]: 等待1秒后开始测试
+[2024/4/27 15:42:14][DATARECV]: 
+>> at AT+CFUN=1
+[2024/4/27 15:42:15][LOG]: Test Item 'at AT+CFUN=1
+' FAIL.Data is '
+>> at AT+CFUN=1'
+[2024/4/27 15:42:15][LOG]: 等待1秒后开始测试
+[2024/4/27 15:42:15][DATARECV]: 
+
+[2024/4/27 15:42:15][DATARECV]: 
+OK
+[2024/4/27 15:42:15][DATARECV]: 
+>> at AT+CFUN=1
+[2024/4/27 15:42:16][DATARECV]: 
+
+[2024/4/27 15:42:16][DATARECV]: 
+OK
+[2024/4/27 15:42:16][LOG]: Test Item 'at AT+CFUN=1
+' PASS. Data is '
+>> at AT+CFUN=1
+
+OK
+>> at AT+CFUN=1
+
+OK'
+[2024/4/27 15:42:16][LOG]: at AT+CFUN?
+
+[2024/4/27 15:42:16][LOG]: 等待1秒后开始测试
+[2024/4/27 15:42:17][DATARECV]: 
+>> at AT+CFUN?
+[2024/4/27 15:42:17][DATARECV]: 
+
+[2024/4/27 15:42:17][DATARECV]: 
++CFUN: 1
+[2024/4/27 15:42:17][DATARECV]: 
+
+[2024/4/27 15:42:17][DATARECV]: 
+OK
+[2024/4/27 15:42:17][LOG]: Test Item 'at AT+CFUN?
+' PASS. Data is '
+>> at AT+CFUN?
+
++CFUN: 1
+
+OK'
+[2024/4/27 15:42:17][LOG]: ROUT1;PORT:RES:SUBT:BANK1 RF1,VSG1
+
+[2024/4/27 15:42:17][LOG]: ROUT1;PORT:RES:SUBT:BANK1 RF1,VSG1
+
+[2024/4/27 15:42:18][LOG]: ROUT1;PORT:RES:SUBT:BANK1 RF2,VSG1
+
+[2024/4/27 15:42:18][LOG]: ROUT1;PORT:RES:SUBT:BANK1 RF2,VSG1
+
+[2024/4/27 15:42:18][LOG]: ROUT1;PORT:RES:SUBT:BANK1 RF3,VSG1
+
+[2024/4/27 15:42:18][LOG]: ROUT1;PORT:RES:SUBT:BANK1 RF3,VSG1
+
+[2024/4/27 15:42:18][LOG]: ROUT1;PORT:RES:SUBT:BANK1 RF4,VSG1
+
+[2024/4/27 15:42:18][LOG]: ROUT1;PORT:RES:SUBT:BANK1 RF4,VSG1
+
+[2024/4/27 15:42:18][LOG]: ROUT1;PORT:RES:SUBT:BANK2 RF1,VSG1
+
+[2024/4/27 15:42:18][LOG]: ROUT1;PORT:RES:SUBT:BANK2 RF1,VSG1
+
+[2024/4/27 15:42:18][LOG]: ROUT1;PORT:RES:SUBT:BANK2 RF2,VSG1
+
+[2024/4/27 15:42:18][LOG]: ROUT1;PORT:RES:SUBT:BANK2 RF2,VSG1
+
+[2024/4/27 15:42:18][LOG]: ROUT1;PORT:RES:SUBT:BANK2 RF3,VSG1
+
+[2024/4/27 15:42:18][LOG]: ROUT1;PORT:RES:SUBT:BANK2 RF3,VSG1
+
+[2024/4/27 15:42:18][LOG]: ROUT1;PORT:RES:SUBT:BANK2 RF4,VSG1
+
+[2024/4/27 15:42:18][LOG]: ROUT1;PORT:RES:SUBT:BANK2 RF4,VSG1
+
+[2024/4/27 15:42:18][LOG]: 查找LTE RX 调制平均值成功
+[2024/4/27 15:42:18][LOG]: ROUT1;PORT:RES:SUBT:BANK1 RF1,VSG1
+
+[2024/4/27 15:42:18][LOG]: ROUT1;PORT:RES:SUBT:BANK1 RF1,VSG1
+
+[2024/4/27 15:42:18][LOG]: ROUT1;PORT:RES:SUBT:BANK1 RF2,VSG1
+
+[2024/4/27 15:42:18][LOG]: ROUT1;PORT:RES:SUBT:BANK1 RF2,VSG1
+
+[2024/4/27 15:42:18][LOG]: ROUT1;PORT:RES:SUBT:BANK1 RF3,VSG1
+
+[2024/4/27 15:42:18][LOG]: ROUT1;PORT:RES:SUBT:BANK1 RF3,VSG1
+
+[2024/4/27 15:42:18][LOG]: ROUT1;PORT:RES:SUBT:BANK1 RF4,VSG1
+
+[2024/4/27 15:42:18][LOG]: ROUT1;PORT:RES:SUBT:BANK1 RF4,VSG1
+
+[2024/4/27 15:42:18][LOG]: ROUT1;PORT:RES:SUBT:BANK2 RF1,VSG1
+
+[2024/4/27 15:42:18][LOG]: ROUT1;PORT:RES:SUBT:BANK2 RF1,VSG1
+
+[2024/4/27 15:42:18][LOG]: ROUT1;PORT:RES:SUBT:BANK2 RF2,VSG1
+
+[2024/4/27 15:42:18][LOG]: ROUT1;PORT:RES:SUBT:BANK2 RF2,VSG1
+
+[2024/4/27 15:42:18][LOG]: ROUT1;PORT:RES:SUBT:BANK2 RF3,VSG1
+
+[2024/4/27 15:42:18][LOG]: ROUT1;PORT:RES:SUBT:BANK2 RF3,VSG1
+
+[2024/4/27 15:42:18][LOG]: ROUT1;PORT:RES:SUBT:BANK2 RF4,VSG1
+
+[2024/4/27 15:42:18][LOG]: ROUT1;PORT:RES:SUBT:BANK2 RF4,VSG1
+
+[2024/4/27 15:42:18][LOG]: VSG1;FREQ:LOOF 10e6
+
+[2024/4/27 15:42:18][LOG]: VSG1;FREQ:LOOF 10e6
+
+[2024/4/27 15:42:18][LOG]: 查找GNSS RX 调制平均值成功
+[2024/4/27 15:42:18][DATARECV]: 
+Kill_Pipe 正常关闭串口
+[2024/4/27 15:42:18][DATARECV]: 
+Kill_Pipe 正常关闭线程
+[2024/4/27 15:42:18][LOG]: 关闭串口COM4
+[2024/4/27 15:42:18][DATARECV]: 
+ Kill_Pipe isGetText: True
+[2024/4/27 15:42:18][DATARECV]: 
+Kill_Pipe 正常关闭串口
+[2024/4/27 15:42:18][DATARECV]: 
+Kill_Pipe 正常关闭线程
+[2024/4/27 15:42:19][LOG]: 关闭串口COM16
+[2024/4/27 15:42:19][DATARECV]: 
+ Kill_Pipe isGetText: True
+[2024/4/27 15:42:19][DATARECV]: 指令OUTP OFF
+写入成功
+[2024/4/27 15:42:19][LOG]: Power_OFF指令成功
+[2024/4/27 15:42:19][LOG]: 打开串口COM4 Result:True
+[2024/4/27 15:42:19][LOG]: 打开串口COM16 Result:True
+[2024/4/27 15:42:19][LOG]: OpenVISA Result:True
+[2024/4/27 15:42:19][LOG]: SendVolt Result:True
+[2024/4/27 15:42:19][LOG]: SendCurr Result:True
+[2024/4/27 15:42:19][LOG]: Send_Power_ON Result:True
+[2024/4/27 15:42:19][LOG]: CheckRFVer Result:True
+[2024/4/27 15:42:19][LOG]: Check Sleep mode allowed Result:True
+[2024/4/27 15:42:19][LOG]: pm-sleep disable
+ Result:True
+[2024/4/27 15:42:19][LOG]: config -s pm.conf.sleep_mode disable
+ Result:True
+[2024/4/27 15:42:19][LOG]: at AT+EGMR=0,7
+ Result:True
+[2024/4/27 15:42:19][LOG]: at AT+CFUN=0
+ Result:True
+[2024/4/27 15:42:19][LOG]: at AT+QRFTESTMODE=1
+ Result:True
+[2024/4/27 15:42:19][LOG]: at AT+QRFTESTMODE?
+ Result:True
+[2024/4/27 15:42:19][LOG]: at AT+QRFTEST=3,18300,0,0,2300,0,0,6,0
+ Result:True
+[2024/4/27 15:42:19][LOG]: Setup_LTE_Cmd_TX Result:True
+[2024/4/27 15:42:19][LOG]: Setup_LTE_Routing_Port_TX Result:True
+[2024/4/27 15:42:19][LOG]: Setup_LTE_EATTenuation_TX Result:True
+[2024/4/27 15:42:19][LOG]: Test_LTE_TX_Power_L_BAND_1_L_18_H_28 Result:True
+[2024/4/27 15:42:19][LOG]: at AT+QRFTESTMODE=0
+ Result:True
+[2024/4/27 15:42:19][LOG]: at AT+QRFTEST=3,19575,0,0,2300,0,0,6,0
+ Result:True
+[2024/4/27 15:42:19][LOG]: Test_LTE_TX_Power_L_BAND_3_L_18_H_28 Result:True
+[2024/4/27 15:42:19][LOG]: at AT+QRFTEST=3,20525,0,0,2300,0,0,6,0
+ Result:True
+[2024/4/27 15:42:19][LOG]: Test_LTE_TX_Power_L_BAND_5_L_18_H_28 Result:True
+[2024/4/27 15:42:19][LOG]: at AT+CFUN?
+ Result:True
+[2024/4/27 15:42:19][LOG]: at+gps on
+ Result:True
+[2024/4/27 15:42:19][LOG]: Setup_GNSS_Cmd Result:True
+[2024/4/27 15:42:19][LOG]: Setup_GNSS_Routing_Port_RX Result:True
+[2024/4/27 15:42:19][LOG]: Setup_GNSS_EATTenuation Result:True
+[2024/4/27 15:42:19][LOG]: Setup_GNSS_DL_Power Result:True
+[2024/4/27 15:42:19][LOG]: vir_Test_QUALCOMM__GNSS_CNo_L_35_H_55 Result:True
+[2024/4/27 15:42:19][LOG]: at+gps off
+ Result:True
+[2024/4/27 15:42:19][LOG]: config -s pm.conf.sleep_mode enable
+ Result:True
+[2024/4/27 15:42:19][LOG]: at AT+CFUN=1
+ Result:True
+[2024/4/27 15:42:19][LOG]: 自定义站位信息：{"TestFlow":[{"Id":"1","Station":"SilverLabel","Status":"AUTO_SN_GEN","SNFlag":"","TestTool":"ODM_MOB_Label_Print"},{"Id":"2","Station":"DL_MCU","Status":"AUTO_DL_MCU","SNFlag":"","TestTool":"MCU_FW_DL_ODM"},{"Id":"3","Station":"DL_FW","Status":"AUTO_DL_FW","SNFlag":"","TestTool":"FW_DL_And_Format_ODM"},{"Id":"4","Station":"RF_FT","Status":"AUTO_FT","SNFlag":"","TestTool":"ODM_MOB_FT"},{"Id":"5","Station":"RF_FT2","Status":"AUTO_RF_FT2","SNFlag":"","TestTool":"ODM_MOB_FT_ASM"},{"Id":"6","Station":"FCT","Status":"AUTO_FCT","SNFlag":"","TestTool":"ODM_FCT_Test_MOB"},{"Id":"7","Station":"Collect","Status":"AUTO_PACK","SNFlag":"","TestTool":"ODM_Collect"},{"Id":"8","Station":"Ship","Status":"AUTO_SHIP","SNFlag":"","TestTool":"出货管理系统_ODM"}]}
+[2024/4/27 15:42:19][LOG]: 旧站位：AUTO_FT
+[2024/4/27 15:42:19][LOG]: 新站位：AUTO_RF_FT2
+[2024/4/27 15:42:19][LOG]: 保存数据库的数据:EXEC [dbo].[usp_HandleMOBTestResult]@IMEI = N'P14K4DQ02000064',@SN = N'P14K4DQ02000064',@StationName = N'RF_FT2',@TSNum = N'测试通道1(Channel1)_QDC526-SP-BTFT-12-004-M',@TestResult = '1',@TestTool = N'ODM_MOB_FT_ASM1.0.48',@ErrCode = '',@ErrInfo = N'78.8',@MO = N'SUGQ5000048706',@TestPC = N'SUGA-LOGIX009',@TestPCIp = N'[IP:192.168.14.253][MAC:207BD24038AA]',@Line ='1',@Operator = N'1',@TestFailureCol='FCT_NGTimes',@Status ='AUTO_RF_FT2'
+[2024/4/27 15:42:19][LOG]: 保存数据库成功
+[2024/4/27 15:42:19][LOG]: 测试合格

@@ -1,0 +1,432 @@
+[2024/4/24 16:05:39][INFO]: 测试软件信息:1.3.56
+[2024/4/24 16:05:39][INFO]: 20240126_16:03
+[2024/4/24 16:05:39][INFO]: 当前夹具编号:7897465
+[2024/4/24 16:05:39][INFO]: 工单号:SUGQ5000048706
+[2024/4/24 16:05:39][INFO]: 当前SN:P14K4DO05000002
+[2024/4/24 16:05:39][INFO]:  MOB_Barcode号数据获取成功 SN当前站位：AUTO_RF_FT2
+[2024/4/24 16:05:39][LOG]: 数据库版本为：V1.3.55
+[2024/4/24 16:05:39][LOG]: V1.3.56
+[2024/4/24 16:05:39][INFO]: 符合测试条件，即将进行测试
+[2024/4/24 16:05:39][TESTITEM]: ParseInfo
+[2024/4/24 16:05:39][PASS]: Test Item 'ParseInfo' PASS
+[2024/4/24 16:05:39][DATARECV]: 打开GPIB1::5::INSTR成功
+[2024/4/24 16:05:39][PASS]: 打开电源接口成功
+[2024/4/24 16:05:39][LOG]: 电源名称：KEYSIGHT_E3640A
+[2024/4/24 16:05:39][DATARECV]: 指令VOLT:RANG P20V
+写入成功
+[2024/4/24 16:05:39][DATARECV]: 指令VOLT 3.7
+写入成功
+[2024/4/24 16:05:39][PASS]: 写入VOLT指令成功
+[2024/4/24 16:05:39][DATARECV]: 指令CURR 1
+写入成功
+[2024/4/24 16:05:39][PASS]: 写入CURR指令成功
+[2024/4/24 16:05:39][DATARECV]: 指令OUTP ON
+写入成功
+[2024/4/24 16:05:39][PASS]: Power_ON指令成功
+[2024/4/24 16:05:39][TESTITEM]: EnableUSB
+[2024/4/24 16:05:39][LOG]: before open ,COM List is
+[2024/4/24 16:05:39][LOG]: COM1
+[2024/4/24 16:05:39][LOG]: COM11
+[2024/4/24 16:05:39][LOG]: COM14
+[2024/4/24 16:05:39][LOG]: COM13
+[2024/4/24 16:05:39][LOG]: COM29
+[2024/4/24 16:05:39][LOG]: COM7
+[2024/4/24 16:05:39][LOG]: COM15
+[2024/4/24 16:05:39][LOG]: COM7 + [DataSend]:
+[2024/4/24 16:05:45][DATARECV]: ?
+NOR boot spl: Uncompressing u-boot image ... OK (135848 => 248604 54%)
+Transferring control to u-boot ...
+
+
+U-Boot 2012.10 (Feb 06 2023 - 15:13:44) ALT1250_03_00_00_00_30621_UB
+
+Board: ALT1250 Ver: 0.32-BZ-E0 (PMP CPU Speed 120 MHz)
+DRAM:  2.5 MiB
+Now running in RAM - U-Boot at: 902a8000
+Boot mode 3
+Flash Manufacturer/Device ID is: 0xef6018
+Enable QUAD mode
+Flash: 16 MiB
+map import OK
+USB CTRL has been successfully initialized!
+In:    usbtty
+Out:   usbtty
+Err:   usbtty
+Configuring Flash Write Protection (offset 0x192e00)
+new_ce_val = 0x3a00f8f0
+Rst info: power button : power on, no reset 
+Hit any key to stop autoboot:  2 
+[2024/4/24 16:05:45][LOG]: COM7 + [DataSend]: 
+
+[2024/4/24 16:05:45][DATARECV]:  0 
+# 
+# 
+# 
+[2024/4/24 16:05:46][LOG]: after open ,COM List is
+[2024/4/24 16:05:46][LOG]: COM1
+[2024/4/24 16:05:46][LOG]: COM11
+[2024/4/24 16:05:46][LOG]: COM14
+[2024/4/24 16:05:46][LOG]: COM13
+[2024/4/24 16:05:46][LOG]: COM29
+[2024/4/24 16:05:46][LOG]: COM7
+[2024/4/24 16:05:46][LOG]: COM15
+[2024/4/24 16:05:46][LOG]: COM16
+[2024/4/24 16:05:46][PASS]: Test Item 'EnableUSB' PASS
+[2024/4/24 16:05:47][DATARECV]: 指令OUTP OFF
+写入成功
+[2024/4/24 16:05:47][PASS]: Power_OFF指令成功
+[2024/4/24 16:05:47][DATARECV]: 关闭GPIB1::5::INSTR成功
+[2024/4/24 16:05:47][PASS]: 关闭电源接口成功
+[2024/4/24 16:05:48][DATARECV]: 打开GPIB1::5::INSTR成功
+[2024/4/24 16:05:48][PASS]: 打开电源接口成功
+[2024/4/24 16:05:48][LOG]: 电源名称：KEYSIGHT_E3640A
+[2024/4/24 16:05:48][DATARECV]: 指令VOLT:RANG P20V
+写入成功
+[2024/4/24 16:05:48][DATARECV]: 指令VOLT 3.7
+写入成功
+[2024/4/24 16:05:48][PASS]: 写入VOLT指令成功
+[2024/4/24 16:05:48][DATARECV]: 指令CURR 1
+写入成功
+[2024/4/24 16:05:48][PASS]: 写入CURR指令成功
+[2024/4/24 16:05:48][DATARECV]: 指令OUTP ON
+写入成功
+[2024/4/24 16:05:48][PASS]: Power_ON指令成功
+[2024/4/24 16:05:48][TESTITEM]: TestMode
+[2024/4/24 16:05:55][LOG]: [3] [105]Use application log lock interface.
+[3] [687]ALTCOM log level 3.
+[3] [305]Use default buffpool interface.
+[3] [316]Use application block configuration.
+LTE atach timeout key not found. Default to 120 seconds
+[init_configuration:6738] WAKE: b=0 w=0, c=-1, dur=0, count=0
+[appMainLoopInit:7218] ***EXCMON 2 excmon_initialized = true;
+[restartWatchdogTimer:995] Watchdog enabled! Timeout in 90 seconds.
+Welcome to MiniConsTMP117 ID: 0x0117
+ole
+>> LPS22 ID: 0xb4
+Good REG 0x0B = 0x00
+Good REG 0x0C = 0x00
+Good REG 0x0D = 0x00
+Good REG 0x0E = 0x00
+Good REG 0x0F = 0xB4
+Good REG 0x10 = 0x00
+Good REG 0x11 = 0x00
+Good REG 0x12 = 0x01
+Good REG 0x13 = 0x00
+Good REG 0x14 = 0x00
+Good REG 0x15 = 0x00
+Good REG 0x16 = 0x00
+Good REG 0x17 = 0x00
+Good REG 0x19 = 0x80
+Good REG 0x1A = 0x00
+Good REG 0x1B = 0x00
+Good REG 0x24 = 0x00
+Good REG 0x25 = 0x00
+Good REG 0x26 = 0x00
+Good REG 0x27 = 0x00
+Good REG 0x28 = 0x00
+Good REG 0x29 = 0x00
+Good REG 0x2A = 0x00
+Good REG 0x2B = 0x00
+Good REG 0x2C = 0x00
+Good REG 0x78 = 0x00
+Good REG 0x79 = 0x00
+Good REG 0x7A = 0x00
+LPS22 boot complete!
+OPT300x ID: 0x5449
+LIS2 ID: 0x44
+[getAccelerometerConfigurationBitMask:8538] Accelerometer configuration key not found. Default to 0x0002.
+LPS22 boot complete!
+[1] [953]apicmdgw_send error: -116
+Post DFOTA action key not found. Default to DEFAULT_POST_DFOTA_ACTION
+Post DFOTA action key not found. Default to DEFAULT_POST_DFOTA_ACTION
+Set LCM_3.3V_EN=1
+Set LCM_3.3V_EN=0
+[appMainLoopTask:6663] APP_TRACE
+[overrideRatList:7028] Preferred rat list is CATM only.
+WIFI callback registered.
+[appMainLoopInit:7484] Send EVT_INIT.
+[appMainLoopInit:7485] EVT_SEND(eventId=0)
+[appMainLoopTask:6676] [STM]currState: INIT(0), evt: INIT(0)
+[INIT_INIT_Handler:2963] APP_TRACE
+[INIT_INIT_Handler:2966] EVT_SEND(eventId=16)
+[restartWatchdogTimer:982] Watchdog re-enabled! Timeout in 90 seconds.
+[appMainLoopTask:6714] [STM]nextState: IDLE(1)
+[appMainLoopTask:6676] [STM]currState: IDLE(1), evt: SENSE(16)
+[IDLE_SENSE_Handler:4081] APP_TRACE
+Cold start epochFromModemTime() 2
+	CCID: 89320420000001827797 
+**EXCMON initial Status: state: 1
+[IDLE_SENSE_Handler:4114] ***EXCMON 1 excmon_initialized = true;
+
+SSL3_00_L_00_52
+==========IMEI:868617060280320===========
+	Temp=25.03 degC, RH=0.00%
+	Accl: i=0 x=0.01 y=0.02 z=0.99
+LPS22 boot complete!
+	Pressure=1000.96 hPa
+	Light intensity=425 lux
+	VBAT=3684 mV
+	Operating Mode: TEST
+	Push Btn Value: 0
+========================================
+Set LCM_3.3V_EN=1
+WIFI ESP32 enabled.
+[check_test_mode:3129] Device is in test mode.
+Enter a test command.
+
+[2024/4/24 16:05:55][PASS]: Test Item 'TestMode' PASS
+[2024/4/24 16:05:55][PASS]: Test Item 'TestMode' PASS
+[2024/4/24 16:05:55][TESTITEM]: IMEI
+[2024/4/24 16:05:55][PASS]: Test Item 'IMEI' PASS
+[2024/4/24 16:05:55][TESTITEM]: ICCID
+[2024/4/24 16:05:55][INFO]: [SaveICCID]关联ICCID:'89320420000001827797'到SN_MOB:'P14K4DO05000002'
+[2024/4/24 16:05:55][INFO]: [SaveICCID]保存成功!
+[2024/4/24 16:05:55][PASS]: Test Item 'ICCID' PASS
+[2024/4/24 16:05:55][TESTITEM]: Version
+[2024/4/24 16:05:55][LOG]: COM29 + [DataSend]:at+version
+
+[2024/4/24 16:05:55][DATARECV]: at+version
+
+SSL3_00_L_00_52
+TNT Compiled on Mar 20 2024 at 18:09:12
+
+BG772AGLAAR01A05_03.201.03.201
+
+OK
+
+
+
+NP Package: RK_03_00_00_00_31721_001
+Apps: RKAPP_03_00_00_00_31631_002__c338213cec22df819df80d6d001f840f0352891e
+Using APP processor - no SB or 3B versions
+MAC Revision: REL_1250_03_00_00_REV_319122
+MAC Package Version: ALT1250_03_00_00_00_31721_FW
+MAC Build Time: Apr_24_2023_00_21_03
+PHY Revision: 12.50.319116
+PHY Build Time: Apr_24_2023_00_03_20
+PHY Build Info: releas_0
+PMP Revision: 319121
+PMP Version: 31721_PMP
+PMP build time: Jan_09_2023_11_11_34
+DSP Revision: 65262
+BB Product: 1250
+BB HW Revision: 20
+RFIC_6200 Revision: 00
+NP Build Time: Nov  1 2023 10:07:26
+C&V Ver: 9.76
+Calibration date: 27.03.24
+Calibrated NP package: RK_03_00_00_00_03
+U-Boot Version: ALT1250_03_00_00_00_30621_UB
+
+OK
+
+>> 
+[2024/4/24 16:05:55][PASS]: Test Item 'Version' PASS
+[2024/4/24 16:05:55][TESTITEM]: NIST
+[2024/4/24 16:05:55][LOG]: COM29 + [DataSend]:at+NIST
+
+[2024/4/24 16:05:55][DATARECV]: at+NIST
+Get TMP117 NIST registers.
+TMP117 NIST - EEPROM1: 0x4190, EEPROM2: 0x0F64, Temp Offset: 0x0000, EEPROM3: 0x23E1
+OK
+>> 
+[2024/4/24 16:05:55][PASS]: Test Item 'NIST' PASS
+[2024/4/24 16:05:55][TESTITEM]: Accelerometer
+[2024/4/24 16:05:55][LOG]: COM29 + [DataSend]:at+gsensor
+
+[2024/4/24 16:05:56][DATARECV]: at+gsensor
+Accelerometer INT1 status: 0
++GSENSOR:x[0.01]-y[0.02]-z[0.99]
+[getAccelerometerConfigurationBitMask:8538] Accelerometer configuration key not found. Default to 0x0002.
+>> 
+[2024/4/24 16:05:56][PASS]: Test Item 'Accelerometer' PASS
+[2024/4/24 16:05:56][TESTITEM]: Pressure_sensor
+[2024/4/24 16:05:56][LOG]: COM29 + [DataSend]:at+press
+
+[2024/4/24 16:05:56][DATARECV]: at+press
+LPS22 boot complete!
++PRESS:1000.98 hPa
+>> 
+[2024/4/24 16:05:56][PASS]: Test Item 'Pressure_sensor' PASS
+[2024/4/24 16:05:56][TESTITEM]: Temperature_sensor
+[2024/4/24 16:05:56][LOG]: COM29 + [DataSend]:at+temp
+
+[2024/4/24 16:05:56][DATARECV]: at+temp
++TEMP:[25.03 degC]
+>> 
+[2024/4/24 16:05:56][LOG]: read temp is 25.03
+[2024/4/24 16:05:56][PASS]: Test Item 'Temperature_sensor' PASS
+[2024/4/24 16:05:56][TESTITEM]: Light_sensor
+[2024/4/24 16:05:56][LOG]: COM29 + [DataSend]:at+light
+
+[2024/4/24 16:05:56][DATARECV]: at+light
+Light sensor INT status: 0
++LIGHT:465 lux
+>> 
+[2024/4/24 16:05:56][PASS]: Test Item 'Light_sensor' PASS
+[2024/4/24 16:05:56][TESTITEM]: WIFI
+[2024/4/24 16:05:56][LOG]: COM29 + [DataSend]:at+wen 1
+
+[2024/4/24 16:05:56][DATARECV]: at+wen 1
+WIFI ESP32 is already enabled.
+OK
+>> 
+[2024/4/24 16:05:56][LOG]: COM29 + [DataSend]:at+wifi at+GMR
+
+[2024/4/24 16:05:56][DATARECV]: at+wifi at+GMR
+WIFI command: at+GMR
+OK
+>> at+GMR..
+AT version:2.4.2.0(fb731d2 - ESP32C3 - Aug 25 2022 03:47:31)
+SDK version:v4.3.2-553-g588436db47
+compile time(67966ba):Oct 17 2022 19:06:45
+Bin version:2.4.2(ESP32C3-SPI)
+
+OK
+....................................................................................................................................................................................
+
+[2024/4/24 16:05:56][LOG]: COM29 + [DataSend]:at+wifi AT+CWMODE=1
+
+[2024/4/24 16:05:56][DATARECV]: at+wifi AT+CWMODE=1
+WIFI command: AT+CWMODE=1
+OK
+>> AT+CWMODE=1..
+..OK..
+
+[2024/4/24 16:05:59][DATARECV]: at+wifi AT+CWLAP
+WIFI command: AT+CWLAP
+OK
+>> AT+CWLAP..
+Record 0: +CWLAP:(4,"MINGWORK_2_4G",-31,"6c:b1:58:15:64:6d",6,-1,-1,4,4,7,0)
+Record 1: +CWLAP:(4,"",-31,"6e:b1:58:25:64:6d",6,-1,-1,4,4,7,0)
+Record 2: +CWLAP:(3,"OnePlus 11",-32,"2e:46:4b:52:6a:50",1,-1,-1,4,4,7,0)
+Record 3: +CWLAP:(4,"Xiaomi_E876",-46,"c8:bf:4c:de:b9:63",3,-1,-1,5,3,7,1)
+
+[2024/4/24 16:05:59][PASS]: Test Item 'WIFI' PASS
+[2024/4/24 16:05:59][TESTITEM]: Bluetooth
+[2024/4/24 16:05:59][LOG]: COM29 + [DataSend]:at+wen 1
+
+[2024/4/24 16:05:59][DATARECV]: at+wen 1
+WIFI ESP32 is already enabled.
+OK
+>> 
+[2024/4/24 16:05:59][LOG]: COM29 + [DataSend]:at+wifi AT+BLEINIT=2
+
+[2024/4/24 16:06:00][DATARECV]: at+wifi AT+BLEINIT=2
+WIFI command: AT+BLEINIT=2
+OK
+>> AT+BLEINIT=2..
+..OK..
+
+[2024/4/24 16:06:03][DATARECV]: at+wifi AT+BLEADDR?
+WIFI command: AT+BLEADDR?
+OK
+>> AT+BLEADDR?..
++BLEADDR:"24:58:7c:92:ac:ba"..OK..
+
+[2024/4/24 16:06:03][PASS]: Test Item 'Bluetooth' PASS
+[2024/4/24 16:06:03][TESTITEM]: KEY_WakeUp
+[2024/4/24 16:06:03][LOG]: COM29 + [DataSend]:at+btn
+
+[2024/4/24 16:06:03][DATARECV]: at+btn
+Press the push button now
+
+[2024/4/24 16:06:07][LOG]: Button pushed
+>> 
+[2024/4/24 16:06:07][PASS]: Test Item 'KEY_WakeUp' PASS
+[2024/4/24 16:06:07][TESTITEM]: LED
+[2024/4/24 16:06:07][LOG]: COM29 + [DataSend]:at+led 1 1
+
+[2024/4/24 16:06:07][DATARECV]: at+led 1 1
+LED started
+>> 
+[2024/4/24 16:06:08][LOG]: Point x:912 y:475
+[2024/4/24 16:06:08][LOG]: Point x:1390 y:473
+[2024/4/24 16:06:08][PASS]: Test Item 'LED' PASS
+[2024/4/24 16:06:08][TESTITEM]: ADC
+[2024/4/24 16:06:08][LOG]: COM29 + [DataSend]:at+vbat
+
+[2024/4/24 16:06:08][DATARECV]: at+vbat
+Voltage Regulator voltage 3680 mV
+>> 
+[2024/4/24 16:06:08][PASS]: Test Item 'ADC' PASS
+[2024/4/24 16:06:08][TESTITEM]: VBAT_CON
+[2024/4/24 16:06:09][LOG]: CHG_DET is :HighV
+
+[2024/4/24 16:06:10][LOG]: ADC Result VBAT:3.657741546631V
+
+[2024/4/24 16:06:10][PASS]: Test Item 'VBAT_CON' PASS
+[2024/4/24 16:06:10][TESTITEM]: Closs_Wifi
+[2024/4/24 16:06:10][LOG]: COM29 + [DataSend]:setenv wifi 0
+
+[2024/4/24 16:06:10][DATARECV]: setenv wifi 0
+OK
+>> WIFI ESP32 disabled.
+
+[2024/4/24 16:06:10][LOG]: COM29 + [DataSend]:getenv
+
+[2024/4/24 16:06:10][DATARECV]: getenv
+mag=a1b2c3d4
+logstart=on
+logstarttime=0
+logstorage=sflash
+sensor_port=cryo_sensor
+inactive=standby
+gps=off
+gpsacqtime=120
+rsrp=-120
+envVersion=1
+flightdetection=on
+assert=0
+opermode=test
+warehouseinterval=0
+sensorinterval=120
+uploadinterval=360
+handshake=on
+trackparams=0,0,0x000000000000
+scansuspend=on
+certidx=1
+scanparams=12,0,0x09E1
+sensormask=0x0F7B
+eismask=0x0B7B
+minvbat=3100
+excmonsystemparams=1 0 0 0 0 0 0 0 0 4294967295 0 0 0 0 0
+excmondevrec0=0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+excmondevrec1=0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+excmondevrec2=0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+provisioned=yes
+CRC=4bf0
+wifi=0
+
+OK
+>> 
+[2024/4/24 16:06:10][PASS]: Test Item 'Closs_Wifi' PASS
+[2024/4/24 16:06:10][DATARECV]: 指令OUTP OFF
+写入成功
+[2024/4/24 16:06:10][PASS]: Power_OFF指令成功
+[2024/4/24 16:06:10][DATARECV]: 关闭GPIB1::5::INSTR成功
+[2024/4/24 16:06:10][PASS]: 关闭电源接口成功
+[2024/4/24 16:06:10][TESTITEM]: ParseInfo Result:True
+[2024/4/24 16:06:10][TESTITEM]: EnableUSB Result:True
+[2024/4/24 16:06:10][TESTITEM]: TestMode Result:True
+[2024/4/24 16:06:10][TESTITEM]: IMEI Result:True
+[2024/4/24 16:06:10][TESTITEM]: ICCID Result:True
+[2024/4/24 16:06:10][TESTITEM]: Version Result:True
+[2024/4/24 16:06:10][TESTITEM]: NIST Result:True
+[2024/4/24 16:06:10][TESTITEM]: Accelerometer Result:True
+[2024/4/24 16:06:10][TESTITEM]: Pressure_sensor Result:True
+[2024/4/24 16:06:10][TESTITEM]: Temperature_sensor Result:True
+[2024/4/24 16:06:10][TESTITEM]: Light_sensor Result:True
+[2024/4/24 16:06:10][TESTITEM]: WIFI Result:True
+[2024/4/24 16:06:10][TESTITEM]: Bluetooth Result:True
+[2024/4/24 16:06:10][TESTITEM]: KEY_WakeUp Result:True
+[2024/4/24 16:06:10][TESTITEM]: LED Result:True
+[2024/4/24 16:06:10][TESTITEM]: ADC Result:True
+[2024/4/24 16:06:10][TESTITEM]: VBAT_CON Result:True
+[2024/4/24 16:06:10][TESTITEM]: Closs_Wifi Result:True
+[2024/4/24 16:06:10][LOG]: 自定义站位信息：{"TestFlow":[{"Id":"1","Station":"SilverLabel","Status":"AUTO_SN_GEN","SNFlag":"","TestTool":"ODM_MOB_Label_Print"},{"Id":"2","Station":"DL_MCU","Status":"AUTO_DL_MCU","SNFlag":"","TestTool":"MCU_FW_DL_ODM"},{"Id":"3","Station":"DL_FW","Status":"AUTO_DL_FW","SNFlag":"","TestTool":"FW_DL_And_Format_ODM"},{"Id":"4","Station":"RF_FT","Status":"AUTO_FT","SNFlag":"","TestTool":"ODM_MOB_FT"},{"Id":"5","Station":"RF_FT2","Status":"AUTO_RF_FT2","SNFlag":"","TestTool":"ODM_MOB_FT_ASM"},{"Id":"6","Station":"FCT","Status":"AUTO_FCT","SNFlag":"","TestTool":"ODM_FCT_Test_MOB"},{"Id":"7","Station":"Collect","Status":"AUTO_PACK","SNFlag":"","TestTool":"ODM_Collect"},{"Id":"8","Station":"Ship","Status":"AUTO_SHIP","SNFlag":"","TestTool":"出货管理系统_ODM"}]}
+[2024/4/24 16:06:10][LOG]: 旧站位：AUTO_RF_FT2
+[2024/4/24 16:06:10][LOG]: 新站位：AUTO_FCT
+[2024/4/24 16:06:10][LOG]: 保存数据库的数据:EXEC [dbo].[usp_HandleMOBTestResult]@IMEI = N'868617060280320',@SN = N'P14K4DO05000002',@StationName = N'FCT',@TSNum = N'7897465',@TestResult = '1',@TestTool = N'ODM_FCT_Test_MOB1.3.56',@ErrCode = '',@ErrInfo = N'31.2',@MO = N'SUGQ5000048706',@TestPC = N'SUGA-LOGIX006',@TestPCIp = N'[IP:192.168.14.163][MAC:E0D55EA26B81]',@Line ='1',@Operator = N'1',@TestFailureCol='FCT_NGTimes',@Status ='AUTO_FCT'
+[2024/4/24 16:06:10][LOG]: 保存数据库成功
+[2024/4/24 16:06:10][PASS]: 测试合格

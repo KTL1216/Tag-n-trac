@@ -13,6 +13,8 @@ from pptx import Presentation
 from pptx.util import Inches
 import statsmodels.formula.api as stats
 
+prs = Presentation()
+
 def extract_reading(sensor_string, pattern):
     # Define the regular expression pattern to match the pressure reading
     match = re.search(pattern, sensor_string)
@@ -181,8 +183,7 @@ def plot_FCT(folder_name):
             sheet.append(row)
         workbook.save(os.getcwd()+'\\QDM065-Summary.xlsx')  # save workbook
         workbook.close()  # close workbook
-    
-    prs = Presentation()
+
     for metric in ["AccelX", "AccelY", "AccelZ", "Pressure", "Temp", "Light", "WiFi Scan Results", "Voltage (mV)"]:
         values = [entry[metric] for entry in data]
 
@@ -240,7 +241,6 @@ def plot_FCT(folder_name):
             stats_slide.shapes.add_picture(image_path, left, top, width=Inches(8), height=Inches(4))
         else:
             print(f"No valid data found for metric: {folder_name}")
-    prs.save(os.getcwd()+f'\\{folder_name}.pptx')
 
 def plot_rf(folder_name):
     # Initialize data dictionaries
@@ -309,7 +309,6 @@ def plot_rf(folder_name):
         workbook.save(os.getcwd()+'\\QDM065-Summary.xlsx')  # save workbook
         workbook.close()  # close workbook
 
-    prs = Presentation()
     for freq in freq_list:
         values = [entry["Measured Power"] for entry in data if entry["Frequency"] == freq]
 
@@ -367,21 +366,30 @@ def plot_rf(folder_name):
             stats_slide.shapes.add_picture(image_path, left, top, width=Inches(8), height=Inches(4))
         else:
             print(f"No valid data found for metric: {folder_name}")
-    prs.save(os.getcwd()+f'\\{folder_name}.pptx')
 
 def run_functions_safely():
     functions = [
         ("Device", plot_FCT),
         ("PCBA", plot_FCT),
-        ("RF_condution", plot_rf),
+        ("RF_conduction", plot_rf),
         ("RF_coupling", plot_rf)
     ]
 
     for arg, func in functions:
         try:
+            # Add a slide with a title and content layout
+            slide_layout = prs.slide_layouts[1]  # 0 is the layout for a title slide
+            slide = prs.slides.add_slide(slide_layout)
+
+            # Access the title and content placeholders
+            title = slide.shapes.title
+            title.text = arg
+            title.text_frame.text = arg
             func(arg)
         except Exception as e:
             print(f"An error occurred while running {func.__name__}({arg}): {e}")
+    
+    prs.save(os.getcwd()+'\\charts.pptx')
 
 run_functions_safely()
 # plot_FCT("Device")

@@ -1,0 +1,3 @@
+Pressure outlier for both FCT
+
+Conduction still running at 5 frequency instead of 3
