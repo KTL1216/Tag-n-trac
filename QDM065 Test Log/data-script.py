@@ -200,7 +200,7 @@ def plot_FCT(folder_name):
             table = stats_slide.shapes.add_table(rows, cols, left, top, width, height).table
 
             # Set column headings
-            table.cell(0, 0).text = 'Frequency'
+            table.cell(0, 0).text = str(metric)
             table.cell(1, 0).text = 'Count'
             table.cell(2, 0).text = 'Mean'
             table.cell(3, 0).text = 'Std'
@@ -221,8 +221,8 @@ def plot_FCT(folder_name):
             plt.hist(values, bins='auto', color='skyblue', alpha=0.7, rwidth=0.85)
             
             # Add labels and title
-            plt.title(f'{"Measured Power"} for {folder_name} at {str(metric)}')
-            plt.xlabel("Measured Power")
+            plt.title(f'{str(metric)} for {folder_name}')
+            plt.xlabel({str(metric)})
             plt.ylabel('Counts')
 
             # Save the plot as an image
@@ -374,7 +374,7 @@ def run_functions_safely():
         ("Device", plot_FCT),
         ("PCBA", plot_FCT),
         ("RF_condution", plot_rf),
-        ("RF_couping", plot_rf)
+        ("RF_coupling", plot_rf)
     ]
 
     for arg, func in functions:
