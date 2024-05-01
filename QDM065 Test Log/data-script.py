@@ -74,8 +74,8 @@ def FCT_dict(folder_name, lines, time_stamp, time_val):
         if re.search('CCID:\'', line):
             CCID = int(extract_reading(line, r'ID:\'(\d+)\''))
             SN_MOB = extract_reading(line, r'SN_MOB:\'(\w+)\'')
-        if re.search('taget imei is', line):
-            IMEI = extract_reading(line, r'taget imei is (\d+)')
+        if re.search('=IMEI:', line):
+            IMEI = extract_reading(line, r"IMEI:(\d+)")
         if re.search('SSL3_', line):
             mcu_ver = line.split("\n")[0]
         if re.search('GSENSOR:', line):
@@ -138,12 +138,8 @@ def plot_FCT(folder_name):
     error_folder_path = os.path.join(logdir, "Error Folder")
     if not os.path.exists(error_folder_path):
         os.makedirs(error_folder_path)
-
     folder_path = os.path.join(logdir, "LOGS")
-    count = 0
-    print(folder_path)
     for file in os.listdir(folder_path):
-        count += 1
         time_stamp = date_stamp(file.split('_')[2])+clock_stamp(file.split('_')[2])
         time_val = int(time_value(file.split('_')[2]))
         file_path = os.path.join(logdir, "LOGS", file)
@@ -156,7 +152,7 @@ def plot_FCT(folder_name):
             contained = False
             replace = False
             for unit in data:
-                if unit["IMEI"] == data_dict["IMEI"]:
+                if unit["SN_MOB"] == data_dict["SN_MOB"]:
                     contained = True
                     if unit["Time Value"] < time_val:
                         replace = True
@@ -172,7 +168,7 @@ def plot_FCT(folder_name):
             error_file_path = os.path.join(error_folder_path, file)
             os.rename(file_path, error_file_path)
     print(len(data))
-    print(count)
+
     # Create a dataframe
     df = pd.DataFrame(data)
     df = df[list(data[0].keys())]
@@ -272,9 +268,8 @@ def plot_rf(folder_name):
         try:
             lines = f.readlines()
             for line in lines:
-                if re.search("CONFigure:LTE:MEAS:RFSettings:FREQuency", line):
-                    number = re.findall(r'(\d+\.?\d*)(?=E\+6)', line)
-                    temp_freq = float(number[0][0] if number[0][1] == '' else ''.join(number[0]))
+                if re.search("FREQ:cent ", line):
+                    temp_freq = float(re.findall(r'\d+\.\d+', line)[0])
                     if temp_freq not in freq_list:
                         freq_list.append(temp_freq)
                 if re.search("\'Test_LTE_TX_Power", line):
@@ -396,6 +391,6 @@ def run_functions_safely():
     
     prs.save(os.getcwd()+'\\charts.pptx')
 
-# run_functions_safely()
-plot_FCT("PCBA")
+run_functions_safely()
+# plot_FCT("PCBA")
 # plot_rf("RF_conduction")
