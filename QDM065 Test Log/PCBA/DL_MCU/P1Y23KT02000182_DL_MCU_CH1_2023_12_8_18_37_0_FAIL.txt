@@ -1,0 +1,39 @@
+[FW Path]:D:\TOOLS\MCU_FW_DL_ODM_V1.2.07\MCU_FW_DL_ODM_V1.2.07\QDM065\factory_ESP32C3-SPI.bin
+[FW DB]:BG772AGLAAR01A05_QDM065-EA_01.001.01.034;BG772AGLAAR01A05
+[Fixture Number]:ODMT004
+[Serial Number]:
+[IMEI]:P1Y23KT02000182
+[Date]:2023-12-8_18:37:0
+[Tool Version]:MCU_FW_DL_ODM_V1.2.07
+[StationName]:DL_MCU
+[MO]:QWCQ1000132363
+[OC]:QDM065EABA-N06-AAAAA
+[DL Time]:15
+[FN]:QDM065-EA-DL-11-003-M
+[Opertaor]:210268
+++++++++++++++++++++++++++++++
+[DL Info]:Q6-A0740-BL8L10502:not need set 120M
+[DL Info]:[Log_Level]:L6
+[DL Info]:[MCU_Ver]:factory_ESP32C3-SPI
+[Abstract_Log ErrCode ID]:50332747 
+[Abstract_Log ErrCode Info]:236405184 
+++++++++++++++trace log begin 1+++++++++++++++
+2023-12-8_18:36:45 <--> ************IMEI:P1Y23KT02000182************
+2023-12-8_18:36:45 <--> Check(P1Y23KT02000182)IMEI_STD Record Complete
+2023-12-8_18:36:55 <--> Download ESP32_MCU file ......
+2023-12-8_18:37:0 <--> cmd.exe /c D:\TOOLS\MCU_FW_DL_ODM_V1.2.07\MCU_FW_DL_ODM_V1.2.07\QDM002\1\esptool-v3.2-win64\esptool1.exe -p COM40 -b 460800 write_flash 0x0 "D:\TOOLS\MCU_FW_DL_ODM_V1.2.07\MCU_FW_DL_ODM_V1.2.07\QDM065\factory_ESP32C3-SPI.bin"
+2023-12-8_18:37:0 <--> Traceback (most recent call last):
+  File "esptool.py", line 5143, in <module>
+  File "esptool.py", line 5136, in _main
+  File "esptool.py", line 4541, in main
+  File "esptool.py", line 121, in get_default_connected_device
+  File "esptool.py", line 372, in detect_chip
+  File "esptool.py", line 329, in __init__
+  File "serial\__init__.py", line 90, in serial_for_url
+  File "serial\serialwin32.py", line 64, in open
+serial.serialutil.SerialException: could not open port 'COM40': FileNotFoundError(2, '系统找不到指定的文件。', None, 2)
+
+2023-12-8_18:37:0 <--> FAIL, DL_FW, cannot find dirction!
+2023-12-8_18:37:0 <--> ESP32 DL Fail
+2023-12-8_18:37:0 <--> =====ERR-OC:QDM065EABA-N06-AAAAA=====
+++++++++++++++trace log end+++++++++++++++

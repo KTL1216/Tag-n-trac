@@ -1,0 +1,160 @@
+[FW Path]:D:\TOOLS\MCU_FW_DL_ODM_V1.2.07\MCU_FW_DL_ODM_V1.2.07\QDM065\factory_ESP32C3-SPI.bin
+[FW DB]:BG772AGLAAR01A05_QDM065-EA_01.001.01.034;BG772AGLAAR01A05
+[Fixture Number]:ODMT004
+[Serial Number]:
+[IMEI]:P1Y23KT02000371
+[Date]:2023-11-30_2:58:18
+[Tool Version]:MCU_FW_DL_ODM_V1.2.07
+[StationName]:DL_MCU
+[MO]:QWCQ1000132363
+[OC]:QDM065EABA-N06-AAAAA
+[DL Time]:82
+[FN]:QDM065-EA-DL-11-003-M
+[Opertaor]:210268
+++++++++++++++++++++++++++++++
+[DL Info]:Q6-A0740-BL8L10502:not need set 120M
+[DL Info]:[Log_Level]:L6
+[DL Info]:[MCU_Ver]:factory_ESP32C3-SPI
+[DL Info]:After DL:AUTO_DL_MCU
+[Abstract_Log ErrCode ID]:50331648 
+[Abstract_Log ErrCode Info]:200556696 
+++++++++++++++trace log begin 1+++++++++++++++
+2023-11-30_2:56:55 <--> ************IMEI:P1Y23KT02000371************
+2023-11-30_2:56:55 <--> Check(P1Y23KT02000371)IMEI_STD Record Complete
+2023-11-30_2:57:5 <--> Download ESP32_MCU file ......
+2023-11-30_2:57:10 <--> cmd.exe /c D:\TOOLS\MCU_FW_DL_ODM_V1.2.07\MCU_FW_DL_ODM_V1.2.07\QDM002\1\esptool-v3.2-win64\esptool1.exe -p COM40 -b 460800 write_flash 0x0 "D:\TOOLS\MCU_FW_DL_ODM_V1.2.07\MCU_FW_DL_ODM_V1.2.07\QDM065\factory_ESP32C3-SPI.bin"
+2023-11-30_2:57:11 <--> esptool.py v3.2
+Serial port COM40
+Connecting...
+2023-11-30_2:57:11 <--> .
+2023-11-30_2:57:12 <--> 
+Detecting chip type... ESP32-C3
+Chip is ESP32-C3 (revision 4)
+Features: Wi-Fi
+Crystal is 40MHz
+MAC: d4:f9:8d:23:d7:f8
+Uploading stub...
+Running stub...
+Stub running...
+Changing baud rate to 460800
+Changed.
+Configuring flash size...
+Flash will be erased from 0x00000000 to 0x003fffff...
+Compressed 4194304 bytes to 869850...
+Writing at 0x00000000... (1 %)
+
+2023-11-30_2:57:12 <--> Writing at 0x00027683... (3 %)
+
+2023-11-30_2:57:15 <--> Writing at 0x00064548... (5 %)
+
+2023-11-30_2:57:19 <--> Writing at 0x0006ec54... (7 %)
+
+2023-11-30_2:57:20 <--> Writing at 0x0007a74c... (9 %)
+
+2023-11-30_2:57:22 <--> Writing at 0x000856d2... (11 %)
+
+2023-11-30_2:57:23 <--> Writing at 0x0008f6c5... (12 %)
+
+2023-11-30_2:57:24 <--> Writing at 0x00096e9e... (14 %)
+
+2023-11-30_2:57:25 <--> Writing at 0x0009e5ca... (16 %)
+
+2023-11-30_2:57:26 <--> Writing at 0x000a60d9... (18 %)
+
+2023-11-30_2:57:27 <--> Writing at 0x000ad092... (20 %)
+
+2023-11-30_2:57:28 <--> Writing at 0x000b42a7... (22 %)
+
+2023-11-30_2:57:29 <--> Writing at 0x000bb301... (24 %)
+
+2023-11-30_2:57:30 <--> Writing at 0x000c360f... (25 %)
+
+2023-11-30_2:57:31 <--> Writing at 0x000cad6b... (27 %)
+
+2023-11-30_2:57:32 <--> Writing at 0x000d1b5a... (29 %)
+
+2023-11-30_2:57:33 <--> Writing at 0x000d84b8... (31 %)
+
+2023-11-30_2:57:34 <--> Writing at 0x000de892... (33 %)
+
+2023-11-30_2:57:34 <--> Writing at 0x000e66b1... (35 %)
+
+2023-11-30_2:57:35 <--> Writing at 0x000ed6fb... (37 %)
+
+2023-11-30_2:57:36 <--> Writing at 0x000f5804... (38 %)
+
+2023-11-30_2:57:37 <--> Writing at 0x000fbdd3... (40 %)
+
+2023-11-30_2:57:38 <--> Writing at 0x0010301e... (42 %)
+
+2023-11-30_2:57:39 <--> Writing at 0x00109de0... (44 %)
+
+2023-11-30_2:57:40 <--> Writing at 0x00110651... (46 %)
+
+2023-11-30_2:57:41 <--> Writing at 0x001176f2... (48 %)
+
+2023-11-30_2:57:42 <--> Writing at 0x0011edcc... (50 %)
+
+2023-11-30_2:57:43 <--> Writing at 0x001256ca... (51 %)
+
+2023-11-30_2:57:44 <--> Writing at 0x0012c4c5... (53 %)
+
+2023-11-30_2:57:44 <--> Writing at 0x00133240... (55 %)
+
+2023-11-30_2:57:45 <--> Writing at 0x00139d41... (57 %)
+
+2023-11-30_2:57:45 <--> Writing at 0x00140848... (59 %)
+
+2023-11-30_2:57:46 <--> Writing at 0x00147892... (61 %)
+
+2023-11-30_2:57:46 <--> Writing at 0x0014e45c... (62 %)
+
+2023-11-30_2:57:46 <--> Writing at 0x001554a9... (64 %)
+
+2023-11-30_2:57:47 <--> Writing at 0x0015d24c... (66 %)
+
+2023-11-30_2:57:47 <--> Writing at 0x00164b7e... (68 %)
+
+2023-11-30_2:57:47 <--> Writing at 0x0016ad6d... (70 %)
+
+2023-11-30_2:57:48 <--> Writing at 0x001711b8... (72 %)
+
+2023-11-30_2:57:48 <--> Writing at 0x00178297... (74 %)
+
+2023-11-30_2:57:49 <--> Writing at 0x0017e4cb... (75 %)
+
+2023-11-30_2:57:49 <--> Writing at 0x00184c2a... (77 %)
+
+2023-11-30_2:57:49 <--> Writing at 0x0018abba... (79 %)
+
+2023-11-30_2:57:50 <--> Writing at 0x00190db1... (81 %)
+
+2023-11-30_2:57:50 <--> Writing at 0x0019700f... (83 %)
+
+2023-11-30_2:57:51 <--> Writing at 0x0019d4d0... (85 %)
+
+2023-11-30_2:57:51 <--> Writing at 0x001a38ae... (87 %)
+
+2023-11-30_2:57:51 <--> Writing at 0x001aa58e... (88 %)
+
+2023-11-30_2:57:52 <--> Writing at 0x001b0ce3... (90 %)
+
+2023-11-30_2:57:52 <--> Writing at 0x001b700c... (92 %)
+
+2023-11-30_2:57:52 <--> Writing at 0x001bcb0a... (94 %)
+
+2023-11-30_2:57:53 <--> Writing at 0x001c2eea... (96 %)
+
+2023-11-30_2:57:53 <--> Writing at 0x001c924f... (98 %)
+
+2023-11-30_2:57:54 <--> Writing at 0x00288849... (100 %)
+
+2023-11-30_2:58:17 <--> Wrote 4194304 bytes (869850 compressed) at 0x00000000 in 52.2 seconds (effective 643.1 kbit/s)...
+Hash of data verified.
+
+Leaving...
+Hard resetting via RTS pin...
+
+2023-11-30_2:58:17 <--> ESP32 DL Pass
+2023-11-30_2:58:17 <--> =====OC:QDM065EABA-N06-AAAAA=====
+++++++++++++++trace log end+++++++++++++++

@@ -1,0 +1,734 @@
+
+Script:QHY004_ASSY-MMI[MMI][SC1501627-ZZ]
+---------------------------CHECK PORT3 INSERT----------------------
+CHECK PORT3 INSERT SUCCESS
+抓取串口字符串...
+PHONE_AT: COMPOR READ FAIL  3
+抓取串口字符串...
+抓取串口字符串...
+PHONE_AT: COMPOR READ FAIL  3
+抓取串口字符串...
+抓取串口字符串...
+PHONE_AT: COMPORT_READ  3 : [3] [105]Use application log lock interface.
+[3] [687]ALTCOM log level 3.
+[3] [305]Use default buffpool interface.
+[3] [316]Use application block configuration.
+[init_configuration:5593] WAKE: b=0 w=0, c=-1, dur=0, count=0
+[appMainLoopInit:6047] ***EXCMON 2 excmon_initialized = true;
+[restartWatchdogTimer:881] Watchdog enabled! Timeout in 90 seconds.
+Welcome to MiniConsole
+>> BLE_INIT_Handler()
+
+抓取串口字符串...
+PHONE_AT: COMPORT_READ  3 : DA1453X reset complete.
+OK
+
+抓取串口字符串...
+PHONE_AT: COMPORT_READ  3 : DA1453X binary 30998 bytes download attempted!
+
+抓取串口字符串...
+PHONE_AT: COMPORT_READ  3 : [1] [953]apicmdgw_send error: -116
+
+抓取串口字符串...
+PHONE_AT: COMPORT_READ  3 : BLE DA1453X binary loaded.
+
+抓取串口字符串...
+抓取串口字符串...
+PHONE_AT: COMPORT_READ  3 : BLE callback registered.
+WIFI callback registered.
+[appMainLoopInit:6269] Send EVT_INIT.
+[appMainLoopInit:6270] EVT_SEND(eventId=0)
+[appMainLoopTask:5518] APP_TRACE
+[appMainLoopTask:5531] [STM]currState: INIT(0), evt: INIT(0)
+[INIT_INIT_Handler:2468] APP_TRACE
+[INIT_INIT_Handler:2471] EVT_SEND(eventId=16)
+[restartWatchdogTimer:868] Watchdog re-enabled! Timeout in 90 seconds.
+[appMainLoopTask:5569] [STM]nextState: IDLE(1)
+[appMainLoopTask:5531] [STM]currState: IDLE(1), evt: SENSE(16)
+[IDLE_SENSE_Handler:3245] APP_TRACE
+Cold start epochFromModemTime() 4
+	CCID: N/A
+**EXCMON initial Status: state: 1
+[IDLE_SENSE_Handler:3285] ***EXCMON 1 excmon_initialized = true;
+BLE get relative time cmd ID: 0x07
+BLE get relative time response. RelativeTime: 0 tableResetTime[0] = 0, tableResetTime[1] = 0, tableResetTime[2] = 0, tableResetTime[3] = 0, tableResetTime[4] = 0, tableResetTime[5] = 0, tableResetTime[6] = -1515870916, 
+[ble_rsp_ind_callback:1760] EVT_SEND(eventId=19)
+BLE sensor config cmd ID: 0x04, tempPeriod: 0x78, 
+抓取串口字符串...
+PHONE_AT: COMPORT_READ  3 : sensorPeriod: 0x78 accelSensitivity: 0x00, rtdEnable: 0x16, tempOffset: 0x00
+[ble_rsp_ind_callback:1745] EVT_SEND(eventId=19)
+
+抓取串口字符串...
+PHONE_AT: COMPORT_READ  3 : BLE read table cmd ID: 0x08, table_id: 0x03
+Temp Record: 0 Time count: 0, Temp: 25.1 degC, RH=0.00%
+[ble_rsp_ind_callback:1792] EVT_SEND(eventId=19)
+Get BLE track params: num 0, adv_addr_type 0, bd_addr[00:00:00:00:00:00]
+BLE track is turned off.
+Get BLE scan params: duration 30 seconds, period 120 seconds, vendorID 09E1
+BLE scan cmd ID: 0x02, duration: 0x1E, period: 0x0078, vendorID: 0x09E1
+[ble_rsp_ind_callback:1733] EVT_SEND(eventId=19)
+
+抓取串口字符串...
+PHONE_AT: COMPORT_READ  3 : BLE get relative time cmd ID: 0x07
+BLE get relative time response. RelativeTime: 0 tableResetTime[0] = 0, tableResetTime[1] = 0, tableResetTime[2] = 0, tableResetTime[3] = 0, tableResetTime[4] = 0, tableResetTime[5] = 0, tableResetTime[6] = -1515870916, 
+[ble_rsp_ind_callback:1760] EVT_SEND(eventId=19)
+BLE sensor config cmd ID: 0x04, tempPeriod: 0x78, sensorPeriod: 0x78 accelSensitivity: 0x00, rtdEnable: 0x16, tempOffset: 0x60
+[ble_rsp_ind_callback:1745] EVT_SEND(eventId=19)
+BLE params initialized.
+BLE alert config cmd ID: 0x05, alertMask: 0x0000, parameter: 0x0000
+[ble_rsp_ind_callback:1751] EVT_SEND(eventId=19)
+BLE read table cmd ID: 0x08, table_id: 0x03
+Temp Record: 0 Time count: 0, Temp: 25.1 degC, RH=0.00%
+[ble_rsp_ind_callback:1792] EVT_SEND(eventId=19)
+BLE read table cmd ID: 0x08, table_id: 0x04
+Sensor Record 0: Time count: 0, Pressure: 984.40 hPa, Light: 200 lux, accX: 0.06, accY: -0.02, accZ: -1.00
+[ble_rsp_ind_callback:1792] EVT_SEND(eventId=19)
+Get BLE scan params: duration 30 seconds, period 120
+抓取串口字符串...
+PHONE_AT: COMPORT_READ  3 :  seconds, vendorID 09E1
+Get BLE track params: num 0, adv_addr_type 0, bd_addr[00:00:00:00:00:00]
+
+SMM3_04_T_00_94
+==========IMEI:868617060001510===========
+	Accl: x=0.06 y=-0.02 z=-1.00
+	Pressure=984.40 hPa
+	Light intensity = 200 lux
+	Temp=25.09 degC, RH=0.00%
+	VREG=3361 mV
+	VBAT=4956 mV
+	Power not plugged-in
+	Operating Mode: TEST
+	Push Btn Value: 0
+========================================
+
+\\\\\\\\\\\\\\\\\\\\
+\\Quick charge test with battery
+\\\\\\\\\\\\\\\\\\\\
+PHONE POWER ON...
+CLOSE POWER
+GPIB: GPIB_WRITE 31256 : *IDN?
+GPIB: GPIB_READ 31256 : HEWLETT-PACKARD,66311B,0,A.02.02
+
+GPIB: GPIB_WRITE 31256 : OUTP OFF;*OPC?
+GPIB: GPIB_READ 31256 : +1
+
+OPEN POWER
+GPIB: GPIB_WRITE 31256 : *IDN?
+GPIB: GPIB_READ 31256 : HEWLETT-PACKARD,66311B,0,A.02.02
+
+GPIB: GPIB_WRITE 31256 : VOLT 5;*OPC?
+GPIB: GPIB_READ 31256 : +1
+
+GPIB: GPIB_WRITE 31256 : CURR 2;*OPC?
+GPIB: GPIB_READ 31256 : +1
+
+GPIB: GPIB_WRITE 31256 : OUTP ON;*OPC?
+GPIB: GPIB_READ 31256 : +1
+
+GPIB: GPIB_WRITE 31256 : *IDN?
+GPIB: GPIB_READ 31256 : HEWLETT-PACKARD,66311B,0,A.02.02
+
+GPIB: GPIB_WRITE 31256 : SENS:CURR:RANG 0.2;*OPC?
+GPIB: GPIB_READ 31256 : +1
+
+GPIB: GPIB_WRITE 31256 : MEAS:CURR?
+GPIB: GPIB_READ 31256 : 6.77911E-1
+
+Quick charge test with battery:677.911011
+CLOSE POWER
+GPIB: GPIB_WRITE 31256 : *IDN?
+GPIB: GPIB_READ 31256 : HEWLETT-PACKARD,66311B,0,A.02.02
+
+GPIB: GPIB_WRITE 31256 : OUTP OFF;*OPC?
+GPIB: GPIB_READ 31256 : +1
+
+--------------------------------------------------------------------------------------------------------------------
+send commond>at at+cfun=1
+rangeMin:OK
+rangeMax:OK
+PHONE_AT: COMPORT_WRITE  3 : at at+cfun=1
+
+
+PHONE_AT: COMPORT_WRITE  3 : at at+cfun=1
+
+OK
+
+>> at at+cfun=1
+
+OK
+
+>> 
+--------------------------------------------------------------------------------------------------------------------
+send commond>at at%getacfg="Identification.Device.Gen7"
+rangeMin:-
+rangeMax:-
+PHONE_AT: COMPORT_WRITE  3 : at at%getacfg="Identification.Device.Gen7"
+
+
+Y4TEDCPB16000001
+OK
+
+>> 
+Read bsn:Y4TEDCPB16000001
+MES Check Station
+MES Check Station Pass
+--------------------------------------------------------------------------------------------------------------------
+send commond>at+vbat
+rangeMin:4600.000
+rangeMax:6200.000
+PHONE_AT: COMPORT_WRITE  3 : at+vbat
+
+Battery voltage 4920 mV
+>> 
+--------------------------------------------------------------------------------------------------------------------
+send commond>at at+cfun=1
+rangeMin:OK
+rangeMax:OK
+PHONE_AT: COMPORT_WRITE  3 : at at+cfun=1
+
+
+OK
+
+>> 
+--------------------------------------------------------------------------------------------------------------------
+send commond>at at%ccid
+rangeMin:19
+rangeMax:20
+PHONE_AT: COMPORT_WRITE  3 : at at%ccid
+
+
+%CCID: 89320420000001833654
+
+OK
+
+>> 
+--------------------------------------------------------------------------------------------------------------------
+send commond>ver
+rangeMin:SMM3_04_T_00_94
+rangeMax:-
+PHONE_AT: COMPORT_WRITE  3 : ver
+
+
+SMM3_04_T_00_94
+TNT Compiled on Oct 28 2023 at 05:35:24
+>> 
+--------------------------------------------------------------------------------------------------------------------
+send commond>at+version
+rangeMin:TNT Compiled on Oct 28 2023 at 05:35:24
+rangeMax:-
+PHONE_AT: COMPORT_WRITE  3 : at+version
+
+
+SMM3_04_T_00_94
+TNT Compiled on Oct 28 2023 at 05:35:24
+
+
+NP Package: RK_03_00_00_00_20761_001
+Apps: RKAPP_03_00_00_00_20761_001__18_Feb_22_00:03:54
+Using APP processor - no SB or 3B versions
+MAC Revision: REL_1250_03_00_00_REV_299596
+MAC Package Version: ALT1250_03_00_00_00_20751_FW
+MAC Build Time: Feb_17_2022_00_25_29
+PHY Revision: 12.50.299585
+PHY Build Time: Feb_17_2022_00_02_40
+PHY Build Info: releas_0
+PMP Revision: 299601
+PMP Version: 20751_PMP
+PMP build time: Sep_20_2021_18_26_27
+DSP Revision: 65262
+BB Product: 1250
+BB HW Revision: 20
+RFIC_6200 Revision: 00
+NP Build Time: Jun  1 2022 21:26:00
+C&V Ver: 9.68
+Calibration date: 24.06.22
+Calibrated NP package: RK_03_00_00_00_02
+U-Boot Version: ALT1250_03_00_00_00_30621_UB
+
+OK
+
+>> 
+--------------------------------------------------------------------------------------------------------------------
+send commond>at at+cfun=0
+rangeMin:OK
+rangeMax:OK
+PHONE_AT: COMPORT_WRITE  3 : at at+cfun=0
+
+
+OK
+
+>> 
+--------------------------------------------------------------------------------------------------------------------
+send commond>at at%ignssev="SESSIONSTAT",1
+rangeMin:OK
+rangeMax:OK
+PHONE_AT: COMPORT_WRITE  3 : at at%ignssev="SESSIONSTAT",1
+
+
+OK
+
+>> 
+--------------------------------------------------------------------------------------------------------------------
+send commond>at at%ignssact=1
+rangeMin:OK
+rangeMax:OK
+PHONE_AT: COMPORT_WRITE  3 : at at%ignssact=1
+
+
+OK
+
+>> 
+--------------------------------------------------------------------------------------------------------------------
+send commond>at at%ignssact?
+rangeMin:%IGNSSACT: 1
+rangeMax:%IGNSSACT: 1
+PHONE_AT: COMPORT_WRITE  3 : at at%ignssact?
+
+
+%IGNSSACT: 1
+
+OK
+
+>> 
+--------------------------------------------------------------------------------------------------------------------
+send commond>at at%ignssinfo="sat"
+rangeMin:3
+rangeMax:-
+PHONE_AT: COMPORT_WRITE  3 : at at%ignssinfo="sat"
+
+
+%IGNSSINFO: 0
+
+OK
+
+>> 
+--------------------------------------------------------------------------------------------------------------------
+send commond>at at%ignssinfo="sat"
+rangeMin:3
+rangeMax:-
+PHONE_AT: COMPORT_WRITE  3 : at at%ignssinfo="sat"
+
+
+%IGNSSINFO: 9
+%IGNSSINFO:03,00,000,29
+%IGNSSINFO:04,00,000,26
+%IGNSSINFO:09,00,000,23
+%IGNSSINFO:16,00,000,38
+%IGNSSINFO:26,00,000,32
+%IGNSSINFO:27,00,000,21
+%IGNSSINFO:28,00,000,27
+%IGNSSINFO:31,00,000,27
+%IGNSSINFO:32,00,000,22
+
+OK
+
+>> 
+搜星数量：9
+--------------------------------------------------------------------------------------------------------------------
+send commond>at+eink
+rangeMin:-
+rangeMax:-
+PHONE_AT: COMPORT_WRITE  3 : at+eink
+
+OK
+>> 
+11
+--------------------------------------------------------------------------------------------------------------------
+send commond>at+clear 4
+rangeMin:OK
+rangeMax:OK
+PHONE_AT: COMPORT_WRITE  3 : at+clear 4
+
+BLE clear table 4
+BLE clear table cmd ID: 0x09, table_id: 0x04
+Set LCM_3.3V_EN=0
+OK
+>> 
+--------------------------------------------------------------------------------------------------------------------
+send commond>at+sense 1 1 0 0 0
+rangeMin:OK
+rangeMax:OK
+PHONE_AT: COMPORT_WRITE  3 : at+sense 1 1 0 0 0
+
+BLE sensor config cmd tempPeriod 1 minutes, sensorPeriod 1 minutes accelSensitivity 0g, rtdEnable 0, tempOffset: 0
+BLE sensor config cmd ID: 0x04, tempPeriod: 0x01, sensorPeriod: 0x01 accelSensitivity: 0x00, rtdEnable: 0x00, tempOffset: 0x00
+OK
+>> 
+--------------------------------------------------------------------------------------------------------------------
+send commond>at+read 4
+rangeMin:800.00,20.00,x:0.00,y:0.00,z:0.80
+rangeMax:1100.00,300.00,x:0.20,y:0.20,z:1.20
+PHONE_AT: COMPORT_WRITE  3 : at+read 4
+
+BLE read table 4
+BLE read table cmd ID: 0x08, table_id: 0x04
+OK
+>> Sensor Record 0: Time count: 0, Pressure: 984.32 hPa, Light: 200 lux, accX: 0.06, accY: -0.02, accZ: -1.00
+
+984.32
+--------------------------------------------------------------------------------------------------------------------
+send commond>at+clear 4
+rangeMin:OK
+rangeMax:OK
+PHONE_AT: COMPORT_WRITE  3 : at+clear 4
+
+BLE clear table 4
+BLE clear table cmd ID: 0x09, table_id: 0x04
+OK
+>> 
+--------------------------------------------------------------------------------------------------------------------
+send commond>at+sense 1 1 0 0 0
+rangeMin:OK
+rangeMax:OK
+PHONE_AT: COMPORT_WRITE  3 : at+sense 1 1 0 0 0
+
+BLE sensor config cmd tempPeriod 1 minutes, sensorPeriod 1 minutes accelSensitivity 0g, rtdEnable 0, tempOffset: 0
+BLE sensor config cmd ID: 0x04, tempPeriod: 0x01, sensorPeriod: 0x01 accelSensitivity: 0x00, rtdEnable: 0x00, tempOffset: 0x00
+OK
+>> 
+--------------------------------------------------------------------------------------------------------------------
+send commond>at+read 4
+rangeMin:0.00
+rangeMax:5.00
+PHONE_AT: COMPORT_WRITE  3 : at+read 4
+
+BLE read table 4
+BLE read table cmd ID: 0x08, table_id: 0x04
+OK
+>> Sensor Record 0: Time count: 0, Pressure: 984.30 hPa, Light: 80 lux, accX: 0.06, accY: -0.02, accZ: -1.01
+
+--------------------------------------------------------------------------------------------------------------------
+send commond>at+clear 4
+rangeMin:OK
+rangeMax:OK
+PHONE_AT: COMPORT_WRITE  3 : at+clear 4
+
+BLE clear table 4
+BLE clear table cmd ID: 0x09, table_id: 0x04
+OK
+>> 
+--------------------------------------------------------------------------------------------------------------------
+send commond>at+sense 1 1 0 0 0
+rangeMin:OK
+rangeMax:OK
+PHONE_AT: COMPORT_WRITE  3 : at+sense 1 1 0 0 0
+
+BLE sensor config cmd tempPeriod 1 minutes, sensorPeriod 1 minutes accelSensitivity 0g, rtdEnable 0, tempOffset: 0
+BLE sensor config cmd ID: 0x04, tempPeriod: 0x01, sensorPeriod: 0x01 accelSensitivity: 0x00, rtdEnable: 0x00, tempOffset: 0x00
+OK
+>> 
+--------------------------------------------------------------------------------------------------------------------
+send commond>at+read 4
+rangeMin:0.00
+rangeMax:5.00
+PHONE_AT: COMPORT_WRITE  3 : at+read 4
+
+BLE read table 4
+BLE read table cmd ID: 0x08, table_id: 0x04
+OK
+>> Sensor Record 0: Time count: 0, Pressure: 984.48 hPa, Light: 0 lux, accX: 0.06, accY: -0.03, accZ: -1.00
+
+--------------------------------------------------------------------------------------------------------------------
+send commond>at+clear 3
+rangeMin:OK
+rangeMax:OK
+PHONE_AT: COMPORT_WRITE  3 : at+clear 3
+
+BLE clear table 3
+BLE clear table cmd ID: 0x09, table_id: 0x03
+OK
+>> 
+--------------------------------------------------------------------------------------------------------------------
+send commond>at+sense 1 1 0 0 0
+rangeMin:OK
+rangeMax:OK
+PHONE_AT: COMPORT_WRITE  3 : at+sense 1 1 0 0 0
+
+BLE sensor config cmd tempPeriod 1 minutes, sensorPeriod 1 minutes accelSensitivity 0g, rtdEnable 0, tempOffset: 0
+BLE sensor config cmd ID: 0x04, tempPeriod: 0x01, sensorPeriod: 0x01 accelSensitivity: 0x00, rtdEnable: 0x00, tempOffset: 0x00
+OK
+>> 
+--------------------------------------------------------------------------------------------------------------------
+send commond>at+read 3
+rangeMin:-Temp:20.000000
+rangeMax:-Temp:30.000000
+PHONE_AT: COMPORT_WRITE  3 : at+read 3
+
+BLE read table 3
+BLE read table cmd ID: 0x08, table_id: 0x03
+OK
+>> Temp Record: 0 Time count: 0, Temp: 25.4 degC, RH=0.00%
+
+Temp:25.4
+--------------------------------------------------------------------------------------------------------------------
+send commond>at+ping 20
+rangeMin:len: 20
+rangeMax:len: 20
+PHONE_AT: COMPORT_WRITE  3 : at+ping 20
+
+BLE ping cmd send 20 bytes: 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F 10 11 12 13 14
+BLE ping cmd ID: 0x01, len: 0x14, bytes:
+OK
+>> BLE ping response len: 20, bytes:  00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F 10 11 12 13
+
+--------------------------------------------------------------------------------------------------------------------
+send commond>at+scan 30 120 0x09E1
+rangeMin:-
+rangeMax:-
+PHONE_AT: COMPORT_WRITE  3 : at+scan 30 120 0x09E1
+
+BLE scan cmd duration 30 seconds, period 120 seconds, vendorID 09E1
+BLE scan cmd ID: 0x02, duration: 0x1E, period: 0x0078, vendorID: 0x09E1
+OK
+>> 
+--------------------------------------------------------------------------------------------------------------------
+send commond>at+clear 1
+rangeMin:OK
+rangeMax:OK
+PHONE_AT: COMPORT_WRITE  3 : at+clear 1
+
+BLE clear table 1
+BLE clear table cmd ID: 0x09, table_id: 0x01
+OK
+>> 
+--------------------------------------------------------------------------------------------------------------------
+send commond>at+sense 1 1 0 0 0
+rangeMin:OK
+rangeMax:OK
+PHONE_AT: COMPORT_WRITE  3 : at+sense 1 1 0 0 0
+
+BLE sensor config cmd tempPeriod 1 minutes, sensorPeriod 1 minutes accelSensitivity 0g, rtdEnable 0, tempOffset: 0
+BLE sensor config cmd ID: 0x04, tempPeriod: 0x01, sensorPeriod: 0x01 accelSensitivity: 0x00, rtdEnable: 0x00, tempOffset: 0x00
+OK
+>> 
+--------------------------------------------------------------------------------------------------------------------
+send commond>at+read 1
+rangeMin:-
+rangeMax:-
+PHONE_AT: COMPORT_WRITE  3 : at+read 1
+
+BLE read table 1
+BLE read table cmd ID: 0x08, table_id: 0x01
+OK
+>> Scan Record: 0 Time count: 0, Addr type: 1, Addr: [c4:6a:7c:fa:2d:47], RSSI: -49, Manu_ID: 0x9E1, Temp alert: 1, Trip duration: 1, Temp: 203, Vbat: 301, Man Addr: 0x472DFA
+Scan Record: 1 Time count: 0, Addr type: 1, Addr: [c4:6a:7c:fa:22:ef], RSSI: -49, Manu_ID: 0x9E1, Temp alert: 1, Trip duration: 0, Temp: 207, Vbat: 301, Man Addr: 0xEF22FA
+
+BLEreadtable1BLEreadtablecmdID:0x08,table_id:0x01OK>>ScanRecord:0Timecount:0,Addrtype:1,Addr:[c4:6a:7c:fa:2d:47],RSSI:-49,Manu_ID:0x9E1,Tempalert:1,Tripduration:1,Temp:203,Vbat:301,ManAddr:0x472DFAScanRecord:1Timecount:0,Addrtype:1,Addr:[c4:6a:7c:fa:22:ef],RSSI:-49,Manu_ID:0x9E1,Tempalert:1,Tripduration:0,Temp:207,Vbat:301,ManAddr:0xEF22FA
+--------------------------------------------------------------------------------------------------------------------
+send commond>at+led 500 500
+rangeMin:-
+rangeMax:-
+PHONE_AT: COMPORT_WRITE  3 : at+led 500 500
+
+LED started
+>> 
+--------------------------------------------------------------------------------------------------------------------
+send commond>at+led 500 500
+rangeMin:-
+rangeMax:-
+PHONE_AT: COMPORT_WRITE  3 : at+led 500 500
+
+LED stopped
+>> 
+--------------------------------------------------------------------------------------------------------------------
+send commond>at+btn
+rangeMin:-
+rangeMax:-
+PHONE_AT: COMPORT_WRITE  3 : at+btn
+
+Press the push button now
+
+PHONE_AT: COMPORT_WRITE  3 : at+btn
+
+Press the push button now
+Button pushed
+>> 
+--------------------------------------------------------------------------------------------------------------------
+send commond>at+wen 0
+rangeMin:OK
+rangeMax:OK
+PHONE_AT: COMPORT_WRITE  3 : at+wen 0
+
+WIFI ESP32 disabled.
+OK
+>> 	Push btn value=0 count=1
+
+--------------------------------------------------------------------------------------------------------------------
+send commond>at+wen 1
+rangeMin:OK
+rangeMax:OK
+PHONE_AT: COMPORT_WRITE  3 : at+wen 1
+
+Set LCM_3.3V_EN=1
+
+PHONE_AT: COMPORT_WRITE  3 : at+wen 1
+
+OK
+>> 
+--------------------------------------------------------------------------------------------------------------------
+send commond>at+wifi at+GMR
+rangeMin:2.4.2(ESP32C3-SPI)
+rangeMax:-
+PHONE_AT: COMPORT_WRITE  3 : at+wifi at+GMR
+
+WIFI command: at+GMR
+OK
+>> at+GMR..
+AT version:2.4.2.0(fb731d2 - ESP32C3 - Aug 25 2022 03:47:31)
+SDK version:v4.3.2-553-g588436db47
+compile time(67966ba):Oct 17 2022 19:06:45
+Bin version:2.4.2(ESP32C3-SPI)
+
+OK
+
+--------------------------------------------------------------------------------------------------------------------
+send commond>at+wifi AT+CWMODE=1
+rangeMin:-
+rangeMax:-
+PHONE_AT: COMPORT_WRITE  3 : at+wifi AT+CWMODE=1
+
+WIFI command: AT+CWMODE=1
+OK
+>> AT+CWMODE=1..
+..OK..
+
+--------------------------------------------------------------------------------------------------------------------
+send commond>at+wifi AT+CWLAP
+rangeMin:-
+rangeMax:-
+PHONE_AT: COMPORT_WRITE  3 : at+wifi AT+CWLAP
+
+WIFI command: AT+CWLAP
+OK
+>> AT+CWLAP..
+Record 0: +CWLAP:(3,"NVRG37230613",-52,"4c:f5:dc:c1:69:cb",13,-1,-1,4,4,7,1)
+Record 1: +CWLAP:(4,"Xiaomi_21F1",-53,"a4:39:b3:b4:21:f2",11,-1,-1,5,3,7,1)
+Record 2: +CWLAP:(3,"CQHY-CWB_Wi-Fi5",-62,"94:e4:ba:fd:04:85",6,-1,-1,4,4,7,0)
+Record 3: +CWLAP:(4,"@PHICOMM_82",-64,"fc:7c:02:30:36:84",3,-1,-1,5,3,7,0)
+
+--------------------------------------------------------------------------------------------------------------------
+send commond>at+wifi AT+BLEINIT=2
+rangeMin:-
+rangeMax:-
+PHONE_AT: COMPORT_WRITE  3 : at+wifi AT+BLEINIT=2
+
+WIFI command: AT+BLEINIT=2
+OK
+>> AT+BLEINIT=2..
+..OK..
+
+--------------------------------------------------------------------------------------------------------------------
+send commond>at+wifi AT+BLEADVDATAEX="ESP_Y4TEDCPB16000001","A002","0102030405",1
+rangeMin:-
+rangeMax:-
+PHONE_AT: COMPORT_WRITE  3 : at+wifi AT+BLEADVDATAEX="ESP_Y4TEDCPB16000001","A002","0102030405",1
+
+WIFI command: AT+BLEADVDATAEX="ESP_Y4TEDCPB16000001","A002","0102030405",1
+OK
+>> AT+BLEADVDATAEX="ESP_Y4TEDCPB16000001","A002","0102030405",1..
+..OK..
+
+blename:ESP_Y4TEDCPB16000001,mac:(null),id:BluetoothLE#BluetoothLE00:1a:7d:da:71:11-34:85:18:01:fb:4e
+抓取串口字符串...
+PHONE_AT: COMPOR READ FAIL  3
+抓取串口字符串...
+抓取串口字符串...
+PHONE_AT: COMPORT_READ  3 : 
+抓取串口字符串...
+PHONE_AT: COMPORT_READ  3 : [3] [105]Use application log lock interface.
+[3] [687]ALTCOM log level 3.
+[3] [305]Use default buffpool interface.
+[3] [316]Use application block configuration.
+[init_configuration:5593] WAKE: b=0 w=0, c=-1, dur=0, count=0
+[appMainLoopInit:6047] ***EXCMON 2 excmon_initialized = true;
+[restartWatchdogTimer:881] Watchdog enabled! Timeout in 90 seconds.
+Welcome to MiniConsole
+>> BLE_INIT_Handler()
+
+抓取串口字符串...
+抓取串口字符串...
+PHONE_AT: COMPORT_READ  3 : [1] [953]apicmdgw_send error: -116
+
+抓取串口字符串...
+PHONE_AT: COMPORT_READ  3 : BLE DA1453X binary loaded.
+
+抓取串口字符串...
+PHONE_AT: COMPORT_READ  3 : [1] [984]Module 0x01 version mismatched!
+[1] [986]MCU: V0.15
+[1] [988]MAP: V0.14
+[1] [984]Module 0x05 version mismatched!
+[1] [986]MCU: V0.4
+[1] [988]MAP: V0.3
+
+抓取串口字符串...
+PHONE_AT: COMPORT_READ  3 : BLE callback registered.
+WIFI callback registered.
+[appMainLoopInit:6269] Send EVT_INIT.
+[appMainLoopInit:6270] EVT_SEND(eventId=0)
+[appMainLoopTask:5518] APP_TRACE
+[appMainLoopTask:5531] [STM]currState: INIT(0), evt: INIT(0)
+[INIT_INIT_Handler:2468] APP_TRACE
+[INIT_INIT_Handler:2471] EVT_SEND(eventId=16)
+[restartWatchdogTimer:868] Watchdog re-enabled! Timeout in 90 seconds.
+[appMainLoopTask:5569] [STM]nextState: IDLE(1)
+[appMainLoopTask:5531] [STM]currState: IDLE(1), evt: SENSE(16)
+[IDLE_SENSE_Handler:3245] APP_TRACE
+Cold start epochFromModemTime() 4
+	CCID: N/A
+**EXCMON initial Status: state: 1
+[IDLE_SENSE_Handler:3285] ***EXCMON 1 excmon_initialized = true;
+BLE get relative time cmd ID: 0x07
+BLE get relative time response. RelativeTime: 0 tableResetTime[0] = 0, tableResetTime[1] = 0, tableResetTime[2] = 0, tableResetTime[3] = 0, tableResetTime[4] = 0, tableResetTime[5] = 0, tableResetTime[6] = -1515870916, 
+[ble_rsp_ind_callback:1760] EVT_SEND(eventId=19)
+BLE sensor config cmd ID: 0x04, tempPeriod: 0x78, 
+抓取串口字符串...
+PHONE_AT: COMPORT_READ  3 : sensorPeriod: 0x78 accelSensitivity: 0x00, rtdEnable: 0x16, tempOffset: 0x00
+[ble_rsp_ind_callback:1745] EVT_SEND(eventId=19)
+
+抓取串口字符串...
+PHONE_AT: COMPORT_READ  3 : BLE read table cmd ID: 0x08, table_id: 0x03
+Temp Record: 0 Time count: 0, Temp: 25.8 degC, RH=0.00%
+[ble_rsp_ind_callback:1792] EVT_SEND(eventId=19)
+Get BLE track params: num 0, adv_addr_type 0, bd_addr[00:00:00:00:00:00]
+BLE track is turned off.
+Get BLE scan params: duration 30 seconds, period 120 seconds, vendorID 09E1
+BLE scan cmd ID: 0x02, duration: 0x1E, period: 0x0078, vendorID: 0x09E1
+[ble_rsp_ind_callback:1733] EVT_SEND(eventId=19)
+
+抓取串口字符串...
+PHONE_AT: COMPORT_READ  3 : BLE get relative time cmd ID: 0x07
+BLE get relative time response. RelativeTime: 0 tableResetTime[0] = 0, tableResetTime[1] = 0, tableResetTime[2] = 0, tableResetTime[3] = 0, tableResetTime[4] = 0, tableResetTime[5] = 0, tableResetTime[6] = -1515870916, 
+[ble_rsp_ind_callback:1760] EVT_SEND(eventId=19)
+BLE sensor config cmd ID: 0x04, tempPeriod: 0x78, sensorPeriod: 0x78 accelSensitivity: 0x00, rtdEnable: 0x16, tempOffset: 0x60
+[ble_rsp_ind_callback:1745] EVT_SEND(eventId=19)
+BLE params initialized.
+BLE alert config cmd ID: 0x05, alertMask: 0x0000, parameter: 0x0000
+[ble_rsp_ind_callback:1751] EVT_SEND(eventId=19)
+BLE read table cmd ID: 0x08, table_id: 0x03
+Temp Record: 0 Time count: 0, Temp: 25.8 degC, RH=0.00%
+[ble_rsp_ind_callback:1792] EVT_SEND(eventId=19)
+BLE read table cmd ID: 0x08, table_id: 0x04
+Sensor Record 0: Time count: 0, Pressure: 984.38 hPa, Light: 201 lux, accX: 0.06, accY: -0.02, accZ: -1.00
+[ble_rsp_ind_callback:1792] EVT_SEND(eventId=19)
+Get BLE scan params: duration 30 seconds, period 120
+抓取串口字符串...
+PHONE_AT: COMPORT_READ  3 :  seconds, vendorID 09E1
+Get BLE track params: num 0, adv_addr_type 0, bd_addr[00:00:00:00:00:00]
+
+SMM3_04_T_00_94
+==========IMEI:868617060001510===========
+	Accl: x=0.06 y=-0.02 z=-1.00
+	Pressure=984.38 hPa
+	Light intensity = 201 lux
+	Temp=25.75 degC, RH=0.00%
+	VREG=3367 mV
+	VBAT=4960 mV
+	Power not plugged-in
+	Operating Mode: TEST
+	Push Btn Value: 0
+========================================
+Set LCM_3.3V_EN=1
+
+------------------------------------------------------------------------
+Save Run Log ...
+------------------------------------------------------------------------

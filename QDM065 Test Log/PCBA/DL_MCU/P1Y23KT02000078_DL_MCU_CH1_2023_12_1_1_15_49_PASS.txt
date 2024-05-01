@@ -1,0 +1,160 @@
+[FW Path]:D:\TOOLS\MCU_FW_DL_ODM_V1.2.07\MCU_FW_DL_ODM_V1.2.07\QDM065\factory_ESP32C3-SPI.bin
+[FW DB]:BG772AGLAAR01A05_QDM065-EA_01.001.01.034;BG772AGLAAR01A05
+[Fixture Number]:ODMT004
+[Serial Number]:
+[IMEI]:P1Y23KT02000078
+[Date]:2023-12-1_1:15:49
+[Tool Version]:MCU_FW_DL_ODM_V1.2.07
+[StationName]:DL_MCU
+[MO]:QWCQ1000132363
+[OC]:QDM065EABA-N06-AAAAA
+[DL Time]:75
+[FN]:QDM065-EA-DL-11-003-M
+[Opertaor]:210268
+++++++++++++++++++++++++++++++
+[DL Info]:Q6-A0740-BL8L10502:not need set 120M
+[DL Info]:[Log_Level]:L6
+[DL Info]:[MCU_Ver]:factory_ESP32C3-SPI
+[DL Info]:After DL:AUTO_DL_MCU
+[Abstract_Log ErrCode ID]:50331648 
+[Abstract_Log ErrCode Info]:230054664 
+++++++++++++++trace log begin 1+++++++++++++++
+2023-12-1_1:14:33 <--> ************IMEI:P1Y23KT02000078************
+2023-12-1_1:14:33 <--> Check(P1Y23KT02000078)IMEI_STD Record Complete
+2023-12-1_1:14:43 <--> Download ESP32_MCU file ......
+2023-12-1_1:14:48 <--> cmd.exe /c D:\TOOLS\MCU_FW_DL_ODM_V1.2.07\MCU_FW_DL_ODM_V1.2.07\QDM002\1\esptool-v3.2-win64\esptool1.exe -p COM40 -b 460800 write_flash 0x0 "D:\TOOLS\MCU_FW_DL_ODM_V1.2.07\MCU_FW_DL_ODM_V1.2.07\QDM065\factory_ESP32C3-SPI.bin"
+2023-12-1_1:14:48 <--> esptool.py v3.2
+Serial port COM40
+Connecting...
+2023-12-1_1:14:49 <--> .
+2023-12-1_1:14:49 <--> 
+Detecting chip type... ESP32-C3
+Chip is ESP32-C3 (revision 4)
+Features: Wi-Fi
+Crystal is 40MHz
+MAC: d4:f9:8d:34:17:18
+Uploading stub...
+Running stub...
+Stub running...
+Changing baud rate to 460800
+Changed.
+Configuring flash size...
+Flash will be erased from 0x00000000 to 0x003fffff...
+Compressed 4194304 bytes to 869850...
+Writing at 0x00000000... (1 %)
+
+2023-12-1_1:14:50 <--> Writing at 0x00027683... (3 %)
+
+2023-12-1_1:14:52 <--> Writing at 0x00064548... (5 %)
+
+2023-12-1_1:14:55 <--> Writing at 0x0006ec54... (7 %)
+
+2023-12-1_1:14:56 <--> Writing at 0x0007a74c... (9 %)
+
+2023-12-1_1:14:57 <--> Writing at 0x000856d2... (11 %)
+
+2023-12-1_1:14:58 <--> Writing at 0x0008f6c5... (12 %)
+
+2023-12-1_1:14:59 <--> Writing at 0x00096e9e... (14 %)
+
+2023-12-1_1:15:0 <--> Writing at 0x0009e5ca... (16 %)
+
+2023-12-1_1:15:1 <--> Writing at 0x000a60d9... (18 %)
+
+2023-12-1_1:15:1 <--> Writing at 0x000ad092... (20 %)
+
+2023-12-1_1:15:2 <--> Writing at 0x000b42a7... (22 %)
+
+2023-12-1_1:15:3 <--> Writing at 0x000bb301... (24 %)
+
+2023-12-1_1:15:4 <--> Writing at 0x000c360f... (25 %)
+
+2023-12-1_1:15:5 <--> Writing at 0x000cad6b... (27 %)
+
+2023-12-1_1:15:5 <--> Writing at 0x000d1b5a... (29 %)
+
+2023-12-1_1:15:6 <--> Writing at 0x000d84b8... (31 %)
+
+2023-12-1_1:15:7 <--> Writing at 0x000de892... (33 %)
+
+2023-12-1_1:15:7 <--> Writing at 0x000e66b1... (35 %)
+
+2023-12-1_1:15:8 <--> Writing at 0x000ed6fb... (37 %)
+
+2023-12-1_1:15:9 <--> Writing at 0x000f5804... (38 %)
+
+2023-12-1_1:15:10 <--> Writing at 0x000fbdd3... (40 %)
+
+2023-12-1_1:15:10 <--> Writing at 0x0010301e... (42 %)
+
+2023-12-1_1:15:11 <--> Writing at 0x00109de0... (44 %)
+
+2023-12-1_1:15:12 <--> Writing at 0x00110651... (46 %)
+
+2023-12-1_1:15:13 <--> Writing at 0x001176f2... (48 %)
+
+2023-12-1_1:15:13 <--> Writing at 0x0011edcc... (50 %)
+
+2023-12-1_1:15:14 <--> Writing at 0x001256ca... (51 %)
+
+2023-12-1_1:15:15 <--> Writing at 0x0012c4c5... (53 %)
+
+2023-12-1_1:15:15 <--> Writing at 0x00133240... (55 %)
+
+2023-12-1_1:15:16 <--> Writing at 0x00139d41... (57 %)
+
+2023-12-1_1:15:16 <--> Writing at 0x00140848... (59 %)
+
+2023-12-1_1:15:16 <--> Writing at 0x00147892... (61 %)
+
+2023-12-1_1:15:17 <--> Writing at 0x0014e45c... (62 %)
+
+2023-12-1_1:15:17 <--> Writing at 0x001554a9... (64 %)
+
+2023-12-1_1:15:18 <--> Writing at 0x0015d24c... (66 %)
+
+2023-12-1_1:15:18 <--> Writing at 0x00164b7e... (68 %)
+
+2023-12-1_1:15:18 <--> Writing at 0x0016ad6d... (70 %)
+
+2023-12-1_1:15:19 <--> Writing at 0x001711b8... (72 %)
+
+2023-12-1_1:15:19 <--> Writing at 0x00178297... (74 %)
+
+2023-12-1_1:15:20 <--> Writing at 0x0017e4cb... (75 %)
+
+2023-12-1_1:15:20 <--> Writing at 0x00184c2a... (77 %)
+
+2023-12-1_1:15:20 <--> Writing at 0x0018abba... (79 %)
+
+2023-12-1_1:15:21 <--> Writing at 0x00190db1... (81 %)
+
+2023-12-1_1:15:21 <--> Writing at 0x0019700f... (83 %)
+
+2023-12-1_1:15:21 <--> Writing at 0x0019d4d0... (85 %)
+
+2023-12-1_1:15:22 <--> Writing at 0x001a38ae... (87 %)
+
+2023-12-1_1:15:22 <--> Writing at 0x001aa58e... (88 %)
+
+2023-12-1_1:15:23 <--> Writing at 0x001b0ce3... (90 %)
+
+2023-12-1_1:15:23 <--> Writing at 0x001b700c... (92 %)
+
+2023-12-1_1:15:23 <--> Writing at 0x001bcb0a... (94 %)
+
+2023-12-1_1:15:24 <--> Writing at 0x001c2eea... (96 %)
+
+2023-12-1_1:15:24 <--> Writing at 0x001c924f... (98 %)
+
+2023-12-1_1:15:25 <--> Writing at 0x00288849... (100 %)
+
+2023-12-1_1:15:48 <--> Wrote 4194304 bytes (869850 compressed) at 0x00000000 in 45.5 seconds (effective 737.7 kbit/s)...
+Hash of data verified.
+
+Leaving...
+Hard resetting via RTS pin...
+
+2023-12-1_1:15:48 <--> ESP32 DL Pass
+2023-12-1_1:15:48 <--> =====OC:QDM065EABA-N06-AAAAA=====
+++++++++++++++trace log end+++++++++++++++

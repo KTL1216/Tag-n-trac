@@ -1,0 +1,1043 @@
+[FW Path]:D:\tools\FW_DL_And_Format_ODM_V1.2.08\FW_DL_And_Format_ODM_V1.2.08\QDM065\BG772AGLAAR01A05_QDM065-EA_01.001.01.034\fw.alt
+[FW DB]:BG772AGLAAR01A05_QDM065-EA_01.001.01.034;BG772AGLAAR01A05
+[Fixture Number]:ODMT004
+[Serial Number]:
+[IMEI]:P1Y23KT02000310
+[Date]:2023-11-30_7:41:58
+[Tool Version]:FW_DL_And_Format_ODM_V1.2.08
+[StationName]:DL_FW
+[MO]:QWCQ1000132363
+[OC]:QDM065EABA-N06-AAAAA
+[DL Time]:160
+[FN]:QDM065-EA-DL-12-004-M
+[Opertaor]:210268
+++++++++++++++++++++++++++++++
+[DL Info]:Q6-A0740-BL8L10502:not need set 120M
+[DL Info]:Tool not need Erase(QDM065EABA-N06-AAAAA)...
+[DL Info]:[Log_Level]:L6
+[DL Info]:KEY_IMEI:P1Y23KT02000310
+[DL Info]:TestFlow- Update MOB SN Status Pass!-AUTO_DL_MCU
+[DL Info]:---DL Firmware Pass----
+[DL Info]:[2023-11-30-7:41:58]-IMEI(P1Y23KT02000310)-SQL_DB_ADD_ABSTRACT_LOG_CONN(1) Pass
+[DL Info]:---SaveLog_Abstract 1 Pass----
+[DL Info]:---Upload_DL_Status_Flag_MOB-----
+[DL Info]:After DL:Update AUTO_DL_FW Pass
+[DL Info]:---Upload_DL_Status_Flag---Pass------
+++++++++++++++++++++++++++++++
+[Abstract_Log ErrCode ID]:0x3000000 
+[Abstract_Log ErrCode Info]: 
+++++++++++++++trace log begin+++++++++++++++
+2023-11-30_7:39:18 <--> ************IMEI:P1Y23KT02000310************
+2023-11-30_7:39:18 <--> Not First_Product
+2023-11-30_7:39:18 <--> Check_Set_SQL_MOB_SN Pass
+2023-11-30_7:39:18 <--> +++++++++++1,Check Module Mode+++++++++++
+2023-11-30_7:39:18 <--> Open port ......
+2023-11-30_7:39:18 <--> Open port success
+2023-11-30_7:39:29 <-->  reset 
+Hit any key to stop autoboot:  3  0 
+# 
+# 
+# 
+# 
+# 
+# 
+# 
+# 
+# 
+# 
+# 
+# 
+# 
+2023-11-30_7:39:29 <--> Check module success
+2023-11-30_7:39:29 <--> +++++++++++2,DLMode =1 非裸片+++++++++++
+2023-11-30_7:39:29 <--> DL start ......
+2023-11-30_7:39:29 <--> D:\tools\FW_DL_And_Format_ODM_V1.2.08\FW_DL_And_Format_ODM_V1.2.08\Altair\1\powershell.exe /c D:\tools\FW_DL_And_Format_ODM_V1.2.08\FW_DL_And_Format_ODM_V1.2.08\Altair\1\ImageBurnTool1.exe -v D:\tools\FW_DL_And_Format_ODM_V1.2.08\FW_DL_And_Format_ODM_V1.2.08\QDM065\BG772AGLAAR01A05_QDM065-EA_01.001.01.034\RK_03_00 E0_BZ /0 /1 /2 /3 /4 /7 /11 /12 /19 -uartparams 1 1275 3000000 1 -s 1 -n 1
+2023-11-30_7:39:36 <--> Setting baudrate to 3000000
+2023-11-30_7:39:39 <--> Setting flow control on
+2023-11-30_7:39:40 <--> Log file's location:
+2023-11-30_7:39:40 <--> 'C:\ProgramData\Altair\ImageBurnTool\Logging\LogFile30-11-2023  07-39-30.547.txt'
+2023-11-30_7:39:42 <--> Reading Session File: C:\Users\1\AppData\Local\Temp\tmp163E.tmp
+2023-11-30_7:39:42 <-->  Write: erase 0xB8010000 "+1000"
+2023-11-30_7:39:42 <-->  ...
+2023-11-30_7:39:42 <-->  Done.
+2023-11-30_7:39:42 <-->  Read: 10 \fpattern(Erased *#) with timeout 10000
+2023-11-30_7:39:42 <-->  ...
+2023-11-30_7:39:43 <-->  Done.
+2023-11-30_7:39:43 <-->  Write: loadb 0xB80B0000
+2023-11-30_7:39:43 <-->  ...
+2023-11-30_7:39:43 <-->  Done.
+2023-11-30_7:39:43 <-->  Read: 3 \fpattern(## Ready for binary (kermit) download*) with timeout 3000
+2023-11-30_7:39:43 <-->  ...
+2023-11-30_7:39:43 <-->  Done.
+2023-11-30_7:39:43 <-->  Send: D:\tools\FW_DL_And_Format_ODM_V1.2.08\FW_DL_And_Format_ODM_V1.2.08\QDM065\BG772AGLAAR01A05_QDM065-EA_01.001.01.034\RK_03_00\Images\u-boot-backup.bin
+2023-11-30_7:39:43 <--> Sending file ...
+2023-11-30_7:39:43 <--> This might take a while .... please wait
+2023-11-30_7:39:43 <--> Writing image "u-boot-backup.bin" to device ... (1% completed)     
+2023-11-30_7:39:43 <--> Writing image "u-boot-backup.bin" to device ... (2% completed)     
+2023-11-30_7:39:43 <--> Writing image "u-boot-backup.bin" to device ... (3% completed)     
+2023-11-30_7:39:43 <--> Writing image "u-boot-backup.bin" to device ... (4% completed)     
+2023-11-30_7:39:43 <--> Writing image "u-boot-backup.bin" to device ... (5% completed)     
+2023-11-30_7:39:43 <--> Writing image "u-boot-backup.bin" to device ... (6% completed)     
+2023-11-30_7:39:43 <--> Writing image "u-boot-backup.bin" to device ... (7% completed)     
+2023-11-30_7:39:43 <--> Writing image "u-boot-backup.bin" to device ... (8% completed)     
+2023-11-30_7:39:43 <--> Writing image "u-boot-backup.bin" to device ... (9% completed)     
+2023-11-30_7:39:43 <--> Writing image "u-boot-backup.bin" to device ... (10% completed)     
+2023-11-30_7:39:43 <--> Writing image "u-boot-backup.bin" to device ... (11% completed)     
+2023-11-30_7:39:43 <--> Writing image "u-boot-backup.bin" to device ... (12% completed)     
+2023-11-30_7:39:43 <--> Writing image "u-boot-backup.bin" to device ... (13% completed)     
+2023-11-30_7:39:43 <--> Writing image "u-boot-backup.bin" to device ... (14% completed)     
+2023-11-30_7:39:43 <--> Writing image "u-boot-backup.bin" to device ... (15% completed)     
+2023-11-30_7:39:43 <--> Writing image "u-boot-backup.bin" to device ... (16% completed)     
+2023-11-30_7:39:43 <--> Writing image "u-boot-backup.bin" to device ... (17% completed)     
+2023-11-30_7:39:43 <--> Writing image "u-boot-backup.bin" to device ... (18% completed)     
+2023-11-30_7:39:43 <--> Writing image "u-boot-backup.bin" to device ... (19% completed)     
+2023-11-30_7:39:43 <--> Writing image "u-boot-backup.bin" to device ... (20% completed)     
+2023-11-30_7:39:43 <--> Writing image "u-boot-backup.bin" to device ... (21% completed)     
+2023-11-30_7:39:43 <--> Writing image "u-boot-backup.bin" to device ... (22% completed)     
+2023-11-30_7:39:43 <--> Writing image "u-boot-backup.bin" to device ... (23% completed)     
+2023-11-30_7:39:43 <--> Writing image "u-boot-backup.bin" to device ... (24% completed)     
+2023-11-30_7:39:43 <--> Writing image "u-boot-backup.bin" to device ... (25% completed)     
+2023-11-30_7:39:43 <--> Writing image "u-boot-backup.bin" to device ... (26% completed)     
+2023-11-30_7:39:43 <--> Writing image "u-boot-backup.bin" to device ... (27% completed)     
+2023-11-30_7:39:43 <--> Writing image "u-boot-backup.bin" to device ... (28% completed)     
+2023-11-30_7:39:43 <--> Writing image "u-boot-backup.bin" to device ... (29% completed)     
+2023-11-30_7:39:43 <--> Writing image "u-boot-backup.bin" to device ... (30% completed)     
+2023-11-30_7:39:43 <--> Writing image "u-boot-backup.bin" to device ... (31% completed)     
+2023-11-30_7:39:43 <--> Writing image "u-boot-backup.bin" to device ... (32% completed)     
+2023-11-30_7:39:43 <--> Writing image "u-boot-backup.bin" to device ... (33% completed)     
+2023-11-30_7:39:43 <--> Writing image "u-boot-backup.bin" to device ... (34% completed)     
+2023-11-30_7:39:43 <--> Writing image "u-boot-backup.bin" to device ... (35% completed)     
+2023-11-30_7:39:43 <--> Writing image "u-boot-backup.bin" to device ... (36% completed)     
+2023-11-30_7:39:43 <--> Writing image "u-boot-backup.bin" to device ... (37% completed)     
+2023-11-30_7:39:43 <--> Writing image "u-boot-backup.bin" to device ... (38% completed)     
+2023-11-30_7:39:43 <--> Writing image "u-boot-backup.bin" to device ... (39% completed)     
+2023-11-30_7:39:43 <--> Writing image "u-boot-backup.bin" to device ... (40% completed)     
+2023-11-30_7:39:43 <--> Writing image "u-boot-backup.bin" to device ... (41% completed)     
+2023-11-30_7:39:43 <--> Writing image "u-boot-backup.bin" to device ... (42% completed)     
+2023-11-30_7:39:43 <--> Writing image "u-boot-backup.bin" to device ... (43% completed)     
+2023-11-30_7:39:43 <--> Writing image "u-boot-backup.bin" to device ... (44% completed)     
+2023-11-30_7:39:43 <--> Writing image "u-boot-backup.bin" to device ... (45% completed)     
+2023-11-30_7:39:43 <--> Writing image "u-boot-backup.bin" to device ... (46% completed)     
+2023-11-30_7:39:43 <--> Writing image "u-boot-backup.bin" to device ... (47% completed)     
+2023-11-30_7:39:43 <--> Writing image "u-boot-backup.bin" to device ... (48% completed)     
+2023-11-30_7:39:43 <--> Writing image "u-boot-backup.bin" to device ... (49% completed)     
+2023-11-30_7:39:43 <--> Writing image "u-boot-backup.bin" to device ... (50% completed)     
+2023-11-30_7:39:43 <--> Writing image "u-boot-backup.bin" to device ... (51% completed)     
+2023-11-30_7:39:44 <--> Writing image "u-boot-backup.bin" to device ... (52% completed)     
+2023-11-30_7:39:44 <--> Writing image "u-boot-backup.bin" to device ... (53% completed)     
+2023-11-30_7:39:44 <--> Writing image "u-boot-backup.bin" to device ... (54% completed)     
+2023-11-30_7:39:44 <--> Writing image "u-boot-backup.bin" to device ... (55% completed)     
+2023-11-30_7:39:44 <--> Writing image "u-boot-backup.bin" to device ... (56% completed)     
+2023-11-30_7:39:44 <--> Writing image "u-boot-backup.bin" to device ... (57% completed)     
+2023-11-30_7:39:44 <--> Writing image "u-boot-backup.bin" to device ... (58% completed)     
+2023-11-30_7:39:44 <--> Writing image "u-boot-backup.bin" to device ... (59% completed)     
+2023-11-30_7:39:44 <--> Writing image "u-boot-backup.bin" to device ... (60% completed)     
+2023-11-30_7:39:44 <--> Writing image "u-boot-backup.bin" to device ... (61% completed)     
+2023-11-30_7:39:44 <--> Writing image "u-boot-backup.bin" to device ... (62% completed)     
+2023-11-30_7:39:44 <--> Writing image "u-boot-backup.bin" to device ... (63% completed)     
+2023-11-30_7:39:44 <--> Writing image "u-boot-backup.bin" to device ... (64% completed)     
+2023-11-30_7:39:44 <--> Writing image "u-boot-backup.bin" to device ... (65% completed)     
+2023-11-30_7:39:44 <--> Writing image "u-boot-backup.bin" to device ... (66% completed)     
+2023-11-30_7:39:44 <--> Writing image "u-boot-backup.bin" to device ... (67% completed)     
+2023-11-30_7:39:44 <--> Writing image "u-boot-backup.bin" to device ... (68% completed)     
+2023-11-30_7:39:44 <--> Writing image "u-boot-backup.bin" to device ... (69% completed)     
+2023-11-30_7:39:44 <--> Writing image "u-boot-backup.bin" to device ... (70% completed)     
+2023-11-30_7:39:44 <--> Writing image "u-boot-backup.bin" to device ... (71% completed)     
+2023-11-30_7:39:44 <--> Writing image "u-boot-backup.bin" to device ... (72% completed)     
+2023-11-30_7:39:44 <--> Writing image "u-boot-backup.bin" to device ... (73% completed)     
+2023-11-30_7:39:44 <--> Writing image "u-boot-backup.bin" to device ... (74% completed)     
+2023-11-30_7:39:44 <--> Writing image "u-boot-backup.bin" to device ... (75% completed)     
+2023-11-30_7:39:44 <--> Writing image "u-boot-backup.bin" to device ... (76% completed)     
+2023-11-30_7:39:44 <--> Writing image "u-boot-backup.bin" to device ... (77% completed)     
+2023-11-30_7:39:44 <--> Writing image "u-boot-backup.bin" to device ... (78% completed)     
+2023-11-30_7:39:44 <--> Writing image "u-boot-backup.bin" to device ... (79% completed)     
+2023-11-30_7:39:44 <--> Writing image "u-boot-backup.bin" to device ... (80% completed)     
+2023-11-30_7:39:44 <--> Writing image "u-boot-backup.bin" to device ... (81% completed)     
+2023-11-30_7:39:44 <--> Writing image "u-boot-backup.bin" to device ... (82% completed)     
+2023-11-30_7:39:44 <--> Writing image "u-boot-backup.bin" to device ... (83% completed)     
+2023-11-30_7:39:44 <--> Writing image "u-boot-backup.bin" to device ... (84% completed)     
+2023-11-30_7:39:44 <--> Writing image "u-boot-backup.bin" to device ... (85% completed)     
+2023-11-30_7:39:44 <--> Writing image "u-boot-backup.bin" to device ... (86% completed)     
+2023-11-30_7:39:44 <--> Writing image "u-boot-backup.bin" to device ... (87% completed)     
+2023-11-30_7:39:44 <--> Writing image "u-boot-backup.bin" to device ... (88% completed)     
+2023-11-30_7:39:44 <--> Writing image "u-boot-backup.bin" to device ... (89% completed)     
+2023-11-30_7:39:44 <--> Writing image "u-boot-backup.bin" to device ... (90% completed)     
+2023-11-30_7:39:44 <--> Writing image "u-boot-backup.bin" to device ... (91% completed)     
+2023-11-30_7:39:44 <--> Writing image "u-boot-backup.bin" to device ... (92% completed)     
+2023-11-30_7:39:44 <--> Writing image "u-boot-backup.bin" to device ... (93% completed)     
+2023-11-30_7:39:44 <--> Writing image "u-boot-backup.bin" to device ... (94% completed)     
+2023-11-30_7:39:44 <--> Writing image "u-boot-backup.bin" to device ... (95% completed)     
+2023-11-30_7:39:44 <--> Writing image "u-boot-backup.bin" to device ... (96% completed)     
+2023-11-30_7:39:44 <--> Writing image "u-boot-backup.bin" to device ... (97% completed)     
+2023-11-30_7:39:44 <--> Writing image "u-boot-backup.bin" to device ... (98% completed)     
+2023-11-30_7:39:44 <--> Writing image "u-boot-backup.bin" to device ... (99% completed)     
+2023-11-30_7:39:44 <--> Writing image "u-boot-backup.bin" to device ... (100% completed)     
+2023-11-30_7:39:44 <-->  Done.
+2023-11-30_7:39:45 <-->  Write: loadb 0xB8010000
+2023-11-30_7:39:45 <-->  ...
+2023-11-30_7:39:45 <-->  Done.
+2023-11-30_7:39:45 <-->  Read: 3 \fpattern(## Ready for binary (kermit) download*) with timeout 3000
+2023-11-30_7:39:45 <-->  ...
+2023-11-30_7:39:45 <-->  Done.
+2023-11-30_7:39:45 <--> Writing image "system_header_backup_alt1250_E0_BZ.bin" to device ... (46% completed)     
+2023-11-30_7:39:45 <--> Writing image "system_header_backup_alt1250_E0_BZ.bin" to device ... (88% completed)     
+2023-11-30_7:39:45 <--> Writing image "u-boot-backup.bin" to device ... (100% completed)     
+2023-11-30_7:39:45 <-->  Done.
+2023-11-30_7:39:45 <-->  Read: 120 \fpattern(## Start Addr*#) with timeout 120000
+2023-11-30_7:39:45 <-->  ...
+2023-11-30_7:39:45 <-->  Done.
+2023-11-30_7:39:45 <-->  Write: erase 0xB8000000 "+1000"
+2023-11-30_7:39:45 <-->  ...
+2023-11-30_7:39:45 <-->  Done.
+2023-11-30_7:39:45 <-->  Read: 10 \fpattern(Erased *#) with timeout 10000
+2023-11-30_7:39:45 <-->  ...
+2023-11-30_7:39:45 <-->  Done.
+2023-11-30_7:39:45 <-->  Write: loadb 0xB8011000
+2023-11-30_7:39:45 <-->  ...
+2023-11-30_7:39:45 <-->  Done.
+2023-11-30_7:39:45 <-->  Read: 3 \fpattern(## Ready for binary (kermit) download*) with timeout 3000
+2023-11-30_7:39:45 <-->  ...
+2023-11-30_7:39:45 <-->  Done.
+2023-11-30_7:39:45 <--> Writing image "u-boot.bin" to device ... (1% completed)     
+2023-11-30_7:39:45 <--> Writing image "u-boot.bin" to device ... (2% completed)     
+2023-11-30_7:39:45 <--> Writing image "u-boot.bin" to device ... (3% completed)     
+2023-11-30_7:39:45 <--> Writing image "u-boot.bin" to device ... (4% completed)     
+2023-11-30_7:39:45 <--> Writing image "u-boot.bin" to device ... (5% completed)     
+2023-11-30_7:39:45 <--> Writing image "u-boot.bin" to device ... (6% completed)     
+2023-11-30_7:39:45 <--> Writing image "u-boot.bin" to device ... (7% completed)     
+2023-11-30_7:39:45 <--> Writing image "u-boot.bin" to device ... (8% completed)     
+2023-11-30_7:39:45 <--> Writing image "u-boot.bin" to device ... (9% completed)     
+2023-11-30_7:39:45 <--> Writing image "u-boot.bin" to device ... (10% completed)     
+2023-11-30_7:39:45 <--> Writing image "u-boot.bin" to device ... (11% completed)     
+2023-11-30_7:39:45 <--> Writing image "u-boot.bin" to device ... (12% completed)     
+2023-11-30_7:39:45 <--> Writing image "u-boot.bin" to device ... (13% completed)     
+2023-11-30_7:39:45 <--> Writing image "u-boot.bin" to device ... (14% completed)     
+2023-11-30_7:39:45 <--> Writing image "u-boot.bin" to device ... (15% completed)     
+2023-11-30_7:39:45 <--> Writing image "u-boot.bin" to device ... (16% completed)     
+2023-11-30_7:39:45 <--> Writing image "u-boot.bin" to device ... (17% completed)     
+2023-11-30_7:39:45 <--> Writing image "u-boot.bin" to device ... (18% completed)     
+2023-11-30_7:39:45 <--> Writing image "u-boot.bin" to device ... (19% completed)     
+2023-11-30_7:39:45 <--> Writing image "u-boot.bin" to device ... (20% completed)     
+2023-11-30_7:39:45 <--> Writing image "u-boot.bin" to device ... (21% completed)     
+2023-11-30_7:39:45 <--> Writing image "u-boot.bin" to device ... (22% completed)     
+2023-11-30_7:39:45 <--> Writing image "u-boot.bin" to device ... (23% completed)     
+2023-11-30_7:39:45 <--> Writing image "u-boot.bin" to device ... (24% completed)     
+2023-11-30_7:39:45 <--> Writing image "u-boot.bin" to device ... (25% completed)     
+2023-11-30_7:39:46 <--> Writing image "u-boot.bin" to device ... (26% completed)     
+2023-11-30_7:39:46 <--> Writing image "u-boot.bin" to device ... (27% completed)     
+2023-11-30_7:39:46 <--> Writing image "u-boot.bin" to device ... (28% completed)     
+2023-11-30_7:39:46 <--> Writing image "u-boot.bin" to device ... (29% completed)     
+2023-11-30_7:39:46 <--> Writing image "u-boot.bin" to device ... (30% completed)     
+2023-11-30_7:39:46 <--> Writing image "u-boot.bin" to device ... (31% completed)     
+2023-11-30_7:39:46 <--> Writing image "u-boot.bin" to device ... (32% completed)     
+2023-11-30_7:39:46 <--> Writing image "u-boot.bin" to device ... (33% completed)     
+2023-11-30_7:39:46 <--> Writing image "u-boot.bin" to device ... (34% completed)     
+2023-11-30_7:39:46 <--> Writing image "u-boot.bin" to device ... (35% completed)     
+2023-11-30_7:39:46 <--> Writing image "u-boot.bin" to device ... (36% completed)     
+2023-11-30_7:39:46 <--> Writing image "u-boot.bin" to device ... (37% completed)     
+2023-11-30_7:39:46 <--> Writing image "u-boot.bin" to device ... (38% completed)     
+2023-11-30_7:39:46 <--> Writing image "u-boot.bin" to device ... (39% completed)     
+2023-11-30_7:39:46 <--> Writing image "u-boot.bin" to device ... (40% completed)     
+2023-11-30_7:39:46 <--> Writing image "u-boot.bin" to device ... (41% completed)     
+2023-11-30_7:39:46 <--> Writing image "u-boot.bin" to device ... (42% completed)     
+2023-11-30_7:39:46 <--> Writing image "u-boot.bin" to device ... (43% completed)     
+2023-11-30_7:39:46 <--> Writing image "u-boot.bin" to device ... (44% completed)     
+2023-11-30_7:39:46 <--> Writing image "u-boot.bin" to device ... (45% completed)     
+2023-11-30_7:39:46 <--> Writing image "u-boot.bin" to device ... (46% completed)     
+2023-11-30_7:39:46 <--> Writing image "u-boot.bin" to device ... (47% completed)     
+2023-11-30_7:39:46 <--> Writing image "u-boot.bin" to device ... (48% completed)     
+2023-11-30_7:39:46 <--> Writing image "u-boot.bin" to device ... (49% completed)     
+2023-11-30_7:39:46 <--> Writing image "u-boot.bin" to device ... (50% completed)     
+2023-11-30_7:39:46 <--> Writing image "u-boot.bin" to device ... (51% completed)     
+2023-11-30_7:39:46 <--> Writing image "u-boot.bin" to device ... (52% completed)     
+2023-11-30_7:39:46 <--> Writing image "u-boot.bin" to device ... (53% completed)     
+2023-11-30_7:39:46 <--> Writing image "u-boot.bin" to device ... (54% completed)     
+2023-11-30_7:39:46 <--> Writing image "u-boot.bin" to device ... (55% completed)     
+2023-11-30_7:39:46 <--> Writing image "u-boot.bin" to device ... (56% completed)     
+2023-11-30_7:39:46 <--> Writing image "u-boot.bin" to device ... (57% completed)     
+2023-11-30_7:39:46 <--> Writing image "u-boot.bin" to device ... (58% completed)     
+2023-11-30_7:39:46 <--> Writing image "u-boot.bin" to device ... (59% completed)     
+2023-11-30_7:39:46 <--> Writing image "u-boot.bin" to device ... (60% completed)     
+2023-11-30_7:39:46 <--> Writing image "u-boot.bin" to device ... (61% completed)     
+2023-11-30_7:39:46 <--> Writing image "u-boot.bin" to device ... (62% completed)     
+2023-11-30_7:39:46 <--> Writing image "u-boot.bin" to device ... (63% completed)     
+2023-11-30_7:39:46 <--> Writing image "u-boot.bin" to device ... (64% completed)     
+2023-11-30_7:39:46 <--> Writing image "u-boot.bin" to device ... (65% completed)     
+2023-11-30_7:39:46 <--> Writing image "u-boot.bin" to device ... (66% completed)     
+2023-11-30_7:39:46 <--> Writing image "u-boot.bin" to device ... (67% completed)     
+2023-11-30_7:39:46 <--> Writing image "u-boot.bin" to device ... (68% completed)     
+2023-11-30_7:39:46 <--> Writing image "u-boot.bin" to device ... (69% completed)     
+2023-11-30_7:39:46 <--> Writing image "u-boot.bin" to device ... (70% completed)     
+2023-11-30_7:39:46 <--> Writing image "u-boot.bin" to device ... (71% completed)     
+2023-11-30_7:39:46 <--> Writing image "u-boot.bin" to device ... (72% completed)     
+2023-11-30_7:39:46 <--> Writing image "u-boot.bin" to device ... (73% completed)     
+2023-11-30_7:39:46 <--> Writing image "u-boot.bin" to device ... (74% completed)     
+2023-11-30_7:39:46 <--> Writing image "u-boot.bin" to device ... (75% completed)     
+2023-11-30_7:39:46 <--> Writing image "u-boot.bin" to device ... (76% completed)     
+2023-11-30_7:39:46 <--> Writing image "u-boot.bin" to device ... (77% completed)     
+2023-11-30_7:39:46 <--> Writing image "u-boot.bin" to device ... (78% completed)     
+2023-11-30_7:39:46 <--> Writing image "u-boot.bin" to device ... (79% completed)     
+2023-11-30_7:39:46 <--> Writing image "u-boot.bin" to device ... (80% completed)     
+2023-11-30_7:39:46 <--> Writing image "u-boot.bin" to device ... (81% completed)     
+2023-11-30_7:39:47 <--> Writing image "u-boot.bin" to device ... (82% completed)     
+2023-11-30_7:39:47 <--> Writing image "u-boot.bin" to device ... (83% completed)     
+2023-11-30_7:39:47 <--> Writing image "u-boot.bin" to device ... (84% completed)     
+2023-11-30_7:39:47 <--> Writing image "u-boot.bin" to device ... (85% completed)     
+2023-11-30_7:39:47 <--> Writing image "u-boot.bin" to device ... (86% completed)     
+2023-11-30_7:39:47 <--> Writing image "u-boot.bin" to device ... (87% completed)     
+2023-11-30_7:39:47 <--> Writing image "u-boot.bin" to device ... (88% completed)     
+2023-11-30_7:39:47 <--> Writing image "u-boot.bin" to device ... (89% completed)     
+2023-11-30_7:39:47 <--> Writing image "u-boot.bin" to device ... (90% completed)     
+2023-11-30_7:39:47 <--> Writing image "u-boot.bin" to device ... (91% completed)     
+2023-11-30_7:39:47 <--> Writing image "u-boot.bin" to device ... (92% completed)     
+2023-11-30_7:39:47 <--> Writing image "u-boot.bin" to device ... (93% completed)     
+2023-11-30_7:39:47 <--> Writing image "u-boot.bin" to device ... (94% completed)     
+2023-11-30_7:39:47 <--> Writing image "u-boot.bin" to device ... (95% completed)     
+2023-11-30_7:39:47 <--> Writing image "u-boot.bin" to device ... (96% completed)     
+2023-11-30_7:39:47 <--> Writing image "u-boot.bin" to device ... (97% completed)     
+2023-11-30_7:39:47 <--> Writing image "u-boot.bin" to device ... (98% completed)     
+2023-11-30_7:39:47 <--> Writing image "u-boot.bin" to device ... (99% completed)     
+2023-11-30_7:39:47 <--> Writing image "u-boot.bin" to device ... (100% completed)     
+2023-11-30_7:39:47 <-->  Done.
+2023-11-30_7:39:47 <-->  Read: 120 \fpattern(## Start Addr*#) with timeout 120000
+2023-11-30_7:39:47 <-->  ...
+2023-11-30_7:39:47 <-->  Done.
+2023-11-30_7:39:47 <-->  Write: loadb 0xB8000000
+2023-11-30_7:39:47 <-->  ...
+2023-11-30_7:39:47 <-->  Done.
+2023-11-30_7:39:47 <-->  Read: 3 \fpattern(## Ready for binary (kermit) download*) with timeout 3000
+2023-11-30_7:39:47 <-->  ...
+2023-11-30_7:39:47 <-->  Done.
+2023-11-30_7:39:47 <--> Writing image "system_header_alt1250_E0_BZ.bin" to device ... (41% completed)     
+2023-11-30_7:39:47 <--> Writing image "system_header_alt1250_E0_BZ.bin" to device ... (80% completed)     
+2023-11-30_7:39:47 <--> Writing image "u-boot.bin" to device ... (100% completed)     
+2023-11-30_7:39:48 <-->  Done.
+2023-11-30_7:39:48 <-->  Write: loadb 0xB8001000
+2023-11-30_7:39:48 <-->  ...
+2023-11-30_7:39:48 <-->  Done.
+2023-11-30_7:39:48 <-->  Read: 3 \fpattern(## Ready for binary (kermit) download*) with timeout 3000
+2023-11-30_7:39:48 <-->  ...
+2023-11-30_7:39:48 <-->  Done.
+2023-11-30_7:39:48 <--> Writing image "system_header_dh0_alt1250_E0_BZ.bin" to device ... (46% completed)     
+2023-11-30_7:39:48 <--> Writing image "system_header_dh0_alt1250_E0_BZ.bin" to device ... (88% completed)     
+2023-11-30_7:39:48 <--> Writing image "u-boot.bin" to device ... (100% completed)     
+2023-11-30_7:39:48 <-->  Done.
+2023-11-30_7:39:48 <-->  Write: protect off all
+2023-11-30_7:39:48 <-->  ...
+2023-11-30_7:39:48 <-->  Done.
+2023-11-30_7:39:48 <-->  Read: 3 \fpattern(Un-Protect Flash) with timeout 3000
+2023-11-30_7:39:48 <-->  ...
+2023-11-30_7:39:51 <-->  Done.
+2023-11-30_7:39:51 <-->  Write: erase 0xB8193000 "+2000"
+2023-11-30_7:39:51 <-->  ...
+2023-11-30_7:39:51 <-->  Done.
+2023-11-30_7:39:51 <-->  Read: 10 \fpattern(Erased *#) with timeout 10000
+2023-11-30_7:39:51 <-->  ...
+2023-11-30_7:39:51 <-->  Done.
+2023-11-30_7:39:51 <-->  Write: erase 0xB8195000 "+2000"
+2023-11-30_7:39:51 <-->  ...
+2023-11-30_7:39:51 <-->  Done.
+2023-11-30_7:39:51 <-->  Read: 10 \fpattern(Erased *#) with timeout 10000
+2023-11-30_7:39:51 <-->  ...
+2023-11-30_7:39:51 <-->  Done.
+2023-11-30_7:39:51 <-->  Write: protect on all
+2023-11-30_7:39:51 <-->  ...
+2023-11-30_7:39:51 <-->  Done.
+2023-11-30_7:39:51 <-->  Read: 3 \fpattern(Protect Flash Bank) with timeout 3000
+2023-11-30_7:39:51 <-->  ...
+2023-11-30_7:39:54 <-->  Done.
+2023-11-30_7:39:54 <-->  Write: protect off all
+2023-11-30_7:39:54 <-->  ...
+2023-11-30_7:39:54 <-->  Done.
+2023-11-30_7:39:54 <-->  Read: 3 \fpattern(Un-Protect Flash) with timeout 3000
+2023-11-30_7:39:54 <-->  ...
+2023-11-30_7:39:58 <-->  Done.
+2023-11-30_7:39:58 <-->  Write: erase 0xB819E000 "+1000"
+2023-11-30_7:39:58 <-->  ...
+2023-11-30_7:39:58 <-->  Done.
+2023-11-30_7:39:58 <-->  Read: 10 \fpattern(Erased *#) with timeout 10000
+2023-11-30_7:39:58 <-->  ...
+2023-11-30_7:39:58 <-->  Done.
+2023-11-30_7:39:58 <-->  Write: erase 0xB819F000 "+1000"
+2023-11-30_7:39:58 <-->  ...
+2023-11-30_7:39:58 <-->  Done.
+2023-11-30_7:39:58 <-->  Read: 10 \fpattern(Erased *#) with timeout 10000
+2023-11-30_7:39:58 <-->  ...
+2023-11-30_7:39:58 <-->  Done.
+2023-11-30_7:39:58 <-->  Write: loadb 0xB819E000
+2023-11-30_7:39:58 <-->  ...
+2023-11-30_7:39:58 <-->  Done.
+2023-11-30_7:39:58 <-->  Read: 3 \fpattern(## Ready for binary (kermit) download*) with timeout 3000
+2023-11-30_7:39:58 <-->  ...
+2023-11-30_7:39:58 <-->  Done.
+2023-11-30_7:39:58 <--> Writing image "partmap.bin" to device ... (8% completed)     
+2023-11-30_7:39:58 <--> Writing image "partmap.bin" to device ... (14% completed)     
+2023-11-30_7:39:58 <--> Writing image "partmap.bin" to device ... (19% completed)     
+2023-11-30_7:39:58 <--> Writing image "partmap.bin" to device ... (24% completed)     
+2023-11-30_7:39:58 <--> Writing image "partmap.bin" to device ... (30% completed)     
+2023-11-30_7:39:58 <--> Writing image "partmap.bin" to device ... (35% completed)     
+2023-11-30_7:39:58 <--> Writing image "partmap.bin" to device ... (40% completed)     
+2023-11-30_7:39:58 <--> Writing image "partmap.bin" to device ... (45% completed)     
+2023-11-30_7:39:58 <--> Writing image "partmap.bin" to device ... (51% completed)     
+2023-11-30_7:39:58 <--> Writing image "partmap.bin" to device ... (56% completed)     
+2023-11-30_7:39:58 <--> Writing image "partmap.bin" to device ... (61% completed)     
+2023-11-30_7:39:58 <--> Writing image "partmap.bin" to device ... (67% completed)     
+2023-11-30_7:39:58 <--> Writing image "partmap.bin" to device ... (72% completed)     
+2023-11-30_7:39:58 <--> Writing image "partmap.bin" to device ... (77% completed)     
+2023-11-30_7:39:58 <--> Writing image "partmap.bin" to device ... (83% completed)     
+2023-11-30_7:39:58 <--> Writing image "partmap.bin" to device ... (88% completed)     
+2023-11-30_7:39:58 <--> Writing image "partmap.bin" to device ... (93% completed)     
+2023-11-30_7:39:58 <--> Writing image "partmap.bin" to device ... (99% completed)     
+2023-11-30_7:39:58 <--> Writing image "partmap.bin" to device ... (100% completed)     
+2023-11-30_7:39:58 <-->  Done.
+2023-11-30_7:39:58 <-->  Read: 120 \fpattern(## Start Addr*#) with timeout 120000
+2023-11-30_7:39:58 <-->  ...
+2023-11-30_7:39:58 <-->  Done.
+2023-11-30_7:39:58 <-->  Write: protect on all
+2023-11-30_7:39:58 <-->  ...
+2023-11-30_7:39:58 <-->  Done.
+2023-11-30_7:39:58 <-->  Read: 3 \fpattern(Protect Flash Bank) with timeout 3000
+2023-11-30_7:39:58 <-->  ...
+2023-11-30_7:40:1 <-->  Done.
+2023-11-30_7:40:1 <-->  Write: loadb 0xB8003000
+2023-11-30_7:40:1 <-->  ...
+2023-11-30_7:40:1 <-->  Done.
+2023-11-30_7:40:1 <-->  Read: 3 \fpattern(## Ready for binary (kermit) download*) with timeout 3000
+2023-11-30_7:40:1 <-->  ...
+2023-11-30_7:40:1 <-->  Done.
+2023-11-30_7:40:1 <--> Writing image "config_record_ALT1250_E0_BZ.bin" to device ... (13% completed)     
+2023-11-30_7:40:1 <--> Writing image "config_record_ALT1250_E0_BZ.bin" to device ... (27% completed)     
+2023-11-30_7:40:1 <--> Writing image "config_record_ALT1250_E0_BZ.bin" to device ... (40% completed)     
+2023-11-30_7:40:1 <--> Writing image "config_record_ALT1250_E0_BZ.bin" to device ... (54% completed)     
+2023-11-30_7:40:1 <--> Writing image "config_record_ALT1250_E0_BZ.bin" to device ... (67% completed)     
+2023-11-30_7:40:1 <--> Writing image "config_record_ALT1250_E0_BZ.bin" to device ... (80% completed)     
+2023-11-30_7:40:1 <--> Writing image "config_record_ALT1250_E0_BZ.bin" to device ... (94% completed)     
+2023-11-30_7:40:1 <--> Writing image "partmap.bin" to device ... (100% completed)     
+2023-11-30_7:40:1 <-->  Done.
+2023-11-30_7:40:1 <-->  Read: 120 \fpattern(## Start Addr*#) with timeout 120000
+2023-11-30_7:40:1 <-->  ...
+2023-11-30_7:40:2 <-->  Done.
+2023-11-30_7:40:2 <-->  Write: loadb 0xB8004000
+2023-11-30_7:40:2 <-->  ...
+2023-11-30_7:40:2 <-->  Done.
+2023-11-30_7:40:2 <-->  Read: 3 \fpattern(## Ready for binary (kermit) download*) with timeout 3000
+2023-11-30_7:40:2 <-->  ...
+2023-11-30_7:40:2 <-->  Done.
+2023-11-30_7:40:2 <--> Writing image "config_record_ALT1250_E0_BZ.bin" to device ... (13% completed)     
+2023-11-30_7:40:2 <--> Writing image "config_record_ALT1250_E0_BZ.bin" to device ... (27% completed)     
+2023-11-30_7:40:2 <--> Writing image "config_record_ALT1250_E0_BZ.bin" to device ... (40% completed)     
+2023-11-30_7:40:2 <--> Writing image "config_record_ALT1250_E0_BZ.bin" to device ... (54% completed)     
+2023-11-30_7:40:2 <--> Writing image "config_record_ALT1250_E0_BZ.bin" to device ... (67% completed)     
+2023-11-30_7:40:2 <--> Writing image "config_record_ALT1250_E0_BZ.bin" to device ... (80% completed)     
+2023-11-30_7:40:2 <--> Writing image "config_record_ALT1250_E0_BZ.bin" to device ... (94% completed)     
+2023-11-30_7:40:2 <--> Writing image "partmap.bin" to device ... (100% completed)     
+2023-11-30_7:40:2 <-->  Done.
+2023-11-30_7:40:2 <-->  Read: 120 \fpattern(## Start Addr*#) with timeout 120000
+2023-11-30_7:40:2 <-->  ...
+2023-11-30_7:40:2 <-->  Done.
+2023-11-30_7:40:2 <--> --- First phase completed ---
+2023-11-30_7:40:2 <--> Waiting for automatic device Reset...
+2023-11-30_7:40:9 <--> Setting baudrate to 3000000
+2023-11-30_7:40:12 <--> Setting flow control on
+2023-11-30_7:40:13 <--> Log file's location:
+2023-11-30_7:40:13 <--> 'C:\ProgramData\Altair\ImageBurnTool\Logging\LogFile30-11-2023  07-39-30.547.txt'
+2023-11-30_7:40:16 <--> Reading Session File: C:\Users\1\AppData\Local\Temp\tmp9802.tmp
+2023-11-30_7:40:16 <-->  Write: loadb app_fw
+2023-11-30_7:40:16 <-->  ...
+2023-11-30_7:40:16 <-->  Done.
+2023-11-30_7:40:16 <-->  Read: 3 \fpattern(## Ready for binary (kermit) download*) with timeout 3000
+2023-11-30_7:40:16 <-->  ...
+2023-11-30_7:40:16 <-->  Done.
+2023-11-30_7:40:16 <--> Writing image "AppFW_flash.bin" to device ... (1% completed)     
+2023-11-30_7:40:16 <--> Writing image "AppFW_flash.bin" to device ... (2% completed)     
+2023-11-30_7:40:17 <--> Writing image "AppFW_flash.bin" to device ... (3% completed)     
+2023-11-30_7:40:17 <--> Writing image "AppFW_flash.bin" to device ... (4% completed)     
+2023-11-30_7:40:17 <--> Writing image "AppFW_flash.bin" to device ... (5% completed)     
+2023-11-30_7:40:18 <--> Writing image "AppFW_flash.bin" to device ... (6% completed)     
+2023-11-30_7:40:18 <--> Writing image "AppFW_flash.bin" to device ... (7% completed)     
+2023-11-30_7:40:18 <--> Writing image "AppFW_flash.bin" to device ... (8% completed)     
+2023-11-30_7:40:18 <--> Writing image "AppFW_flash.bin" to device ... (9% completed)     
+2023-11-30_7:40:19 <--> Writing image "AppFW_flash.bin" to device ... (10% completed)     
+2023-11-30_7:40:19 <--> Writing image "AppFW_flash.bin" to device ... (11% completed)     
+2023-11-30_7:40:19 <--> Writing image "AppFW_flash.bin" to device ... (12% completed)     
+2023-11-30_7:40:20 <--> Writing image "AppFW_flash.bin" to device ... (13% completed)     
+2023-11-30_7:40:20 <--> Writing image "AppFW_flash.bin" to device ... (14% completed)     
+2023-11-30_7:40:20 <--> Writing image "AppFW_flash.bin" to device ... (15% completed)     
+2023-11-30_7:40:21 <--> Writing image "AppFW_flash.bin" to device ... (16% completed)     
+2023-11-30_7:40:21 <--> Writing image "AppFW_flash.bin" to device ... (17% completed)     
+2023-11-30_7:40:21 <--> Writing image "AppFW_flash.bin" to device ... (18% completed)     
+2023-11-30_7:40:21 <--> Writing image "AppFW_flash.bin" to device ... (19% completed)     
+2023-11-30_7:40:22 <--> Writing image "AppFW_flash.bin" to device ... (20% completed)     
+2023-11-30_7:40:22 <--> Writing image "AppFW_flash.bin" to device ... (21% completed)     
+2023-11-30_7:40:22 <--> Writing image "AppFW_flash.bin" to device ... (22% completed)     
+2023-11-30_7:40:23 <--> Writing image "AppFW_flash.bin" to device ... (23% completed)     
+2023-11-30_7:40:23 <--> Writing image "AppFW_flash.bin" to device ... (24% completed)     
+2023-11-30_7:40:23 <--> Writing image "AppFW_flash.bin" to device ... (25% completed)     
+2023-11-30_7:40:23 <--> Writing image "AppFW_flash.bin" to device ... (26% completed)     
+2023-11-30_7:40:24 <--> Writing image "AppFW_flash.bin" to device ... (27% completed)     
+2023-11-30_7:40:24 <--> Writing image "AppFW_flash.bin" to device ... (28% completed)     
+2023-11-30_7:40:24 <--> Writing image "AppFW_flash.bin" to device ... (29% completed)     
+2023-11-30_7:40:25 <--> Writing image "AppFW_flash.bin" to device ... (30% completed)     
+2023-11-30_7:40:25 <--> Writing image "AppFW_flash.bin" to device ... (31% completed)     
+2023-11-30_7:40:25 <--> Writing image "AppFW_flash.bin" to device ... (32% completed)     
+2023-11-30_7:40:26 <--> Writing image "AppFW_flash.bin" to device ... (33% completed)     
+2023-11-30_7:40:26 <--> Writing image "AppFW_flash.bin" to device ... (34% completed)     
+2023-11-30_7:40:26 <--> Writing image "AppFW_flash.bin" to device ... (35% completed)     
+2023-11-30_7:40:26 <--> Writing image "AppFW_flash.bin" to device ... (36% completed)     
+2023-11-30_7:40:27 <--> Writing image "AppFW_flash.bin" to device ... (37% completed)     
+2023-11-30_7:40:27 <--> Writing image "AppFW_flash.bin" to device ... (38% completed)     
+2023-11-30_7:40:27 <--> Writing image "AppFW_flash.bin" to device ... (39% completed)     
+2023-11-30_7:40:28 <--> Writing image "AppFW_flash.bin" to device ... (40% completed)     
+2023-11-30_7:40:28 <--> Writing image "AppFW_flash.bin" to device ... (41% completed)     
+2023-11-30_7:40:28 <--> Writing image "AppFW_flash.bin" to device ... (42% completed)     
+2023-11-30_7:40:28 <--> Writing image "AppFW_flash.bin" to device ... (43% completed)     
+2023-11-30_7:40:29 <--> Writing image "AppFW_flash.bin" to device ... (44% completed)     
+2023-11-30_7:40:29 <--> Writing image "AppFW_flash.bin" to device ... (45% completed)     
+2023-11-30_7:40:29 <--> Writing image "AppFW_flash.bin" to device ... (46% completed)     
+2023-11-30_7:40:30 <--> Writing image "AppFW_flash.bin" to device ... (47% completed)     
+2023-11-30_7:40:30 <--> Writing image "AppFW_flash.bin" to device ... (48% completed)     
+2023-11-30_7:40:30 <--> Writing image "AppFW_flash.bin" to device ... (49% completed)     
+2023-11-30_7:40:30 <--> Writing image "AppFW_flash.bin" to device ... (50% completed)     
+2023-11-30_7:40:31 <--> Writing image "AppFW_flash.bin" to device ... (51% completed)     
+2023-11-30_7:40:31 <--> Writing image "AppFW_flash.bin" to device ... (52% completed)     
+2023-11-30_7:40:31 <--> Writing image "AppFW_flash.bin" to device ... (53% completed)     
+2023-11-30_7:40:32 <--> Writing image "AppFW_flash.bin" to device ... (54% completed)     
+2023-11-30_7:40:32 <--> Writing image "AppFW_flash.bin" to device ... (55% completed)     
+2023-11-30_7:40:32 <--> Writing image "AppFW_flash.bin" to device ... (56% completed)     
+2023-11-30_7:40:32 <--> Writing image "AppFW_flash.bin" to device ... (57% completed)     
+2023-11-30_7:40:33 <--> Writing image "AppFW_flash.bin" to device ... (58% completed)     
+2023-11-30_7:40:33 <--> Writing image "AppFW_flash.bin" to device ... (59% completed)     
+2023-11-30_7:40:33 <--> Writing image "AppFW_flash.bin" to device ... (60% completed)     
+2023-11-30_7:40:34 <--> Writing image "AppFW_flash.bin" to device ... (61% completed)     
+2023-11-30_7:40:34 <--> Writing image "AppFW_flash.bin" to device ... (62% completed)     
+2023-11-30_7:40:34 <--> Writing image "AppFW_flash.bin" to device ... (63% completed)     
+2023-11-30_7:40:35 <--> Writing image "AppFW_flash.bin" to device ... (64% completed)     
+2023-11-30_7:40:35 <--> Writing image "AppFW_flash.bin" to device ... (65% completed)     
+2023-11-30_7:40:35 <--> Writing image "AppFW_flash.bin" to device ... (66% completed)     
+2023-11-30_7:40:35 <--> Writing image "AppFW_flash.bin" to device ... (67% completed)     
+2023-11-30_7:40:36 <--> Writing image "AppFW_flash.bin" to device ... (68% completed)     
+2023-11-30_7:40:36 <--> Writing image "AppFW_flash.bin" to device ... (69% completed)     
+2023-11-30_7:40:36 <--> Writing image "AppFW_flash.bin" to device ... (70% completed)     
+2023-11-30_7:40:37 <--> Writing image "AppFW_flash.bin" to device ... (71% completed)     
+2023-11-30_7:40:37 <--> Writing image "AppFW_flash.bin" to device ... (72% completed)     
+2023-11-30_7:40:37 <--> Writing image "AppFW_flash.bin" to device ... (73% completed)     
+2023-11-30_7:40:38 <--> Writing image "AppFW_flash.bin" to device ... (74% completed)     
+2023-11-30_7:40:38 <--> Writing image "AppFW_flash.bin" to device ... (75% completed)     
+2023-11-30_7:40:38 <--> Writing image "AppFW_flash.bin" to device ... (76% completed)     
+2023-11-30_7:40:38 <--> Writing image "AppFW_flash.bin" to device ... (77% completed)     
+2023-11-30_7:40:39 <--> Writing image "AppFW_flash.bin" to device ... (78% completed)     
+2023-11-30_7:40:39 <--> Writing image "AppFW_flash.bin" to device ... (79% completed)     
+2023-11-30_7:40:39 <--> Writing image "AppFW_flash.bin" to device ... (80% completed)     
+2023-11-30_7:40:39 <--> Writing image "AppFW_flash.bin" to device ... (81% completed)     
+2023-11-30_7:40:40 <--> Writing image "AppFW_flash.bin" to device ... (82% completed)     
+2023-11-30_7:40:40 <--> Writing image "AppFW_flash.bin" to device ... (83% completed)     
+2023-11-30_7:40:40 <--> Writing image "AppFW_flash.bin" to device ... (84% completed)     
+2023-11-30_7:40:40 <--> Writing image "AppFW_flash.bin" to device ... (85% completed)     
+2023-11-30_7:40:41 <--> Writing image "AppFW_flash.bin" to device ... (86% completed)     
+2023-11-30_7:40:41 <--> Writing image "AppFW_flash.bin" to device ... (87% completed)     
+2023-11-30_7:40:41 <--> Writing image "AppFW_flash.bin" to device ... (88% completed)     
+2023-11-30_7:40:41 <--> Writing image "AppFW_flash.bin" to device ... (89% completed)     
+2023-11-30_7:40:42 <--> Writing image "AppFW_flash.bin" to device ... (90% completed)     
+2023-11-30_7:40:42 <--> Writing image "AppFW_flash.bin" to device ... (91% completed)     
+2023-11-30_7:40:43 <--> Writing image "AppFW_flash.bin" to device ... (92% completed)     
+2023-11-30_7:40:43 <--> Writing image "AppFW_flash.bin" to device ... (93% completed)     
+2023-11-30_7:40:43 <--> Writing image "AppFW_flash.bin" to device ... (94% completed)     
+2023-11-30_7:40:43 <--> Writing image "AppFW_flash.bin" to device ... (95% completed)     
+2023-11-30_7:40:43 <--> Writing image "AppFW_flash.bin" to device ... (96% completed)     
+2023-11-30_7:40:44 <--> Writing image "AppFW_flash.bin" to device ... (97% completed)     
+2023-11-30_7:40:44 <--> Writing image "AppFW_flash.bin" to device ... (98% completed)     
+2023-11-30_7:40:44 <--> Writing image "AppFW_flash.bin" to device ... (99% completed)     
+2023-11-30_7:40:44 <--> Writing image "AppFW_flash.bin" to device ... (100% completed)     
+2023-11-30_7:40:45 <-->  Done.
+2023-11-30_7:40:45 <-->  Write: loadb modem_fw
+2023-11-30_7:40:45 <-->  ...
+2023-11-30_7:40:45 <-->  Done.
+2023-11-30_7:40:45 <-->  Read: 3 \fpattern(## Ready for binary (kermit) download*) with timeout 3000
+2023-11-30_7:40:45 <-->  ...
+2023-11-30_7:40:45 <-->  Done.
+2023-11-30_7:40:45 <--> Writing image "ue_lte.fw" to device ... (1% completed)     
+2023-11-30_7:40:45 <--> Writing image "ue_lte.fw" to device ... (2% completed)     
+2023-11-30_7:40:46 <--> Writing image "ue_lte.fw" to device ... (3% completed)     
+2023-11-30_7:40:46 <--> Writing image "ue_lte.fw" to device ... (4% completed)     
+2023-11-30_7:40:46 <--> Writing image "ue_lte.fw" to device ... (5% completed)     
+2023-11-30_7:40:46 <--> Writing image "ue_lte.fw" to device ... (6% completed)     
+2023-11-30_7:40:47 <--> Writing image "ue_lte.fw" to device ... (7% completed)     
+2023-11-30_7:40:47 <--> Writing image "ue_lte.fw" to device ... (8% completed)     
+2023-11-30_7:40:47 <--> Writing image "ue_lte.fw" to device ... (9% completed)     
+2023-11-30_7:40:47 <--> Writing image "ue_lte.fw" to device ... (10% completed)     
+2023-11-30_7:40:48 <--> Writing image "ue_lte.fw" to device ... (11% completed)     
+2023-11-30_7:40:48 <--> Writing image "ue_lte.fw" to device ... (12% completed)     
+2023-11-30_7:40:48 <--> Writing image "ue_lte.fw" to device ... (13% completed)     
+2023-11-30_7:40:48 <--> Writing image "ue_lte.fw" to device ... (14% completed)     
+2023-11-30_7:40:48 <--> Writing image "ue_lte.fw" to device ... (15% completed)     
+2023-11-30_7:40:49 <--> Writing image "ue_lte.fw" to device ... (16% completed)     
+2023-11-30_7:40:49 <--> Writing image "ue_lte.fw" to device ... (17% completed)     
+2023-11-30_7:40:49 <--> Writing image "ue_lte.fw" to device ... (18% completed)     
+2023-11-30_7:40:49 <--> Writing image "ue_lte.fw" to device ... (19% completed)     
+2023-11-30_7:40:50 <--> Writing image "ue_lte.fw" to device ... (20% completed)     
+2023-11-30_7:40:50 <--> Writing image "ue_lte.fw" to device ... (21% completed)     
+2023-11-30_7:40:50 <--> Writing image "ue_lte.fw" to device ... (22% completed)     
+2023-11-30_7:40:50 <--> Writing image "ue_lte.fw" to device ... (23% completed)     
+2023-11-30_7:40:51 <--> Writing image "ue_lte.fw" to device ... (24% completed)     
+2023-11-30_7:40:51 <--> Writing image "ue_lte.fw" to device ... (25% completed)     
+2023-11-30_7:40:51 <--> Writing image "ue_lte.fw" to device ... (26% completed)     
+2023-11-30_7:40:51 <--> Writing image "ue_lte.fw" to device ... (27% completed)     
+2023-11-30_7:40:52 <--> Writing image "ue_lte.fw" to device ... (28% completed)     
+2023-11-30_7:40:52 <--> Writing image "ue_lte.fw" to device ... (29% completed)     
+2023-11-30_7:40:52 <--> Writing image "ue_lte.fw" to device ... (30% completed)     
+2023-11-30_7:40:52 <--> Writing image "ue_lte.fw" to device ... (31% completed)     
+2023-11-30_7:40:52 <--> Writing image "ue_lte.fw" to device ... (32% completed)     
+2023-11-30_7:40:53 <--> Writing image "ue_lte.fw" to device ... (33% completed)     
+2023-11-30_7:40:53 <--> Writing image "ue_lte.fw" to device ... (34% completed)     
+2023-11-30_7:40:53 <--> Writing image "ue_lte.fw" to device ... (35% completed)     
+2023-11-30_7:40:53 <--> Writing image "ue_lte.fw" to device ... (36% completed)     
+2023-11-30_7:40:54 <--> Writing image "ue_lte.fw" to device ... (37% completed)     
+2023-11-30_7:40:54 <--> Writing image "ue_lte.fw" to device ... (38% completed)     
+2023-11-30_7:40:54 <--> Writing image "ue_lte.fw" to device ... (39% completed)     
+2023-11-30_7:40:54 <--> Writing image "ue_lte.fw" to device ... (40% completed)     
+2023-11-30_7:40:55 <--> Writing image "ue_lte.fw" to device ... (41% completed)     
+2023-11-30_7:40:55 <--> Writing image "ue_lte.fw" to device ... (42% completed)     
+2023-11-30_7:40:55 <--> Writing image "ue_lte.fw" to device ... (43% completed)     
+2023-11-30_7:40:55 <--> Writing image "ue_lte.fw" to device ... (44% completed)     
+2023-11-30_7:40:55 <--> Writing image "ue_lte.fw" to device ... (45% completed)     
+2023-11-30_7:40:56 <--> Writing image "ue_lte.fw" to device ... (46% completed)     
+2023-11-30_7:40:56 <--> Writing image "ue_lte.fw" to device ... (47% completed)     
+2023-11-30_7:40:56 <--> Writing image "ue_lte.fw" to device ... (48% completed)     
+2023-11-30_7:40:56 <--> Writing image "ue_lte.fw" to device ... (49% completed)     
+2023-11-30_7:40:57 <--> Writing image "ue_lte.fw" to device ... (50% completed)     
+2023-11-30_7:40:57 <--> Writing image "ue_lte.fw" to device ... (51% completed)     
+2023-11-30_7:40:57 <--> Writing image "ue_lte.fw" to device ... (52% completed)     
+2023-11-30_7:40:57 <--> Writing image "ue_lte.fw" to device ... (53% completed)     
+2023-11-30_7:40:58 <--> Writing image "ue_lte.fw" to device ... (54% completed)     
+2023-11-30_7:40:58 <--> Writing image "ue_lte.fw" to device ... (55% completed)     
+2023-11-30_7:40:58 <--> Writing image "ue_lte.fw" to device ... (56% completed)     
+2023-11-30_7:40:58 <--> Writing image "ue_lte.fw" to device ... (57% completed)     
+2023-11-30_7:40:58 <--> Writing image "ue_lte.fw" to device ... (58% completed)     
+2023-11-30_7:40:59 <--> Writing image "ue_lte.fw" to device ... (59% completed)     
+2023-11-30_7:40:59 <--> Writing image "ue_lte.fw" to device ... (60% completed)     
+2023-11-30_7:40:59 <--> Writing image "ue_lte.fw" to device ... (61% completed)     
+2023-11-30_7:40:59 <--> Writing image "ue_lte.fw" to device ... (62% completed)     
+2023-11-30_7:41:0 <--> Writing image "ue_lte.fw" to device ... (63% completed)     
+2023-11-30_7:41:0 <--> Writing image "ue_lte.fw" to device ... (64% completed)     
+2023-11-30_7:41:0 <--> Writing image "ue_lte.fw" to device ... (65% completed)     
+2023-11-30_7:41:0 <--> Writing image "ue_lte.fw" to device ... (66% completed)     
+2023-11-30_7:41:1 <--> Writing image "ue_lte.fw" to device ... (67% completed)     
+2023-11-30_7:41:1 <--> Writing image "ue_lte.fw" to device ... (68% completed)     
+2023-11-30_7:41:1 <--> Writing image "ue_lte.fw" to device ... (69% completed)     
+2023-11-30_7:41:1 <--> Writing image "ue_lte.fw" to device ... (70% completed)     
+2023-11-30_7:41:2 <--> Writing image "ue_lte.fw" to device ... (71% completed)     
+2023-11-30_7:41:2 <--> Writing image "ue_lte.fw" to device ... (72% completed)     
+2023-11-30_7:41:2 <--> Writing image "ue_lte.fw" to device ... (73% completed)     
+2023-11-30_7:41:2 <--> Writing image "ue_lte.fw" to device ... (74% completed)     
+2023-11-30_7:41:2 <--> Writing image "ue_lte.fw" to device ... (75% completed)     
+2023-11-30_7:41:3 <--> Writing image "ue_lte.fw" to device ... (76% completed)     
+2023-11-30_7:41:3 <--> Writing image "ue_lte.fw" to device ... (77% completed)     
+2023-11-30_7:41:3 <--> Writing image "ue_lte.fw" to device ... (78% completed)     
+2023-11-30_7:41:3 <--> Writing image "ue_lte.fw" to device ... (79% completed)     
+2023-11-30_7:41:4 <--> Writing image "ue_lte.fw" to device ... (80% completed)     
+2023-11-30_7:41:4 <--> Writing image "ue_lte.fw" to device ... (81% completed)     
+2023-11-30_7:41:4 <--> Writing image "ue_lte.fw" to device ... (82% completed)     
+2023-11-30_7:41:4 <--> Writing image "ue_lte.fw" to device ... (83% completed)     
+2023-11-30_7:41:4 <--> Writing image "ue_lte.fw" to device ... (84% completed)     
+2023-11-30_7:41:5 <--> Writing image "ue_lte.fw" to device ... (85% completed)     
+2023-11-30_7:41:5 <--> Writing image "ue_lte.fw" to device ... (86% completed)     
+2023-11-30_7:41:5 <--> Writing image "ue_lte.fw" to device ... (87% completed)     
+2023-11-30_7:41:5 <--> Writing image "ue_lte.fw" to device ... (88% completed)     
+2023-11-30_7:41:5 <--> Writing image "ue_lte.fw" to device ... (89% completed)     
+2023-11-30_7:41:6 <--> Writing image "ue_lte.fw" to device ... (90% completed)     
+2023-11-30_7:41:6 <--> Writing image "ue_lte.fw" to device ... (91% completed)     
+2023-11-30_7:41:6 <--> Writing image "ue_lte.fw" to device ... (92% completed)     
+2023-11-30_7:41:6 <--> Writing image "ue_lte.fw" to device ... (93% completed)     
+2023-11-30_7:41:6 <--> Writing image "ue_lte.fw" to device ... (94% completed)     
+2023-11-30_7:41:7 <--> Writing image "ue_lte.fw" to device ... (95% completed)     
+2023-11-30_7:41:7 <--> Writing image "ue_lte.fw" to device ... (96% completed)     
+2023-11-30_7:41:7 <--> Writing image "ue_lte.fw" to device ... (97% completed)     
+2023-11-30_7:41:7 <--> Writing image "ue_lte.fw" to device ... (98% completed)     
+2023-11-30_7:41:7 <--> Writing image "ue_lte.fw" to device ... (99% completed)     
+2023-11-30_7:41:8 <--> Writing image "ue_lte.fw" to device ... (100% completed)     
+2023-11-30_7:41:8 <-->  Done.
+2023-11-30_7:41:8 <-->  Read: 120 \fpattern(## Start Addr*#) with timeout 120000
+2023-11-30_7:41:8 <-->  ...
+2023-11-30_7:41:8 <-->  Done.
+2023-11-30_7:41:8 <-->  Write: loadb modem_fw2
+2023-11-30_7:41:8 <-->  ...
+2023-11-30_7:41:8 <-->  Done.
+2023-11-30_7:41:8 <-->  Read: 3 \fpattern(## Ready for binary (kermit) download*) with timeout 3000
+2023-11-30_7:41:8 <-->  ...
+2023-11-30_7:41:8 <-->  Done.
+2023-11-30_7:41:9 <--> Writing image "ue_lte.fw2" to device ... (1% completed)     
+2023-11-30_7:41:9 <--> Writing image "ue_lte.fw2" to device ... (2% completed)     
+2023-11-30_7:41:9 <--> Writing image "ue_lte.fw2" to device ... (3% completed)     
+2023-11-30_7:41:9 <--> Writing image "ue_lte.fw2" to device ... (4% completed)     
+2023-11-30_7:41:9 <--> Writing image "ue_lte.fw2" to device ... (5% completed)     
+2023-11-30_7:41:10 <--> Writing image "ue_lte.fw2" to device ... (6% completed)     
+2023-11-30_7:41:10 <--> Writing image "ue_lte.fw2" to device ... (7% completed)     
+2023-11-30_7:41:10 <--> Writing image "ue_lte.fw2" to device ... (8% completed)     
+2023-11-30_7:41:10 <--> Writing image "ue_lte.fw2" to device ... (9% completed)     
+2023-11-30_7:41:10 <--> Writing image "ue_lte.fw2" to device ... (10% completed)     
+2023-11-30_7:41:10 <--> Writing image "ue_lte.fw2" to device ... (11% completed)     
+2023-11-30_7:41:11 <--> Writing image "ue_lte.fw2" to device ... (12% completed)     
+2023-11-30_7:41:11 <--> Writing image "ue_lte.fw2" to device ... (13% completed)     
+2023-11-30_7:41:11 <--> Writing image "ue_lte.fw2" to device ... (14% completed)     
+2023-11-30_7:41:11 <--> Writing image "ue_lte.fw2" to device ... (15% completed)     
+2023-11-30_7:41:11 <--> Writing image "ue_lte.fw2" to device ... (16% completed)     
+2023-11-30_7:41:12 <--> Writing image "ue_lte.fw2" to device ... (17% completed)     
+2023-11-30_7:41:12 <--> Writing image "ue_lte.fw2" to device ... (18% completed)     
+2023-11-30_7:41:12 <--> Writing image "ue_lte.fw2" to device ... (19% completed)     
+2023-11-30_7:41:12 <--> Writing image "ue_lte.fw2" to device ... (20% completed)     
+2023-11-30_7:41:12 <--> Writing image "ue_lte.fw2" to device ... (21% completed)     
+2023-11-30_7:41:13 <--> Writing image "ue_lte.fw2" to device ... (22% completed)     
+2023-11-30_7:41:13 <--> Writing image "ue_lte.fw2" to device ... (23% completed)     
+2023-11-30_7:41:13 <--> Writing image "ue_lte.fw2" to device ... (24% completed)     
+2023-11-30_7:41:13 <--> Writing image "ue_lte.fw2" to device ... (25% completed)     
+2023-11-30_7:41:13 <--> Writing image "ue_lte.fw2" to device ... (26% completed)     
+2023-11-30_7:41:14 <--> Writing image "ue_lte.fw2" to device ... (27% completed)     
+2023-11-30_7:41:14 <--> Writing image "ue_lte.fw2" to device ... (28% completed)     
+2023-11-30_7:41:14 <--> Writing image "ue_lte.fw2" to device ... (29% completed)     
+2023-11-30_7:41:14 <--> Writing image "ue_lte.fw2" to device ... (30% completed)     
+2023-11-30_7:41:14 <--> Writing image "ue_lte.fw2" to device ... (31% completed)     
+2023-11-30_7:41:15 <--> Writing image "ue_lte.fw2" to device ... (32% completed)     
+2023-11-30_7:41:15 <--> Writing image "ue_lte.fw2" to device ... (33% completed)     
+2023-11-30_7:41:15 <--> Writing image "ue_lte.fw2" to device ... (34% completed)     
+2023-11-30_7:41:15 <--> Writing image "ue_lte.fw2" to device ... (35% completed)     
+2023-11-30_7:41:15 <--> Writing image "ue_lte.fw2" to device ... (36% completed)     
+2023-11-30_7:41:15 <--> Writing image "ue_lte.fw2" to device ... (37% completed)     
+2023-11-30_7:41:16 <--> Writing image "ue_lte.fw2" to device ... (38% completed)     
+2023-11-30_7:41:16 <--> Writing image "ue_lte.fw2" to device ... (39% completed)     
+2023-11-30_7:41:16 <--> Writing image "ue_lte.fw2" to device ... (40% completed)     
+2023-11-30_7:41:16 <--> Writing image "ue_lte.fw2" to device ... (41% completed)     
+2023-11-30_7:41:16 <--> Writing image "ue_lte.fw2" to device ... (42% completed)     
+2023-11-30_7:41:17 <--> Writing image "ue_lte.fw2" to device ... (43% completed)     
+2023-11-30_7:41:17 <--> Writing image "ue_lte.fw2" to device ... (44% completed)     
+2023-11-30_7:41:17 <--> Writing image "ue_lte.fw2" to device ... (45% completed)     
+2023-11-30_7:41:17 <--> Writing image "ue_lte.fw2" to device ... (46% completed)     
+2023-11-30_7:41:17 <--> Writing image "ue_lte.fw2" to device ... (47% completed)     
+2023-11-30_7:41:18 <--> Writing image "ue_lte.fw2" to device ... (48% completed)     
+2023-11-30_7:41:18 <--> Writing image "ue_lte.fw2" to device ... (49% completed)     
+2023-11-30_7:41:18 <--> Writing image "ue_lte.fw2" to device ... (50% completed)     
+2023-11-30_7:41:18 <--> Writing image "ue_lte.fw2" to device ... (51% completed)     
+2023-11-30_7:41:18 <--> Writing image "ue_lte.fw2" to device ... (52% completed)     
+2023-11-30_7:41:19 <--> Writing image "ue_lte.fw2" to device ... (53% completed)     
+2023-11-30_7:41:19 <--> Writing image "ue_lte.fw2" to device ... (54% completed)     
+2023-11-30_7:41:19 <--> Writing image "ue_lte.fw2" to device ... (55% completed)     
+2023-11-30_7:41:19 <--> Writing image "ue_lte.fw2" to device ... (56% completed)     
+2023-11-30_7:41:19 <--> Writing image "ue_lte.fw2" to device ... (57% completed)     
+2023-11-30_7:41:20 <--> Writing image "ue_lte.fw2" to device ... (58% completed)     
+2023-11-30_7:41:20 <--> Writing image "ue_lte.fw2" to device ... (59% completed)     
+2023-11-30_7:41:20 <--> Writing image "ue_lte.fw2" to device ... (60% completed)     
+2023-11-30_7:41:20 <--> Writing image "ue_lte.fw2" to device ... (61% completed)     
+2023-11-30_7:41:20 <--> Writing image "ue_lte.fw2" to device ... (62% completed)     
+2023-11-30_7:41:20 <--> Writing image "ue_lte.fw2" to device ... (63% completed)     
+2023-11-30_7:41:21 <--> Writing image "ue_lte.fw2" to device ... (64% completed)     
+2023-11-30_7:41:21 <--> Writing image "ue_lte.fw2" to device ... (65% completed)     
+2023-11-30_7:41:21 <--> Writing image "ue_lte.fw2" to device ... (66% completed)     
+2023-11-30_7:41:21 <--> Writing image "ue_lte.fw2" to device ... (67% completed)     
+2023-11-30_7:41:21 <--> Writing image "ue_lte.fw2" to device ... (68% completed)     
+2023-11-30_7:41:22 <--> Writing image "ue_lte.fw2" to device ... (69% completed)     
+2023-11-30_7:41:22 <--> Writing image "ue_lte.fw2" to device ... (70% completed)     
+2023-11-30_7:41:22 <--> Writing image "ue_lte.fw2" to device ... (71% completed)     
+2023-11-30_7:41:22 <--> Writing image "ue_lte.fw2" to device ... (72% completed)     
+2023-11-30_7:41:22 <--> Writing image "ue_lte.fw2" to device ... (73% completed)     
+2023-11-30_7:41:23 <--> Writing image "ue_lte.fw2" to device ... (74% completed)     
+2023-11-30_7:41:23 <--> Writing image "ue_lte.fw2" to device ... (75% completed)     
+2023-11-30_7:41:23 <--> Writing image "ue_lte.fw2" to device ... (76% completed)     
+2023-11-30_7:41:23 <--> Writing image "ue_lte.fw2" to device ... (77% completed)     
+2023-11-30_7:41:23 <--> Writing image "ue_lte.fw2" to device ... (78% completed)     
+2023-11-30_7:41:24 <--> Writing image "ue_lte.fw2" to device ... (79% completed)     
+2023-11-30_7:41:24 <--> Writing image "ue_lte.fw2" to device ... (80% completed)     
+2023-11-30_7:41:24 <--> Writing image "ue_lte.fw2" to device ... (81% completed)     
+2023-11-30_7:41:24 <--> Writing image "ue_lte.fw2" to device ... (82% completed)     
+2023-11-30_7:41:24 <--> Writing image "ue_lte.fw2" to device ... (83% completed)     
+2023-11-30_7:41:24 <--> Writing image "ue_lte.fw2" to device ... (84% completed)     
+2023-11-30_7:41:25 <--> Writing image "ue_lte.fw2" to device ... (85% completed)     
+2023-11-30_7:41:25 <--> Writing image "ue_lte.fw2" to device ... (86% completed)     
+2023-11-30_7:41:25 <--> Writing image "ue_lte.fw2" to device ... (87% completed)     
+2023-11-30_7:41:25 <--> Writing image "ue_lte.fw2" to device ... (88% completed)     
+2023-11-30_7:41:25 <--> Writing image "ue_lte.fw2" to device ... (89% completed)     
+2023-11-30_7:41:25 <--> Writing image "ue_lte.fw2" to device ... (90% completed)     
+2023-11-30_7:41:26 <--> Writing image "ue_lte.fw2" to device ... (91% completed)     
+2023-11-30_7:41:26 <--> Writing image "ue_lte.fw2" to device ... (92% completed)     
+2023-11-30_7:41:26 <--> Writing image "ue_lte.fw2" to device ... (93% completed)     
+2023-11-30_7:41:26 <--> Writing image "ue_lte.fw2" to device ... (94% completed)     
+2023-11-30_7:41:26 <--> Writing image "ue_lte.fw2" to device ... (95% completed)     
+2023-11-30_7:41:26 <--> Writing image "ue_lte.fw2" to device ... (96% completed)     
+2023-11-30_7:41:27 <--> Writing image "ue_lte.fw2" to device ... (97% completed)     
+2023-11-30_7:41:27 <--> Writing image "ue_lte.fw2" to device ... (98% completed)     
+2023-11-30_7:41:27 <--> Writing image "ue_lte.fw2" to device ... (99% completed)     
+2023-11-30_7:41:27 <--> Writing image "ue_lte.fw2" to device ... (100% completed)     
+2023-11-30_7:41:27 <-->  Done.
+2023-11-30_7:41:27 <-->  Write: loadb 0xB8074000
+2023-11-30_7:41:27 <-->  ...
+2023-11-30_7:41:27 <-->  Done.
+2023-11-30_7:41:27 <-->  Read: 3 \fpattern(## Ready for binary (kermit) download*) with timeout 3000
+2023-11-30_7:41:27 <-->  ...
+2023-11-30_7:41:28 <-->  Done.
+2023-11-30_7:41:28 <--> Writing image "pmp.bin" to device ... (1% completed)     
+2023-11-30_7:41:28 <--> Writing image "pmp.bin" to device ... (2% completed)     
+2023-11-30_7:41:28 <--> Writing image "pmp.bin" to device ... (3% completed)     
+2023-11-30_7:41:28 <--> Writing image "pmp.bin" to device ... (4% completed)     
+2023-11-30_7:41:28 <--> Writing image "pmp.bin" to device ... (5% completed)     
+2023-11-30_7:41:28 <--> Writing image "pmp.bin" to device ... (6% completed)     
+2023-11-30_7:41:28 <--> Writing image "pmp.bin" to device ... (7% completed)     
+2023-11-30_7:41:28 <--> Writing image "pmp.bin" to device ... (8% completed)     
+2023-11-30_7:41:28 <--> Writing image "pmp.bin" to device ... (9% completed)     
+2023-11-30_7:41:28 <--> Writing image "pmp.bin" to device ... (10% completed)     
+2023-11-30_7:41:28 <--> Writing image "pmp.bin" to device ... (11% completed)     
+2023-11-30_7:41:28 <--> Writing image "pmp.bin" to device ... (12% completed)     
+2023-11-30_7:41:28 <--> Writing image "pmp.bin" to device ... (13% completed)     
+2023-11-30_7:41:28 <--> Writing image "pmp.bin" to device ... (14% completed)     
+2023-11-30_7:41:28 <--> Writing image "pmp.bin" to device ... (15% completed)     
+2023-11-30_7:41:28 <--> Writing image "pmp.bin" to device ... (16% completed)     
+2023-11-30_7:41:28 <--> Writing image "pmp.bin" to device ... (17% completed)     
+2023-11-30_7:41:28 <--> Writing image "pmp.bin" to device ... (18% completed)     
+2023-11-30_7:41:28 <--> Writing image "pmp.bin" to device ... (19% completed)     
+2023-11-30_7:41:28 <--> Writing image "pmp.bin" to device ... (20% completed)     
+2023-11-30_7:41:28 <--> Writing image "pmp.bin" to device ... (21% completed)     
+2023-11-30_7:41:28 <--> Writing image "pmp.bin" to device ... (22% completed)     
+2023-11-30_7:41:28 <--> Writing image "pmp.bin" to device ... (23% completed)     
+2023-11-30_7:41:28 <--> Writing image "pmp.bin" to device ... (24% completed)     
+2023-11-30_7:41:28 <--> Writing image "pmp.bin" to device ... (25% completed)     
+2023-11-30_7:41:28 <--> Writing image "pmp.bin" to device ... (26% completed)     
+2023-11-30_7:41:28 <--> Writing image "pmp.bin" to device ... (27% completed)     
+2023-11-30_7:41:28 <--> Writing image "pmp.bin" to device ... (28% completed)     
+2023-11-30_7:41:28 <--> Writing image "pmp.bin" to device ... (29% completed)     
+2023-11-30_7:41:28 <--> Writing image "pmp.bin" to device ... (30% completed)     
+2023-11-30_7:41:28 <--> Writing image "pmp.bin" to device ... (31% completed)     
+2023-11-30_7:41:28 <--> Writing image "pmp.bin" to device ... (32% completed)     
+2023-11-30_7:41:28 <--> Writing image "pmp.bin" to device ... (33% completed)     
+2023-11-30_7:41:28 <--> Writing image "pmp.bin" to device ... (34% completed)     
+2023-11-30_7:41:28 <--> Writing image "pmp.bin" to device ... (35% completed)     
+2023-11-30_7:41:28 <--> Writing image "pmp.bin" to device ... (36% completed)     
+2023-11-30_7:41:28 <--> Writing image "pmp.bin" to device ... (37% completed)     
+2023-11-30_7:41:28 <--> Writing image "pmp.bin" to device ... (38% completed)     
+2023-11-30_7:41:28 <--> Writing image "pmp.bin" to device ... (39% completed)     
+2023-11-30_7:41:28 <--> Writing image "pmp.bin" to device ... (40% completed)     
+2023-11-30_7:41:28 <--> Writing image "pmp.bin" to device ... (41% completed)     
+2023-11-30_7:41:28 <--> Writing image "pmp.bin" to device ... (42% completed)     
+2023-11-30_7:41:28 <--> Writing image "pmp.bin" to device ... (43% completed)     
+2023-11-30_7:41:28 <--> Writing image "pmp.bin" to device ... (44% completed)     
+2023-11-30_7:41:28 <--> Writing image "pmp.bin" to device ... (45% completed)     
+2023-11-30_7:41:28 <--> Writing image "pmp.bin" to device ... (46% completed)     
+2023-11-30_7:41:28 <--> Writing image "pmp.bin" to device ... (47% completed)     
+2023-11-30_7:41:28 <--> Writing image "pmp.bin" to device ... (48% completed)     
+2023-11-30_7:41:28 <--> Writing image "pmp.bin" to device ... (49% completed)     
+2023-11-30_7:41:28 <--> Writing image "pmp.bin" to device ... (50% completed)     
+2023-11-30_7:41:28 <--> Writing image "pmp.bin" to device ... (51% completed)     
+2023-11-30_7:41:28 <--> Writing image "pmp.bin" to device ... (52% completed)     
+2023-11-30_7:41:28 <--> Writing image "pmp.bin" to device ... (53% completed)     
+2023-11-30_7:41:28 <--> Writing image "pmp.bin" to device ... (54% completed)     
+2023-11-30_7:41:28 <--> Writing image "pmp.bin" to device ... (55% completed)     
+2023-11-30_7:41:28 <--> Writing image "pmp.bin" to device ... (56% completed)     
+2023-11-30_7:41:28 <--> Writing image "pmp.bin" to device ... (57% completed)     
+2023-11-30_7:41:28 <--> Writing image "pmp.bin" to device ... (58% completed)     
+2023-11-30_7:41:28 <--> Writing image "pmp.bin" to device ... (59% completed)     
+2023-11-30_7:41:28 <--> Writing image "pmp.bin" to device ... (60% completed)     
+2023-11-30_7:41:28 <--> Writing image "pmp.bin" to device ... (61% completed)     
+2023-11-30_7:41:28 <--> Writing image "pmp.bin" to device ... (62% completed)     
+2023-11-30_7:41:28 <--> Writing image "pmp.bin" to device ... (63% completed)     
+2023-11-30_7:41:28 <--> Writing image "pmp.bin" to device ... (64% completed)     
+2023-11-30_7:41:28 <--> Writing image "pmp.bin" to device ... (65% completed)     
+2023-11-30_7:41:28 <--> Writing image "pmp.bin" to device ... (66% completed)     
+2023-11-30_7:41:28 <--> Writing image "pmp.bin" to device ... (67% completed)     
+2023-11-30_7:41:28 <--> Writing image "pmp.bin" to device ... (68% completed)     
+2023-11-30_7:41:28 <--> Writing image "pmp.bin" to device ... (69% completed)     
+2023-11-30_7:41:28 <--> Writing image "pmp.bin" to device ... (70% completed)     
+2023-11-30_7:41:28 <--> Writing image "pmp.bin" to device ... (71% completed)     
+2023-11-30_7:41:28 <--> Writing image "pmp.bin" to device ... (72% completed)     
+2023-11-30_7:41:28 <--> Writing image "pmp.bin" to device ... (73% completed)     
+2023-11-30_7:41:28 <--> Writing image "pmp.bin" to device ... (74% completed)     
+2023-11-30_7:41:28 <--> Writing image "pmp.bin" to device ... (75% completed)     
+2023-11-30_7:41:28 <--> Writing image "pmp.bin" to device ... (76% completed)     
+2023-11-30_7:41:28 <--> Writing image "pmp.bin" to device ... (77% completed)     
+2023-11-30_7:41:29 <--> Writing image "pmp.bin" to device ... (78% completed)     
+2023-11-30_7:41:29 <--> Writing image "pmp.bin" to device ... (79% completed)     
+2023-11-30_7:41:29 <--> Writing image "pmp.bin" to device ... (80% completed)     
+2023-11-30_7:41:29 <--> Writing image "pmp.bin" to device ... (81% completed)     
+2023-11-30_7:41:29 <--> Writing image "pmp.bin" to device ... (82% completed)     
+2023-11-30_7:41:29 <--> Writing image "pmp.bin" to device ... (83% completed)     
+2023-11-30_7:41:29 <--> Writing image "pmp.bin" to device ... (84% completed)     
+2023-11-30_7:41:29 <--> Writing image "pmp.bin" to device ... (85% completed)     
+2023-11-30_7:41:29 <--> Writing image "pmp.bin" to device ... (86% completed)     
+2023-11-30_7:41:29 <--> Writing image "pmp.bin" to device ... (87% completed)     
+2023-11-30_7:41:29 <--> Writing image "pmp.bin" to device ... (88% completed)     
+2023-11-30_7:41:29 <--> Writing image "pmp.bin" to device ... (89% completed)     
+2023-11-30_7:41:29 <--> Writing image "pmp.bin" to device ... (90% completed)     
+2023-11-30_7:41:29 <--> Writing image "pmp.bin" to device ... (91% completed)     
+2023-11-30_7:41:29 <--> Writing image "pmp.bin" to device ... (92% completed)     
+2023-11-30_7:41:29 <--> Writing image "pmp.bin" to device ... (93% completed)     
+2023-11-30_7:41:29 <--> Writing image "pmp.bin" to device ... (94% completed)     
+2023-11-30_7:41:29 <--> Writing image "pmp.bin" to device ... (95% completed)     
+2023-11-30_7:41:29 <--> Writing image "pmp.bin" to device ... (96% completed)     
+2023-11-30_7:41:29 <--> Writing image "pmp.bin" to device ... (97% completed)     
+2023-11-30_7:41:29 <--> Writing image "pmp.bin" to device ... (98% completed)     
+2023-11-30_7:41:29 <--> Writing image "pmp.bin" to device ... (99% completed)     
+2023-11-30_7:41:29 <--> Writing image "pmp.bin" to device ... (100% completed)     
+2023-11-30_7:41:29 <-->  Done.
+2023-11-30_7:41:29 <-->  Write: loadb 0xB80AE000
+2023-11-30_7:41:29 <-->  ...
+2023-11-30_7:41:29 <-->  Done.
+2023-11-30_7:41:29 <-->  Read: 3 \fpattern(## Ready for binary (kermit) download*) with timeout 3000
+2023-11-30_7:41:29 <-->  ...
+2023-11-30_7:41:29 <-->  Done.
+2023-11-30_7:41:29 <--> Writing image "system_header_modem_alt1250.bin" to device ... (31% completed)     
+2023-11-30_7:41:29 <--> Writing image "system_header_modem_alt1250.bin" to device ... (63% completed)     
+2023-11-30_7:41:29 <--> Writing image "pmp.bin" to device ... (100% completed)     
+2023-11-30_7:41:29 <-->  Done.
+2023-11-30_7:41:29 <--> --- Second phase completed ---
+2023-11-30_7:41:29 <--> SUCCESS:
+2023-11-30_7:41:29 <--> The burning process completed successfully
+2023-11-30_7:41:29 <-->                              *********   Complete   *********
+2023-11-30_7:41:29 <--> --- second phase completed ---success:the burning process completed successfully                             *********   complete   *********
+2023-11-30_7:41:30 <--> Resetting device ...
+2023-11-30_7:41:30 <--> Completion Time: 11-30-2023 7:41:30 上午
+2023-11-30_7:41:30 <--> resetting device ...completion time: 11-30-2023 7:41:30 上午
+2023-11-30_7:41:30 <--> Open port ......
+2023-11-30_7:41:30 <--> Open port success
+2023-11-30_7:41:31 <-->  0 
+# 
+# 
+# 
+# 
+2023-11-30_7:41:31 <--> Check module success
+2023-11-30_7:41:31 <--> DL MCU start ......
+2023-11-30_7:41:31 <--> D:\tools\FW_DL_And_Format_ODM_V1.2.08\FW_DL_And_Format_ODM_V1.2.08\Altair\1\powershell.exe /c "D:\tools\FW_DL_And_Format_ODM_V1.2.08\FW_DL_And_Format_ODM_V1.2.08\Altair\1\ImageBurnTool1.exe -v "D:\tools\FW_DL_And_Format_ODM_V1.2.08\FW_DL_And_Format_ODM_V1.2.08\QDM065\BG772AGLAAR01A05_QDM065-EA_01.001.01.034\RK_03_00" E0_BZ /14 "D:\tools\FW_DL_And_Format_ODM_V1.2.08\FW_DL_And_Format_ODM_V1.2.08\QDM065\BG772AGLAAR01A05_QDM065-EA_01.001.01.034\MCU_SSL3_00_L_00_34.bin" /18 -uartparams 0 1275 921600 0 -s 1 -n 1"
+2023-11-30_7:41:38 <--> Setting baudrate to 921600
+2023-11-30_7:41:41 <--> Setting flow control off
+2023-11-30_7:41:42 <--> Log file's location:
+2023-11-30_7:41:42 <--> 'C:\ProgramData\Altair\ImageBurnTool\Logging\LogFile30-11-2023  07-41-31.772.txt'
+2023-11-30_7:41:45 <--> Reading Session File: C:\Users\1\AppData\Local\Temp\tmpF3C8.tmp
+2023-11-30_7:41:45 <-->  Write: loadb mcu
+2023-11-30_7:41:45 <-->  ...
+2023-11-30_7:41:45 <-->  Done.
+2023-11-30_7:41:45 <-->  Read: 3 \fpattern(## Ready for binary (kermit) download*) with timeout 3000
+2023-11-30_7:41:45 <-->  ...
+2023-11-30_7:41:45 <-->  Done.
+2023-11-30_7:41:45 <-->  Send: D:\tools\FW_DL_And_Format_ODM_V1.2.08\FW_DL_And_Format_ODM_V1.2.08\QDM065\BG772AGLAAR01A05_QDM065-EA_01.001.01.034\MCU_SSL3_00_L_00_34.bin
+2023-11-30_7:41:45 <--> Sending file ...
+2023-11-30_7:41:45 <--> This might take a while .... please wait
+2023-11-30_7:41:45 <--> Writing image "MCU_SSL3_00_L_00_34.bin" to device ... (1% completed)     
+2023-11-30_7:41:45 <--> Writing image "MCU_SSL3_00_L_00_34.bin" to device ... (2% completed)     
+2023-11-30_7:41:45 <--> Writing image "MCU_SSL3_00_L_00_34.bin" to device ... (3% completed)     
+2023-11-30_7:41:45 <--> Writing image "MCU_SSL3_00_L_00_34.bin" to device ... (4% completed)     
+2023-11-30_7:41:45 <--> Writing image "MCU_SSL3_00_L_00_34.bin" to device ... (5% completed)     
+2023-11-30_7:41:45 <--> Writing image "MCU_SSL3_00_L_00_34.bin" to device ... (6% completed)     
+2023-11-30_7:41:45 <--> Writing image "MCU_SSL3_00_L_00_34.bin" to device ... (7% completed)     
+2023-11-30_7:41:45 <--> Writing image "MCU_SSL3_00_L_00_34.bin" to device ... (8% completed)     
+2023-11-30_7:41:45 <--> Writing image "MCU_SSL3_00_L_00_34.bin" to device ... (9% completed)     
+2023-11-30_7:41:45 <--> Writing image "MCU_SSL3_00_L_00_34.bin" to device ... (10% completed)     
+2023-11-30_7:41:46 <--> Writing image "MCU_SSL3_00_L_00_34.bin" to device ... (11% completed)     
+2023-11-30_7:41:46 <--> Writing image "MCU_SSL3_00_L_00_34.bin" to device ... (12% completed)     
+2023-11-30_7:41:46 <--> Writing image "MCU_SSL3_00_L_00_34.bin" to device ... (13% completed)     
+2023-11-30_7:41:46 <--> Writing image "MCU_SSL3_00_L_00_34.bin" to device ... (14% completed)     
+2023-11-30_7:41:46 <--> Writing image "MCU_SSL3_00_L_00_34.bin" to device ... (15% completed)     
+2023-11-30_7:41:46 <--> Writing image "MCU_SSL3_00_L_00_34.bin" to device ... (16% completed)     
+2023-11-30_7:41:46 <--> Writing image "MCU_SSL3_00_L_00_34.bin" to device ... (17% completed)     
+2023-11-30_7:41:46 <--> Writing image "MCU_SSL3_00_L_00_34.bin" to device ... (18% completed)     
+2023-11-30_7:41:46 <--> Writing image "MCU_SSL3_00_L_00_34.bin" to device ... (19% completed)     
+2023-11-30_7:41:46 <--> Writing image "MCU_SSL3_00_L_00_34.bin" to device ... (20% completed)     
+2023-11-30_7:41:46 <--> Writing image "MCU_SSL3_00_L_00_34.bin" to device ... (21% completed)     
+2023-11-30_7:41:46 <--> Writing image "MCU_SSL3_00_L_00_34.bin" to device ... (22% completed)     
+2023-11-30_7:41:46 <--> Writing image "MCU_SSL3_00_L_00_34.bin" to device ... (23% completed)     
+2023-11-30_7:41:46 <--> Writing image "MCU_SSL3_00_L_00_34.bin" to device ... (24% completed)     
+2023-11-30_7:41:46 <--> Writing image "MCU_SSL3_00_L_00_34.bin" to device ... (25% completed)     
+2023-11-30_7:41:46 <--> Writing image "MCU_SSL3_00_L_00_34.bin" to device ... (26% completed)     
+2023-11-30_7:41:47 <--> Writing image "MCU_SSL3_00_L_00_34.bin" to device ... (27% completed)     
+2023-11-30_7:41:47 <--> Writing image "MCU_SSL3_00_L_00_34.bin" to device ... (28% completed)     
+2023-11-30_7:41:47 <--> Writing image "MCU_SSL3_00_L_00_34.bin" to device ... (29% completed)     
+2023-11-30_7:41:47 <--> Writing image "MCU_SSL3_00_L_00_34.bin" to device ... (30% completed)     
+2023-11-30_7:41:47 <--> Writing image "MCU_SSL3_00_L_00_34.bin" to device ... (31% completed)     
+2023-11-30_7:41:47 <--> Writing image "MCU_SSL3_00_L_00_34.bin" to device ... (32% completed)     
+2023-11-30_7:41:47 <--> Writing image "MCU_SSL3_00_L_00_34.bin" to device ... (33% completed)     
+2023-11-30_7:41:47 <--> Writing image "MCU_SSL3_00_L_00_34.bin" to device ... (34% completed)     
+2023-11-30_7:41:47 <--> Writing image "MCU_SSL3_00_L_00_34.bin" to device ... (35% completed)     
+2023-11-30_7:41:47 <--> Writing image "MCU_SSL3_00_L_00_34.bin" to device ... (36% completed)     
+2023-11-30_7:41:47 <--> Writing image "MCU_SSL3_00_L_00_34.bin" to device ... (37% completed)     
+2023-11-30_7:41:47 <--> Writing image "MCU_SSL3_00_L_00_34.bin" to device ... (38% completed)     
+2023-11-30_7:41:47 <--> Writing image "MCU_SSL3_00_L_00_34.bin" to device ... (39% completed)     
+2023-11-30_7:41:47 <--> Writing image "MCU_SSL3_00_L_00_34.bin" to device ... (40% completed)     
+2023-11-30_7:41:47 <--> Writing image "MCU_SSL3_00_L_00_34.bin" to device ... (41% completed)     
+2023-11-30_7:41:47 <--> Writing image "MCU_SSL3_00_L_00_34.bin" to device ... (42% completed)     
+2023-11-30_7:41:48 <--> Writing image "MCU_SSL3_00_L_00_34.bin" to device ... (43% completed)     
+2023-11-30_7:41:48 <--> Writing image "MCU_SSL3_00_L_00_34.bin" to device ... (44% completed)     
+2023-11-30_7:41:48 <--> Writing image "MCU_SSL3_00_L_00_34.bin" to device ... (45% completed)     
+2023-11-30_7:41:48 <--> Writing image "MCU_SSL3_00_L_00_34.bin" to device ... (46% completed)     
+2023-11-30_7:41:48 <--> Writing image "MCU_SSL3_00_L_00_34.bin" to device ... (47% completed)     
+2023-11-30_7:41:48 <--> Writing image "MCU_SSL3_00_L_00_34.bin" to device ... (48% completed)     
+2023-11-30_7:41:48 <--> Writing image "MCU_SSL3_00_L_00_34.bin" to device ... (49% completed)     
+2023-11-30_7:41:48 <--> Writing image "MCU_SSL3_00_L_00_34.bin" to device ... (50% completed)     
+2023-11-30_7:41:48 <--> Writing image "MCU_SSL3_00_L_00_34.bin" to device ... (51% completed)     
+2023-11-30_7:41:48 <--> Writing image "MCU_SSL3_00_L_00_34.bin" to device ... (52% completed)     
+2023-11-30_7:41:48 <--> Writing image "MCU_SSL3_00_L_00_34.bin" to device ... (53% completed)     
+2023-11-30_7:41:48 <--> Writing image "MCU_SSL3_00_L_00_34.bin" to device ... (54% completed)     
+2023-11-30_7:41:48 <--> Writing image "MCU_SSL3_00_L_00_34.bin" to device ... (55% completed)     
+2023-11-30_7:41:48 <--> Writing image "MCU_SSL3_00_L_00_34.bin" to device ... (56% completed)     
+2023-11-30_7:41:48 <--> Writing image "MCU_SSL3_00_L_00_34.bin" to device ... (57% completed)     
+2023-11-30_7:41:48 <--> Writing image "MCU_SSL3_00_L_00_34.bin" to device ... (58% completed)     
+2023-11-30_7:41:49 <--> Writing image "MCU_SSL3_00_L_00_34.bin" to device ... (59% completed)     
+2023-11-30_7:41:49 <--> Writing image "MCU_SSL3_00_L_00_34.bin" to device ... (60% completed)     
+2023-11-30_7:41:49 <--> Writing image "MCU_SSL3_00_L_00_34.bin" to device ... (61% completed)     
+2023-11-30_7:41:49 <--> Writing image "MCU_SSL3_00_L_00_34.bin" to device ... (62% completed)     
+2023-11-30_7:41:49 <--> Writing image "MCU_SSL3_00_L_00_34.bin" to device ... (63% completed)     
+2023-11-30_7:41:49 <--> Writing image "MCU_SSL3_00_L_00_34.bin" to device ... (64% completed)     
+2023-11-30_7:41:49 <--> Writing image "MCU_SSL3_00_L_00_34.bin" to device ... (65% completed)     
+2023-11-30_7:41:49 <--> Writing image "MCU_SSL3_00_L_00_34.bin" to device ... (66% completed)     
+2023-11-30_7:41:49 <--> Writing image "MCU_SSL3_00_L_00_34.bin" to device ... (67% completed)     
+2023-11-30_7:41:49 <--> Writing image "MCU_SSL3_00_L_00_34.bin" to device ... (68% completed)     
+2023-11-30_7:41:49 <--> Writing image "MCU_SSL3_00_L_00_34.bin" to device ... (69% completed)     
+2023-11-30_7:41:49 <--> Writing image "MCU_SSL3_00_L_00_34.bin" to device ... (70% completed)     
+2023-11-30_7:41:49 <--> Writing image "MCU_SSL3_00_L_00_34.bin" to device ... (71% completed)     
+2023-11-30_7:41:49 <--> Writing image "MCU_SSL3_00_L_00_34.bin" to device ... (72% completed)     
+2023-11-30_7:41:49 <--> Writing image "MCU_SSL3_00_L_00_34.bin" to device ... (73% completed)     
+2023-11-30_7:41:49 <--> Writing image "MCU_SSL3_00_L_00_34.bin" to device ... (74% completed)     
+2023-11-30_7:41:49 <--> Writing image "MCU_SSL3_00_L_00_34.bin" to device ... (75% completed)     
+2023-11-30_7:41:49 <--> Writing image "MCU_SSL3_00_L_00_34.bin" to device ... (76% completed)     
+2023-11-30_7:41:50 <--> Writing image "MCU_SSL3_00_L_00_34.bin" to device ... (77% completed)     
+2023-11-30_7:41:50 <--> Writing image "MCU_SSL3_00_L_00_34.bin" to device ... (78% completed)     
+2023-11-30_7:41:50 <--> Writing image "MCU_SSL3_00_L_00_34.bin" to device ... (79% completed)     
+2023-11-30_7:41:50 <--> Writing image "MCU_SSL3_00_L_00_34.bin" to device ... (80% completed)     
+2023-11-30_7:41:50 <--> Writing image "MCU_SSL3_00_L_00_34.bin" to device ... (81% completed)     
+2023-11-30_7:41:50 <--> Writing image "MCU_SSL3_00_L_00_34.bin" to device ... (82% completed)     
+2023-11-30_7:41:50 <--> Writing image "MCU_SSL3_00_L_00_34.bin" to device ... (83% completed)     
+2023-11-30_7:41:50 <--> Writing image "MCU_SSL3_00_L_00_34.bin" to device ... (84% completed)     
+2023-11-30_7:41:50 <--> Writing image "MCU_SSL3_00_L_00_34.bin" to device ... (85% completed)     
+2023-11-30_7:41:50 <--> Writing image "MCU_SSL3_00_L_00_34.bin" to device ... (86% completed)     
+2023-11-30_7:41:50 <--> Writing image "MCU_SSL3_00_L_00_34.bin" to device ... (87% completed)     
+2023-11-30_7:41:50 <--> Writing image "MCU_SSL3_00_L_00_34.bin" to device ... (88% completed)     
+2023-11-30_7:41:50 <--> Writing image "MCU_SSL3_00_L_00_34.bin" to device ... (89% completed)     
+2023-11-30_7:41:50 <--> Writing image "MCU_SSL3_00_L_00_34.bin" to device ... (90% completed)     
+2023-11-30_7:41:50 <--> Writing image "MCU_SSL3_00_L_00_34.bin" to device ... (91% completed)     
+2023-11-30_7:41:51 <--> Writing image "MCU_SSL3_00_L_00_34.bin" to device ... (92% completed)     
+2023-11-30_7:41:51 <--> Writing image "MCU_SSL3_00_L_00_34.bin" to device ... (93% completed)     
+2023-11-30_7:41:51 <--> Writing image "MCU_SSL3_00_L_00_34.bin" to device ... (94% completed)     
+2023-11-30_7:41:51 <--> Writing image "MCU_SSL3_00_L_00_34.bin" to device ... (95% completed)     
+2023-11-30_7:41:51 <--> Writing image "MCU_SSL3_00_L_00_34.bin" to device ... (96% completed)     
+2023-11-30_7:41:51 <--> Writing image "MCU_SSL3_00_L_00_34.bin" to device ... (97% completed)     
+2023-11-30_7:41:51 <--> Writing image "MCU_SSL3_00_L_00_34.bin" to device ... (98% completed)     
+2023-11-30_7:41:51 <--> Writing image "MCU_SSL3_00_L_00_34.bin" to device ... (99% completed)     
+2023-11-30_7:41:51 <--> Writing image "MCU_SSL3_00_L_00_34.bin" to device ... (100% completed)     
+2023-11-30_7:41:51 <-->  Done.
+2023-11-30_7:41:51 <-->  Read: 120 \fpattern(## Start Addr*#) with timeout 120000
+2023-11-30_7:41:51 <-->  ...
+2023-11-30_7:41:52 <-->  Done.
+2023-11-30_7:41:52 <-->  Write: loadb 0xB80AD000
+2023-11-30_7:41:52 <-->  ...
+2023-11-30_7:41:52 <-->  Done.
+2023-11-30_7:41:52 <-->  Read: 3 \fpattern(## Ready for binary (kermit) download*) with timeout 3000
+2023-11-30_7:41:52 <-->  ...
+2023-11-30_7:41:52 <-->  Done.
+2023-11-30_7:41:52 <--> Writing image "io_par.bin" to device ... (42% completed)     
+2023-11-30_7:41:52 <--> Writing image "io_par.bin" to device ... (83% completed)     
+2023-11-30_7:41:52 <--> Writing image "MCU_SSL3_00_L_00_34.bin" to device ... (100% completed)     
+2023-11-30_7:41:52 <-->  Done.
+2023-11-30_7:41:52 <-->  Read: 120 \fpattern(## Start Addr*#) with timeout 120000
+2023-11-30_7:41:52 <-->  ...
+2023-11-30_7:41:52 <-->  Done.
+2023-11-30_7:41:52 <--> --- Second phase completed ---
+2023-11-30_7:41:52 <--> SUCCESS:
+2023-11-30_7:41:52 <--> The burning process completed successfully
+2023-11-30_7:41:52 <-->                              *********   Complete   *********
+2023-11-30_7:41:52 <--> --- second phase completed ---success:the burning process completed successfully                             *********   complete   *********
+2023-11-30_7:41:53 <--> Resetting device ...
+2023-11-30_7:41:53 <--> Completion Time: 11-30-2023 7:41:53 上午
+2023-11-30_7:41:53 <--> resetting device ...completion time: 11-30-2023 7:41:53 上午
+++++++++++++++trace log end+++++++++++++++

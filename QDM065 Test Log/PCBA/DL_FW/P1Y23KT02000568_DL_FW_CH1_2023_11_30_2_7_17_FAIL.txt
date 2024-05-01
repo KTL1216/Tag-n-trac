@@ -1,0 +1,27 @@
+[FW Path]:D:\tools\FW_DL_And_Format_ODM_V1.2.08\FW_DL_And_Format_ODM_V1.2.08\QDM065\BG772AGLAAR01A05_QDM065-EA_01.001.01.034\fw.alt
+[FW DB]:BG772AGLAAR01A05_QDM065-EA_01.001.01.034;BG772AGLAAR01A05
+[Fixture Number]:ODMT004
+[Serial Number]:
+[IMEI]:P1Y23KT02000568
+[Date]:2023-11-30_2:7:17
+[Tool Version]:FW_DL_And_Format_ODM_V1.2.08
+[StationName]:DL_FW
+[MO]:QWCQ1000132363
+[OC]:QDM065EABA-N06-AAAAA
+[DL Time]:0
+[FN]:QDM065-EA-DL-12-004-M
+[Opertaor]:210268
+++++++++++++++++++++++++++++++
+[DL Info]:Q6-A0740-BL8L10502:not need set 120M
+[DL Info]:Tool not need Erase(QDM065EABA-N06-AAAAA)...
+[DL Info]:[Log_Level]:L6
+[DL Info]:---DL Firmware Fail----
+[DL Info]:---FAIL_NO_TEST Not SaveLog_Abstract----
+++++++++++++++++++++++++++++++
+[Abstract_Log ErrCode ID]:0x3fffffff 
+[Abstract_Log ErrCode Info]:ERROR, IMEI  SQL Status(AUTO_SN_GEN),Not allowed to be tested! 
+++++++++++++++trace log begin+++++++++++++++
+2023-11-30_2:7:17 <--> ************IMEI:P1Y23KT02000568************
+2023-11-30_2:7:17 <--> Not First_Product
+2023-11-30_2:7:17 <--> Check_Set_SQL_MOB_SN Fail
+++++++++++++++trace log end+++++++++++++++

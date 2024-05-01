@@ -1,0 +1,7 @@
+1. In RF, is IMEI the same as SNOB
+
+2. Different sheet so we can differentiate Conduction vs Couping?
+
+3. Will future tests always be tested 3 times at each of 1950 and 45 frequency exactly?
+
+4. What is NIST Registar

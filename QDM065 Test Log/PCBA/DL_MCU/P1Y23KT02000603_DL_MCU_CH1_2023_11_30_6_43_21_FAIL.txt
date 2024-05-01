@@ -1,0 +1,71 @@
+[FW Path]:D:\TOOLS\MCU_FW_DL_ODM_V1.2.07\MCU_FW_DL_ODM_V1.2.07\QDM065\factory_ESP32C3-SPI.bin
+[FW DB]:BG772AGLAAR01A05_QDM065-EA_01.001.01.034;BG772AGLAAR01A05
+[Fixture Number]:ODMT004
+[Serial Number]:
+[IMEI]:P1Y23KT02000603
+[Date]:2023-11-30_6:43:21
+[Tool Version]:MCU_FW_DL_ODM_V1.2.07
+[StationName]:DL_MCU
+[MO]:QWCQ1000132363
+[OC]:QDM065EABA-N06-AAAAA
+[DL Time]:24
+[FN]:QDM065-EA-DL-11-003-M
+[Opertaor]:210268
+++++++++++++++++++++++++++++++
+[DL Info]:Q6-A0740-BL8L10502:not need set 120M
+[DL Info]:[Log_Level]:L6
+[DL Info]:[MCU_Ver]:factory_ESP32C3-SPI
+[Abstract_Log ErrCode ID]:50332747 
+[Abstract_Log ErrCode Info]:200556696 
+++++++++++++++trace log begin 1+++++++++++++++
+2023-11-30_6:42:57 <--> ************IMEI:P1Y23KT02000603************
+2023-11-30_6:42:57 <--> Check(P1Y23KT02000603)IMEI_STD Record Complete
+2023-11-30_6:43:8 <--> Download ESP32_MCU file ......
+2023-11-30_6:43:13 <--> cmd.exe /c D:\TOOLS\MCU_FW_DL_ODM_V1.2.07\MCU_FW_DL_ODM_V1.2.07\QDM002\1\esptool-v3.2-win64\esptool1.exe -p COM40 -b 460800 write_flash 0x0 "D:\TOOLS\MCU_FW_DL_ODM_V1.2.07\MCU_FW_DL_ODM_V1.2.07\QDM065\factory_ESP32C3-SPI.bin"
+2023-11-30_6:43:13 <--> esptool.py v3.2
+Serial port COM40
+Connecting...
+2023-11-30_6:43:13 <--> .
+2023-11-30_6:43:13 <--> .
+2023-11-30_6:43:13 <--> .
+2023-11-30_6:43:14 <--> .
+2023-11-30_6:43:14 <--> .
+2023-11-30_6:43:15 <--> .
+2023-11-30_6:43:15 <--> .
+2023-11-30_6:43:15 <--> .
+2023-11-30_6:43:15 <--> .
+2023-11-30_6:43:15 <--> .
+2023-11-30_6:43:16 <--> .
+2023-11-30_6:43:16 <--> .
+2023-11-30_6:43:16 <--> .
+2023-11-30_6:43:16 <--> .
+2023-11-30_6:43:16 <--> .
+2023-11-30_6:43:17 <--> .
+2023-11-30_6:43:17 <--> .
+2023-11-30_6:43:17 <--> .
+2023-11-30_6:43:18 <--> .
+2023-11-30_6:43:18 <--> .
+2023-11-30_6:43:18 <--> .
+2023-11-30_6:43:18 <--> .
+2023-11-30_6:43:18 <--> .
+2023-11-30_6:43:19 <--> .
+2023-11-30_6:43:19 <--> .
+2023-11-30_6:43:20 <--> .
+2023-11-30_6:43:20 <--> .
+2023-11-30_6:43:20 <--> .
+2023-11-30_6:43:20 <--> .
+2023-11-30_6:43:20 <--> .
+2023-11-30_6:43:21 <--> .
+2023-11-30_6:43:21 <--> .
+2023-11-30_6:43:21 <--> .
+2023-11-30_6:43:21 <--> .
+2023-11-30_6:43:21 <--> .
+2023-11-30_6:43:21 <--> 
+
+A fatal error occurred: Failed to connect to Espressif device: No serial data received.
+For troubleshooting steps visit: https://github.com/espressif/esptool#troubleshooting
+
+2023-11-30_6:43:21 <--> FAIL, DL_FW, error!
+2023-11-30_6:43:21 <--> ESP32 DL Fail
+2023-11-30_6:43:21 <--> =====ERR-OC:QDM065EABA-N06-AAAAA=====
+++++++++++++++trace log end+++++++++++++++

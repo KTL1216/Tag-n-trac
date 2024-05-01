@@ -1,0 +1,23 @@
+[FW Path]:D:\TOOLS\MCU_FW_DL_ODM_V1.2.07\MCU_FW_DL_ODM_V1.2.07\QDM065\factory_ESP32C3-SPI.bin
+[FW DB]:BG772AGLAAR01A05_QDM065-EA_01.001.01.034;BG772AGLAAR01A05
+[Fixture Number]:ODMT004
+[Serial Number]:
+[IMEI]:P1Y23KU02000255
+[Date]:2023-11-30_10:13:1
+[Tool Version]:MCU_FW_DL_ODM_V1.2.07
+[StationName]:DL_MCU
+[MO]:QWCQ1000132363
+[OC]:QDM065EABA-N06-AAAAA
+[DL Time]:0
+[FN]:QDM065-EA-DL-11-003-M
+[Opertaor]:210268
+++++++++++++++++++++++++++++++
+[DL Info]:Q6-A0740-BL8L10502:not need set 120M
+[DL Info]:[Log_Level]:L6
+[DL Info]:[MCU_Ver]:factory_ESP32C3-SPI
+[Abstract_Log ErrCode ID]:50339841 
+[Abstract_Log ErrCode Info]:227636656 
+++++++++++++++trace log begin 1+++++++++++++++
+2023-11-30_10:13:1 <--> ************IMEI:P1Y23KU02000255************
+2023-11-30_10:13:1 <--> FAIL, Check(P1Y23KU02000255)IMEI_STD Record Fail!
+++++++++++++++trace log end+++++++++++++++

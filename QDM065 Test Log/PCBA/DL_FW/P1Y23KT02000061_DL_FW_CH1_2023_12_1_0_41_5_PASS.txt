@@ -1,0 +1,29 @@
+[FW Path]:D:\tools\FW_DL_And_Format_ODM_V1.2.08\FW_DL_And_Format_ODM_V1.2.08\QDM065\BG772AGLAAR01A05_QDM065-EA_01.001.01.034\fw.alt
+[FW DB]:BG772AGLAAR01A05_QDM065-EA_01.001.01.034;BG772AGLAAR01A05
+[Fixture Number]:ODMT004
+[Serial Number]:
+[IMEI]:P1Y23KT02000061
+[Date]:2023-12-1_0:41:5
+[Tool Version]:FW_DL_And_Format_ODM_V1.2.08
+[StationName]:DL_FW
+[MO]:QWCQ1000132363
+[OC]:QDM065EABA-N06-AAAAA
+[DL Time]:151
+[FN]:QDM065-EA-DL-12-004-M
+[Opertaor]:210268
+++++++++++++++++++++++++++++++
+[DL Info]:Q6-A0740-BL8L10502:not need set 120M
+[DL Info]:Tool not need Erase(QDM065EABA-N06-AAAAA)...
+[DL Info]:[Log_Level]:L6
+[DL Info]:KEY_IMEI:P1Y23KT02000061
+[DL Info]:TestFlow- Update MOB SN Status Pass!-AUTO_DL_MCU
+[DL Info]:---DL Firmware Pass----
+[DL Info]:[2023-12-1-0:41:5]-IMEI(P1Y23KT02000061)-SQL_DB_ADD_ABSTRACT_LOG_CONN(1) Pass
+[DL Info]:---SaveLog_Abstract 1 Pass----
+[DL Info]:---Upload_DL_Status_Flag_MOB-----
+[DL Info]:After DL:Update AUTO_DL_FW Pass
+[DL Info]:---Upload_DL_Status_Flag---Pass------
+++++++++++++++++++++++++++++++
+[Abstract_Log ErrCode ID]:0x3000000 
+[Abstract_Log ErrCode Info]:FAIL, Port-1275 open fail 
+++++++++++++++Debug_Log_Handle no use +++++++++++++++

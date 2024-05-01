@@ -1,0 +1,58 @@
+[FW Path]:D:\tools\FW_DL_And_Format_ODM_V1.2.08\FW_DL_And_Format_ODM_V1.2.08\QDM065\BG772AGLAAR01A05_QDM065-EA_01.001.01.034\fw.alt
+[FW DB]:BG772AGLAAR01A05_QDM065-EA_01.001.01.034;BG772AGLAAR01A05
+[Fixture Number]:ODMT004
+[Serial Number]:
+[IMEI]:P1Y23KT02000183
+[Date]:2023-11-30_20:38:26
+[Tool Version]:FW_DL_And_Format_ODM_V1.2.08
+[StationName]:DL_FW
+[MO]:QWCQ1000132363
+[OC]:QDM065EABA-N06-AAAAA
+[DL Time]:36
+[FN]:QDM065-EA-DL-12-004-M
+[Opertaor]:210268
+++++++++++++++++++++++++++++++
+[DL Info]:Q6-A0740-BL8L10502:not need set 120M
+[DL Info]:Tool not need Erase(QDM065EABA-N06-AAAAA)...
+[DL Info]:[Log_Level]:L6
+[DL Info]:KEY_IMEI:P1Y23KT02000183
+[DL Info]:TestFlow- Update MOB SN Status Pass!-AUTO_DL_MCU
+[DL Info]:---DL Firmware Fail----
+[DL Info]:[2023-11-30-20:38:26]-IMEI(P1Y23KT02000183)-SQL_DB_ADD_ABSTRACT_LOG_CONN(1) Pass
+[DL Info]:---SaveLog_Abstract 1 Pass----
+++++++++++++++++++++++++++++++
+[Abstract_Log ErrCode ID]:0x3002060 
+[Abstract_Log ErrCode Info]:FAIL, error:there were errors while executing the burning process ... see log file for additional information 
+++++++++++++++trace log begin+++++++++++++++
+2023-11-30_20:37:50 <--> ************IMEI:P1Y23KT02000183************
+2023-11-30_20:37:50 <--> Not First_Product
+2023-11-30_20:37:50 <--> Check_Set_SQL_MOB_SN Pass
+2023-11-30_20:37:50 <--> +++++++++++1,Check Module Mode+++++++++++
+2023-11-30_20:37:50 <--> Open port ......
+2023-11-30_20:37:50 <--> Open port success
+2023-11-30_20:37:58 <--> '????$??'ßÄ###$
+2023-11-30_20:37:58 <--> Check module success
+2023-11-30_20:37:58 <--> +++++++++++2,DLMode =1 ·ÇÂãÆ¬+++++++++++
+2023-11-30_20:37:58 <--> DL start ......
+2023-11-30_20:37:58 <--> D:\tools\FW_DL_And_Format_ODM_V1.2.08\FW_DL_And_Format_ODM_V1.2.08\Altair\1\powershell.exe /c D:\tools\FW_DL_And_Format_ODM_V1.2.08\FW_DL_And_Format_ODM_V1.2.08\Altair\1\ImageBurnTool1.exe -v D:\tools\FW_DL_And_Format_ODM_V1.2.08\FW_DL_And_Format_ODM_V1.2.08\QDM065\BG772AGLAAR01A05_QDM065-EA_01.001.01.034\RK_03_00 E0_BZ /0 /1 /2 /3 /4 /7 /11 /12 /19 -uartparams 1 1275 3000000 1 -s 1 -n 1
+2023-11-30_20:38:6 <--> Setting baudrate to 3000000
+2023-11-30_20:38:9 <--> Setting flow control on
+2023-11-30_20:38:10 <--> Log file's location:
+2023-11-30_20:38:10 <--> 'C:\ProgramData\Altair\ImageBurnTool\Logging\LogFile30-11-2023  20-37-59.162.txt'
+2023-11-30_20:38:12 <--> ERROR: Cannot get response from device. Please verify port's availability
+2023-11-30_20:38:12 <--> Aborting burning process !
+2023-11-30_20:38:19 <--> Setting baudrate to 3000000
+2023-11-30_20:38:22 <--> Setting flow control on
+2023-11-30_20:38:23 <--> Log file's location:
+2023-11-30_20:38:23 <--> 'C:\ProgramData\Altair\ImageBurnTool\Logging\LogFile30-11-2023  20-37-59.162.txt'
+2023-11-30_20:38:25 <--> ERROR: Cannot get response from device. Please verify port's availability
+2023-11-30_20:38:25 <--> Aborting burning process !
+2023-11-30_20:38:25 <--> ERROR:
+2023-11-30_20:38:25 <--> There were errors while executing the burning process ... 
+2023-11-30_20:38:25 <--> See log file for additional information
+2023-11-30_20:38:25 <--> error:there were errors while executing the burning process ... see log file for additional information
+2023-11-30_20:38:26 <--> Resetting device ...
+2023-11-30_20:38:26 <--> Completion Time: 11-30-2023 8:38:26 ÏÂÎç
+2023-11-30_20:38:26 <--> resetting device ...completion time: 11-30-2023 8:38:26 ÏÂÎç
+2023-11-30_20:38:26 <--> FAIL, error:there were errors while executing the burning process ... see log file for additional information
+++++++++++++++trace log end+++++++++++++++
