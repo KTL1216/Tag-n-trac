@@ -139,15 +139,19 @@ def plot_FCT(folder_name):
     if not os.path.exists(error_folder_path):
         os.makedirs(error_folder_path)
 
-    for file in os.listdir(logdir+"\\PASS\\"):
+    folder_path = os.path.join(logdir, "LOGS")
+    count = 0
+    print(folder_path)
+    for file in os.listdir(folder_path):
+        count += 1
         time_stamp = date_stamp(file.split('_')[2])+clock_stamp(file.split('_')[2])
         time_val = int(time_value(file.split('_')[2]))
-        file_path = os.path.join(logdir, "PASS", file)
+        file_path = os.path.join(logdir, "LOGS", file)
         f = open(file_path, 'r', encoding="utf8")
         try:
             lines = f.readlines()
             data_dict = FCT_dict(folder_name, lines, time_stamp, time_val)
-
+            
             # Check for duplicate IDs
             contained = False
             replace = False
@@ -168,7 +172,7 @@ def plot_FCT(folder_name):
             error_file_path = os.path.join(error_folder_path, file)
             os.rename(file_path, error_file_path)
     print(len(data))
-
+    print(count)
     # Create a dataframe
     df = pd.DataFrame(data)
     df = df[list(data[0].keys())]
@@ -255,10 +259,11 @@ def plot_rf(folder_name):
         os.makedirs(error_folder_path)
 
     # Parsing data
-    for file in os.listdir(logdir+"\\PASS\\"):
+    folder_path = os.path.join(logdir, "LOGS")
+    for file in os.listdir(folder_path):
         time_stamp = date_stamp(file.split('_')[2])+clock_stamp(file.split('_')[2])
         time_val = int(time_value(file.split('_')[2]))
-        file_path = os.path.join(logdir, "PASS", file)
+        file_path = os.path.join(logdir, "LOGS", file)
         f = open(file_path, 'r', encoding="utf8")
         IMEI = file.split('_')[0]
         temp_freq = -1
@@ -391,6 +396,6 @@ def run_functions_safely():
     
     prs.save(os.getcwd()+'\\charts.pptx')
 
-run_functions_safely()
-# plot_FCT("Device")
-#plot_rf("RF_condution")
+# run_functions_safely()
+plot_FCT("PCBA")
+# plot_rf("RF_conduction")
