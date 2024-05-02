@@ -67,7 +67,6 @@ def FCT_dict(folder_name, lines, time_stamp, time_val):
     wifi_scan = 0
     Button = False
     NTC = None
-    found_voltage = False
     Voltage = None
 
     for line in lines:
@@ -96,12 +95,8 @@ def FCT_dict(folder_name, lines, time_stamp, time_val):
         if folder_name == "Device":
             if re.search('get ntc adc value is', line):
                 NTC = extract_reading(line, r"is(\d+\.\d+)")
-            if re.search('Test Item \'Voltage\' PASS', line):
-                found_voltage = True
-            if re.search('DATARECV', line):
-                if found_voltage:
-                    Voltage = float(re.findall(r'\d+\.\d+(?=E)', line)[0])*1000.0
-                    found_voltage = False
+            if re.search('	VBAT=', line):
+                Voltage = float(re.search(r'\d+', line)[0])
         else:
             if re.search('get ntc adc value is', line):
                 NTC = "N/A"
@@ -268,8 +263,8 @@ def plot_rf(folder_name):
         try:
             lines = f.readlines()
             for line in lines:
-                if re.search("FREQ:cent ", line):
-                    temp_freq = float(re.findall(r'\d+\.\d+', line)[0])
+                if re.search("HAN1;LTE;CONF:EARF:UL:cc1", line):
+                    temp_freq = float(re.search(r"cc1\s+(\d+)", line).group(1)) / 10.0
                     if temp_freq not in freq_list:
                         freq_list.append(temp_freq)
                 if re.search("\'Test_LTE_TX_Power", line):
