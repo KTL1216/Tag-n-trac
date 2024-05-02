@@ -4,31 +4,43 @@ import json
 import requests
 import sys
 
+# Base URL for the API
 API_BASE = "https://api.tagntrac.io"
 
-chk_cfg = {"0": 15, "1": 60, "35": "at%setacfg=radiom.config.preferred_rat_list,'CATM'", "36": "  OK  "}
+# Configuration dictionary with specific settings for different status codes
+chk_cfg = {
+    "0": 15, 
+    "1": 60, 
+    "35": "at%setacfg=radiom.config.preferred_rat_list,'CATM'", 
+    "36": "  OK  "
+}
 
-## (15,60); minRsrp=-124; Flt=1; 
-cfg0_params = {"0": 15, "1": 60, "9": -124, "21": 1}
+# Parameter dictionary for configuration 0
+cfg0_params = {
+    "0": 15, 
+    "1": 60, 
+    "9": -124, 
+    "21": 1
+}
 
-
+# Placeholder variables for user credentials and filename
 fname = ""
-
-id = "usernamem" 
+id = "username" 
 pwd = "password" 
 
 def prompt():
-    id = input("Your username is: ")
-    pwd = input("Your password is: ")
+    """Prompt user for username, password, and file name for device id list."""
+    id = input("Your username: ")
+    pwd = input("Your password: ")
     fname = input("File name for the device id list: ")
     return id, pwd, fname
-# id = "kenton.lee@tagntrac.com"
-# pwd = "Xj0%cuKX"
-# fname = "ih_test1.txt"
+
+# Capture user input
 id, pwd, fname = prompt()
 
 def login(email, password):
-    login_response = requests.post(f"https://api.tagntrac.io/login?clientId=Tbocs0cjhrac",
+    """Attempt to log in a user with given email and password."""
+    login_response = requests.post(f"{API_BASE}/login?clientId=Tbocs0cjhrac",
                              data = json.dumps({"emailId" : email, "userSecret" : password}),
                              headers={"Content-Type" : "application/json", "Origin" : "DOC.API"})
     try:
@@ -40,37 +52,39 @@ def login(email, password):
     print(f"Login failed: {login_response.text}")
     return (None, None)
 
-
+# Perform login and capture token and API key
 token, xapikey = login(id, pwd)
 
-common_headers = {"Authorization" : token,
-                  "Origin" : "https://app.tagntrac.io",
-                  "x-api-key" : xapikey}
+# Common headers used in GET requests
+common_headers = {
+    "Authorization": token,
+    "Origin": "https://app.tagntrac.io",
+    "x-api-key": xapikey
+}
 
-
-common_headers_post = {"Authorization" : token,
-                  "Origin" : "https://app.tagntrac.io",
-                  "Content-Type": "application/json"}
-
-
+# Common headers used in POST requests
+common_headers_post = {
+    "Authorization": token,
+    "Origin": "https://app.tagntrac.io",
+    "Content-Type": "application/json"
+}
 
 def get_device(device_id):
-    response = requests.get(f"{API_BASE}/device/{device_id}",
-                            headers=common_headers)
+    """Retrieve device information by device ID."""
+    response = requests.get(f"{API_BASE}/device/{device_id}", headers=common_headers)
     return response.json()
 
-
 def get_device_data(device_id):
-    response = requests.get(f"{API_BASE}/device/{device_id}/data",
-                            headers=common_headers)
+    """Retrieve device data by device ID."""
+    response = requests.get(f"{API_BASE}/device/{device_id}/data", headers=common_headers)
     if response.json()['status'] == 'SUCCESS':
         return response.json()['response']
-    else: return None
-
+    else: 
+        return None
 
 def get_device_shadow(device_id):
-    response = requests.get(f"{API_BASE}/device/{device_id}/shadow",
-                            headers=common_headers)
+    """Retrieve and parse device shadow state."""
+    response = requests.get(f"{API_BASE}/device/{device_id}/shadow", headers=common_headers)
     shdw = response.json()
     reported, desired = None, None
     if shdw['status'] == "SUCCESS":
@@ -81,30 +95,31 @@ def get_device_shadow(device_id):
     return reported, desired
 
 def update_device_shadow(device_id, payload):
-    #payload = json.dumps({ "25": "SSL3_00_L_00_34", "29": 0})
+    """Update device shadow with new configuration."""
     response = requests.post(f"{API_BASE}/device/{device_id}/shadow",
                             payload, headers=common_headers_post)
     print(response.text)
     return response.json()
 
-
 def parse_device_config(shdw):
+    """Display device configuration if available."""
     if shdw['status'] == "SUCCESS":
         p = shdw['shadow']['state']['reported']
         print("config: ", p["0"], p["1"], p["25"])
     else:
         print("config: missing")
 
-
 def parse_device_data(data):
+    """Print the number of data points received."""
     print("num points: ", len(data))
 
 def update_config(device_list, json_params):
+    """Update configuration for each device in the list."""
     for dev in device_list:
         update_device_shadow(dev, json_params)
 
-
 def print_device_config(device_list):
+    """Print the configuration of each device in the list."""
     for dev in device_list:
         r, d = get_device_shadow(dev)
         if r is not None:
@@ -117,11 +132,12 @@ def print_device_config(device_list):
             print("%s\tFail"%(dev))
 
 def check_device_config(device_list, cfg):
+    """Check each device configuration for discrepancies with a reference configuration."""
     for dev in device_list:
         r, d = get_device_shadow(dev)
         if r is not None:
             diff_keys = {k: (r[k], cfg[k]) for k in cfg if k in r and r[k] != cfg[k]}
-            miss_keys = {k:(cfg[k]) for k in cfg if k not in r}
+            miss_keys = {k: (cfg[k]) for k in cfg if k not in r}
             print(dev)
             if len(diff_keys):
                 print("\tDiffs: ", diff_keys)
@@ -130,11 +146,9 @@ def check_device_config(device_list, cfg):
         else:
             print(dev, "\t", "No Shadow")
 
-
-
-
+# Read device list from file specified by the user
 with open(fname, 'r') as fname:
-	device_list = fname.read().splitlines()
+    device_list = fname.read().splitlines()
 
 print("reading device list: ", len(device_list))
 
