@@ -6,17 +6,26 @@ import sys
 
 API_BASE = "https://api.tagntrac.io"
 
-
 chk_cfg = {"0": 15, "1": 60, "35": "at%setacfg=radiom.config.preferred_rat_list,'CATM'", "36": "  OK  "}
 
 ## (15,60); minRsrp=-124; Flt=1; 
 cfg0_params = {"0": 15, "1": 60, "9": -124, "21": 1}
 
 
-fname = "ih_test1.txt"
+fname = ""
 
 id = "usernamem" 
 pwd = "password" 
+
+def prompt():
+    id = input("Your username is: ")
+    pwd = input("Your password is: ")
+    fname = input("File name for the device id list: ")
+    return id, pwd, fname
+# id = "kenton.lee@tagntrac.com"
+# pwd = "Xj0%cuKX"
+# fname = "ih_test1.txt"
+id, pwd, fname = prompt()
 
 def login(email, password):
     login_response = requests.post(f"https://api.tagntrac.io/login?clientId=Tbocs0cjhrac",
@@ -129,18 +138,17 @@ with open(fname, 'r') as fname:
 
 print("reading device list: ", len(device_list))
 
-
 print_device_config(device_list)
 
 #update_fota(device_list)
 #update_config(device_list, json.dumps({"30": 0}))
-#check_device_config(device_list, chk_cfg)
-#for dev in device_list:
-    #print(f"---\nReport for device {dev}")
+# check_device_config(device_list, chk_cfg)
+for dev in device_list:
+    print(f"---\nReport for device {dev}")
     
     
-    #dev_data = get_device_data(dev)
-    #Aparse_device_data(dev_data)
+    dev_data = get_device_data(dev)
+    parse_device_data(dev_data)
 
 
 
