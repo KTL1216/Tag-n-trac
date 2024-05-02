@@ -68,6 +68,7 @@ def FCT_dict(folder_name, lines, time_stamp, time_val):
     Button = False
     NTC = None
     Voltage = None
+    Current = None
 
     for line in lines:
         if re.search('CCID:\'', line):
@@ -97,9 +98,9 @@ def FCT_dict(folder_name, lines, time_stamp, time_val):
                 NTC = extract_reading(line, r"is(\d+\.\d+)")
             if re.search('	VBAT=', line):
                 Voltage = float(re.search(r'\d+', line)[0])
+            if re.search(r"\[DATARECV\]: \+.*", line):
+                Current = float(re.search(r"\+?([-\d.]+)E", line).group(1))
         else:
-            if re.search('get ntc adc value is', line):
-                NTC = "N/A"
             if re.search('Voltage Regulator ', line):
                 Voltage = float(re.findall(r'\d+', line)[0])
 
@@ -119,7 +120,8 @@ def FCT_dict(folder_name, lines, time_stamp, time_val):
         "WiFi Scan Results": wifi_scan,
         "Button": Button,
         "NTC": NTC,
-        "Voltage (mV)": Voltage
+        "Voltage (mV)": Voltage,
+        "Charge Current": Current
     }
     return data_dict
 
@@ -179,7 +181,7 @@ def plot_FCT(folder_name):
         workbook.save(os.getcwd()+'\\QDM065-Summary.xlsx')  # save workbook
         workbook.close()  # close workbook
 
-    for metric in ["AccelX", "AccelY", "AccelZ", "Pressure", "Temp", "Light", "WiFi Scan Results", "Voltage (mV)"]:
+    for metric in ["AccelX", "AccelY", "AccelZ", "Pressure", "Temp", "Light", "WiFi Scan Results", "Voltage (mV)", "Charge Current"]:
         values = [entry[metric] for entry in data]
 
         # Check if there are values to plot
