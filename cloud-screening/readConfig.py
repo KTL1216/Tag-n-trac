@@ -30,9 +30,9 @@ pwd = "password"
 
 def prompt():
     """Prompt user for username, password, and file name for device id list."""
-    id = input("Your username: ")
-    pwd = input("Your password: ")
-    fname = input("File name for the device id list: ")
+    id = input("Enter username: ")
+    pwd = input("Enter password: ")
+    fname = input("Enter file name of device id list: ")
     return id, pwd, fname
 
 # Capture user input
@@ -156,7 +156,7 @@ print_device_config(device_list)
 
 #update_fota(device_list)
 #update_config(device_list, json.dumps({"30": 0}))
-# check_device_config(device_list, chk_cfg)
+check_device_config(device_list, chk_cfg)
 for dev in device_list:
     print(f"---\nReport for device {dev}")
     
