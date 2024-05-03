@@ -36,10 +36,8 @@ def prompt():
     return id, pwd, fname
 
 # Capture user input
-# id, pwd, fname = prompt()
-id = "kenton.lee@tagntrac.com"
-pwd = "Xj0%cuKX"
-fname = "ih_test1.txt"
+id, pwd, fname = prompt()
+
 
 def login(email, password):
     """Attempt to log in a user with given email and password."""
