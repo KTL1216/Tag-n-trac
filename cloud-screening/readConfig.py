@@ -36,7 +36,10 @@ def prompt():
     return id, pwd, fname
 
 # Capture user input
-id, pwd, fname = prompt()
+# id, pwd, fname = prompt()
+id = "kenton.lee@tagntrac.com"
+pwd = "Xj0%cuKX"
+fname = "ih_test1.txt"
 
 def login(email, password):
     """Attempt to log in a user with given email and password."""
@@ -94,6 +97,16 @@ def get_device_shadow(device_id):
             desired = shdw['shadow']['state']['desired']
     return reported, desired
 
+def get_device_health_last_reported(device_id):
+    """Retrieve and parse device health state."""
+    response = requests.get(f"{API_BASE}/device/{device_id}/health", headers=common_headers)
+    health = response.json()
+    print(health['device']['health'].keys())
+    reported_time = None
+    if health['status'] == "SUCCESS":
+        reported_time = health['device']['health']['lastReportedAt']
+    return reported_time
+
 def update_device_shadow(device_id, payload):
     """Update device shadow with new configuration."""
     response = requests.post(f"{API_BASE}/device/{device_id}/shadow",
@@ -121,6 +134,7 @@ def update_config(device_list, json_params):
 def print_device_config(device_list):
     """Print the configuration of each device in the list."""
     for dev in device_list:
+        print(dev)
         r, d = get_device_shadow(dev)
         if r is not None:
             try:
@@ -130,6 +144,27 @@ def print_device_config(device_list):
                 pass
         else:
             print("%s\tFail"%(dev))
+
+def print_device_battery_level(device_list):
+    """Print the desired and reported battery level of each device in the list."""
+    for dev in device_list:
+        r, d = get_device_shadow(dev)
+        if r is not None and d is not None:
+            reported_battery = r.get("20", "No data")
+            desired_battery = d.get("20", "No data")
+            print(f"{dev}\tReported Battery Level: {reported_battery}\tDesired Battery Level: {desired_battery}")
+        else:
+            print(f"{dev}\tBattery level data unavailable")
+
+def print_last_reported_time(device_list):
+    """Print the desired and reported last reported time of each device in the list."""
+    for dev in device_list:
+        time = get_device_health_last_reported(dev)
+        desired_time = "N/A"
+        if time is not None:
+            print(f"{dev}\tLast reported time is: {time}\tDesired Report time is: {desired_time}")
+        else:
+            print(f"{dev}\tBattery level data unavailable")
 
 def check_device_config(device_list, cfg):
     """Check each device configuration for discrepancies with a reference configuration."""
@@ -152,20 +187,21 @@ with open(fname, 'r') as fname:
 
 print("reading device list: ", len(device_list))
 
-print_device_config(device_list)
+# print_device_config(device_list)
+print_device_battery_level(device_list)
+print_last_reported_time(device_list)
 
 #update_fota(device_list)
 #update_config(device_list, json.dumps({"30": 0}))
-check_device_config(device_list, chk_cfg)
-for dev in device_list:
-    print(f"---\nReport for device {dev}")
+# check_device_config(device_list, chk_cfg)
+# for dev in device_list:
+#     print(f"---\nReport for device {dev}")
     
-    
-    dev_data = get_device_data(dev)
-    parse_device_data(dev_data)
+#     dev_data = get_device_data(dev)
+#     parse_device_data(dev_data)
 
 
-
+#(dev, r["0"], r["1"], r["11"], r['9'], r["30"], r["25"], r['34'], r['8'])
 '''
 typedef enum {
   AWS_CONFIG_KEY_SENSOR_INTERVAL = 0,       // 0

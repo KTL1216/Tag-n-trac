@@ -1,0 +1,1052 @@
+openapi: 3.1.0
+info:
+  version: 1.0.0
+  title: TnT Relativity Platform
+  description: API Specification for Tag-N-Trac Relativity Platform
+  contact:
+    name: API Support
+    url: https://tagntrac.atlassian.net/servicedesk/customer/portals
+    email: support@tagntrac.com
+servers:
+  - url: https://api.tagntrac.io/
+paths:
+  /v2/auth/login:
+    post:
+      summary: Login
+      operationId: login_v2
+      description: |
+        Authenticate a user with provided credentials and return the following keys:
+        - `idToken` : JWT used for authentication.
+        - `clientApiKey` : Used for the health check api. This does not expire or change and hence can be used indefinitely for performing health checks.
+      tags:
+        - Authentication
+      parameters:
+        - name: domain
+          in: header
+          schema:
+            type: string
+            enum:
+              - app
+          required: true
+        - name: x-client-id
+          in: header
+          schema:
+            type: string
+            enum:
+              - Tnt117bvtrac
+          required: true
+        - name: client-identifier
+          in: header
+          schema:
+            type: string
+            enum:
+              - tnt-customer-portal
+          required: true
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                password:
+                  type: string
+                reqType:
+                  type: string
+                  enum:
+                    - cognitoAuth
+              required:
+                - email
+                - password
+                - reqType
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Login'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    enum:
+                      - FAILURE
+                  message:
+                    type: string
+                    description: A message indicating the result of the operation.
+                    examples:
+                      - email cannot be empty
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    enum:
+                      - FAILURE
+                  message:
+                    type: string
+                    description: A message indicating the result of the operation.
+                    examples:
+                      - No such user exists
+  /cellular/device/config:
+    post:
+      tags:
+        - Cellular
+      summary: Configure Cell Devices
+      operationId: configureCellularDevice
+      description: API to send configuration commands to multiple cellular devices.
+      parameters:
+        - $ref: '#/components/parameters/V2JWT'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ConfigureDeviceRequestBody'
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    enum:
+                      - SUCCESS
+                  message:
+                    type: string
+                    enum:
+                      - Configuration updated successfully
+        '207':
+          description: Partial Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  '201':
+                    type: object
+                    properties:
+                      successfulDevices:
+                        type: array
+                        items:
+                          type: string
+                      message:
+                        type: string
+                  '404':
+                    type: object
+                    properties:
+                      failedDevices:
+                        type: array
+                        items:
+                          type: string
+                      message:
+                        type: string
+                  status:
+                    type: string
+                    enum:
+                      - PARTIAL_SUCCESS
+                  message:
+                    type: string
+                examples:
+                  - '201':
+                      message: Successfully updated configuration
+                      successfulDevices:
+                        - C40***70FFA4
+                        - C40***000273
+                    '404':
+                      message: Device not found
+                      failedDevices:
+                        - C40***00009
+                    status: PARTIAL_SUCCESS
+                    message: Configuration updated successfully for some devices
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    enum:
+                      - FAILURE
+                  message:
+                    type: string
+                    description: A message indicating the result of the operation.
+                    examples:
+                      - Invalid Configuration
+        '401':
+          description: Unauthorized
+          content:
+            text/html:
+              schema:
+                type: string
+                enum:
+                  - Invalid Token
+  /devices/assets:
+    post:
+      tags:
+        - Asset Provisioning
+      summary: Provision Multiple Assets
+      operationId: provisionAsset
+      description: |-
+        The parameter `ASSET_TYPE` must be set to one of following values: `UNIT`, `BOX`, `CONTAINER`, `PALLET`.
+        The parameter `ASSET_ID` should be set to a unique Asset identifier (for example, it could be the SSCC code of the shipment or some other unique value that be used to identify the asset).
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/ProvisionDeviceRequestBody'
+              examples:
+                - - DEVICE_ID: C40***00009
+                    ASSET_ID: ASSET20240310
+                    ASSET_TYPE: UNIT
+                    PROJECT: Project_1
+                  - DEVICE_ID: C40***70FFA4
+                    ASSET_ID: ASSET20240311
+                    ASSET_TYPE: UNIT
+                    PROJECT: Project_2
+                  - DEVICE_ID: C40***000273
+                    ASSET_ID: ASSET20240312
+                    ASSET_TYPE: BOX
+                    PROJECT: Project_3
+      parameters:
+        - $ref: '#/components/parameters/V2JWT'
+      responses:
+        '201':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    enum:
+                      - SUCCESS
+                  message:
+                    type: string
+                    description: A message indicating the result of the operation.
+                    examples:
+                      - Assets provisioned successfully
+        '207':
+          description: Partial Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  '200':
+                    type: object
+                    properties:
+                      devices:
+                        type: array
+                        items:
+                          type: string
+                      message:
+                        type: string
+                      status:
+                        type: string
+                        enum:
+                          - SUCCESS
+                  '400':
+                    type: object
+                    properties:
+                      devicesWithInvalidAssetName:
+                        type: array
+                        items:
+                          type: string
+                      devicesWithInvalidAssetType:
+                        type: array
+                        items:
+                          type: string
+                      devicesNotInUserOrganization:
+                        type: array
+                        items:
+                          type: string
+                      devicesAlreadyProvisioned:
+                        type: array
+                        items:
+                          type: string
+                      devicesWithInvalidProject:
+                        type: array
+                        items:
+                          type: string
+                      message:
+                        type: string
+                      status:
+                        type: string
+                        enum:
+                          - FAILURE
+                  status:
+                    type: string
+                    enum:
+                      - PARTIAL_SUCCESS
+                  message:
+                    type: string
+                examples:
+                  - '200':
+                      status: SUCCESS
+                      message: Asset provisioned successfully
+                      devices:
+                        - C40***70FFA4
+                        - C40***000273
+                    '400':
+                      status: FAILURE
+                      devicesWithInvalidAssetName: []
+                      devicesWithInvalidAssetType: []
+                      devicesNotInUserOrganization:
+                        - C40***00009
+                      devicesAlreadyProvisioned: []
+                      devicesWithInvalidProject: []
+                    status: PARTIAL_SUCCESS
+                    message: Some assets provisioned successfully
+        '401':
+          description: Unauthorized
+          content:
+            text/html:
+              schema:
+                type: string
+                enum:
+                  - Invalid Token
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                type: object
+                examples:
+                  - status: FAILURE
+                    error: Devices either not found in user's organization or already provisioned
+                    devicesWithInvalidAssetName: []
+                    devicesWithInvalidAssetType: []
+                    devicesNotInUserOrganization:
+                      - C40***00009
+                    devicesAlreadyProvisioned: []
+                    devicesWithInvalidProject: []
+    delete:
+      tags:
+        - Asset Provisioning
+      summary: Deprovision Multiples Assets
+      operationId: deprovisionAsset
+      parameters:
+        - $ref: '#/components/parameters/V2JWT'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                device:
+                  type: array
+                  items:
+                    type: string
+              examples:
+                - device:
+                    - C40***70FFA4
+                    - C40***00009E
+                    - C40***000273
+                    - C0A***EF5500
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    enum:
+                      - SUCCESS
+                  message:
+                    type: string
+                    examples:
+                      - All devices de-provisioned successfully
+        '207':
+          description: Partial Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  '201':
+                    type: object
+                    properties:
+                      status:
+                        type: string
+                        enum:
+                          - SUCCESS
+                      message:
+                        type: string
+                      devices:
+                        type: array
+                        items:
+                          type: string
+                  '404':
+                    type: object
+                    properties:
+                      status:
+                        type: string
+                        enum:
+                          - FAILURE
+                      message:
+                        type: string
+                      devices:
+                        type: array
+                        items:
+                          type: string
+                  status:
+                    type: string
+                    enum:
+                      - PARTIAL_SUCCESS
+                  message:
+                    type: string
+                examples:
+                  - '201':
+                      status: SUCCESS
+                      message: Device deprovisioned successfully
+                      devices:
+                        - C40***00009E
+                        - C40***000273
+                        - C40***70FFA4
+                    '404':
+                      status: FAILURE
+                      message: Device not found
+                      devices:
+                        - C0A***EF5500
+                    status: PARTIAL_SUCCESS
+                    message: Some devices deprovisioned successfully
+        '401':
+          description: Unauthorized
+          content:
+            text/html:
+              schema:
+                type: string
+                enum:
+                  - Invalid Token
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    enum:
+                      - FAILURE
+                  error:
+                    type: string
+                    description: A message indicating the result of the operation.
+                    examples:
+                      - Devices not found in user's organization
+  /device/{deviceId}/health:
+    get:
+      tags:
+        - Health
+      summary: Get device health
+      operationId: getDeviceHealth
+      description: This endpoint allows you to perform a healthcheck on a device
+      parameters:
+        - $ref: '#/components/parameters/ApiKey'
+        - name: deviceId
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    enum:
+                      - SUCCESS
+                  device:
+                    $ref: '#/components/schemas/Device'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    enum:
+                      - FAILURE
+                  error:
+                    type: string
+                    examples:
+                      - Device does not belong to this organization
+        '401':
+          description: Unauthorized
+          content:
+            text/html:
+              schema:
+                type: string
+                enum:
+                  - Invalid Token
+  /webhook:
+    post:
+      tags:
+        - Webhooks
+      summary: Create Webhook
+      operationId: createWebhook
+      description: |-
+        The following events can be subscribed to for the webhooks.
+        1. The CATM1_TAG_DATA_AVAILABLE webhook event is fired every time a sensor recording is received from the cellular device.
+            
+
+        ``` json
+        {
+          "body": {
+            "organization": "TagNTrac"
+            "apiKey": "xxxx",
+            "eventType": "CATM1_TAG_DATA_AVAILABLE",
+            "scope": "ORGANIZATION", 
+            "data": {
+              "id": "868617060008853",
+              "tm": 23.06,     // tmeperature (in degress Celsius)
+              "accX": 0.74,    // acceleration along X axis in G units
+              "accY": -0.01,   // acceleration along Y axis in G units
+              "accZ": -0.66,   // acceleration along Z axis in G units
+              "li": 0,         // Light level (units of lux) 
+              "prs": 996.22,   // Pressure sensor reading (unit of hPa)
+              "evnts": 0,      // Events flags (see details below)
+              "vbat": 5476,    // Battery voltage level (millivolts)
+              "ts": 1698124222000,  // timestamp (unix epoch in milliseconds) of sensor reading
+              "lat": 32.844292,   // latitude of device location
+              "lng": -117.175431. // longitude of device location
+              "rsrp": -100,     // cell signal strength in dbm 
+              "locationAccuracy": "MED",  // estimated accuracy of the location fix (LOW/MED/HIGH)
+            }
+          }
+        }
+
+         ```
+
+        The "evnts" field is a bitmap that can indicate followng events:
+
+        - Bit position 0: Movement event
+        - Bit position 1: Box open event (detected by light sensor)
+        - Bit position 2: Box close event (detected by light sensor)
+        - Bit position 3: Button press event
+        - Bit position 4: Button long press event
+        - Bit position 10: Device is being charged
+            
+
+        The "rsrp" vale is the cellular signal strength in dbm. It can be converted to a indicator as follows (approximately): >-70 = 4bars; -70 to -85 = 3bars; -85 to -100 = 2bars; -100 to -115 = 1bar).
+
+        2\. The CELLULAR_LOGGER_REPORT_AVAILABLE webhook is generated for excursion monitor state changes on a device.
+
+        The "status" object contains the current excursion status. The "monitorState" key value is either 4 ("Active" ) or 5 ("Stopped") when the webhook is triggered.
+
+        ``` json
+        {
+          "body": {
+            "organization": "TagNTrac",
+            "organizationId": "YjNKbllXNXBlbUYwYVc5dWU0NzgyYWQwLTkzZTAtMTFlYi1iMzgyLWIzM2UwY2ZmOGQ3ZQ==",
+            "eventType": "CELLULAR_LOGGER_REPORT_AVAILABLE",
+            "scope": "ORGANIZATION",
+            "projectId": "Y0hKdmFtVmpkQT09ZTQwMmQ2ZjAtMWNmNS0xMWVkLTkwNDctYmQyNmE2ZTM3NTNl",
+            "project": "StarScream",
+            "config": {.             // Alarm configuration parameters
+              "startTime": 1697755169000,   // start time for monitor (unix epoch, milliseconds)
+              "endTime": 1700350769000,     // end tieme for monitor (unix epoch, milliseconds)
+              "startButtonNeeded": 0,       // 0: No start button needed
+              "startDelay": 3600,           // start delay (in seconds) after monitor start
+              "stopDelay": 1800,            // stop delay (in seconds) after monitor stop
+              "buttonIgnoreDelay": 3600,    // button delay (in seconds), after start
+              "tripDurationMax": 576,       // max trip duration (in hours) before alarm is triggered
+              "alertHighTemp": 25,          // temperature high threshold (in degress Celsius)
+              "alertLowTemp": 0,            // temperature low threshold (in degress Celsius)
+              "consecutiveCount": 1,        // number of consecutive samples to trigger alarm
+              "alertLifetimeHighTemp": 25,  // cumulative temperature high threshold (in degress Celsius)
+              "alertLifetimeLowTemp": 0,    // cumulative high threshold (in degress Celsius)
+              "lifetimeCount": 0,           // number of cumulative samples to trigger alarm
+            },
+            "status": {
+              "monitorState": 4,             // current state of the excursion monitor (Active=4; Stopped=5)
+              "tripDurationExcursion": true, // status of the trip duration excursion event
+              "tempExcursion": true,         // status of the temp excursion event
+              "lifetimeTempExcursion": true. // status of the lifetime temp excursion event
+            },
+            "data": [.  // array of sensor data records for the monitoring period
+             {
+                "ts": "1711632919000",  // timestamp (unix epoch in milliseconds) of sensor reading
+                "tm": 25.14,          // temperature ( in Celsius degrees )
+                "accX": 0.02,         // acceleration along X axis in G units
+                "accY": -0.01,        // acceleration along Y axis in G units
+                "accZ": 1.05,         // acceleration along Z axis in G units
+                "li": 201,            // Light level (units of lux)
+                "prs": 999.59,        // Pressure sensor reading (unit of hPa)
+                "vbat": 3972         // Battery voltage level (millivolts)
+              },
+              ....
+            ]
+         }
+
+         ```
+      parameters:
+        - $ref: '#/components/parameters/V2JWT'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/WebhookSubscription'
+      responses:
+        '201':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WebhookCreationResponse'
+        '401':
+          description: Unauthorized
+          content:
+            text/html:
+              schema:
+                type: string
+                enum:
+                  - Invalid Token
+  /v2/device/{deviceId}/pdf:
+    get:
+      tags:
+        - Reports
+      summary: Download PDF report
+      operationId: getDevicePDFReport
+      description: |
+        This endpoint allows users to download a PDF report for a specific device identified by its ID.
+      parameters:
+        - $ref: '#/components/parameters/V2JWT'
+        - name: deviceId
+          in: path
+          description: ID of the device for which the PDF report is requested
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/pdf:
+              schema:
+                type: string
+                format: binary
+        '401':
+          description: Unauthorized
+          content:
+            text/html:
+              schema:
+                type: string
+                enum:
+                  - Invalid Token
+components:
+  schemas:
+    Login:
+      type: object
+      properties:
+        status:
+          type: string
+        user:
+          type: object
+          properties:
+            userName:
+              type: string
+            slug:
+              type: string
+            email:
+              type: string
+            contact:
+              type: string
+            role:
+              type: string
+            avatar:
+              type: string
+            userId:
+              type: string
+            userRoles:
+              type: array
+              items:
+                type: object
+                properties:
+                  id:
+                    type: string
+                  name:
+                    type: string
+            organizationId:
+              type: string
+            permissions:
+              type: string
+            projectInfo:
+              type: array
+              items:
+                type: object
+                properties:
+                  id:
+                    type: string
+                  projectName:
+                    type: string
+        project:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: string
+              projectName:
+                type: string
+        token:
+          type: string
+        idToken:
+          type: string
+        refreshToken:
+          type: string
+        expiration:
+          type: integer
+        organization:
+          type: object
+          properties:
+            id:
+              type: string
+            organizationName:
+              type: string
+            organizationType:
+              type: string
+            config:
+              type: object
+              properties:
+                timezone:
+                  type: string
+                temperature:
+                  type: string
+            ClientApiKey:
+              type: object
+              properties:
+                clientId:
+                  type: string
+        clientApiKey:
+          type: object
+          properties:
+            clientId:
+              type: string
+    DeviceConfiguration:
+      type: object
+      required:
+        - addr
+        - highTemp
+        - lowTemp
+        - consecutiveCount
+        - lifetimeHighTemp
+        - lifetimeLowTemp
+        - lifetimeCount
+      properties:
+        addr:
+          type: string
+          description: Address of the device to configure.
+        highTemp:
+          type: number
+          description: Maximum temperature allowed.
+        lowTemp:
+          type: number
+          description: Minimum temperature allowed.
+        consecutiveCount:
+          type: integer
+          description: Maximum number of consecutive temperature measurements outside the range of lowTemp and highTemp before an excursion is raised.
+        lifetimeHighTemp:
+          type: number
+          description: Absolute maximum temperature allowed.
+        lifetimeLowTemp:
+          type: number
+          description: Absolute minimum temperature allowed.
+        lifetimeCount:
+          type: integer
+          description: Total number of temperature measurements outside the range of lowTemp and highTemp before an excursion is raised (set to 0 to turn off this feature).
+    AlertPayload:
+      type: object
+      required:
+        - monitorStartTime
+        - startButtonNeeded
+        - startDelay
+        - stopDelay
+        - tripDuration
+        - ignoreButtonPeriod
+        - devices
+      properties:
+        monitorStartTime:
+          type: integer
+          description: Number of seconds since 1/1/1970 after which monitoring will start.
+        startButtonNeeded:
+          type: integer
+          description: Whether a button press is required (1) or not (0) to start.
+          enum:
+            - 0
+            - 1
+        startDelay:
+          type: integer
+          description: Number of minutes to wait before getting any temperature reading after monitoring starts.
+        stopDelay:
+          type: integer
+          description: Number of minutes to wait before alerting.
+        tripDuration:
+          type: integer
+          description: Number of minutes to wait before canceling the alert.
+        ignoreButtonPeriod:
+          type: integer
+          description: Number of minutes to ignore button presses after an alert.
+        devices:
+          type: array
+          items:
+            $ref: '#/components/schemas/DeviceConfiguration'
+    ParametersPayload:
+      type: object
+      required:
+        - sensingInterval
+        - uploadInterval
+      properties:
+        sensingInterval:
+          type: integer
+          description: Number of minutes between sensor readings.
+        uploadInterval:
+          type: integer
+          description: Number of minutes between uploads.
+    ConfigureDeviceRequestBody:
+      type: object
+      required:
+        - commands
+      properties:
+        commands:
+          type: array
+          items:
+            type: object
+            required:
+              - cell_addr
+              - cmd
+            properties:
+              cell_addr:
+                type: string
+                description: Address of the cellular device to which the command should be sent.
+              cmd:
+                type: string
+                description: The command to send.
+                enum:
+                  - alert
+                  - parameters
+              payload:
+                type: object
+                description: The payload for the command.
+                anyOf:
+                  - $ref: '#/components/schemas/AlertPayload'
+                  - $ref: '#/components/schemas/ParametersPayload'
+    ProvisionDeviceRequestBody:
+      type: object
+      required:
+        - DEVICE_ID
+        - ASSET_ID
+        - ASSET_TYPE
+        - PROJECT
+      properties:
+        DEVICE_ID:
+          type: string
+        ASSET_ID:
+          type: string
+        ASSET_TYPE:
+          type: string
+        PROJECT:
+          type: string
+          description: Name of the project to associate the asset with.
+    Device:
+      type: object
+      properties:
+        id:
+          type: string
+        deviceType:
+          type: string
+        attributes:
+          type: object
+          properties:
+            model:
+              type: string
+            revision:
+              type: string
+            lot:
+              type: string
+        isActive:
+          type: boolean
+        status:
+          type: string
+        createdAt:
+          type: string
+          format: date-time
+        updatedAt:
+          type: string
+          format: date-time
+        recall:
+          type: boolean
+        health:
+          type: object
+          properties:
+            lastReportedAt:
+              type: string
+              format: date-time
+            state:
+              type: string
+            command:
+              type: object
+              properties:
+                payload:
+                  type: object
+                blegwId:
+                  type: string
+                  nullable: true
+            config:
+              type: object
+              properties:
+                startTime:
+                  type: integer
+                endTime:
+                  type: integer
+                startButtonNeeded:
+                  type: integer
+                startDelay:
+                  type: integer
+                stopDelay:
+                  type: integer
+                buttonIgnoreDelay:
+                  type: integer
+                tripDurationMax:
+                  type: integer
+                timestampCounterId:
+                  type: integer
+                sensorInterval:
+                  type: integer
+                uploadInterval:
+                  type: integer
+                alertHighTemp:
+                  type: integer
+                alertLowTemp:
+                  type: integer
+                consecutiveCount:
+                  type: integer
+                alertLifetimeHighTemp:
+                  type: integer
+                alertLifetimeLowTemp:
+                  type: integer
+                lifetimeCount:
+                  type: integer
+                tripDurationExcursion:
+                  type: boolean
+                tempExcursion:
+                  type: boolean
+                lifetimeTempExcursion:
+                  type: boolean
+                monitorState:
+                  type: integer
+    WebhookSubscription:
+      type: object
+      properties:
+        url:
+          type: string
+        headers:
+          type: object
+          nullable: true
+        eventType:
+          type: string
+          enum:
+            - CATM1_TAG_DATA_AVAILABLE
+            - CELLULAR_LOGGER_REPORT_AVAILABLE
+        level:
+          type: string
+        levelId:
+          type: string
+        organizationId:
+          type: string
+        createdBy:
+          type: string
+        isActive:
+          type: boolean
+        recipients:
+          type: array
+          items:
+            type: string
+        attributes:
+          type: object
+          nullable: true
+          properties:
+            project:
+              type: string
+      required:
+        - url
+        - eventType
+        - level
+        - levelId
+        - organizationId
+        - createdBy
+        - isActive
+    WebhookCreationResponse:
+      type: object
+      properties:
+        status:
+          type: string
+          enum:
+            - SUCCESS
+        message:
+          type: string
+          description: A message indicating the result of the operation.
+          examples:
+            - Webhook created successfully
+        id:
+          type: string
+          description: ID of the created webhook
+          examples:
+            - ZDJWaW*************************tyMDA0
+  parameters:
+    V2JWT:
+      in: header
+      name: Authorization
+      description: JWT token. Obtained from the `idToken` field in the login response
+      schema:
+        type: string
+        format: JWT
+      required: true
+    ApiKey:
+      in: header
+      name: x-api-key
+      description: Obtained from the `ClientApiKey` field in the login response
+      schema:
+        type: string
+      required: true
+  securitySchemes:
+    BasicAuth:
+      type: http
+      scheme: basic
+    BearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+    ApiKey:
+      type: apiKey
+      in: header
+      name: x-api-key
+      description: Obtained from the `ClientApiKey` field in the login response
