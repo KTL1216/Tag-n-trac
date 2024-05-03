@@ -1,4 +1,4 @@
-from datetime import datetime
+from datetime import datetime, timezone
 import json
 #import matplotlib.pyplot as plt
 import requests
@@ -97,11 +97,10 @@ def get_device_shadow(device_id):
             desired = shdw['shadow']['state']['desired']
     return reported, desired
 
-def get_device_health_last_reported(device_id):
+def get_health_last_reported(device_id):
     """Retrieve and parse device health state."""
     response = requests.get(f"{API_BASE}/device/{device_id}/health", headers=common_headers)
     health = response.json()
-    print(health['device']['health'].keys())
     reported_time = None
     if health['status'] == "SUCCESS":
         reported_time = health['device']['health']['lastReportedAt']
@@ -147,22 +146,28 @@ def print_device_config(device_list):
 
 def print_device_battery_level(device_list):
     """Print the desired and reported battery level of each device in the list."""
-    for dev in device_list:
-        r, d = get_device_shadow(dev)
-        if r is not None and d is not None:
-            reported_battery = r.get("20", "No data")
-            desired_battery = d.get("20", "No data")
-            print(f"{dev}\tReported Battery Level: {reported_battery}\tDesired Battery Level: {desired_battery}")
-        else:
-            print(f"{dev}\tBattery level data unavailable")
+    # for dev in device_list:
+    #     r, d = get_device_shadow(dev)
+    #     if r is not None and d is not None:
+    #         reported_battery = r.get("20", "No data")
+    #         desired_battery = d.get("20", "No data")
+    #         print(f"{dev}\tReported Battery Level: {reported_battery}\tDesired Battery Level: {desired_battery}")
+    #     else:
+    #         print(f"{dev}\tBattery level data unavailable")
 
 def print_last_reported_time(device_list):
     """Print the desired and reported last reported time of each device in the list."""
     for dev in device_list:
-        time = get_device_health_last_reported(dev)
-        desired_time = "N/A"
+        time = get_health_last_reported(dev)
         if time is not None:
-            print(f"{dev}\tLast reported time is: {time}\tDesired Report time is: {desired_time}")
+            # Get the current UTC time as a timezone-aware datetime object
+            current_utc_time = datetime.now(timezone.utc)
+            # Convert the time string to a timezone-aware datetime object
+            reported_time = datetime.strptime(time, "%Y-%m-%dT%H:%M:%S.%fZ").replace(tzinfo=timezone.utc)
+            # Calculate the time difference
+            time_difference = current_utc_time - reported_time
+            hours_passed = time_difference.total_seconds() / 3600
+            print(f"{dev}\tLast reported time is: {time}\tIt has been {hours_passed:.2f} hours since last reported.")
         else:
             print(f"{dev}\tBattery level data unavailable")
 
