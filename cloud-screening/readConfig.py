@@ -154,7 +154,7 @@ def print_device_battery_level(device_list):
     #         print(f"{dev}\tBattery level data unavailable")
 
 def print_last_reported_time(device_list):
-    """Print the desired and reported last reported time of each device in the list."""
+    """Print the reported last reported time of each device in the list."""
     for dev in device_list:
         time = get_health_last_reported(dev)
         if time is not None:
