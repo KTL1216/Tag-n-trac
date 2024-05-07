@@ -2,7 +2,6 @@ from datetime import datetime, timezone
 import json
 #import matplotlib.pyplot as plt
 import requests
-import sys
 
 # Base URL for the API
 API_BASE = "https://api.tagntrac.io"
@@ -36,7 +35,10 @@ def prompt():
     return id, pwd, fname
 
 # Capture user input
-id, pwd, fname = prompt()
+# id, pwd, fname = prompt()
+id = "kenton.lee@tagntrac.com"
+pwd = "Xj0%cuKX"
+fname = "ih_test1.txt"
 
 
 def login(email, password):
@@ -164,10 +166,15 @@ def print_last_reported_time(device_list):
             reported_time = datetime.strptime(time, "%Y-%m-%dT%H:%M:%S.%fZ").replace(tzinfo=timezone.utc)
             # Calculate the time difference
             time_difference = current_utc_time - reported_time
-            hours_passed = time_difference.total_seconds() / 3600
-            print(f"{dev}\tLast reported time is: {time}\tIt has been {hours_passed:.2f} hours since last reported.")
+            hours = time_difference.seconds // 3600
+            minutes = (time_difference.seconds % 3600) // 60
+            seconds = time_difference.seconds % 60
+            # Format the time difference
+            formatted_time_difference = f"{hours} hrs {minutes} mins {seconds} secs"
+            print(f"{dev}\tLast reported time is: {time}. It has been {formatted_time_difference} since last reported.")
+            print()
         else:
-            print(f"{dev}\tBattery level data unavailable")
+            print(f"{dev}\tLast Reported Time data unavailable")
 
 def check_device_config(device_list, cfg):
     """Check each device configuration for discrepancies with a reference configuration."""
@@ -190,7 +197,7 @@ with open(fname, 'r') as fname:
 
 print("reading device list: ", len(device_list))
 
-# print_device_config(device_list)
+print_device_config(device_list)
 print_device_battery_level(device_list)
 print_last_reported_time(device_list)
 
