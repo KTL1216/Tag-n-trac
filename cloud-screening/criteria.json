@@ -1,14 +1,15 @@
 {
-    "Sensor Interval": null,
-    "Upload Interval": 3,
-    "Warehouse Interval": 3,
-    "Min Vbat Mv": null,
-    "Flight Mode Enable": null,
-    "Upload Handshake": null,
-    "Accelerometer Config": null,
-    "Accelerometer Threshold": null,
-    "Firmware Version": ["SSL3_00_L_00_58", "SSL3_00_L_00_52"],
-    "WiFi Enable": null,
-    "Scan Suspend": null,
-    "LTE Attach Timeout": null
+    "Sensor Interval": 15,
+    "Upload Interval": 60,
+    "Warehouse Interval": 120,
+    "Min Vbat Mv": 3100,
+    "Flight Mode Enable": 1,
+    "Upload Handshake": 1,
+    "Accelerometer Config": 2,
+    "Accelerometer Threshold": 1.9,
+    "Firmware Version": ["SSL3_00_L_00_58"],
+    "WiFi Enable": 1,
+    "Scan Suspend": 1,
+    "LTE Attach Timeout": 180,
+    "Timeout Multiplier": 3
 }

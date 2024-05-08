@@ -1,6 +1,7 @@
 from datetime import datetime, timezone
 import os
 import re
+import sys
 import json
 #import matplotlib.pyplot as plt
 import requests
@@ -10,7 +11,7 @@ import openpyxl
 from openpyxl.utils.dataframe import dataframe_to_rows
 
 # Open the JSON file
-with open('criteria.json', 'r') as file:
+with open(sys.argv[1], 'r') as file:
     criteria = json.load(file)
 
 # Base URL for the API
@@ -100,80 +101,57 @@ def get_health_last_reported(device_id):
         reported_time = health['device']['health']['lastReportedAt']
         if reported_time is None:
             reported_time = "N/A"
+    else:
+        reported_time = "N/A"
     return reported_time
 
 def sensor_interval_test(data_dict, criteria):
     if data_dict["Sensor Interval"] == "N/A":
         return False
     else:
-        return True
-
+        return criteria == data_dict["Sensor Interval"]
 
 def upload_interval_test(data_dict, criteria):
-    if data_dict["Time Passed Since Reported"] == "N/A":
+    if data_dict["Upload Interval"] == "N/A":
         return False
     else:
-        time_str = data_dict["Time Passed Since Reported"]
-
-        # Split the string into components
-        components = time_str.split()
-
-        # Extract hours, minutes, and seconds
-        hours = int(components[0]) if "hrs" in time_str else 0
-        minutes = int(components[2]) if "mins" in time_str else 0
-        seconds = int(components[4]) if "secs" in time_str else 0
-
-        # Convert hours, minutes, and seconds to minutes
-        total_minutes = hours * 60 + minutes + seconds / 60
-        return total_minutes < criteria * data_dict["Upload Interval"]
+        return criteria == data_dict["Upload Interval"]
 
 def warehouse_interval_test(data_dict, criteria):
-    if data_dict["Time Passed Since Reported"] == "N/A":
+    if data_dict["Warehouse Interval"] == "N/A":
         return False
     else:
-        time_str = data_dict["Time Passed Since Reported"]
-
-        # Split the string into components
-        components = time_str.split()
-
-        # Extract hours, minutes, and seconds
-        hours = int(components[0]) if "hrs" in time_str else 0
-        minutes = int(components[2]) if "mins" in time_str else 0
-        seconds = int(components[4]) if "secs" in time_str else 0
-
-        # Convert hours, minutes, and seconds to minutes
-        total_minutes = hours * 60 + minutes + seconds / 60
-        return total_minutes < criteria * data_dict["Warehouse Interval"]
+        return criteria == data_dict["Warehouse Interval"]
 
 def min_vbat_test(data_dict, criteria):
     if data_dict["Min Vbat Mv"] == "N/A":
         return False
     else:
-        return True
+        return criteria == data_dict["Min Vbat Mv"]
 
 def flight_mode_test(data_dict, criteria):
     if data_dict["Flight Mode Enable"] == "N/A":
         return False
     else:
-        return True
+        return criteria == data_dict["Flight Mode Enable"]
 
 def handshake_test(data_dict, criteria):
     if data_dict["Upload Handshake"] == "N/A":
         return False
     else:
-        return True
+        return criteria == data_dict["Upload Handshake"]
 
 def accelerometer_config_test(data_dict, criteria):
     if data_dict["Accelerometer Config"] == "N/A":
         return False
     else:
-        return True
+        return criteria == data_dict["Accelerometer Config"]
 
 def accelerometer_threshold_test(data_dict, criteria):
     if data_dict["Accelerometer Threshold"] == "N/A":
         return False
     else:
-        return True
+        return criteria == data_dict["Accelerometer Threshold"]
 
 def firmware_version_test(data_dict, criteria):
     if data_dict["Firmware Version"] == "N/A":
@@ -185,19 +163,42 @@ def wifi_enable_test(data_dict, criteria):
     if data_dict["WiFi Enable"] == "N/A":
         return False
     else:
-        return True
+        return criteria == data_dict["WiFi Enable"]
 
 def scan_suspend_test(data_dict, criteria):
     if data_dict["Scan Suspend"] == "N/A":
         return False
     else:
-        return True
+        return criteria == data_dict["Scan Suspend"]
 
 def LTE_attach_timeout_test(data_dict, criteria):
     if data_dict["LTE Attach Timeout"] == "N/A":
         return False
     else:
-        return True
+        return criteria == data_dict["LTE Attach Timeout"]
+    
+def timeout_multiplier_test(data_dict, criteria):
+    if data_dict["Time Passed Since Reported"] == "N/A":
+        return False
+    else:
+        time_str = data_dict["Time Passed Since Reported"]
+
+        # Split the string into components
+        components = time_str.split()
+
+        # Extract hours, minutes, and seconds
+        hours = int(components[0]) if "hrs" in time_str else 0
+        minutes = int(components[2]) if "mins" in time_str else 0
+        seconds = int(components[4]) if "secs" in time_str else 0
+
+        # Convert hours, minutes, and seconds to minutes
+        total_minutes = hours * 60 + minutes + seconds / 60
+        if criteria["Warehouse Interval"] and data_dict["Warehouse Interval"] !=  0:
+            return total_minutes < criteria["Timeout Multiplier"] * data_dict["Warehouse Interval"]
+        elif criteria["Upload Interval"] and data_dict["Upload Interval"] !=  0:
+            return total_minutes < criteria["Timeout Multiplier"] * data_dict["Upload Interval"]
+        else:
+            return False
 
 def run_test(data_dict, criteria):
     bool = True
@@ -207,17 +208,13 @@ def run_test(data_dict, criteria):
         if not sensor_interval_test(data_dict, criteria["Sensor Interval"]):
             fail_list.append("Sensor Interval")
     if criteria["Upload Interval"] is not None:
-        temp_bool = True
-        if criteria["Warehouse Interval"] is not None:
-            if data_dict["Warehouse Interval"] > 0:
-                temp_bool = warehouse_interval_test(data_dict, criteria["Warehouse Interval"])
-            else:
-                temp_bool = upload_interval_test(data_dict, criteria["Upload Interval"])
-        else:
-            temp_bool = upload_interval_test(data_dict, criteria["Upload Interval"])
-        bool = bool and temp_bool
+        bool = bool and upload_interval_test(data_dict, criteria["Upload Interval"])
         if not upload_interval_test(data_dict, criteria["Upload Interval"]):
-            fail_list.append("Upload/Warehouse Interval")
+            fail_list.append("Upload Interval")
+    if criteria["Warehouse Interval"] is not None:
+        bool = bool and warehouse_interval_test(data_dict, criteria["Warehouse Interval"])
+        if not warehouse_interval_test(data_dict, criteria["Warehouse Interval"]):
+            fail_list.append("Warehouse Interval")
     if criteria["Min Vbat Mv"] is not None:
         bool = bool and min_vbat_test(data_dict, criteria["Min Vbat Mv"])
         if not min_vbat_test(data_dict, criteria["Min Vbat Mv"]):
@@ -254,6 +251,10 @@ def run_test(data_dict, criteria):
         bool = bool and LTE_attach_timeout_test(data_dict, criteria["LTE Attach Timeout"])
         if not LTE_attach_timeout_test(data_dict, criteria["LTE Attach Timeout"]):
             fail_list.append("LTE Attach Timeout")
+    if criteria["Timeout Multiplier"] is not None:
+        bool = bool and timeout_multiplier_test(data_dict, criteria)
+        if not LTE_attach_timeout_test(data_dict, criteria):
+            fail_list.append("Time Passed Since Reported")
     return bool, fail_list
 
 def produce_data_dict(device_id, criteria):
@@ -324,27 +325,27 @@ def run(fname, criteria):
     new_file_path = os.path.join(os.getcwd(), f'Health Check {timestamp}.xlsx')
     df.to_excel(new_file_path, index=False, sheet_name="Health Check")
 
-    failed_list = []
+    # failed_list = []
 
-    with open(f'failed {timestamp}.txt', 'w') as outfile:
-        for data_dict in data_list:
-            if not data_dict["Pass"]:
-                failed_list.append(str(data_dict["IMEI"]))
-                failed_record = str(data_dict["IMEI"]) + "   " + str(data_dict["Last Reported Time (UTC)"])
-                outfile.write(failed_record + '\n')
+    # with open(f'failed {timestamp}.txt', 'w') as outfile:
+    #     for data_dict in data_list:
+    #         if not data_dict["Pass"]:
+    #             failed_list.append(str(data_dict["IMEI"]))
+    #             failed_record = str(data_dict["IMEI"]) + "   " + str(data_dict["Last Reported Time (UTC)"])
+    #             outfile.write(failed_record + '\n')
 
-    # Open the original file in read mode and a temporary file in write mode
-    with open(fname, 'r') as read_file, open('temp_file.txt', 'w') as temp_file:
-        # Read through each line in the original file
-        for line in read_file:
-            # Check if the line's number (strip removes newline characters) is not in the numbers to remove
-            if line.strip() not in failed_list:
-                # Write this line to the temporary file
-                temp_file.write(line)
+    # # Open the original file in read mode and a temporary file in write mode
+    # with open(fname, 'r') as read_file, open('temp_file.txt', 'w') as temp_file:
+    #     # Read through each line in the original file
+    #     for line in read_file:
+    #         # Check if the line's number (strip removes newline characters) is not in the numbers to remove
+    #         if line.strip() not in failed_list:
+    #             # Write this line to the temporary file
+    #             temp_file.write(line)
 
-    # Remove the original file
-    os.remove(fname)
+    # # Remove the original file
+    # os.remove(fname)
 
-    # Rename the temporary file to the original file name
-    os.rename('temp_file.txt', fname)
+    # # Rename the temporary file to the original file name
+    # os.rename('temp_file.txt', fname)
 run(fname, criteria)
