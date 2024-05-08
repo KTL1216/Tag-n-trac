@@ -10,8 +10,10 @@ import pandas as pd
 import openpyxl
 from openpyxl.utils.dataframe import dataframe_to_rows
 
+
+json_file = input("Enter criteria json file name: ")
 # Open the JSON file
-with open(sys.argv[1], 'r') as file:
+with open(json_file, 'r') as file:
     criteria = json.load(file)
 
 # Base URL for the API
@@ -253,7 +255,7 @@ def run_test(data_dict, criteria):
             fail_list.append("LTE Attach Timeout")
     if criteria["Timeout Multiplier"] is not None:
         bool = bool and timeout_multiplier_test(data_dict, criteria)
-        if not LTE_attach_timeout_test(data_dict, criteria):
+        if not timeout_multiplier_test(data_dict, criteria):
             fail_list.append("Time Passed Since Reported")
     return bool, fail_list
 
