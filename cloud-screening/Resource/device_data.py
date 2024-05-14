@@ -66,7 +66,7 @@ def get_device_data_v2(device_id):
 
     
 #device_list = ['868617060222892']
-fname_dev = "tmp.csv"
+fname_dev = "output.txt"
 
 
 with open(fname_dev, 'r') as fname:

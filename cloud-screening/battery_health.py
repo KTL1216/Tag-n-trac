@@ -40,11 +40,25 @@ common_headers2 = {"Authorization" : idToken,
                   "Origin" : f"{API_BASE}",
                   "x-api-key" : xapikey2}
 
-queryDates = ""
-## to specify data range
-#queryDates = "?start=2024-03-15T10:00:00.000Z&end=2024-03-17T10:00:00.000Z"
 
-def get_device_data_v2(device_id):
+def generate_time_string(hours_ago):
+    # Get the current time in UTC
+    end_time = datetime.now(timezone.utc)
+    # Calculate the start time by subtracting the given hours
+    start_time = end_time - timedelta(hours=hours_ago)
+
+    # Format both times to the ISO 8601 format with milliseconds
+    start_str = start_time.strftime('%Y-%m-%dT%H:%M:%S.000Z')
+    end_str = end_time.strftime('%Y-%m-%dT%H:%M:%S.000Z')
+
+    # Construct the final string
+    result_string = f"?start={start_str}&end={end_str}"
+    return result_string
+
+
+def get_device_data_v2(device_id, hours_ago):
+    queryDates = generate_time_string(hours_ago)
+    print(queryDates)
     response = requests.get(f"{API_BASE}/v2/device/{device_id}/data"+queryDates,
                             headers=common_headers2)
     if response.json()['status'] == 'SUCCESS':
@@ -54,7 +68,7 @@ def get_device_data_v2(device_id):
         print("Get Device data2 failed: "+device_id)
         return None
 
-def data_clean_up(data_entry, dev_id, hours):
+def data_clean_up(data_entry, dev_id, hours_ago):
     timestamp_ms = int(data_entry['ts'])
     timestamp_s = timestamp_ms / 1000
     reported_time = datetime.fromtimestamp(timestamp_s, timezone.utc)
@@ -62,17 +76,20 @@ def data_clean_up(data_entry, dev_id, hours):
     # Calculate time difference
     current_utc_time = datetime.now(timezone.utc)
     time_difference = current_utc_time - reported_time
-    if time_difference <= timedelta(hours=int(hours)) and data_entry['vbat'] is not None:
-        hours = time_difference.seconds // 3600
-        minutes = (time_difference.seconds % 3600) // 60
-        seconds = time_difference.seconds % 60
+
+    if data_entry['vbat'] is not None:
+        # Calculate hours, minutes, and seconds from time difference
+        hours_formatted = time_difference.total_seconds() // 3600
+        minutes = (time_difference.total_seconds() % 3600) // 60
+        seconds = time_difference.total_seconds() % 60
         # Format the time difference
-        formatted_time_difference = f"{hours} hrs {minutes} mins {seconds} secs"
+        formatted_time_difference = f"{int(hours_formatted)} hrs {int(minutes)} mins {int(seconds)} secs"
         data_dict = {
             'IMEI': dev_id,
             'Timestamp': reported_time.strftime('%Y-%m-%d %H:%M:%S'),
             'Time passed since Reported': formatted_time_difference,
-            'vBat': data_entry['vbat']
+            'vBat': int(data_entry['vbat']),
+            'Time Difference': -1 * time_difference.total_seconds() / 3600
         }
         return data_dict
     else:
@@ -95,12 +112,28 @@ def convert_to_seconds(t):
         print(f"Error converting time: {t} - {e}")
         return 0  # return 0 if there's an error, or you could choose to handle it differently
 
+def convert_to_hours(t):
+    try:
+        time_parts = {'hrs': 0, 'mins': 0, 'secs': 0}
+        parts = t.split()
+        for i in range(0, len(parts), 2):
+            if parts[i + 1].startswith('hr'):
+                time_parts['hrs'] = int(parts[i])
+            elif parts[i + 1].startswith('min'):
+                time_parts['mins'] = int(parts[i])
+            elif parts[i + 1].startswith('sec'):
+                time_parts['secs'] = int(parts[i])
+        total_seconds = time_parts['hrs'] * 3600 + time_parts['mins'] * 60 + time_parts['secs']
+        return total_seconds / 3600  # Convert seconds to hours
+    except Exception as e:
+        print(f"Error converting time: {t} - {e}")
+        return 0  # return 0 if there's an error, or you could choose to handle it differently
 
 fname_dev = "output.txt"
 
 
 def run(fname):
-    hours = input("Enter the time period (how many hours ago from now): ")
+    hours_ago = input("Enter the time period (how many hours ago from now): ")
 
     # Read device list from file specified by the user
     with open(fname, 'r') as file:
@@ -109,18 +142,24 @@ def run(fname):
 
     # An array tracking all the relevant data for all relevant devices
     data_list = []
+    entry_list = []
 
     for dev in device_list[:]:
         print(f"---\nReport for device {dev}")
-        data = get_device_data_v2(dev)
+        data = get_device_data_v2(dev, int(hours_ago))
         if data is not None:
             for entry in data:
+                if 1==1:# and entry['vbat'] is not None:
+                    entry_list.append(entry['ts'])
+                data_dict = data_clean_up(entry, dev, hours_ago)
                 try:
-                    data_dict = data_clean_up(entry, dev, hours)
+                    data_dict = data_clean_up(entry, dev, hours_ago)
                     if data_dict is not None:
                         data_list.append(data_dict)
                 except:
                     print(f"Device {dev} shows error")
+
+    print(f"There are these many entries available: {len(entry_list)}")
     
     # Create a dataframe
     df = pd.DataFrame(data_list)
@@ -130,7 +169,8 @@ def run(fname):
     new_file_path = os.path.join(os.getcwd(), f'Battery Health {timestamp}.xlsx')
     df.to_excel(new_file_path, index=False, sheet_name="vBat Check")
 
-    df['Seconds Since Reported'] = df['Time passed since Reported'].apply(convert_to_seconds)
+    # Convert 'Time passed since Reported' into hours for plotting
+    df['Hours Since Reported'] = df['Time passed since Reported'].apply(convert_to_hours)
 
     # Create a figure and an axes.
     fig, ax = plt.subplots()
@@ -139,13 +179,13 @@ def run(fname):
     grouped = df.groupby('IMEI')
 
     for name, group in grouped:
-        ax.plot(group['Seconds Since Reported'], group['vBat'], label=name)
+        ax.plot(group['Hours Since Reported'], group['vBat'], label=name)
 
     # Setting the x-axis to show more recent times on the right
     ax.invert_xaxis()  # invert the x-axis to meet your requirement
 
     # Label the axes
-    ax.set_xlabel('Time Passed (seconds ago)')
+    ax.set_xlabel('Time Passed (hours ago)')
     ax.set_ylabel('Battery Voltage (vBat)')
 
     # Title and legend
