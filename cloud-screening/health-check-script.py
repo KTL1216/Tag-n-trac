@@ -278,6 +278,7 @@ def produce_data_dict(device_id, criteria):
         # Format the time difference
         formatted_time_difference = f"{hours} hrs {minutes} mins {seconds} secs"
 
+    # print(shadow_reported["42"].keys())
     data_dict = {
         "IMEI": device_id,
         "Last Reported Time (UTC)": time,
