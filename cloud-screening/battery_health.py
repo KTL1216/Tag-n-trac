@@ -89,11 +89,11 @@ def data_clean_up(data_entry, dev_id, hours_ago):
             'Timestamp': reported_time.strftime('%Y-%m-%d %H:%M:%S'),
             'Time passed since Reported': formatted_time_difference,
             'vBat': int(data_entry['vbat']),
-            'Time Difference': -1 * time_difference.total_seconds() / 3600
+            f'Reported time since {hours_ago}hrs ago (hrs)': float(hours_ago)-time_difference.total_seconds() / 3600
         }
         return data_dict
     else:
-        return None
+        return None 
     
 # Convert 'Time passed since Reported' into a total seconds for plotting
 def convert_to_seconds(t):
@@ -129,60 +129,15 @@ def convert_to_hours(t):
         print(f"Error converting time: {t} - {e}")
         return 0  # return 0 if there's an error, or you could choose to handle it differently
 
-fname_dev = "output.txt"
-
-
-def run(fname):
-    hours_ago = input("Enter the time period (how many hours ago from now): ")
-
-    # Read device list from file specified by the user
-    with open(fname, 'r') as file:
-        device_list = file.read().splitlines()
-    print("reading device list: ", len(device_list))
-
-    # An array tracking all the relevant data for all relevant devices
-    data_list = []
-    entry_list = []
-
-    for dev in device_list[:]:
-        print(f"---\nReport for device {dev}")
-        data = get_device_data_v2(dev, int(hours_ago))
-        if data is not None:
-            for entry in data:
-                if 1==1:# and entry['vbat'] is not None:
-                    entry_list.append(entry['ts'])
-                data_dict = data_clean_up(entry, dev, hours_ago)
-                try:
-                    data_dict = data_clean_up(entry, dev, hours_ago)
-                    if data_dict is not None:
-                        data_list.append(data_dict)
-                except:
-                    print(f"Device {dev} shows error")
-
-    print(f"There are these many entries available: {len(entry_list)}")
-    
-    # Create a dataframe
-    df = pd.DataFrame(data_list)
-    df = df[list(data_list[0].keys())]
-    # Save dataframe as excel
-    timestamp = datetime.now().strftime("%Y%m%d%H%M%S")
-    new_file_path = os.path.join(os.getcwd(), f'Battery Health {timestamp}.xlsx')
-    df.to_excel(new_file_path, index=False, sheet_name="vBat Check")
-
-    # Convert 'Time passed since Reported' into hours for plotting
-    df['Hours Since Reported'] = df['Time passed since Reported'].apply(convert_to_hours)
-
+def create_plot_and_slide(grouped, timestamp, prs, count):
     # Create a figure and an axes.
     fig, ax = plt.subplots()
-
-    # Group data by IMEI to plot each device's data
-    grouped = df.groupby('IMEI')
 
     for name, group in grouped:
         ax.plot(group['Hours Since Reported'], group['vBat'], label=name)
 
     # Setting the x-axis to show more recent times on the right
-    ax.invert_xaxis()  # invert the x-axis to meet your requirement
+    ax.invert_xaxis()
 
     # Label the axes
     ax.set_xlabel('Time Passed (hours ago)')
@@ -199,18 +154,70 @@ def run(fname):
     image_dir = os.path.join(os.getcwd(), "images")
     if not os.path.exists(image_dir):
         os.makedirs(image_dir)
-    image_path = os.path.join(image_dir, f'vBat_Time_{timestamp}.png')
+    image_path = os.path.join(image_dir, f'vBat_Time_{timestamp}_{count}.png')
     plt.savefig(image_path)
-    plt.close()
+    plt.close(fig)
 
-    # Add a new slide for the summary table of statistics
-    slide_layout = prs.slide_layouts[6]  # Choose a layout that fits a table well
-    stats_slide = prs.slides.add_slide(slide_layout)
-
-    # Insert the plot image into the slide
+    # Add a new slide for the plot
+    slide_layout = prs.slide_layouts[6]
+    slide = prs.slides.add_slide(slide_layout)
     left = Inches(1)
     top = Inches(0.1)
-    stats_slide.shapes.add_picture(image_path, left, top, width=Inches(10), height=Inches(8))
+    slide.shapes.add_picture(image_path, left, top, width=Inches(10), height=Inches(8))
+
+
+fname_dev = "output.txt"
+
+
+def run(fname):
+    hours_ago = input("Enter the time period (how many hours ago from now): ")
+
+    # Read device list from file specified by the user
+    with open(fname, 'r') as file:
+        device_list = file.read().splitlines()
+    print("reading device list: ", len(device_list))
+
+    # An array tracking all the relevant data for all relevant devices
+    data_list = []
+    group_list = []
+    entry_list = []
+    slide_count = 0
+    for i, dev in enumerate(device_list):
+        print(f"---\nReport for device {dev}")
+        data = get_device_data_v2(dev, int(hours_ago))
+        if data is not None:
+            for entry in data:
+                if 1==1:# and entry['vbat'] is not None:
+                    entry_list.append(entry['ts'])
+                data_dict = data_clean_up(entry, dev, hours_ago)
+                try:
+                    data_dict = data_clean_up(entry, dev, hours_ago)
+                    if data_dict is not None:
+                        group_list.append(data_dict)
+                        data_list.append(data_dict)
+                except:
+                    print(f"Device {dev} shows error")
+        # Check if we need to create a new slide
+        if (i + 1) % 5 == 0 or i + 1 == len(group_list):  # After every 5 devices or the last device
+            df = pd.DataFrame(group_list)
+            df['Hours Since Reported'] = df['Time passed since Reported'].apply(convert_to_hours)
+            grouped = df.groupby('IMEI')
+            create_plot_and_slide(grouped, datetime.now().strftime("%Y%m%d%H%M%S"), prs, slide_count)
+            slide_count += 1
+            group_list = []  # Reset for the next batch
+
+    print(f"There are these many entries available: {len(entry_list)}")
+    
+    # Create a dataframe
+    df = pd.DataFrame(data_list)
+    df = df[list(data_list[0].keys())]
+    # Save dataframe as excel
+    timestamp = datetime.now().strftime("%Y%m%d%H%M%S")
+    new_file_path = os.path.join(os.getcwd(), f'Battery Health {timestamp}.xlsx')
+    df.to_excel(new_file_path, index=False, sheet_name="vBat Check")
+
+    # Convert 'Time passed since Reported' into hours for plotting
+    df['Hours Since Reported'] = df['Time passed since Reported'].apply(convert_to_hours)
 
     # Save the presentation
     prs.save(os.path.join(os.getcwd(), f'Presentation_{timestamp}.pptx'))
