@@ -69,6 +69,12 @@ def FCT_dict(folder_name, lines, time_stamp, time_val):
     NTC = None
     Voltage = None
     Current = None
+    wifi_version = None
+    modem_version = None
+    EEPROM1 = None
+    EEPROM2 = None
+    temp_offset = None
+    EEPROM3 = None
 
     for line in lines:
         if re.search('CCID:\'', line):
@@ -100,14 +106,23 @@ def FCT_dict(folder_name, lines, time_stamp, time_val):
                 Voltage = float(re.search(r'\d+', line)[0])
             if re.search(r"\[DATARECV\]: \+.*", line):
                 Current = float(re.search(r"\+?([-\d.]+)E", line).group(1))
-        else:
+        elif folder_name == "PCBA_FCT":
             if re.search('Voltage Regulator ', line):
                 Voltage = float(re.findall(r'\d+', line)[0])
+            if re.search('Bin version:', line):
+                wifi_version = re.search(r'\d+\.\d+\.\d+\(ESP32C3-SPI\)', line).group()
+            if re.search('BG', line):
+                modem_version = line.split('\n')[0]
+            if re.search('EEPROM2:', line):
+                EEPROM1 = re.search(r'EEPROM1:\s*(0x[0-9A-Fa-f]+)', line).group(1)
+                EEPROM2 = re.search(r'EEPROM2:\s*(0x[0-9A-Fa-f]+)', line).group(1)
+                temp_offset = re.search(r'Temp Offset:\s*(0x[0-9A-Fa-f]+)', line).group(1)
+                EEPROM3 = re.search(r'EEPROM3:\s*(0x[0-9A-Fa-f]+)', line).group(1)
 
     data_dict = {
         "IMEI": IMEI,
         "Timestamp": time_stamp,
-        "CCID": CCID,
+        "CCID": str(CCID),
         "SN_MOB": SN_MOB,
         "MCU Version": mcu_ver,
         "Time Value": time_val,
@@ -119,11 +134,26 @@ def FCT_dict(folder_name, lines, time_stamp, time_val):
         "Light": light,
         "WiFi Scan Results": wifi_scan,
         "Button": Button,
-        "NTC": NTC,
         "Voltage (mV)": Voltage
     }
+    if NTC:
+        data_dict["NTC"] = NTC
     if Current:
         data_dict["Charge Current"] = Current
+    if wifi_version:
+        data_dict["Wifi Version"] = wifi_version
+    if modem_version:
+        data_dict["Modem version"] = modem_version
+    if EEPROM1:
+        data_dict["EEPROM1"] = EEPROM1
+    if EEPROM2:
+        data_dict["EEPROM2"] = EEPROM2
+    if temp_offset:
+        data_dict["Temp Offset"] = temp_offset
+    if EEPROM3:
+        data_dict["EEPROM3"] = EEPROM3
+
+
     return data_dict
 
 def plot_FCT(folder_name):
@@ -393,5 +423,5 @@ def run_functions_safely():
     prs.save(os.getcwd()+'\\charts.pptx')
 
 run_functions_safely()
-# plot_FCT("Device_FCT")
+# plot_FCT("PCBA_FCT")
 # plot_rf("PCBA_FT_Conducted")
