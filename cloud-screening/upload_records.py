@@ -2,7 +2,6 @@ from datetime import datetime, timezone
 import os
 import re
 import sys
-import json
 import matplotlib.pyplot as plt
 import requests
 import json
@@ -75,31 +74,132 @@ def get_device_data_v2(device_id, hours_ago):
     else: 
         print("Get Device data2 failed: "+device_id)
         return None
-
-def total_distance_travel(coords):
-    total_distance = 0.0
-    # Iterate through the list of coordinates
-    for i in range(1, len(coords)):
-        # Calculate the distance between consecutive coordinates
-        distance = geodesic(coords[i-1], coords[i]).miles
-        total_distance += distance
-    return total_distance
-
-def calculate_expected_uploads(hours_ago, dev, criteria):
-    mins_ago = int(hours_ago) * 60
-    interval = -1
-    if criteria["Warehouse Interval"] and criteria["Warehouse Interval"] !=  0:
-        interval = criteria["Warehouse Interval"]
-    elif criteria["Upload Interval"] and criteria["Upload Interval"] !=  0:
-        interval = criteria["Upload Interval"]
     
-    return mins_ago//interval
- 
-def get_coord_list(data):
-    list = []
+def time_delta(data, id):
+    # if there is rsrp then it is an upload sample, if not it is a sensor sample
+    upload_data = []
+    sensor_data = []
     for entry in data:
-        list.append((float(entry['lat']), float(entry['lng'])))
-    return list
+        if entry['rsrp'] is not None:
+            upload_data.append(entry)
+        else:
+            sensor_data.append(entry)
+    
+    # Record the top three longest gap between sensor samples
+    longest_sensor_gaps = []
+    for i in range(1, len(sensor_data)):
+        previous_ts_ms = int(sensor_data[i]['ts'])
+        previous_ts_s = previous_ts_ms / 1000
+        previous_time = datetime.fromtimestamp(previous_ts_s, timezone.utc)
+
+        current_ts_ms = int(sensor_data[i-1]['ts'])
+        currents_ts_s = current_ts_ms / 1000
+        current_time = datetime.fromtimestamp(currents_ts_s, timezone.utc)
+
+        # Calculate time difference
+        time_difference = current_time - previous_time
+        # Calculate hours, minutes, and seconds from time difference
+        hours_formatted = time_difference.total_seconds() // 3600
+        minutes = (time_difference.total_seconds() % 3600) // 60
+        seconds = time_difference.total_seconds() % 60
+        # Format the time difference
+        formatted_time_difference = f"{int(hours_formatted)} hrs {int(minutes)} mins {int(seconds)} secs"
+        if len(longest_sensor_gaps) < 3:
+            longest_sensor_gaps.append([previous_ts_s, currents_ts_s, formatted_time_difference])
+        else:
+            min_index = 0
+            for i in range(1, len(longest_sensor_gaps)):
+                if longest_sensor_gaps[i][2] < longest_sensor_gaps[min_index][2]:
+                    min_index = i
+            if convert_to_seconds(longest_sensor_gaps[min_index][2]) < int(time_difference.total_seconds()):  
+                longest_sensor_gaps[min_index] = [previous_ts_s, currents_ts_s, formatted_time_difference]
+
+    # Record the top three longest gap between upload samples
+    longest_upload_gaps = []
+    for i in range(1, len(upload_data)):
+        previous_ts_ms = int(upload_data[i]['ts'])
+        previous_ts_s = previous_ts_ms / 1000
+        previous_time = datetime.fromtimestamp(previous_ts_s, timezone.utc)
+
+        current_ts_ms = int(upload_data[i-1]['ts'])
+        currents_ts_s = current_ts_ms / 1000
+        current_time = datetime.fromtimestamp(currents_ts_s, timezone.utc)
+
+        # Calculate time difference
+        time_difference = current_time - previous_time
+        # Calculate hours, minutes, and seconds from time difference
+        hours_formatted = time_difference.total_seconds() // 3600
+        minutes = (time_difference.total_seconds() % 3600) // 60
+        seconds = time_difference.total_seconds() % 60
+        # Format the time difference
+        formatted_time_difference = f"{int(hours_formatted)} hrs {int(minutes)} mins {int(seconds)} secs"
+        if len(longest_upload_gaps) < 3:
+            longest_upload_gaps.append([previous_ts_s, currents_ts_s, formatted_time_difference])
+        else:
+            min_index = 0
+            for i in range(1, len(longest_upload_gaps)):
+                if longest_upload_gaps[i][2] < longest_upload_gaps[min_index][2]:
+                    min_index = i
+            if convert_to_seconds(longest_upload_gaps[min_index][2]) < int(time_difference.total_seconds()):  
+                longest_upload_gaps[min_index] = [previous_ts_s, currents_ts_s, formatted_time_difference]
+    
+    data_dict = {
+        'IMEI': id,
+        'Sensor Samples': len(sensor_data),
+        'Upload Samples': len(upload_data),
+        'Top 3 Sensor Gaps': longest_sensor_gaps,
+        'Top 3 Upload Gaps': longest_upload_gaps,
+    }
+
+    return data_dict
+
+def count_decrement_num(data, data_dict):
+    # check how amny times the value of count went down compared to previous sample
+    decrement_counts = 0
+    ts_list = []
+
+    previous_count = None
+    for i in range(len(data)-1, -1, -1):
+        current_count = data[i]['count']
+        if current_count is not None:
+            current_count = int(current_count)  # Convert to integer only if it's not None
+            if previous_count is not None:
+                if current_count < previous_count:
+                    decrement_counts += 1
+                    ts_list.append((int(data[i]['ts'])/1000, int(data[i-1]['ts'])/1000))
+            previous_count = current_count
+
+    data_dict['Count Value Decrements'] = decrement_counts
+    data_dict['Count Decrements Timestamps'] = ts_list
+
+    return data_dict
+
+def successive_distance(data, data_dict):
+    top_3_distance = []
+
+    for i in range(1, len(data)):
+        previous_ts_ms = int(data[i]['ts'])
+        previous_ts_s = previous_ts_ms / 1000
+        previous_coord = (float(data[i]['lat']), float(data[i]['lng']))
+
+        current_ts_ms = int(data[i-1]['ts'])
+        currents_ts_s = current_ts_ms / 1000
+        current_coord = (float(data[i-1]['lat']), float(data[i-1]['lng']))
+
+        if len(top_3_distance) < 3:
+            top_3_distance.append([previous_ts_s, currents_ts_s, geodesic(previous_coord, current_coord).miles])
+        else:
+            min_index = 0
+            for i in range(1, len(top_3_distance)):
+                if top_3_distance[i][2] < top_3_distance[min_index][2]:
+                    min_index = i
+            if top_3_distance[min_index][2] < geodesic(previous_coord, current_coord).miles:  
+                top_3_distance[min_index] = [previous_ts_s, currents_ts_s, geodesic(previous_coord, current_coord).miles]
+    
+    data_dict['Top 3 Successive Distance'] = top_3_distance
+
+    return data_dict
+
 
 # Convert 'Time passed since Reported' into a total seconds for plotting
 def convert_to_seconds(t):
@@ -117,24 +217,6 @@ def convert_to_seconds(t):
     except Exception as e:
         print(f"Error converting time: {t} - {e}")
         return 0  # return 0 if there's an error, or you could choose to handle it differently
-
-def convert_to_hours(t):
-    try:
-        time_parts = {'hrs': 0, 'mins': 0, 'secs': 0}
-        parts = t.split()
-        for i in range(0, len(parts), 2):
-            if parts[i + 1].startswith('hr'):
-                time_parts['hrs'] = int(parts[i])
-            elif parts[i + 1].startswith('min'):
-                time_parts['mins'] = int(parts[i])
-            elif parts[i + 1].startswith('sec'):
-                time_parts['secs'] = int(parts[i])
-        total_seconds = time_parts['hrs'] * 3600 + time_parts['mins'] * 60 + time_parts['secs']
-        return total_seconds / 3600  # Convert seconds to hours
-    except Exception as e:
-        print(f"Error converting time: {t} - {e}")
-        return 0  # return 0 if there's an error, or you could choose to handle it differently
-
 fname_dev = "output.txt"
 
 def run(fname):
@@ -145,27 +227,15 @@ def run(fname):
         device_list = file.read().splitlines()
     print("reading device list: ", len(device_list))
 
-    json_file = input("Enter criteria json file name: ")
-    # Open the JSON file
-    with open(json_file, 'r') as file:
-        criteria = json.load(file)
-
     # An array tracking all the relevant data for all relevant devices
     data_list = []
     for i, dev in enumerate(device_list):
         print(f"---\nReport for device {dev}")
         data = get_device_data_v2(dev, int(hours_ago))
-        # for k, v in data[1].items():
-        #     print(k, v)
         if data is not None:
-            expected_uploads = calculate_expected_uploads(hours_ago, dev, criteria)
-            coordinates = get_coord_list(data)
-            data_dict = {
-                "IMEI": dev,
-                "Uploads Number": len(data),
-                "Min Expected uploads": expected_uploads,
-                "Total Distance Traveled (Miles)": total_distance_travel(coordinates)
-            }
+            data_dict = time_delta(data, dev)
+            data_dict = count_decrement_num(data, data_dict)
+            data_dict = successive_distance(data, data_dict)
             data_list.append(data_dict)
 
     # Create a dataframe
