@@ -79,6 +79,8 @@ def time_delta(data, id):
     # if there is rsrp then it is an upload sample, if not it is a sensor sample
     upload_data = []
     sensor_data = []
+    sensor_delta = []
+    upload_delta = []
     for entry in data:
         if entry['rsrp'] is not None:
             upload_data.append(entry)
@@ -142,21 +144,29 @@ def time_delta(data, id):
                     min_index = i
             if convert_to_seconds(longest_upload_gaps[min_index][2]) < int(time_difference.total_seconds()):  
                 longest_upload_gaps[min_index] = [previous_ts_s, currents_ts_s, formatted_time_difference]
-    
-    data_dict = {
-        'IMEI': id,
-        'Sensor Samples': len(sensor_data),
-        'Upload Samples': len(upload_data),
-        'Top 3 Sensor Gaps': longest_sensor_gaps,
-        'Top 3 Upload Gaps': longest_upload_gaps,
-    }
 
-    return data_dict
+    for item in longest_sensor_gaps:
+        data_dict = {
+            'IMEI': id,
+            'Sensor Samples': len(sensor_data),
+            'Top 3 Sensor Gaps': longest_sensor_gaps
+        }
+        sensor_delta.append(data_dict)
 
-def count_decrement_num(data, data_dict):
+    for item in longest_sensor_gaps:
+        data_dict = {
+            'IMEI': id,
+            'Upload Samples': len(upload_data),
+            'Top 3 Upload Gaps': longest_upload_gaps
+        }
+        upload_delta.append(data_dict)
+
+    return sensor_delta, upload_delta
+
+def count_decrement_num(data, id):
     # check how amny times the value of count went down compared to previous sample
     decrement_counts = 0
-    ts_list = []
+    answer = []
 
     previous_count = None
     for i in range(len(data)-1, -1, -1):
@@ -166,16 +176,20 @@ def count_decrement_num(data, data_dict):
             if previous_count is not None:
                 if current_count < previous_count:
                     decrement_counts += 1
-                    ts_list.append((int(data[i]['ts'])/1000, int(data[i-1]['ts'])/1000))
+                    data_dict = {
+                        "IMEI": id,
+                        "Previous Timestamp": int(data[i]['ts'])/1000,
+                        "Reported Timestamp": int(data[i-1]['ts'])/1000,
+                        "Decrements in Count Value": decrement_counts
+                    }
+                    answer.append(data_dict)
             previous_count = current_count
 
-    data_dict['Count Value Decrements'] = decrement_counts
-    data_dict['Count Decrements Timestamps'] = ts_list
+    return answer
 
-    return data_dict
-
-def successive_distance(data, data_dict):
+def successive_distance(data, id):
     top_3_distance = []
+    answer = []
 
     for i in range(1, len(data)):
         previous_ts_ms = int(data[i]['ts'])
@@ -196,9 +210,16 @@ def successive_distance(data, data_dict):
             if top_3_distance[min_index][2] < geodesic(previous_coord, current_coord).miles:  
                 top_3_distance[min_index] = [previous_ts_s, currents_ts_s, geodesic(previous_coord, current_coord).miles]
     
-    data_dict['Top 3 Successive Distance'] = top_3_distance
+    for item in top_3_distance:
+        data_dict = {
+            "IMEI": id,
+            "Previous Timestamp": item[0],
+            "Report TimeStamp": item[1],
+            "Distance Traveled (miles)": item[2]
+        }
+        answer.append(data_dict)
 
-    return data_dict
+    return answer
 
 
 # Convert 'Time passed since Reported' into a total seconds for plotting
@@ -217,6 +238,23 @@ def convert_to_seconds(t):
     except Exception as e:
         print(f"Error converting time: {t} - {e}")
         return 0  # return 0 if there's an error, or you could choose to handle it differently
+
+def to_excel(data_list, sheet_name):
+    df = pd.DataFrame(data_list)
+    df = df[list(data_list[0].keys())]
+    timestamp = datetime.now().strftime("%Y%m%d%H%M%S")
+    new_file_path = os.path.join(os.getcwd(), f'Upload Records Check {timestamp}.xlsx')
+    if os.path.isfile(new_file_path) == False:
+        df.to_excel(new_file_path, index=False, sheet_name=sheet_name)
+    else:
+        workbook = openpyxl.load_workbook(new_file_path)  # load workbook if already exists
+        sheet = workbook.create_sheet(sheet_name)
+        # append the dataframe results to the current excel file
+        for row in dataframe_to_rows(df, header = True, index = False):
+            sheet.append(row)
+        workbook.save(new_file_path)  # save workbook
+        workbook.close()  # close workbook
+
 fname_dev = "output.txt"
 
 def run(fname):
@@ -228,23 +266,23 @@ def run(fname):
     print("reading device list: ", len(device_list))
 
     # An array tracking all the relevant data for all relevant devices
-    data_list = []
+    sensor_delta_list = []
+    upload_delta_list = []
+    count_decrement_list = []
+    distances_list = []
     for i, dev in enumerate(device_list):
         print(f"---\nReport for device {dev}")
         data = get_device_data_v2(dev, int(hours_ago))
         if data is not None:
-            data_dict = time_delta(data, dev)
-            data_dict = count_decrement_num(data, data_dict)
-            data_dict = successive_distance(data, data_dict)
-            data_list.append(data_dict)
-
-    # Create a dataframe
-    df = pd.DataFrame(data_list)
-    df = df[list(data_list[0].keys())]
-    # Save dataframe as excel
-    timestamp = datetime.now().strftime("%Y%m%d%H%M%S")
-    new_file_path = os.path.join(os.getcwd(), f'Upload Records Check {timestamp}.xlsx')
-    df.to_excel(new_file_path, index=False, sheet_name="Upload Records Check")
-
-    print(f"There are these many entries available: {len(data_list)}")
+            sensor_delta_temp, upload_delta_temp = time_delta(data,dev)
+            sensor_delta_list += sensor_delta_temp
+            upload_delta_list += upload_delta_temp
+            count_decrement_list += count_decrement_num(data, dev)
+            distances_list += successive_distance(data, dev)
+    
+    # store data in excel file
+    to_excel(upload_delta_list, "Sensor Samples")
+    to_excel(upload_delta_list, "Upload Samples")
+    to_excel(count_decrement_list, "Count Decrements")
+    to_excel(distances_list, "Distance")
 run(fname_dev)
