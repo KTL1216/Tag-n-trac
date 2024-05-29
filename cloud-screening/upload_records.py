@@ -14,8 +14,6 @@ from openpyxl.utils.dataframe import dataframe_to_rows
 import matplotlib.dates as mdates
 from geopy.distance import geodesic
 
-prs = Presentation()
-
 ## login
 API_BASE = "https://api.tagntrac.io"
 
