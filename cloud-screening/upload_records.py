@@ -149,7 +149,9 @@ def time_delta(data, id):
         data_dict = {
             'IMEI': id,
             'Sensor Samples': len(sensor_data),
-            'Top 3 Sensor Gaps': longest_sensor_gaps
+            "Previous Timestamp": str(item[0]),
+            "Report TimeStamp": str(item[1]),
+            "Time Delta": item[2]
         }
         sensor_delta.append(data_dict)
 
@@ -157,7 +159,9 @@ def time_delta(data, id):
         data_dict = {
             'IMEI': id,
             'Upload Samples': len(upload_data),
-            'Top 3 Upload Gaps': longest_upload_gaps
+            "Previous Timestamp": str(item[0]),
+            "Report TimeStamp": str(item[1]),
+            "Time Delta": item[2]
         }
         upload_delta.append(data_dict)
 
@@ -178,8 +182,8 @@ def count_decrement_num(data, id):
                     decrement_counts += 1
                     data_dict = {
                         "IMEI": id,
-                        "Previous Timestamp": int(data[i]['ts'])/1000,
-                        "Reported Timestamp": int(data[i-1]['ts'])/1000,
+                        "Previous Timestamp": str(int(data[i]['ts'])/1000),
+                        "Reported Timestamp": str(int(data[i-1]['ts'])/1000),
                         "Decrements in Count Value": decrement_counts
                     }
                     answer.append(data_dict)
@@ -213,8 +217,8 @@ def successive_distance(data, id):
     for item in top_3_distance:
         data_dict = {
             "IMEI": id,
-            "Previous Timestamp": item[0],
-            "Report TimeStamp": item[1],
+            "Previous Timestamp": str(item[0]),
+            "Report TimeStamp": str(item[1]),
             "Distance Traveled (miles)": item[2]
         }
         answer.append(data_dict)
@@ -281,7 +285,7 @@ def run(fname):
             distances_list += successive_distance(data, dev)
     
     # store data in excel file
-    to_excel(upload_delta_list, "Sensor Samples")
+    to_excel(sensor_delta_list, "Sensor Samples")
     to_excel(upload_delta_list, "Upload Samples")
     to_excel(count_decrement_list, "Count Decrements")
     to_excel(distances_list, "Distance")
