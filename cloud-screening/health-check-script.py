@@ -11,7 +11,9 @@ import openpyxl
 from openpyxl.utils.dataframe import dataframe_to_rows
 
 
-json_file = input("Enter criteria json file name: ")
+json_file = input("Enter criteria json file name (default criteria.json): ")
+if json_file == "":
+    json_file = "criteria.json"
 # Open the JSON file
 with open(json_file, 'r') as file:
     criteria = json.load(file)
@@ -43,7 +45,7 @@ def prompt():
     """Prompt user for username, password, and file name for device id list."""
     id = input("Enter username: ")
     pwd = input("Enter password: ")
-    fname = input("Enter file name of device id list: ")
+    fname = input("Enter IMEI list file (default imei.txt): ")
     return id, pwd, fname
 
 
@@ -62,10 +64,9 @@ def login(email, password):
     return (None, None)
 
 # Capture user input
-# id, pwd, fname = prompt()
-id = "kenton.lee@tagntrac.com"
-pwd = "Xj0%cuKX"
-fname = "output.txt"
+id, pwd, fname = prompt()
+if fname == "":
+    fname = "imei.txt"
 
 # Perform login and capture token and API key
 token, xapikey = login(id, pwd)

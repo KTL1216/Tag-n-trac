@@ -1,5 +1,5 @@
 # Open the input file in read mode and the output file in write mode
-with open('input.txt', 'r') as infile, open('output.txt', 'w') as outfile:
+with open('input.txt', 'r') as infile, open('imei.txt', 'w') as outfile:
     # Skip the header line in the input file
     next(infile)
     # Process each line in the input file
@@ -17,4 +17,4 @@ with open('input.txt', 'r') as infile, open('output.txt', 'w') as outfile:
         else:
             print(f"Skipping invalid line: {line.strip()}")
 
-print("The SN values have been extracted to 'output.txt'.")
+print("The SN values have been extracted to 'imei.txt'.")

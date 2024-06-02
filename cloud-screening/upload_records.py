@@ -17,8 +17,15 @@ from geopy.distance import geodesic
 ## login
 API_BASE = "https://api.tagntrac.io"
 
-id = "owen.tnt@tagntrac.com"
-pwd = "Vx9%xCqf"
+# Placeholder variables for user credentials and filename
+fname = ""
+id = "username" 
+pwd = "password" 
+def prompt():
+    """Prompt user for username, password, and file name for device id list."""
+    id = input("Enter username: ")
+    pwd = input("Enter password: ")
+    fname = input("Enter IMEI list file (default imei.txt)")
 
 def login2(email, password):
     login_response = requests.post(f"{API_BASE}/login?clientId=Tbocs0cjhrac",
@@ -32,6 +39,11 @@ def login2(email, password):
         print(f"Exception: {str(e)}")
     print(f"Login failed: {login_response.text}")
     return (None, None)
+
+# Capture user input
+id, pwd, fname = prompt()
+if fname == "":
+    fname = "imei.txt"
 
 idToken, xapikey2 = login2(id, pwd)
 common_headers2 = {"Authorization" : idToken,
@@ -149,7 +161,8 @@ def time_delta(data, id):
             'Sensor Samples': len(sensor_data),
             "Previous Timestamp": str(item[0]),
             "Report TimeStamp": str(item[1]),
-            "Time Delta": item[2]
+            "Time Delta": item[2],
+            "Sortable Mins Delta": float(convert_to_seconds(item[2]))/60.0
         }
         sensor_delta.append(data_dict)
 
@@ -183,7 +196,8 @@ def count_decrement_num(data, id):
                         "IMEI": id,
                         "Previous Timestamp": str(int(data[i]['ts'])/1000),
                         "Reported Timestamp": str(int(data[i-1]['ts'])/1000),
-                        "Decrements in Count Value": decrement_counts
+                        "Previous Count": previous_count,
+                        "Reported Count": current_count
                     }
                     answer.append(data_dict)
             previous_count = current_count
@@ -243,6 +257,10 @@ def convert_to_seconds(t):
         return 0  # return 0 if there's an error, or you could choose to handle it differently
 
 def to_excel(data_list, sheet_name):
+    if not data_list:  # Check if the data_list is empty
+        print(f"No data to write for {sheet_name}")
+        return
+    
     df = pd.DataFrame(data_list)
     df = df[list(data_list[0].keys())]
     timestamp = datetime.now().strftime("%Y%m%d%H%M%S")
@@ -258,10 +276,11 @@ def to_excel(data_list, sheet_name):
         workbook.save(new_file_path)  # save workbook
         workbook.close()  # close workbook
 
-fname_dev = "output.txt"
-
 def run(fname):
-    hours_ago = input("Enter the time period (how many hours ago from now): ")
+    hours_ago = input("Enter the time period in hours (default 72): ")
+    if hours_ago == "":
+        hours_ago = 72
+    print(hours_ago)
 
     # Read device list from file specified by the user
     with open(fname, 'r') as file:
@@ -288,7 +307,7 @@ def run(fname):
     to_excel(upload_delta_list, "Upload Samples")
     to_excel(count_decrement_list, "Count Decrements")
     to_excel(distances_list, "Distance")
-run(fname_dev)
+run(fname)
 
 # sortable time detla
 # show before and after count value when encounter decrement

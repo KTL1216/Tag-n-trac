@@ -19,8 +19,16 @@ prs = Presentation()
 ## login
 API_BASE = "https://api.tagntrac.io"
 
-id = "owen.tnt@tagntrac.com"
-pwd = "Vx9%xCqf"
+# Placeholder variables for user credentials and filename
+fname = ""
+id = "username" 
+pwd = "password" 
+def prompt():
+    """Prompt user for username, password, and file name for device id list."""
+    id = input("Enter username: ")
+    pwd = input("Enter password: ")
+    fname = input("Enter IMEI list file (default imei.txt): ")
+    return id, pwd, fname
 
 def login2(email, password):
     login_response = requests.post(f"{API_BASE}/login?clientId=Tbocs0cjhrac",
@@ -34,6 +42,11 @@ def login2(email, password):
         print(f"Exception: {str(e)}")
     print(f"Login failed: {login_response.text}")
     return (None, None)
+
+# Capture user input
+id, pwd, fname = prompt()
+if fname == "":
+    fname = "imei.txt"
 
 idToken, xapikey2 = login2(id, pwd)
 common_headers2 = {"Authorization" : idToken,
@@ -165,12 +178,11 @@ def create_plot_and_slide(grouped, timestamp, prs, count):
     top = Inches(0.1)
     slide.shapes.add_picture(image_path, left, top, width=Inches(10), height=Inches(8))
 
-
-fname_dev = "output.txt"
-
-
 def run(fname):
-    hours_ago = input("Enter the time period (how many hours ago from now): ")
+    hours_ago = input("Enter the time period in hours (default 72): ")
+    if hours_ago == "":
+        hours_ago = 72
+    print(hours_ago)
 
     # Read device list from file specified by the user
     with open(fname, 'r') as file:
@@ -187,8 +199,7 @@ def run(fname):
         data = get_device_data_v2(dev, int(hours_ago))
         if data is not None:
             for entry in data:
-                if 1==1:# and entry['vbat'] is not None:
-                    entry_list.append(entry['ts'])
+                entry_list.append(entry['ts'])
                 data_dict = data_clean_up(entry, dev, hours_ago)
                 try:
                     data_dict = data_clean_up(entry, dev, hours_ago)
@@ -197,14 +208,12 @@ def run(fname):
                         data_list.append(data_dict)
                 except:
                     print(f"Device {dev} shows error")
-        # Check if we need to create a new slide
-        if (i + 1) % 5 == 0 or i + 1 == len(group_list):  # After every 5 devices or the last device
-            df = pd.DataFrame(group_list)
-            df['Hours Since Reported'] = df['Time passed since Reported'].apply(convert_to_hours)
-            grouped = df.groupby('IMEI')
-            create_plot_and_slide(grouped, datetime.now().strftime("%Y%m%d%H%M%S"), prs, slide_count)
-            slide_count += 1
-            group_list = []  # Reset for the next batch
+        df = pd.DataFrame(group_list)
+        df['Hours Since Reported'] = df['Time passed since Reported'].apply(convert_to_hours)
+        grouped = df.groupby('IMEI')
+        create_plot_and_slide(grouped, datetime.now().strftime("%Y%m%d%H%M%S"), prs, slide_count)
+        slide_count += 1
+        group_list = []  # Reset for the next batch
 
     print(f"There are these many entries available: {len(entry_list)}")
     
@@ -221,4 +230,4 @@ def run(fname):
 
     # Save the presentation
     prs.save(os.path.join(os.getcwd(), f'Presentation_{timestamp}.pptx'))
-run(fname_dev)
+run(fname)
