@@ -4,11 +4,8 @@ def convert_to_zpl(imei):
     # ZPL template for a barcode
     zpl_template = f"""
     ^XA
-    ^FX Third section with bar code.
-    ^BY5,2,130
-    ^FO100,250^BC^FD{IMEI}^FS
-    ^FS
-
+    ^BY3,0.2,45
+    ^FO80,18^BC^FD{IMEI}^FS
     ^XZ
     """
     return zpl_template
@@ -27,7 +24,7 @@ while True:
         print(f"Available printers: {printers}")
 
         # Set the desired printer (assuming the first one is the Zebra printer)
-        z.setqueue(printers[0])
+        z.setqueue('ZDesigner ZT411-203dpi ZPL')
         z.output(zpl)
         # Print the ZPL label
         print("Printed Successfully")

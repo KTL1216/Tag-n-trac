@@ -159,7 +159,8 @@ def time_delta(data, id):
             'Upload Samples': len(upload_data),
             "Previous Timestamp": str(item[0]),
             "Report TimeStamp": str(item[1]),
-            "Time Delta": item[2]
+            "Time Delta": item[2],
+            "Sortable Mins Delta": float(convert_to_seconds(item[2]))/60.0
         }
         upload_delta.append(data_dict)
 
@@ -288,3 +289,9 @@ def run(fname):
     to_excel(count_decrement_list, "Count Decrements")
     to_excel(distances_list, "Distance")
 run(fname_dev)
+
+# sortable time detla
+# show before and after count value when encounter decrement
+# distance get miles/hour, get everything that is greater than 60mph
+# a default time range
+# for criteria file and imei list files, there should be default values too (can still be prompted)

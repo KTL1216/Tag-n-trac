@@ -2,19 +2,14 @@ from datetime import datetime, timezone
 import os
 import re
 import sys
-import matplotlib.pyplot as plt
+import json
+#import matplotlib.pyplot as plt
 import requests
 import json
 import pandas as pd
 import openpyxl
-from datetime import timedelta
-from pptx import Presentation
-from pptx.util import Inches
 from openpyxl.utils.dataframe import dataframe_to_rows
-import matplotlib.dates as mdates
-from geopy.distance import geodesic
 
-prs = Presentation()
 
 json_file = input("Enter criteria json file name: ")
 # Open the JSON file
@@ -41,15 +36,15 @@ cfg0_params = {
 }
 
 # Placeholder variables for user credentials and filename
-input_imei = ""
+fname = ""
 id = "username" 
 pwd = "password" 
 def prompt():
     """Prompt user for username, password, and file name for device id list."""
     id = input("Enter username: ")
     pwd = input("Enter password: ")
-    input_imei = input("Enter file name of device id list: ")
-    return id, pwd, input_imei
+    fname = input("Enter file name of device id list: ")
+    return id, pwd, fname
 
 
 def login(email, password):
@@ -67,28 +62,10 @@ def login(email, password):
     return (None, None)
 
 # Capture user input
-# id, pwd, input_imei = prompt()
-id = "owen.tnt@tagntrac.com"
-pwd = "Vx9%xCqf"
-input_imei = "output.txt"
-
-def login2(email, password):
-    login_response = requests.post(f"{API_BASE}/login?clientId=Tbocs0cjhrac",
-                             data = json.dumps({"emailId" : email, "userSecret" : password,"reqType": "cognitoAuth"}),
-                             headers={"Content-Type" : "application/json", "Origin" : "DOC.API"})
-    try:
-        if login_response.json()["status"] == "SUCCESS":
-            print("Login successful as ", email)
-            return (login_response.json()["idToken"], login_response.json()['clientApiKey']['clientId'])
-    except Exception as e:
-        print(f"Exception: {str(e)}")
-    print(f"Login failed: {login_response.text}")
-    return (None, None)
-
-idToken, xapikey2 = login2(id, pwd)
-common_headers2 = {"Authorization" : idToken,
-                  "Origin" : f"{API_BASE}",
-                  "x-api-key" : xapikey2}
+# id, pwd, fname = prompt()
+id = "kenton.lee@tagntrac.com"
+pwd = "Xj0%cuKX"
+fname = "output.txt"
 
 # Perform login and capture token and API key
 token, xapikey = login(id, pwd)
@@ -106,31 +83,6 @@ common_headers_post = {
     "Origin": "https://app.tagntrac.io",
     "Content-Type": "application/json"
 }
-
-def generate_time_string(hours_ago):
-    # Get the current time in UTC
-    end_time = datetime.now(timezone.utc)
-    # Calculate the start time by subtracting the given hours
-    start_time = end_time - timedelta(hours=hours_ago)
-
-    # Format both times to the ISO 8601 format with milliseconds
-    start_str = start_time.strftime('%Y-%m-%dT%H:%M:%S.000Z')
-    end_str = end_time.strftime('%Y-%m-%dT%H:%M:%S.000Z')
-
-    # Construct the final string
-    result_string = f"?start={start_str}&end={end_str}"
-    return result_string
-
-def get_device_data_v2(device_id, hours_ago):
-    queryDates = generate_time_string(hours_ago)
-    print(queryDates)
-    response = requests.get(f"{API_BASE}/v2/device/{device_id}/data"+queryDates, headers=common_headers2)
-    if response.json()['status'] == 'SUCCESS':
-        data = response.json()['response']
-        return data
-    else: 
-        print("Get Device data2 failed: "+device_id)
-        return None
 
 def get_device_shadow_reported(device_id):
     """Retrieve and parse device shadow state."""
@@ -154,269 +106,6 @@ def get_health_last_reported(device_id):
     else:
         reported_time = "N/A"
     return reported_time
-
-def time_delta(data, id):
-    # if there is rsrp then it is an upload sample, if not it is a sensor sample
-    upload_data = []
-    sensor_data = []
-    sensor_delta = []
-    upload_delta = []
-    for entry in data:
-        if entry['rsrp'] is not None:
-            upload_data.append(entry)
-        else:
-            sensor_data.append(entry)
-    
-    # Record the top three longest gap between sensor samples
-    longest_sensor_gaps = []
-    for i in range(1, len(sensor_data)):
-        previous_ts_ms = int(sensor_data[i]['ts'])
-        previous_ts_s = previous_ts_ms / 1000
-        previous_time = datetime.fromtimestamp(previous_ts_s, timezone.utc)
-
-        current_ts_ms = int(sensor_data[i-1]['ts'])
-        currents_ts_s = current_ts_ms / 1000
-        current_time = datetime.fromtimestamp(currents_ts_s, timezone.utc)
-
-        # Calculate time difference
-        time_difference = current_time - previous_time
-        # Calculate hours, minutes, and seconds from time difference
-        hours_formatted = time_difference.total_seconds() // 3600
-        minutes = (time_difference.total_seconds() % 3600) // 60
-        seconds = time_difference.total_seconds() % 60
-        # Format the time difference
-        formatted_time_difference = f"{int(hours_formatted)} hrs {int(minutes)} mins {int(seconds)} secs"
-        if len(longest_sensor_gaps) < 3:
-            longest_sensor_gaps.append([previous_ts_s, currents_ts_s, formatted_time_difference])
-        else:
-            min_index = 0
-            for i in range(1, len(longest_sensor_gaps)):
-                if longest_sensor_gaps[i][2] < longest_sensor_gaps[min_index][2]:
-                    min_index = i
-            if convert_to_seconds(longest_sensor_gaps[min_index][2]) < int(time_difference.total_seconds()):  
-                longest_sensor_gaps[min_index] = [previous_ts_s, currents_ts_s, formatted_time_difference]
-
-    # Record the top three longest gap between upload samples
-    longest_upload_gaps = []
-    for i in range(1, len(upload_data)):
-        previous_ts_ms = int(upload_data[i]['ts'])
-        previous_ts_s = previous_ts_ms / 1000
-        previous_time = datetime.fromtimestamp(previous_ts_s, timezone.utc)
-
-        current_ts_ms = int(upload_data[i-1]['ts'])
-        currents_ts_s = current_ts_ms / 1000
-        current_time = datetime.fromtimestamp(currents_ts_s, timezone.utc)
-
-        # Calculate time difference
-        time_difference = current_time - previous_time
-        # Calculate hours, minutes, and seconds from time difference
-        hours_formatted = time_difference.total_seconds() // 3600
-        minutes = (time_difference.total_seconds() % 3600) // 60
-        seconds = time_difference.total_seconds() % 60
-        # Format the time difference
-        formatted_time_difference = f"{int(hours_formatted)} hrs {int(minutes)} mins {int(seconds)} secs"
-        if len(longest_upload_gaps) < 3:
-            longest_upload_gaps.append([previous_ts_s, currents_ts_s, formatted_time_difference])
-        else:
-            min_index = 0
-            for i in range(1, len(longest_upload_gaps)):
-                if longest_upload_gaps[i][2] < longest_upload_gaps[min_index][2]:
-                    min_index = i
-            if convert_to_seconds(longest_upload_gaps[min_index][2]) < int(time_difference.total_seconds()):  
-                longest_upload_gaps[min_index] = [previous_ts_s, currents_ts_s, formatted_time_difference]
-
-    for item in longest_sensor_gaps:
-        data_dict = {
-            'IMEI': id,
-            'Sensor Samples': len(sensor_data),
-            "Previous Timestamp": str(item[0]),
-            "Report TimeStamp": str(item[1]),
-            "Time Delta": item[2]
-        }
-        sensor_delta.append(data_dict)
-
-    for item in longest_upload_gaps:
-        data_dict = {
-            'IMEI': id,
-            'Upload Samples': len(upload_data),
-            "Previous Timestamp": str(item[0]),
-            "Report TimeStamp": str(item[1]),
-            "Time Delta": item[2]
-        }
-        upload_delta.append(data_dict)
-
-    return sensor_delta, upload_delta
-
-def count_decrement_num(data, id):
-    # check how amny times the value of count went down compared to previous sample
-    decrement_counts = 0
-    answer = []
-
-    previous_count = None
-    for i in range(len(data)-1, -1, -1):
-        current_count = data[i]['count']
-        if current_count is not None:
-            current_count = int(current_count)  # Convert to integer only if it's not None
-            if previous_count is not None:
-                if current_count < previous_count:
-                    decrement_counts += 1
-                    data_dict = {
-                        "IMEI": id,
-                        "Previous Timestamp": str(int(data[i]['ts'])/1000),
-                        "Reported Timestamp": str(int(data[i-1]['ts'])/1000),
-                        "Decrements in Count Value": decrement_counts
-                    }
-                    answer.append(data_dict)
-            previous_count = current_count
-
-    return answer
-
-def successive_distance(data, id):
-    top_3_distance = []
-    answer = []
-
-    for i in range(1, len(data)):
-        previous_ts_ms = int(data[i]['ts'])
-        previous_ts_s = previous_ts_ms / 1000
-        previous_coord = (float(data[i]['lat']), float(data[i]['lng']))
-
-        current_ts_ms = int(data[i-1]['ts'])
-        currents_ts_s = current_ts_ms / 1000
-        current_coord = (float(data[i-1]['lat']), float(data[i-1]['lng']))
-
-        if len(top_3_distance) < 3:
-            top_3_distance.append([previous_ts_s, currents_ts_s, geodesic(previous_coord, current_coord).miles])
-        else:
-            min_index = 0
-            for i in range(1, len(top_3_distance)):
-                if top_3_distance[i][2] < top_3_distance[min_index][2]:
-                    min_index = i
-            if top_3_distance[min_index][2] < geodesic(previous_coord, current_coord).miles:  
-                top_3_distance[min_index] = [previous_ts_s, currents_ts_s, geodesic(previous_coord, current_coord).miles]
-    
-    for item in top_3_distance:
-        data_dict = {
-            "IMEI": id,
-            "Previous Timestamp": str(item[0]),
-            "Report TimeStamp": str(item[1]),
-            "Distance Traveled (miles)": item[2]
-        }
-        answer.append(data_dict)
-
-    return answer
-
-def data_clean_up(data_entry, dev_id, hours_ago):
-    timestamp_ms = int(data_entry['ts'])
-    timestamp_s = timestamp_ms / 1000
-    reported_time = datetime.fromtimestamp(timestamp_s, timezone.utc)
-
-    # Calculate time difference
-    current_utc_time = datetime.now(timezone.utc)
-    time_difference = current_utc_time - reported_time
-
-    if data_entry['vbat'] is not None:
-        # Calculate hours, minutes, and seconds from time difference
-        hours_formatted = time_difference.total_seconds() // 3600
-        minutes = (time_difference.total_seconds() % 3600) // 60
-        seconds = time_difference.total_seconds() % 60
-        # Format the time difference
-        formatted_time_difference = f"{int(hours_formatted)} hrs {int(minutes)} mins {int(seconds)} secs"
-        data_dict = {
-            'IMEI': dev_id,
-            'Timestamp': reported_time.strftime('%Y-%m-%d %H:%M:%S'),
-            'Time passed since Reported': formatted_time_difference,
-            'vBat': int(data_entry['vbat']),
-            f'Reported time since {hours_ago}hrs ago (hrs)': float(hours_ago)-time_difference.total_seconds() / 3600
-        }
-        return data_dict
-    else:
-        return None 
-
-# Convert 'Time passed since Reported' into a total seconds for plotting
-def convert_to_seconds(t):
-    try:
-        time_parts = {'hrs': 0, 'mins': 0, 'secs': 0}
-        parts = t.split()
-        for i in range(0, len(parts), 2):
-            if parts[i + 1].startswith('hr'):
-                time_parts['hrs'] = int(parts[i])
-            elif parts[i + 1].startswith('min'):
-                time_parts['mins'] = int(parts[i])
-            elif parts[i + 1].startswith('sec'):
-                time_parts['secs'] = int(parts[i])
-        return time_parts['hrs'] * 3600 + time_parts['mins'] * 60 + time_parts['secs']
-    except Exception as e:
-        print(f"Error converting time: {t} - {e}")
-        return 0  # return 0 if there's an error, or you could choose to handle it differently
-
-def convert_to_hours(t):
-    try:
-        time_parts = {'hrs': 0, 'mins': 0, 'secs': 0}
-        parts = t.split()
-        for i in range(0, len(parts), 2):
-            if parts[i + 1].startswith('hr'):
-                time_parts['hrs'] = int(parts[i])
-            elif parts[i + 1].startswith('min'):
-                time_parts['mins'] = int(parts[i])
-            elif parts[i + 1].startswith('sec'):
-                time_parts['secs'] = int(parts[i])
-        total_seconds = time_parts['hrs'] * 3600 + time_parts['mins'] * 60 + time_parts['secs']
-        return total_seconds / 3600  # Convert seconds to hours
-    except Exception as e:
-        print(f"Error converting time: {t} - {e}")
-        return 0  # return 0 if there's an error, or you could choose to handle it differently
-
-def create_plot_and_slide(grouped, timestamp, prs, count):
-    # Create a figure and an axes.
-    fig, ax = plt.subplots()
-
-    for name, group in grouped:
-        ax.plot(group['Hours Since Reported'], group['vBat'], label=name)
-
-    # Setting the x-axis to show more recent times on the right
-    ax.invert_xaxis()
-
-    # Label the axes
-    ax.set_xlabel('Time Passed (hours ago)')
-    ax.set_ylabel('Battery Voltage (vBat)')
-
-    # Title and legend
-    ax.set_title('Battery Voltage Over Time')
-    ax.legend(title='IMEI')
-
-    # Show a grid
-    ax.grid(True)
-
-    # Save the plot as an image
-    image_dir = os.path.join(os.getcwd(), "images")
-    if not os.path.exists(image_dir):
-        os.makedirs(image_dir)
-    image_path = os.path.join(image_dir, f'vBat_Time_{timestamp}_{count}.png')
-    plt.savefig(image_path)
-    plt.close(fig)
-
-    # Add a new slide for the plot
-    slide_layout = prs.slide_layouts[6]
-    slide = prs.slides.add_slide(slide_layout)
-    left = Inches(1)
-    top = Inches(0.1)
-    slide.shapes.add_picture(image_path, left, top, width=Inches(10), height=Inches(8))
-
-def to_excel(data_list, sheet_name, excel_name):
-    df = pd.DataFrame(data_list)
-    df = df[list(data_list[0].keys())]
-    timestamp = datetime.now().strftime("%Y%m%d%H%M%S")
-    new_file_path = os.path.join(os.getcwd(), excel_name)
-    if os.path.isfile(new_file_path) == False:
-        df.to_excel(new_file_path, index=False, sheet_name=sheet_name)
-    else:
-        workbook = openpyxl.load_workbook(new_file_path)  # load workbook if already exists
-        sheet = workbook.create_sheet(sheet_name)
-        # append the dataframe results to the current excel file
-        for row in dataframe_to_rows(df, header = True, index = False):
-            sheet.append(row)
-        workbook.save(new_file_path)  # save workbook
-        workbook.close()  # close workbook
 
 def sensor_interval_test(data_dict, criteria):
     if data_dict["Sensor Interval"] == "N/A":
@@ -636,9 +325,8 @@ def run(fname, criteria):
     df = df[list(data_list[0].keys())]
     # Save dataframe as excel
     timestamp = datetime.now().strftime("%Y%m%d%H%M%S")
-    excel_name = f'Health Check {timestamp}.xlsx'
-    new_file_path = os.path.join(os.getcwd(), excel_name)
-    df.to_excel(new_file_path, index=False, sheet_name="Last Reported")
+    new_file_path = os.path.join(os.getcwd(), f'Health Check {timestamp}.xlsx')
+    df.to_excel(new_file_path, index=False, sheet_name="Health Check")
 
     # failed_list = []
 
@@ -663,61 +351,4 @@ def run(fname, criteria):
 
     # # Rename the temporary file to the original file name
     # os.rename('temp_file.txt', fname)
-    hours_ago = input("Enter the time period (how many hours ago from now): ")
-
-    # An array tracking all the relevant data for all relevant devices
-    sensor_delta_list = []
-    upload_delta_list = []
-    count_decrement_list = []
-    distances_list = []
-    for i, dev in enumerate(device_list):
-        print(f"---\nReport for device {dev}")
-        data = get_device_data_v2(dev, int(hours_ago))
-        if data is not None:
-            sensor_delta_temp, upload_delta_temp = time_delta(data,dev)
-            sensor_delta_list += sensor_delta_temp
-            upload_delta_list += upload_delta_temp
-            count_decrement_list += count_decrement_num(data, dev)
-            distances_list += successive_distance(data, dev)
-    
-    # store data in excel file
-    to_excel(sensor_delta_list, "Sensor Samples", excel_name)
-    to_excel(upload_delta_list, "Upload Samples", excel_name)
-    to_excel(count_decrement_list, "Count Decrements", excel_name)
-    to_excel(distances_list, "Distance", excel_name)
-
-    # An array tracking all the relevant data for all relevant devices
-    vbat_data_list = []
-    group_list = []
-    entry_list = []
-    slide_count = 0
-    for i, dev in enumerate(device_list):
-        data = get_device_data_v2(dev, int(hours_ago))
-        if data is not None:
-            for entry in data:
-                if 1==1:# and entry['vbat'] is not None:
-                    entry_list.append(entry['ts'])
-                data_dict = data_clean_up(entry, dev, hours_ago)
-                try:
-                    data_dict = data_clean_up(entry, dev, hours_ago)
-                    if data_dict is not None:
-                        group_list.append(data_dict)
-                        vbat_data_list.append(data_dict)
-                except:
-                    print(f"Device {dev} shows error")
-        # Check if we need to create a new slide
-        if (i + 1) % 5 == 0 or i + 1 == len(group_list):  # After every 5 devices or the last device
-            df = pd.DataFrame(group_list)
-            df['Hours Since Reported'] = df['Time passed since Reported'].apply(convert_to_hours)
-            grouped = df.groupby('IMEI')
-            create_plot_and_slide(grouped, datetime.now().strftime("%Y%m%d%H%M%S"), prs, slide_count)
-            slide_count += 1
-            group_list = []  # Reset for the next batch
-
-    print(f"There are these many entries available: {len(entry_list)}")
-    
-    to_excel(vbat_data_list, "vBat", excel_name)
-
-    # Save the presentation
-    prs.save(os.path.join(os.getcwd(), f'Presentation_{timestamp}.pptx'))
-run(input_imei, criteria)
+run(fname, criteria)
