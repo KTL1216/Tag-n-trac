@@ -221,9 +221,9 @@ def successive_distance(data, id, speed_limit):
         current_coord = (float(data[i-1]['lat']), float(data[i-1]['lng']))
 
         time_difference = current_time - previous_time
-
-        distances.append([previous_ts_s, currents_ts_s, 
-                          float(geodesic(previous_coord, current_coord).miles) / float(time_difference.total_seconds())/3600])
+        if time_difference.total_seconds() > 0:
+            distances.append([previous_ts_s, currents_ts_s, 
+                              float(geodesic(previous_coord, current_coord).miles) / (float(time_difference.total_seconds())/3600)])
         
     for item in distances:
         if item[2] >= 60:
