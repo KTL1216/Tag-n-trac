@@ -182,7 +182,6 @@ def run(fname):
     hours_ago = input("Enter the time period in hours (default 72): ")
     if hours_ago == "":
         hours_ago = 72
-    print(hours_ago)
 
     # Read device list from file specified by the user
     with open(fname, 'r') as file:

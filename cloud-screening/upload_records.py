@@ -26,6 +26,7 @@ def prompt():
     id = input("Enter username: ")
     pwd = input("Enter password: ")
     fname = input("Enter IMEI list file (default imei.txt)")
+    return id, pwd, fname
 
 def login2(email, password):
     login_response = requests.post(f"{API_BASE}/login?clientId=Tbocs0cjhrac",
@@ -204,37 +205,35 @@ def count_decrement_num(data, id):
 
     return answer
 
-def successive_distance(data, id):
-    top_3_distance = []
+def successive_distance(data, id, speed_limit):
+    distances = []
     answer = []
 
     for i in range(1, len(data)):
         previous_ts_ms = int(data[i]['ts'])
         previous_ts_s = previous_ts_ms / 1000
+        previous_time = datetime.fromtimestamp(previous_ts_s, timezone.utc)
         previous_coord = (float(data[i]['lat']), float(data[i]['lng']))
 
         current_ts_ms = int(data[i-1]['ts'])
         currents_ts_s = current_ts_ms / 1000
+        current_time = datetime.fromtimestamp(currents_ts_s, timezone.utc)
         current_coord = (float(data[i-1]['lat']), float(data[i-1]['lng']))
 
-        if len(top_3_distance) < 3:
-            top_3_distance.append([previous_ts_s, currents_ts_s, geodesic(previous_coord, current_coord).miles])
-        else:
-            min_index = 0
-            for i in range(1, len(top_3_distance)):
-                if top_3_distance[i][2] < top_3_distance[min_index][2]:
-                    min_index = i
-            if top_3_distance[min_index][2] < geodesic(previous_coord, current_coord).miles:  
-                top_3_distance[min_index] = [previous_ts_s, currents_ts_s, geodesic(previous_coord, current_coord).miles]
-    
-    for item in top_3_distance:
-        data_dict = {
-            "IMEI": id,
-            "Previous Timestamp": str(item[0]),
-            "Report TimeStamp": str(item[1]),
-            "Distance Traveled (miles)": item[2]
-        }
-        answer.append(data_dict)
+        time_difference = current_time - previous_time
+
+        distances.append([previous_ts_s, currents_ts_s, 
+                          float(geodesic(previous_coord, current_coord).miles) / float(time_difference.total_seconds())/3600])
+        
+    for item in distances:
+        if item[2] >= 60:
+            data_dict = {
+                "IMEI": id,
+                "Previous Timestamp": str(item[0]),
+                "Report TimeStamp": str(item[1]),
+                "Speed (Mph)": item[2]
+            }
+            answer.append(data_dict)
 
     return answer
 
@@ -280,12 +279,15 @@ def run(fname):
     hours_ago = input("Enter the time period in hours (default 72): ")
     if hours_ago == "":
         hours_ago = 72
-    print(hours_ago)
 
     # Read device list from file specified by the user
     with open(fname, 'r') as file:
         device_list = file.read().splitlines()
     print("reading device list: ", len(device_list))
+
+    speed_limit = input("Enter speed limit for successive reports (default 60mph): ")
+    if speed_limit == "":
+        speed_limit = 60
 
     # An array tracking all the relevant data for all relevant devices
     sensor_delta_list = []
@@ -300,7 +302,7 @@ def run(fname):
             sensor_delta_list += sensor_delta_temp
             upload_delta_list += upload_delta_temp
             count_decrement_list += count_decrement_num(data, dev)
-            distances_list += successive_distance(data, dev)
+            distances_list += successive_distance(data, dev, speed_limit)
     
     # store data in excel file
     to_excel(sensor_delta_list, "Sensor Samples")
@@ -309,8 +311,5 @@ def run(fname):
     to_excel(distances_list, "Distance")
 run(fname)
 
-# sortable time detla
-# show before and after count value when encounter decrement
+
 # distance get miles/hour, get everything that is greater than 60mph
-# a default time range
-# for criteria file and imei list files, there should be default values too (can still be prompted)
