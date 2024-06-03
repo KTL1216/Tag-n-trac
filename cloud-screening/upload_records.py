@@ -222,16 +222,17 @@ def successive_distance(data, id, speed_limit):
 
         time_difference = current_time - previous_time
         if time_difference.total_seconds() > 0:
-            distances.append([previous_ts_s, currents_ts_s, 
+            distances.append([previous_ts_s, currents_ts_s, float(geodesic(previous_coord, current_coord).miles),
                               float(geodesic(previous_coord, current_coord).miles) / (float(time_difference.total_seconds())/3600)])
         
     for item in distances:
-        if item[2] >= 60:
+        if item[3] >= 60:
             data_dict = {
                 "IMEI": id,
                 "Previous Timestamp": str(item[0]),
                 "Report TimeStamp": str(item[1]),
-                "Speed (Mph)": item[2]
+                "Distance (Mi)": item[2],
+                "Speed (Mph)": item[3]
             }
             answer.append(data_dict)
 
@@ -255,14 +256,13 @@ def convert_to_seconds(t):
         print(f"Error converting time: {t} - {e}")
         return 0  # return 0 if there's an error, or you could choose to handle it differently
 
-def to_excel(data_list, sheet_name):
+def to_excel(data_list, sheet_name, timestamp):
     if not data_list:  # Check if the data_list is empty
         print(f"No data to write for {sheet_name}")
         return
     
     df = pd.DataFrame(data_list)
     df = df[list(data_list[0].keys())]
-    timestamp = datetime.now().strftime("%Y%m%d%H%M%S")
     new_file_path = os.path.join(os.getcwd(), f'Upload Records Check {timestamp}.xlsx')
     if os.path.isfile(new_file_path) == False:
         df.to_excel(new_file_path, index=False, sheet_name=sheet_name)
@@ -305,10 +305,11 @@ def run(fname):
             distances_list += successive_distance(data, dev, speed_limit)
     
     # store data in excel file
-    to_excel(sensor_delta_list, "Sensor Samples")
-    to_excel(upload_delta_list, "Upload Samples")
-    to_excel(count_decrement_list, "Count Decrements")
-    to_excel(distances_list, "Distance")
+    timestamp = datetime.now().strftime("%Y%m%d%H%M%S")
+    to_excel(sensor_delta_list, "Sensor Samples", timestamp)
+    to_excel(upload_delta_list, "Upload Samples", timestamp)
+    to_excel(count_decrement_list, "Count Decrements", timestamp)
+    to_excel(distances_list, "Distance", timestamp)
 run(fname)
 
 
