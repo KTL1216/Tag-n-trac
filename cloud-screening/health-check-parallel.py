@@ -1,19 +1,14 @@
 from datetime import datetime, timezone
 import os
-import re
-import sys
 import json
-#import matplotlib.pyplot as plt
 import requests
-import json
 import pandas as pd
-import openpyxl
-from openpyxl.utils.dataframe import dataframe_to_rows
-
+import concurrent.futures
 
 json_file = input("Enter criteria json file name (default criteria.json): ")
 if json_file == "":
     json_file = "criteria.json"
+
 # Open the JSON file
 with open(json_file, 'r') as file:
     criteria = json.load(file)
@@ -23,31 +18,19 @@ API_BASE = "https://api.tagntrac.io"
 
 # Configuration dictionary with specific settings for different status codes
 chk_cfg = {
-    "0": 15, 
-    "1": 60, 
-    "35": "at%setacfg=radiom.config.preferred_rat_list,'CATM'", 
+    "0": 15,
+    "1": 60,
+    "35": "at%setacfg=radiom.config.preferred_rat_list,'CATM'",
     "36": "  OK  "
 }
 
-# Parameter dictionary for configuration 0
-cfg0_params = {
-    "0": 15, 
-    "1": 60, 
-    "9": -124, 
-    "21": 1
-}
-
 # Placeholder variables for user credentials and filename
-fname = ""
-id = "username" 
-pwd = "password" 
 def prompt():
     """Prompt user for username, password, and file name for device id list."""
     id = input("Enter username: ")
     pwd = input("Enter password: ")
     fname = input("Enter IMEI list file (default imei.txt): ")
     return id, pwd, fname
-
 
 def login(email, password):
     """Attempt to log in a user with given email and password."""
@@ -76,13 +59,6 @@ common_headers = {
     "Authorization": token,
     "Origin": "https://app.tagntrac.io",
     "x-api-key": xapikey
-}
-
-# Common headers used in POST requests
-common_headers_post = {
-    "Authorization": token,
-    "Origin": "https://app.tagntrac.io",
-    "Content-Type": "application/json"
 }
 
 def get_device_shadow_reported(device_id):
@@ -266,18 +242,20 @@ def produce_data_dict(device_id, criteria):
     time = get_health_last_reported(device_id)
     # Get the current UTC time as a timezone-aware datetime object
     current_utc_time = datetime.now(timezone.utc)
-    # Convert the time string to a timezone-aware datetime object
+    
     if time == "N/A":
         formatted_time_difference = "N/A"
     else:
-        reported_time = datetime.strptime(time, "%Y-%m-%dT%H:%M:%S.%fZ").replace(tzinfo=timezone.utc)
-        # Calculate the time difference
-        time_difference = current_utc_time - reported_time
-        hours = time_difference.seconds // 3600
-        minutes = (time_difference.seconds % 3600) // 60
-        seconds = time_difference.seconds % 60
-        # Format the time difference
-        formatted_time_difference = f"{hours} hrs {minutes} mins {seconds} secs"
+        try:
+            reported_time = datetime.strptime(time, "%Y-%m-%dT%H:%M:%S.%fZ").replace(tzinfo=timezone.utc)
+            time_difference = current_utc_time - reported_time
+            total_seconds = time_difference.total_seconds()
+            hours = int(total_seconds // 3600)
+            minutes = int((total_seconds % 3600) // 60)
+            seconds = int(total_seconds % 60)
+            formatted_time_difference = f"{hours} hrs {minutes} mins {seconds} secs"
+        except ValueError:
+            formatted_time_difference = "Invalid date format"
 
     # print(shadow_reported["42"].keys())
     data_dict = {
@@ -313,13 +291,16 @@ def run(fname, criteria):
     # An array tracking all the relevant data for all relevant devices
     data_list = []
 
-    for dev in device_list:
-        try:
-            data_dict = produce_data_dict(dev, criteria)
-            data_list.append(data_dict)
-        except Exception as e:
-            print(dev + f": Exception: {str(e)}")
-            pass
+    # Using ThreadPoolExecutor for parallel processing
+    with concurrent.futures.ThreadPoolExecutor(max_workers=10) as executor:
+        futures = {executor.submit(produce_data_dict, dev, criteria): dev for dev in device_list}
+        for future in concurrent.futures.as_completed(futures):
+            dev = futures[future]
+            try:
+                data_dict = future.result()
+                data_list.append(data_dict)
+            except Exception as e:
+                print(dev + f": Exception: {str(e)}")
 
     # Create a dataframe
     df = pd.DataFrame(data_list)
@@ -329,27 +310,4 @@ def run(fname, criteria):
     new_file_path = os.path.join(os.getcwd(), f'Health Check {timestamp}.xlsx')
     df.to_excel(new_file_path, index=False, sheet_name="Health Check")
 
-    # failed_list = []
-
-    # with open(f'failed {timestamp}.txt', 'w') as outfile:
-    #     for data_dict in data_list:
-    #         if not data_dict["Pass"]:
-    #             failed_list.append(str(data_dict["IMEI"]))
-    #             failed_record = str(data_dict["IMEI"]) + "   " + str(data_dict["Last Reported Time (UTC)"])
-    #             outfile.write(failed_record + '\n')
-
-    # # Open the original file in read mode and a temporary file in write mode
-    # with open(fname, 'r') as read_file, open('temp_file.txt', 'w') as temp_file:
-    #     # Read through each line in the original file
-    #     for line in read_file:
-    #         # Check if the line's number (strip removes newline characters) is not in the numbers to remove
-    #         if line.strip() not in failed_list:
-    #             # Write this line to the temporary file
-    #             temp_file.write(line)
-
-    # # Remove the original file
-    # os.remove(fname)
-
-    # # Rename the temporary file to the original file name
-    # os.rename('temp_file.txt', fname)
 run(fname, criteria)

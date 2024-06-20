@@ -167,7 +167,7 @@ def time_delta(data, id):
         }
         sensor_delta.append(data_dict)
 
-    for item in longest_sensor_gaps:
+    for item in longest_upload_gaps:
         data_dict = {
             'IMEI': id,
             'Upload Samples': len(upload_data),
@@ -311,6 +311,3 @@ def run(fname):
     to_excel(count_decrement_list, "Count Decrements", timestamp)
     to_excel(distances_list, "Distance", timestamp)
 run(fname)
-
-
-# distance get miles/hour, get everything that is greater than 60mph
