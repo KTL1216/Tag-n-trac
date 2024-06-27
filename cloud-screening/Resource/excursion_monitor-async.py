@@ -30,16 +30,6 @@ async def login2(session, email, password):
         print(f"Login failed: {resp_json}")
         return None, None
 
-async def fetch_device_data(session, device_id, common_headers2, hours_ago):
-    query_dates = generate_time_string(hours_ago)
-    async with session.get(f"{API_BASE}/v2/device/{device_id}/data" + query_dates, headers=common_headers2) as response:
-        resp_json = await response.json()
-        if resp_json['status'] == 'SUCCESS':
-            return resp_json['response']
-        else:
-            print("Get Device data2 failed: " + device_id)
-            return None
-
 async def get_device_shadow(session, device_id, common_headers2):
     async with session.get(f"{API_BASE}/device/{device_id}/shadow", headers=common_headers2) as response:
         shdw = await response.json()
@@ -60,7 +50,7 @@ def generate_time_string(hours_ago):
 
 def compare_arrays(arr1, arr2, type):
     if len(arr1) != len(arr2):
-        raise ValueError("Arrays must be of the same length")
+        return False, "Arrays are different in length"
     identical = True
     differing_indices = []
     for i in range(len(arr1)):
@@ -73,7 +63,7 @@ def compare_arrays(arr1, arr2, type):
 def compare_dicts(dict1, dict2):
     errors = []
     if set(dict1.keys()) != set(dict2.keys()):
-        return False, ["Different keys"]
+        return False
     for key in dict1:
         if dict1[key] != dict2[key]:
             errors.append(str(key))
@@ -86,8 +76,8 @@ def delta_greater_than(timestamp1, timestamp2, days):
     return delta > timedelta(days=days), delta
 
 def config_26(reported, desired, days, imei):
-    if '26' in reported:
-        if '26' in desired:
+    if '26' in reported and reported['26'] != 0:
+        if desired and '26' in desired:
             desired_match, unmatched_indices = compare_arrays(reported['26'], desired['26'], "desired")
         else:
             desired_match, unmatched_indices = "No 26 config in desired", "No 26 config in desired"
@@ -115,8 +105,8 @@ def config_26(reported, desired, days, imei):
     return data_dict
 
 def config_27(reported, desired, imei):
-    if '27' in reported:
-        if '27' in desired:
+    if '27' in reported and reported['27'] != 0:
+        if desired and '27' in desired:
             desired_match = compare_dicts(reported['27'], desired['27'])
         else:
             desired_match = "No 27 config in desired"
@@ -135,27 +125,27 @@ def config_27(reported, desired, imei):
     return data_dict
 
 def config_33(reported, imei):
-    if '33' in reported:
+    if '33' in reported and reported['33'] != 0:
         monitor_state = reported['33'][0]
         criteria_met, unmet_indices = compare_arrays(reported['33'], criteria['33'], "criteria")
-        if '26' in reported:
+        if '26' in reported and reported['26'] != 0:
             start_time_match = reported['33'][1] == reported['26'][0]
         else:
             start_time_match = 'No 26 config in reported'
-        data_dict = {
-            "IMEI": imei,
-            "Monitor State": "No 33 config in reported",
-            "Meet Criteria?": "No 33 config in reported",
-            "Criteria State": "No 33 config in reported",
-            "Start Time Match 26?": "No 33 config in reported"
-        }
-    else:
         data_dict = {
             "IMEI": imei,
             "Monitor State": monitor_state,
             "Meet Criteria?": criteria_met,
             "Criteria State": criteria['33'][0],
             "Start Time Match 26?": start_time_match
+        }
+    else:
+        data_dict = {
+            "IMEI": imei,
+            "Monitor State": "No 33 config in reported",
+            "Meet Criteria?": "No 33 config in reported",
+            "Criteria State": "No 33 config in reported",
+            "Start Time Match 26?": "No 33 config in reported"
         }
     return data_dict
 
@@ -197,20 +187,24 @@ async def run(fname):
                            "x-api-key": xapikey2}
         tasks = []
         for i, dev in enumerate(device_list):
-            tasks.append(asyncio.create_task(fetch_device_data(session, dev, common_headers2, 40)))
             tasks.append(asyncio.create_task(get_device_shadow(session, dev, common_headers2)))
         
         results = await asyncio.gather(*tasks)
         
         for i in range(len(device_list)):
-            try:
-                dev = device_list[i]
-                reported, desired = results[i * 2 + 1]
-                data_list_26.append(config_26(reported, desired, days_delta, dev))
-                data_list_27.append(config_27(reported, desired, dev))
-                data_list_33.append(config_33(reported, dev))
-            except Exception as e:
-                print(f"Error occurred on {dev}: {e}")
+            dev = device_list[i]
+            reported, desired = results[i]
+            data_list_26.append(config_26(reported, desired, days_delta, dev))
+            data_list_27.append(config_27(reported, desired, dev))
+            data_list_33.append(config_33(reported, dev))
+            # try:
+            #     dev = device_list[i]
+            #     reported, desired = results[i]
+            #     data_list_26.append(config_26(reported, desired, days_delta, dev))
+            #     data_list_27.append(config_27(reported, desired, dev))
+            #     data_list_33.append(config_33(reported, dev))
+            # except Exception as e:
+            #     print(f"Error occurred on {dev}: {e}")
 
     timestamp = datetime.now().strftime("%Y%m%d%H%M%S")
     to_excel(data_list_26, "26", timestamp)

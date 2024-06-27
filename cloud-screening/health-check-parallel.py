@@ -5,14 +5,6 @@ import requests
 import pandas as pd
 import concurrent.futures
 
-json_file = input("Enter criteria json file name (default criteria.json): ")
-if json_file == "":
-    json_file = "criteria.json"
-
-# Open the JSON file
-with open(json_file, 'r') as file:
-    criteria = json.load(file)
-
 # Base URL for the API
 API_BASE = "https://api.tagntrac.io"
 
@@ -263,18 +255,18 @@ def produce_data_dict(device_id, criteria):
         "Last Reported Time (UTC)": time,
         "Current Time (UTC)": current_utc_time.replace(tzinfo=None).strftime('%Y-%m-%d %H:%M:%S'),
         "Time Passed Since Reported": formatted_time_difference,
-        "Sensor Interval": shadow_reported["0"] if shadow_reported else "N/A",
-        "Upload Interval": shadow_reported["1"] if shadow_reported else "N/A",
-        "Warehouse Interval": shadow_reported["11"] if shadow_reported else "N/A",
-        "Min Vbat Mv": shadow_reported["20"] if shadow_reported else "N/A",
-        "Flight Mode Enable": shadow_reported["21"] if shadow_reported else "N/A",
-        "Upload Handshake": shadow_reported["22"] if shadow_reported else "N/A",
-        "Accelerometer Config": shadow_reported["23"] if shadow_reported else "N/A",
-        "Accelerometer Threshold": shadow_reported["24"] if shadow_reported else "N/A",
-        "Firmware Version": shadow_reported["25"] if shadow_reported else "N/A",
-        "WiFi Enable": shadow_reported["28"] if shadow_reported else "N/A",
-        "Scan Suspend": shadow_reported["30"] if shadow_reported else "N/A",
-        "LTE Attach Timeout": shadow_reported["34"] if shadow_reported else "N/A",
+        "Sensor Interval": shadow_reported["0"] if shadow_reported and "0" in shadow_reported else "N/A",
+        "Upload Interval": shadow_reported["1"] if shadow_reported and "1" in shadow_reported else "N/A",
+        "Warehouse Interval": shadow_reported["11"] if shadow_reported and "11" in shadow_reported else "N/A",
+        "Min Vbat Mv": shadow_reported["20"] if shadow_reported and "20" in shadow_reported else "N/A",
+        "Flight Mode Enable": shadow_reported["21"] if shadow_reported and "21" in shadow_reported else "N/A",
+        "Upload Handshake": shadow_reported["22"] if shadow_reported and "22" in shadow_reported else "N/A",
+        "Accelerometer Config": shadow_reported["23"] if shadow_reported and "23" in shadow_reported else "N/A",
+        "Accelerometer Threshold": shadow_reported["24"] if shadow_reported and "24" in shadow_reported else "N/A",
+        "Firmware Version": shadow_reported["25"] if shadow_reported and "25" in shadow_reported else "N/A",
+        "WiFi Enable": shadow_reported["28"] if shadow_reported and "28" in shadow_reported else "N/A",
+        "Scan Suspend": shadow_reported["30"] if shadow_reported and "30" in shadow_reported else "N/A",
+        "LTE Attach Timeout": shadow_reported["34"] if shadow_reported and "34" in shadow_reported else "N/A",
         "Pass": True,
         "Failed Category": []
     }
@@ -309,5 +301,12 @@ def run(fname, criteria):
     timestamp = datetime.now().strftime("%Y%m%d%H%M%S")
     new_file_path = os.path.join(os.getcwd(), f'Health Check {timestamp}.xlsx')
     df.to_excel(new_file_path, index=False, sheet_name="Health Check")
+    
+json_file = input("Enter criteria json file name (default criteria.json): ")
+if json_file == "":
+    json_file = "criteria.json"
 
+# Open the JSON file
+with open(json_file, 'r') as file:
+    criteria = json.load(file)
 run(fname, criteria)

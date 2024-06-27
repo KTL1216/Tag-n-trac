@@ -5,13 +5,6 @@ import os
 import pandas as pd
 from datetime import datetime, timezone
 
-json_file = input("Enter criteria json file name (default criteria.json): ")
-if json_file == "":
-    json_file = "criteria.json"
-# Open the JSON file
-with open(json_file, 'r') as file:
-    criteria = json.load(file)
-
 # Base URL for the API
 API_BASE = "https://api.tagntrac.io"
 
@@ -93,30 +86,82 @@ async def produce_data_dict(session, device_id, criteria, common_headers):
         "Last Reported Time (UTC)": time,
         "Current Time (UTC)": current_utc_time.replace(tzinfo=None).strftime('%Y-%m-%d %H:%M:%S'),
         "Time Passed Since Reported": formatted_time_difference,
-        "Sensor Interval": shadow_reported["0"] if shadow_reported else "N/A",
-        "Upload Interval": shadow_reported["1"] if shadow_reported else "N/A",
-        "Warehouse Interval": shadow_reported["11"] if shadow_reported else "N/A",
-        "Min Vbat Mv": shadow_reported["20"] if shadow_reported else "N/A",
-        "Flight Mode Enable": shadow_reported["21"] if shadow_reported else "N/A",
-        "Upload Handshake": shadow_reported["22"] if shadow_reported else "N/A",
-        "Accelerometer Config": shadow_reported["23"] if shadow_reported else "N/A",
-        "Accelerometer Threshold": shadow_reported["24"] if shadow_reported else "N/A",
-        "Firmware Version": shadow_reported["25"] if shadow_reported else "N/A",
-        "WiFi Enable": shadow_reported["28"] if shadow_reported else "N/A",
-        "Scan Suspend": shadow_reported["30"] if shadow_reported else "N/A",
-        "LTE Attach Timeout": shadow_reported["34"] if shadow_reported else "N/A",
+        "Sensor Interval": shadow_reported["0"] if shadow_reported and "0" in shadow_reported else "N/A",
+        "Upload Interval": shadow_reported["1"] if shadow_reported and "1" in shadow_reported else "N/A",
+        "Warehouse Interval": shadow_reported["11"] if shadow_reported and "11" in shadow_reported else "N/A",
+        "Min Vbat Mv": shadow_reported["20"] if shadow_reported and "20" in shadow_reported else "N/A",
+        "Flight Mode Enable": shadow_reported["21"] if shadow_reported and "21" in shadow_reported else "N/A",
+        "Upload Handshake": shadow_reported["22"] if shadow_reported and "22" in shadow_reported else "N/A",
+        "Accelerometer Config": shadow_reported["23"] if shadow_reported and "23" in shadow_reported else "N/A",
+        "Accelerometer Threshold": shadow_reported["24"] if shadow_reported and "24" in shadow_reported else "N/A",
+        "Firmware Version": shadow_reported["25"] if shadow_reported and "25" in shadow_reported else "N/A",
+        "WiFi Enable": shadow_reported["28"] if shadow_reported and "28" in shadow_reported else "N/A",
+        "Scan Suspend": shadow_reported["30"] if shadow_reported and "30" in shadow_reported else "N/A",
+        "LTE Attach Timeout": shadow_reported["34"] if shadow_reported and "34" in shadow_reported else "N/A",
         "Pass": True,
         "Failed Category": []
     }
 
     data_dict["Pass"], data_dict["Failed Category"] = run_test(data_dict, criteria)
     return data_dict
+    # try:
+    #     shadow_reported = await get_device_shadow_reported(session, device_id, common_headers)
+    #     time = await get_health_last_reported(session, device_id, common_headers)
+    #     current_utc_time = datetime.now(timezone.utc)
+
+    #     if time == "N/A":
+    #         formatted_time_difference = "N/A"
+    #     else:
+    #         try:
+    #             reported_time = datetime.strptime(time, "%Y-%m-%dT%H:%M:%S.%fZ").replace(tzinfo=timezone.utc)
+    #             time_difference = current_utc_time - reported_time
+    #             total_seconds = time_difference.total_seconds()
+    #             hours = int(total_seconds // 3600)
+    #             minutes = int((total_seconds % 3600) // 60)
+    #             seconds = int(total_seconds % 60)
+    #             formatted_time_difference = f"{hours} hrs {minutes} mins {seconds} secs"
+    #         except ValueError:
+    #             formatted_time_difference = "Invalid date format"
+
+    #     data_dict = {
+    #         "IMEI": device_id,
+    #         "Last Reported Time (UTC)": time,
+    #         "Current Time (UTC)": current_utc_time.replace(tzinfo=None).strftime('%Y-%m-%d %H:%M:%S'),
+    #         "Time Passed Since Reported": formatted_time_difference,
+    #         "Sensor Interval": shadow_reported["0"] if shadow_reported else "N/A",
+    #         "Upload Interval": shadow_reported["1"] if shadow_reported else "N/A",
+    #         "Warehouse Interval": shadow_reported["11"] if shadow_reported else "N/A",
+    #         "Min Vbat Mv": shadow_reported["20"] if shadow_reported else "N/A",
+    #         "Flight Mode Enable": shadow_reported["21"] if shadow_reported else "N/A",
+    #         "Upload Handshake": shadow_reported["22"] if shadow_reported else "N/A",
+    #         "Accelerometer Config": shadow_reported["23"] if shadow_reported else "N/A",
+    #         "Accelerometer Threshold": shadow_reported["24"] if shadow_reported else "N/A",
+    #         "Firmware Version": shadow_reported["25"] if shadow_reported else "N/A",
+    #         "WiFi Enable": shadow_reported["28"] if shadow_reported else "N/A",
+    #         "Scan Suspend": shadow_reported["30"] if shadow_reported else "N/A",
+    #         "LTE Attach Timeout": shadow_reported["34"] if shadow_reported else "N/A",
+    #         "Pass": True,
+    #         "Failed Category": []
+    #     }
+
+    #     data_dict["Pass"], data_dict["Failed Category"] = run_test(data_dict, criteria)
+    #     return data_dict
+    # except Exception as e:
+    #     print(f"Error processing device {device_id}: {e}")
+    #     return None
 
 async def run_async():
     id, pwd, fname = prompt()
     if fname == "":
         fname = "imei.txt"
-    
+
+    json_file = input("Enter criteria json file name (default criteria.json): ")
+    if json_file == "":
+        json_file = "criteria.json"
+    # Open the JSON file
+    with open(json_file, 'r') as file:
+        criteria = json.load(file)
+
     async with aiohttp.ClientSession() as session:
         token, xapikey = await login(session, id, pwd)
 
@@ -136,13 +181,22 @@ async def run_async():
         tasks = [produce_data_dict(session, dev, criteria, common_headers) for dev in device_list]
         data_list = await asyncio.gather(*tasks, return_exceptions=True)
 
-        data_list = [data for data in data_list if isinstance(data, dict)]
+        # Filter out None results and log exceptions
+        valid_data_list = []
+        for data in data_list:
+            if isinstance(data, dict):
+                valid_data_list.append(data)
+            elif isinstance(data, Exception):
+                print(f"Task resulted in an exception: {data}")
 
-        df = pd.DataFrame(data_list)
-        df = df[list(data_list[0].keys())]
-        timestamp = datetime.now().strftime("%Y%m%d%H%M%S")
-        new_file_path = os.path.join(os.getcwd(), f'Health Check {timestamp}.xlsx')
-        df.to_excel(new_file_path, index=False, sheet_name="Health Check")
+        df = pd.DataFrame(valid_data_list)
+        if not df.empty:
+            df = df[list(valid_data_list[0].keys())]
+            timestamp = datetime.now().strftime("%Y%m%d%H%M%S")
+            new_file_path = os.path.join(os.getcwd(), f'Health Check {timestamp}.xlsx')
+            df.to_excel(new_file_path, index=False, sheet_name="Health Check")
+        else:
+            print("No valid data to write to Excel")
 
 def sensor_interval_test(data_dict, criteria):
     if data_dict["Sensor Interval"] == "N/A":
