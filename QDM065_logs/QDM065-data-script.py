@@ -75,6 +75,8 @@ def FCT_dict(folder_name, lines, time_stamp, time_val):
     EEPROM2 = None
     temp_offset = None
     EEPROM3 = None
+    provisioned = None
+    env_wifi = None
 
     for line in lines:
         if re.search('CCID:\'', line):
@@ -98,6 +100,10 @@ def FCT_dict(folder_name, lines, time_stamp, time_val):
             wifi_scan += 1
         if re.search('Button pushed',line):
             Button = True
+        if re.search('provisioned', line):
+            provisioned = line.split('=')[1].strip()
+        if re.search('wifi=', line):
+            env_wifi = line.split('=')[1].strip()
 
         if folder_name == "Device_FCT":
             if re.search('get ntc adc value is', line):
@@ -134,7 +140,9 @@ def FCT_dict(folder_name, lines, time_stamp, time_val):
         "Light": light,
         "WiFi Scan Results": wifi_scan,
         "Button": Button,
-        "Voltage (mV)": Voltage
+        "Voltage (mV)": Voltage,
+        "Env Provisioned": provisioned,
+        "Env Wifi": int(env_wifi)
     }
     if NTC:
         data_dict["NTC"] = NTC
@@ -155,6 +163,82 @@ def FCT_dict(folder_name, lines, time_stamp, time_val):
 
 
     return data_dict
+
+# Function to calculate pass/fail statistics for a given metric
+def calculate_pass_fail(data, metric):
+    if metric == "Env Provisioned":
+        pass_count = sum(1 for entry in data if entry[metric] == "yes")
+        fail_count = sum(1 for entry in data if entry[metric] != "yes")
+    elif metric == "Env Wifi":
+        pass_count = sum(1 for entry in data if entry[metric] == 1)
+        fail_count = sum(1 for entry in data if entry[metric] != 1)
+    else:
+        pass_count = sum(1 for entry in data)
+        fail_count = 0
+    total_count = pass_count + fail_count
+    pass_percentage = (pass_count / total_count) * 100 if total_count else 0
+    fail_percentage = (fail_count / total_count) * 100 if total_count else 0
+    return total_count, pass_percentage, fail_percentage, pass_count, fail_count
+
+def pass_fail_plot(data, image_dir):
+    headers = ['Env Provisioned', 'Env Wifi']
+
+    # Add a new slide for the stats table
+    slide_layout = prs.slide_layouts[6]  # Assuming 5 is a layout that fits a table well
+    summary_slide = prs.slides.add_slide(slide_layout)
+
+    # Define table dimensions
+    rows, cols = 6, len(headers) + 1  # Additional row for headers
+    left, top, width, height = Inches(0.5), Inches(4.3), Inches(8.5), Inches(0.2)  # Modify as needed
+
+    # Add a table to the slide (may need to adjust sizes and positions)
+    table = summary_slide.shapes.add_table(rows, cols, left, top, width, height).table
+
+    # Set rows headings
+    table.cell(0, 0).text = 'Metric'
+    table.cell(1, 0).text = 'Quantity'
+    table.cell(2, 0).text = 'Pass %'
+    table.cell(3, 0).text = 'Fail %'
+    table.cell(4, 0).text = 'Pass'
+    table.cell(5, 0).text = 'Fail'
+
+    # Populate the table with data
+    for i, metric in enumerate(headers, start=1):
+        total, pass_percent, fail_percent, pass_count, fail_count = calculate_pass_fail(data, metric)
+        table.cell(0, i).text = metric
+        table.cell(1, i).text = str(total)
+        table.cell(2, i).text = f"{pass_percent:.2f}%"
+        table.cell(3, i).text = f"{fail_percent:.2f}%"
+        table.cell(4, i).text = str(pass_count)
+        table.cell(5, i).text = str(fail_count)
+
+    # Define the path for the saved plot image
+    image_path = os.path.join(image_dir, 'metrics_pass_fail_plot.png')
+
+    # Generate the bar plot
+    x = np.arange(len(headers))  # the label locations
+    width = 0.35  # the width of the bars
+
+    fig, ax = plt.subplots()
+    rects1 = ax.bar(x - width/2, pass_count, width, label='Pass')
+    rects2 = ax.bar(x + width/2, fail_count, width, label='Fail')
+
+    # Add some text for labels, title and custom x-axis tick labels, etc.
+    ax.set_ylabel('Counts')
+    ax.set_title('Pass and Fail Counts by Metric')
+    ax.set_xticks(x)
+    ax.set_xticklabels(headers, rotation=45, ha='right')
+    ax.legend()
+
+    # Save the plot as an image
+    plt.tight_layout()
+    plt.savefig(image_path)
+    plt.close()
+
+    # Insert the plot image into the slide
+    left = Inches(1)
+    top = Inches(0.1)
+    summary_slide.shapes.add_picture(image_path, left, top, width=Inches(8), height=Inches(4))
 
 def plot_FCT(folder_name):
     # Initialize data dictionaries
@@ -272,6 +356,8 @@ def plot_FCT(folder_name):
             stats_slide.shapes.add_picture(image_path, left, top, width=Inches(8), height=Inches(4))
         else:
             print(f"No valid data found for metric: {folder_name}")
+    if folder_name == "Device_FCT":
+        pass_fail_plot(data, image_dir)
 
 def plot_rf(folder_name):
     # Initialize data dictionaries

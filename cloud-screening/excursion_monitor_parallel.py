@@ -116,9 +116,28 @@ def delta_greater_than(timestamp1, timestamp2, days):
 
 
 def config_26(reported, desired, days, imei):
+    if reported is None:
+        data_dict = {
+            "IMEI": imei,
+            "26 Match Desired?": "No reported data",
+            "26 Unmatched Indices": "No reported data",
+            "26 Meet Criteria?": "No reported data",
+            "26 Unmet Indices": "No reported data",
+            "26 Time Delta Greater?": "No reported data",
+            "26 Time Delta": "No reported data",
+            "26 Desired Abs Start Time": "No reported data",
+            "Passed": False
+        }
+        return data_dict
+
+    counter_id_26 = "No 26 config in desired"
     if '26' in reported and isinstance(reported['26'], list):
         if desired and '26' in desired:
             desired_match, unmatched_indices = compare_arrays(reported['26'], desired['26'], "desired")
+            if len(desired['26']) > 7:  # Ensure there are at least 8 elements
+                counter_id_26 = desired['26'][0]
+            else:
+                counter_id_26 = "Not enough elements in desired['26']"
         else:
             desired_match, unmatched_indices = "No 26 config in desired", "No 26 config in desired"
         criteria_met, unmet_indices = compare_arrays(reported['26'], criteria['26'], "criteria")
@@ -131,6 +150,7 @@ def config_26(reported, desired, days, imei):
             "26 Unmet Indices": unmet_indices,
             "26 Time Delta Greater?": delta_greater,
             "26 Time Delta": time_delta,
+            "26 Desired Abs Start Time": counter_id_26,
             "Passed": desired_match and criteria_met and not delta_greater
         }
     else:
@@ -142,14 +162,30 @@ def config_26(reported, desired, days, imei):
             "26 Unmet Indices": "No 26 config in reported",
             "26 Time Delta Greater?": "No 26 config in reported",
             "26 Time Delta": "No 26 config in reported",
+            "26 Desired Abs Start Time": counter_id_26,
             "Passed": False
         }
     return data_dict
 
 def config_27(reported, desired, imei):
+    if reported is None:
+        data_dict = {
+            "IMEI": imei,
+            "27 Match Desired?": "No reported data",
+            "27 Meet Criteria?": "No reported data",
+            "27 Desired Counter id": "No reported data",
+            "Passed": False
+        }
+        return data_dict
+
+    counter_id_27 = "No 27 config in desired"
     if '27' in reported and isinstance(reported['27'], dict):
         if desired and '27' in desired:
             desired_match = compare_dicts(reported['27'], desired['27'])
+            if len(desired['27']['27.0']) > 7:  # Ensure there are at least 8 elements
+                counter_id_27 = [value[7] for value in desired['27'].values()]
+            else:
+                counter_id_27 = "Not enough elements in desired['27']"
         else:
             desired_match = "No 27 config in desired"
         criteria_met = compare_dicts(reported['27'], criteria['27'])
@@ -157,6 +193,7 @@ def config_27(reported, desired, imei):
             "IMEI": imei,
             "27 Match Desired?": desired_match,
             "27 Meet Criteria?": criteria_met,
+            "27 Desired Counter id": counter_id_27,
             "Passed": desired_match and criteria_met
         }
     else:
@@ -164,11 +201,23 @@ def config_27(reported, desired, imei):
             "IMEI": imei,
             "27 Match Desired?": "No 27 config in reported",
             "27 Meet Criteria?": "No 27 config in reported",
+            "27 Desired Counter id": counter_id_27,
             "Passed": False
         }
     return data_dict
 
 def config_33(reported, imei):
+    if reported is None:
+        data_dict = {
+            "IMEI": imei,
+            "33 Monitor State": "No reported data",
+            "33 Meet Criteria?": "No reported data",
+            "33 Criteria State": "No reported data",
+            "33 Start Time Match 26?": "No reported data",
+            "33 Reported Abs Start Time": "No reported data",
+            "Passed": False
+        }
+        return data_dict
     if '33' in reported and reported['33'] != 0:
         monitor_state = reported['33'][0]
         criteria_met, unmet_indices = compare_arrays(reported['33'], criteria['33'], "criteria")
@@ -182,6 +231,7 @@ def config_33(reported, imei):
             "33 Meet Criteria?": criteria_met,
             "33 Criteria State": criteria['33'][0],
             "33 Start Time Match 26?": start_time_match,
+            "33 Reported Abs Start Time": reported['33'][1],
             "Passed": criteria_met and start_time_match
         }
     else:
@@ -191,6 +241,7 @@ def config_33(reported, imei):
             "33 Meet Criteria?": "No 33 config in reported",
             "33 Criteria State": "No 33 config in reported",
             "33 Start Time Match 26?": "No 33 config in reported",
+            "33 Reported Abs Start Time": "No 33 config in reported",
             "Passed": False
         }
     return data_dict
@@ -241,7 +292,8 @@ def run(fname):
         days_delta = 40
     else:
         days_delta = int(days_delta)
-
+    
+    
     with open(fname, 'r') as file:
         device_list = file.read().splitlines()
     print("Reading device list: ", len(device_list))
