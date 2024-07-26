@@ -5,7 +5,7 @@ try:
     rm = pyvisa.ResourceManager()
 
     # Replace with your device's resource string
-    resource_string = 'USB::0x0957::0x0807::MY1234567::INSTR'
+    resource_string = 'GPIBO::9:INSTR'
 
     # Open a connection to the device
     instrument = rm.open_resource(resource_string)
