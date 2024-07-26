@@ -16,16 +16,44 @@ def search_bt_traffic(capfile, address):
     print("Parsing:", capfile)
     cap = pyshark.FileCapture(capfile, display_filter=f'btle.advertising_address == {address}')
 
+    data_list = []
     traffic_found = 0
     for packet in cap:
         traffic_found += 1
-        print(packet)
+        voltage_hex = str(packet.btle.btcommon_eir_ad_entry_data.split(':')[11])+str(packet.btle.btcommon_eir_ad_entry_data.split(':')[12])
+        data_dict = {
+            'Address': address,
+            'Test Temp[C]': 25,
+            'Packet Seq Number': int(packet.nordic_ble.packet_counter),
+            'Payload [Byte]': int(packet.captured_length),
+            'Channel': int(packet.nordic_ble.channel),
+            'RSSI [dBm]': int(packet.nordic_ble.rssi),
+            'Adv Address': str(packet.btle.advertising_address),
+            'Temp [Hex]': '',
+            'Temp [Decimal]': '',
+            'Tamper Event': '',
+            'Voltage Payload': int(voltage_hex, 16)
+        }
+        if packet.captured_length == '56':
+            list=[packet.btle.btcommon_eir_ad_entry_data[9:11],packet.btle.btcommon_eir_ad_entry_data[12:14]]
+            s=""
+            s=s.join(list)
+            data_dict['Temp [Hex]'] = s
+            
+            #print(int(s,16))
+            if int(s,16) < 32767:   #16 bit max positive value
+                data_dict['Temp [Decimal]'] = 0.003906*int(s,16)     
+            else:
+                data_dict['Temp [Decimal]'] = 0.003906*(int(s,16)-4096)
+            data_dict['Tamper Event'] = int(packet.btle.btcommon_eir_ad_entry_data[6:8])
+        data_list.append(data_dict)
+        # print(packet)
 
     if traffic_found > 0:
         print(f"Unit {address}'s traffic is captured")
     else:
         print(f"There is no traffic for unit {address}")
-    return traffic_found
+    return traffic_found, data_list
 
 def set_target(channel, target):
     # Target should be in quarter-microseconds (e.g., 1500us * 4 = 6000)
@@ -49,7 +77,7 @@ def run_maestro(reps):
 def wireshark_gui(test_run_i, timestamp):
     # Swap tab to Wireshark
     pyautogui.hotkey('alt', 'tab')
-    pyautogui.sleep(12)
+    pyautogui.sleep(30)
 
     # Press "Capture"
     pyautogui.hotkey('alt', 'c')
@@ -86,14 +114,15 @@ def wireshark_gui(test_run_i, timestamp):
     return 'captures//' + file_name
 
 
-def to_excel(data_list, sheet_name, timestamp, address):
+def to_excel(data_list, sheet_name, timestamp, is_summary):
     if not data_list:
         print(f"No data to write for {sheet_name}")
         return
     df = pd.DataFrame(data_list)
     df = df[list(data_list[0].keys())]
-    address_clean = address.replace(':', '_')
-    new_file_path = os.path.join(os.getcwd(), f'Bending Test for {address_clean} at {timestamp}.xlsx')
+    if not is_summary:
+        sheet_name = sheet_name.replace(':', '_')
+    new_file_path = os.path.join(os.getcwd(), f'Bending Test at {timestamp}.xlsx')
     if not os.path.isfile(new_file_path):
         df.to_excel(new_file_path, index=False, sheet_name=sheet_name)
     else:
@@ -110,25 +139,31 @@ def run():
     tests = int(input("Enter the number of tests wanted: "))
     address = input("Enter the advertising address for the tested unit: ")
     if address == "":
-        address = "c0:04:03:4a:72:c4"
+        address = "C0:04:03:4A:6F:D7"
 
     timestamp = datetime.now().strftime("%Y%m%d%H%M%S")
-    data_list = []
+    summary_list = []
+    lists_of_data = {}
 
     for i in range(tests):
+        if address not in lists_of_data:
+            lists_of_data[address] = []
         run_maestro(reps)
         cap_file = wireshark_gui(i, timestamp)
-        traffic_found = search_bt_traffic(cap_file, address)
-        data = {
+        traffic_found, data_list = search_bt_traffic(cap_file, address)
+        summary = {
             "Address": address,
             "Test run": i,
             "Traffic found": traffic_found
         }
-        data_list.append(data)
+        summary_list.append(summary)
+        lists_of_data[address] += data_list
 
     ser.close()
     print('Serial connection closed')
 
-    to_excel(data_list, "Bending Test", timestamp, address)
+    to_excel(summary_list, "Bending Test", timestamp, True)
+    for key in lists_of_data.keys():
+        to_excel(lists_of_data[key], key, timestamp, False)
 
 run()
