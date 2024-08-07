@@ -18,8 +18,11 @@ def read_agilent(instrument):
         instrument.write('CONF:TEMP RTD,85,(@203)')
         
         # Enable offset compensation
-        instrument.write('FRES:OCOM ON,(@203)')
-        
+        # instrument.write('FRES:OCOM ON,(@203)')
+                
+        # Set the RTD type to 4-wire
+        instrument.write('SENS:RES:TRAN:FRTD 85 (@203)')
+
         # Initiate the measurement
         instrument.write('INIT')
         
