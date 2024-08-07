@@ -21,7 +21,7 @@ def read_agilent(instrument):
         # instrument.write('FRES:OCOM ON,(@203)')
                 
         # Set the RTD type to 4-wire
-        instrument.write('SENS:RES:TRAN:FRTD 85 (@203)')
+        instrument.write('SENS:TEMP:TRAN:FRTD:TYPE 85,(@103)')
 
         # Initiate the measurement
         instrument.write('INIT')
