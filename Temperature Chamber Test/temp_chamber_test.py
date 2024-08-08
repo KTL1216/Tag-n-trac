@@ -30,7 +30,8 @@ def read_agilent(instrument):
         instrument.write('INIT')
 
         # Fetch the measurement
-        reading = instrument.query('FETCh?')
+        reading_str = instrument.query('FETCh?')
+        reading = float(reading_str.strip())
         
         # Get the current timestamp
         timestamp = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
@@ -55,4 +56,4 @@ def run(device_name, runs, gap):
 
 # Example usage with a GPIB address
 device_name = 'GPIB0::9::INSTR'
-run(device_name, 2, 2)
+run(device_name, 10, 1)
