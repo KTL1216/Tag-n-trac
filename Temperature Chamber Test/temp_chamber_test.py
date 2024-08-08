@@ -18,7 +18,7 @@ def read_agilent(instrument):
         instrument.write('CONF:TEMP RTD,85,(@203)')
         
         # Enable offset compensation
-        # instrument.write('FRES:OCOM ON,(@203)')
+        instrument.write('FRES:OCOM ON,(@203)')
 
         # NPLC Adjustment
         instrument.write('SENS:VOLT:DC:NPLC 1,(@203)')
@@ -28,7 +28,7 @@ def read_agilent(instrument):
 
         # Initiate the measurement
         instrument.write('INIT')
-        
+
         # Fetch the measurement
         reading = instrument.query('FETCh?')
         
@@ -44,10 +44,12 @@ def read_agilent(instrument):
 def run(device_name, runs, gap):
     instrument = rm.open_resource(device_name, timeout=5000)  # Increase timeout if needed
     print(f"Connected to: {instrument.query('*IDN?')}")
+    
     while runs > 0:
         read_agilent(instrument)
         time.sleep(gap)
         runs -= 1
+    
     # Close the connection
     instrument.close()
 
