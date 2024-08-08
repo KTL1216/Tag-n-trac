@@ -19,6 +19,9 @@ def read_agilent(instrument):
         
         # Enable offset compensation
         # instrument.write('FRES:OCOM ON,(@203)')
+
+        # NPLC Adjustment
+        instrument.write('SENS:VOLT:DC:NPLC 1,(@301)')
                 
         # Set the RTD type to 4-wire
         instrument.write('SENS:TEMP:TRAN:FRTD:TYPE 85,(@103)')
