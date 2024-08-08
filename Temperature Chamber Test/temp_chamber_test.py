@@ -21,10 +21,10 @@ def read_agilent(instrument):
         # instrument.write('FRES:OCOM ON,(@203)')
 
         # NPLC Adjustment
-        instrument.write('SENS:VOLT:DC:NPLC 1,(@301)')
+        instrument.write('SENS:VOLT:DC:NPLC 1,(@203)')
                 
         # Set the RTD type to 4-wire
-        instrument.write('SENS:TEMP:TRAN:FRTD:TYPE 85,(@103)')
+        instrument.write('SENS:TEMP:TRAN:FRTD:TYPE 85,(@203)')
 
         # Initiate the measurement
         instrument.write('INIT')
